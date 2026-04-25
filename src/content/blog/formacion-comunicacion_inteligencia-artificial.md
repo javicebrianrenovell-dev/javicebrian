@@ -2,7 +2,7 @@
 title: "Formación continua en Comunicación e Inteligencia Artificial"
 description: "Por qué la formación continua es la clave para seguir siendo relevante en un sector donde la tecnología cambia cada mes."
 pubDate: 2024-11-17
-heroImage: "https://javicebrian.es/wp-content/uploads/2024/11/freepik__candid-image-photography-natural-textures-highly-r__32105.jpeg"
+heroImage: "/blog-images/freepik__candid-image-photography-natural-textures-highly-r__32105.jpeg"
 category: ia
 tags: ["formación", "comunicación", "inteligencia artificial", "aprendizaje continuo"]
 ---

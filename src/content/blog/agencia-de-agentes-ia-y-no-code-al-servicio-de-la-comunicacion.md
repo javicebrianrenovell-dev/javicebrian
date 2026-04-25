@@ -2,7 +2,7 @@
 title: "Agencia de Agentes: IA y No Code al Servicio de la Comunicación"
 description: "Cómo el modelo de agencia de agentes combina IA y herramientas no-code para multiplicar la capacidad de las agencias de comunicación."
 pubDate: 2025-01-18
-heroImage: "https://javicebrian.es/wp-content/uploads/2025/01/freepik__un-director-de-comunicacin-trabajando-desde-la-pla__87398.webp"
+heroImage: "/blog-images/freepik__un-director-de-comunicacin-trabajando-desde-la-pla__87398.webp"
 category: ia
 tags: ["agentes IA", "no-code", "asistentes virtuales", "Make", "ChatGPT"]
 ---

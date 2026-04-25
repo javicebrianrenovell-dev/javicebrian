@@ -2,7 +2,7 @@
 title: "Implementación de la IA en las Empresas: Claves Estratégicas para una Transformación Exitosa"
 description: "Las cinco claves estratégicas para implementar IA en empresas: diagnóstico, comunicación interna, herramientas, formación y medición."
 pubDate: 2025-02-08
-heroImage: "https://javicebrian.es/wp-content/uploads/2025/02/javi-cebrian_director_comunicacion.webp"
+heroImage: "/blog-images/javi-cebrian_director_comunicacion.webp"
 category: ia
 tags: ["implementación IA empresas", "transformación digital", "estrategia"]
 ---

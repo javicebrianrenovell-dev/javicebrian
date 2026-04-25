@@ -2,7 +2,7 @@
 title: "Freepik: la herramienta imprescindible para agencias de comunicación en el día a día"
 description: "Cómo Freepik resuelve el día a día creativo de las agencias de comunicación: imágenes, plantillas, recursos para redes y editor online."
 pubDate: 2024-11-10
-heroImage: "https://javicebrian.es/wp-content/uploads/2024/11/freepik__candid-image-photography-natural-textures-highly-r__91806.jpeg"
+heroImage: "/blog-images/freepik__candid-image-photography-natural-textures-highly-r__91806.jpeg"
 category: herramientas
 tags: ["Freepik", "herramientas IA", "diseño", "agencias de comunicación"]
 ---

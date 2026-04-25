@@ -57,11 +57,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <!-- FORMULARIO -->
       <div class="lg:col-span-7">
-        <form class="space-y-6 bg-[#FAFAF7] p-8 md:p-10 border border-[#E5E5E0] rounded-lg" method="POST" action="/api/contact">
+        <form id="contact-form" class="space-y-6 bg-[#FAFAF7] p-8 md:p-10 border border-[#E5E5E0] rounded-lg">
           <div>
             <p class="font-display text-xs text-[#1A1A1A] mb-2">FORMULARIO DIRECTO</p>
             <p class="text-sm text-[#3D3D3D]">Cuéntame qué te interesa y te respondo en menos de 48 horas.</p>
           </div>
+
+          <!-- Honeypot anti-bots — no tocar -->
+          <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;" />
+
+          <!-- Mensajes de feedback -->
+          <div id="form-feedback" class="hidden p-4 rounded-md text-sm font-semibold" role="status" aria-live="polite"></div>
 
           <div>
             <label for="tipo" class="block text-sm font-bold text-[#1A1A1A] mb-2">Sobre qué quieres hablar *</label>
@@ -102,15 +108,61 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </label>
           </div>
 
-          <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-[#1A1A1A] text-[#FAFAF7] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#8DBE3F] hover:text-[#1A1A1A] transition-colors">
-            Enviar →
+          <button type="submit" id="submit-btn" class="w-full sm:w-auto px-10 py-4 bg-[#1A1A1A] text-[#FAFAF7] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#8DBE3F] hover:text-[#1A1A1A] transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+            <span id="submit-label">Enviar →</span>
           </button>
 
-          <p class="text-xs text-[#6B6B6B] italic">
-            Nota: el formulario se conectará a Resend en la siguiente fase. Por ahora, escríbeme directamente al email.
+          <p class="text-xs text-[#6B6B6B]">
+            Tus datos se envían cifrados y se tratan según la <a href="/politica-de-privacidad/" class="underline">política de privacidad</a>.
           </p>
         </form>
       </div>
     </div>
   </section>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const feedback = document.getElementById('form-feedback') as HTMLDivElement | null;
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+    const submitLabel = document.getElementById('submit-label') as HTMLSpanElement | null;
+
+    if (form && feedback && submitBtn && submitLabel) {
+      form.addEventListener('submit', async (e: Event) => {
+        e.preventDefault();
+        feedback.className = 'hidden';
+
+        submitBtn.disabled = true;
+        submitLabel.textContent = 'Enviando…';
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+
+          if (res.ok) {
+            feedback.className = 'block p-4 rounded-md text-sm font-semibold bg-[#8DBE3F]/15 text-[#1A1A1A] border border-[#8DBE3F]';
+            feedback.textContent = '✓ Mensaje enviado. Te respondo en menos de 48 horas.';
+            form.reset();
+          } else {
+            const json = await res.json().catch(() => ({}));
+            throw new Error(json.error || 'Error al enviar.');
+          }
+        } catch (err) {
+          feedback.className = 'block p-4 rounded-md text-sm font-semibold bg-red-50 text-red-900 border border-red-200';
+          feedback.textContent =
+            '✗ No se pudo enviar. ' +
+            (err instanceof Error ? err.message : '') +
+            ' Escríbeme directamente a jcebrian@grupimedes.com.';
+        } finally {
+          submitBtn.disabled = false;
+          submitLabel.textContent = 'Enviar →';
+        }
+      });
+    }
+  </script>
 </BaseLayout>

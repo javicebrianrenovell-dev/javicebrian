@@ -2,7 +2,7 @@
 title: "La importancia de la comunicación de calidad en la sostenibilidad empresarial"
 description: "La sostenibilidad sin comunicación se queda en intención. La comunicación sin transparencia se queda en greenwashing. Cómo conectar ambas con criterio."
 pubDate: 2024-07-08
-heroImage: "https://javicebrian.es/wp-content/uploads/2023/11/e49968df-67c6-4aae-9aae-6dc7e2b43f70.webp"
+heroImage: "/blog-images/e49968df-67c6-4aae-9aae-6dc7e2b43f70.webp"
 category: sostenibilidad
 tags: ["sostenibilidad", "comunicación corporativa", "transparencia"]
 ---

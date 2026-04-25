@@ -1,0 +1,27 @@
+[Unit]
+Description=javicebrian.es contact form microservice
+Documentation=https://github.com/javicebrianrenovell-dev/javicebrian
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/javicebrian.es-contact
+EnvironmentFile=/var/www/javicebrian.es-contact/.env
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=javicebrian-contact
+
+# Hardening básico
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/www/javicebrian.es-contact
+
+[Install]
+WantedBy=multi-user.target

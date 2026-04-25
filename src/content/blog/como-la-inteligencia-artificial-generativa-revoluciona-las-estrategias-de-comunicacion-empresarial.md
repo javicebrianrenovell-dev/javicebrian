@@ -2,7 +2,7 @@
 title: "Cómo la Inteligencia Artificial Generativa Revoluciona las Estrategias de Comunicación Empresarial"
 description: "La IA generativa está transformando cómo diseñamos estrategias de comunicación: análisis de datos a escala, contenido personalizado y creatividad potenciada."
 pubDate: 2024-09-02
-heroImage: "https://javicebrian.es/wp-content/uploads/2024/10/ae7567bb-ba0e-45cc-b636-238d21f94ac9.webp"
+heroImage: "/blog-images/ae7567bb-ba0e-45cc-b636-238d21f94ac9.webp"
 category: ia
 tags: ["IA generativa", "estrategias de comunicación", "personalización", "automatización", "creatividad con IA"]
 ---

@@ -2,7 +2,7 @@
 title: "Nuevos Desafíos en Comunicación, Sostenibilidad e Inteligencia Artificial"
 description: "Por qué la convergencia de sostenibilidad e IA está redefiniendo las reglas operativas de la dirección de comunicación."
 pubDate: 2024-12-22
-heroImage: "https://javicebrian.es/wp-content/uploads/2024/12/freepik__communication-director-a-hispanic-male-in-a-modern__42101.webp"
+heroImage: "/blog-images/freepik__communication-director-a-hispanic-male-in-a-modern__42101.webp"
 category: comunicacion
 tags: ["IA en comunicación corporativa", "sostenibilidad", "transformación"]
 ---

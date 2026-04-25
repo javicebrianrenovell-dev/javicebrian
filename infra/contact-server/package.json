@@ -1,0 +1,15 @@
+{
+  "name": "javicebrian-contact-server",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Microservicio Node que recibe el formulario de contacto y envía email vía Resend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "resend": "^4.0.0",
+    "express": "^4.21.0"
+  }
+}

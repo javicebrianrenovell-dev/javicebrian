@@ -2,7 +2,7 @@
 title: "Comunicación especializada en sostenibilidad: clave para la resiliencia frente a las crisis medioambientales"
 description: "Por qué las crisis ambientales como la DANA exigen una comunicación que va más allá de la información: construye confianza, educa y prepara."
 pubDate: 2024-12-08
-heroImage: "https://javicebrian.es/wp-content/uploads/2024/12/agencia_comunicacion_ambiental.webp"
+heroImage: "/blog-images/agencia_comunicacion_ambiental.webp"
 category: sostenibilidad
 tags: ["comunicación ambiental", "sostenibilidad estratégica", "DANA", "crisis"]
 ---
