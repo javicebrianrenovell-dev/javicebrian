@@ -1,0 +1,240 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, category, tags } = post.data;
+
+const categoriaLabel: Record<string, string> = {
+  comunicacion: 'Comunicación',
+  sostenibilidad: 'Sostenibilidad',
+  ia: 'Inteligencia Artificial',
+  herramientas: 'Herramientas',
+};
+
+const dateFormatter = new Intl.DateTimeFormat('es-ES', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<BaseLayout title={title} description={description} image={heroImage}>
+  <article>
+    <!-- HERO del post -->
+    <header class="bg-[#1A1A1A] text-[#FAFAF7]">
+      <div class="container-base py-20 md:py-28">
+        <div class="max-w-4xl">
+          <div class="acento-verde mb-8" data-stagger-line></div>
+          <a href="/blog/" class="font-display text-sm text-[#8DBE3F] mb-4 inline-block hover:text-[#FAFAF7] transition-colors" data-stagger-line>
+            ← BLOG · {categoriaLabel[category]}
+          </a>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-[1.15] tracking-tight mt-4" data-stagger-line>
+            {title}
+          </h1>
+          <p class="mt-6 text-lg text-[#A0A0A0] max-w-2xl" data-stagger-line>
+            {description}
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-4 text-sm text-[#A0A0A0]" data-stagger-line>
+            <time datetime={pubDate.toISOString()}>{dateFormatter.format(pubDate)}</time>
+            {updatedDate && (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>Actualizado {dateFormatter.format(updatedDate)}</span>
+              </>
+            )}
+            <span aria-hidden="true">·</span>
+            <span>Javi Cebrián</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Imagen destacada (si hay) -->
+    {heroImage && (
+      <div class="container-base mt-[-2rem] mb-12 max-w-4xl" data-reveal>
+        <img
+          src={heroImage}
+          alt={title}
+          class="w-full h-auto rounded-lg shadow-2xl border border-[#1A1A1A]/10"
+          loading="eager"
+        />
+      </div>
+    )}
+
+    <!-- Contenido del post -->
+    <div class="container-base py-12 md:py-16">
+      <div class="prose-custom max-w-3xl mx-auto" data-reveal>
+        <slot />
+      </div>
+
+      <!-- Tags -->
+      {tags && tags.length > 0 && (
+        <div class="max-w-3xl mx-auto mt-16 pt-8 border-t border-[#E5E5E0]" data-reveal>
+          <p class="font-display text-xs text-[#1A1A1A] mb-4">ETIQUETAS</p>
+          <ul class="flex flex-wrap gap-2">
+            {tags.map(tag => (
+              <li class="px-3 py-1.5 bg-[#FAFAF7] border border-[#E5E5E0] text-xs font-semibold text-[#3D3D3D] rounded-md">
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+
+    <!-- CTA final del post -->
+    <section class="bg-[#1A1A1A] text-[#FAFAF7]">
+      <div class="container-base py-20 md:py-24 text-center">
+        <div class="acento-verde mx-auto mb-8" data-reveal></div>
+        <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-6" data-reveal>
+          ¿Hablamos de tu proyecto?
+        </h2>
+        <p class="text-lg text-[#A0A0A0] max-w-xl mx-auto mb-10" data-reveal>
+          Si lo que has leído conecta con un reto que tienes ahora mismo, contar con una conversación de 30 minutos te aclara más que mil artículos.
+        </p>
+        <a href="/contacto/" data-magnetic="0.3" class="inline-flex items-center gap-2 px-10 py-5 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors">
+          Contacta →
+        </a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style is:global>
+  /* Estilos del contenido del post */
+  .prose-custom {
+    color: var(--color-gris-texto);
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+
+  .prose-custom h2 {
+    font-size: 1.875rem;
+    font-weight: 800;
+    color: var(--color-negro);
+    line-height: 1.2;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .prose-custom h3 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--color-negro);
+    line-height: 1.3;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose-custom p {
+    margin-bottom: 1.25rem;
+  }
+
+  .prose-custom ul, .prose-custom ol {
+    margin: 1.25rem 0 1.5rem 1.5rem;
+  }
+
+  .prose-custom ul li {
+    list-style: none;
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-custom ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-verde);
+    font-weight: 700;
+  }
+
+  .prose-custom ol {
+    counter-reset: ol-counter;
+    list-style: none;
+  }
+
+  .prose-custom ol li {
+    counter-increment: ol-counter;
+    padding-left: 2rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-custom ol li::before {
+    content: counter(ol-counter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    color: var(--color-verde);
+    font-weight: 700;
+    font-family: var(--font-display);
+  }
+
+  .prose-custom strong {
+    color: var(--color-negro);
+    font-weight: 700;
+  }
+
+  .prose-custom a {
+    color: var(--color-negro);
+    text-decoration: underline;
+    text-decoration-color: var(--color-verde);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+  }
+
+  .prose-custom a:hover {
+    color: var(--color-verde);
+  }
+
+  .prose-custom blockquote {
+    border-left: 4px solid var(--color-verde);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--color-negro);
+    line-height: 1.5;
+  }
+
+  .prose-custom img {
+    border-radius: 6px;
+    margin: 2rem 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .prose-custom code {
+    background: #F4F4F0;
+    padding: 0.125rem 0.375rem;
+    border-radius: 3px;
+    font-size: 0.95em;
+  }
+
+  .prose-custom pre {
+    background: var(--color-negro);
+    color: var(--color-blanco);
+    padding: 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .prose-custom pre code {
+    background: transparent;
+    padding: 0;
+  }
+
+  .prose-custom hr {
+    border: none;
+    border-top: 1px solid var(--color-borde);
+    margin: 3rem 0;
+  }
+</style>

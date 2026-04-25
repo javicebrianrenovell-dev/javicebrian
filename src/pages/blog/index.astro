@@ -1,30 +1,100 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const categoriaLabel: Record<string, string> = {
+  comunicacion: 'Comunicación',
+  sostenibilidad: 'Sostenibilidad',
+  ia: 'Inteligencia Artificial',
+  herramientas: 'Herramientas',
+};
+
+const dateFormatter = new Intl.DateTimeFormat('es-ES', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
 ---
 
 <BaseLayout
   title="Blog — Javi Cebrián"
-  description="Reflexiones sobre comunicación, sostenibilidad e IA aplicadas al negocio. Sin postureo. Con criterio."
+  description="Reflexiones con criterio sobre comunicación, sostenibilidad e IA aplicadas al negocio. Sin postureo, con argumentos."
 >
+  <!-- HERO -->
   <section class="bg-[#1A1A1A] text-[#FAFAF7]">
     <div class="container-base py-20 md:py-28">
-      <div class="acento-verde mb-8"></div>
-      <p class="font-display text-sm text-[#8DBE3F] mb-4">BLOG</p>
-      <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tighter max-w-3xl">
+      <div class="acento-verde mb-8" data-stagger-line></div>
+      <p class="font-display text-sm text-[#8DBE3F] mb-4" data-stagger-line>BLOG</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tighter max-w-3xl" data-stagger-line>
         Reflexiones con criterio sobre comunicación, sostenibilidad e IA.
       </h1>
+      <p class="mt-8 text-lg md:text-xl text-[#A0A0A0] max-w-2xl" data-stagger-line>
+        {posts.length} artículos. Sin postureo. Con argumentos.
+      </p>
     </div>
   </section>
 
+  <!-- LISTADO -->
   <section class="container-base py-20 md:py-28">
-    <div class="max-w-2xl mx-auto text-center py-16 border border-dashed border-[#E5E5E0] rounded-lg">
-      <p class="font-display text-xs text-[#8DBE3F] mb-3">EN PREPARACIÓN</p>
-      <h2 class="text-2xl md:text-3xl font-bold text-[#1A1A1A] mb-4">
-        Estoy migrando los artículos.
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10" data-pillars-group>
+      {posts.map(post => (
+        <article class="group" data-pillar>
+          <a href={`/blog/${post.slug}/`} class="block h-full">
+            <div class="aspect-[16/10] bg-[#1A1A1A] rounded-lg overflow-hidden mb-5 relative">
+              {post.data.heroImage ? (
+                <img
+                  src={post.data.heroImage}
+                  alt={post.data.title}
+                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="w-full h-full flex items-center justify-center text-[#8DBE3F] font-display text-7xl opacity-30">
+                  JC
+                </div>
+              )}
+              <div class="absolute top-4 left-4">
+                <span class="px-3 py-1 bg-[#FAFAF7]/95 text-[#1A1A1A] text-xs font-bold uppercase tracking-wider rounded">
+                  {categoriaLabel[post.data.category]}
+                </span>
+              </div>
+            </div>
+            <div>
+              <time datetime={post.data.pubDate.toISOString()} class="text-xs uppercase tracking-widest text-[#6B6B6B] font-semibold">
+                {dateFormatter.format(post.data.pubDate)}
+              </time>
+              <h2 class="mt-2 text-xl font-bold text-[#1A1A1A] leading-tight tracking-tight transition-colors group-hover:text-[#8DBE3F]">
+                {post.data.title}
+              </h2>
+              <p class="mt-3 text-sm text-[#3D3D3D] line-clamp-3 leading-relaxed">
+                {post.data.description}
+              </p>
+              <p class="mt-4 text-xs font-bold text-[#8DBE3F] uppercase tracking-widest inline-flex items-center gap-1 transition-transform group-hover:translate-x-1">
+                Leer artículo →
+              </p>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
+    <div class="container-base py-20 md:py-24 text-center">
+      <div class="acento-verde mx-auto mb-8" data-reveal></div>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-6" data-reveal>
+        ¿Algún tema que quieras leer?
       </h2>
-      <p class="text-[#3D3D3D] leading-relaxed">
-        Los 13 posts del blog actual se están moviendo a este nuevo espacio. Vuelve en unos días.
+      <p class="text-lg text-[#A0A0A0] max-w-xl mx-auto mb-10" data-reveal>
+        Escríbeme con la pregunta. Si veo que merece artículo, lo publico aquí con tu agradecimiento incluido.
       </p>
+      <a href="/contacto/" data-magnetic="0.3" class="inline-flex items-center gap-2 px-10 py-5 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors">
+        Sugiérelo →
+      </a>
     </div>
   </section>
 </BaseLayout>
