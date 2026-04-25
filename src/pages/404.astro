@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Monograma from '../components/Monograma.astro';
+---
+
+<BaseLayout
+  title="Página no encontrada — Javi Cebrián"
+  description="La página que buscas no existe. Vuelve al inicio."
+  noindex={true}
+>
+  <section class="bg-[#1A1A1A] text-[#FAFAF7] min-h-[80vh] flex items-center">
+    <div class="container-base py-20 md:py-28 text-center">
+      <div class="flex justify-center mb-8 opacity-30">
+        <Monograma size={120} variant="blanco" withAccent={true} />
+      </div>
+      <p class="font-display text-sm text-[#8DBE3F] mb-4">ERROR 404</p>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">
+        Esto no está aquí.
+      </h1>
+      <p class="text-lg text-[#A0A0A0] max-w-xl mx-auto mb-10">
+        La URL que buscas no existe o ha cambiado. Quizás te has perdido un acento, o yo me he perdido un enlace.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/" class="inline-flex items-center gap-2 px-8 py-4 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors">
+          Volver al inicio
+        </a>
+        <a href="/contacto/" class="inline-flex items-center gap-2 px-8 py-4 border border-[#FAFAF7]/20 text-[#FAFAF7] font-medium text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7]/5 transition-colors">
+          Avisarme del enlace roto
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

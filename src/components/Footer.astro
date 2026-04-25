@@ -1,0 +1,90 @@
+---
+import Monograma from './Monograma.astro';
+
+const year = new Date().getFullYear();
+
+const links = {
+  navegacion: [
+    { label: 'Inicio', href: '/' },
+    { label: 'Quién soy', href: '/quien-soy/' },
+    { label: 'Blog', href: '/blog/' },
+    { label: 'Contacto', href: '/contacto/' },
+  ],
+  legal: [
+    { label: 'Aviso legal', href: '/aviso-legal/' },
+    { label: 'Política de privacidad', href: '/politica-de-privacidad/' },
+    { label: 'Política de cookies', href: '/politica-de-cookies/' },
+  ],
+  social: [
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/javicebrian', external: true },
+    { label: 'Instagram', href: 'https://instagram.com/javicebrian', external: true },
+    { label: 'X', href: 'https://x.com/javicebrian', external: true },
+  ],
+};
+---
+
+<footer class="bg-[#1A1A1A] text-[#FAFAF7] mt-32">
+  <div class="container-base py-16">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+      <!-- Brand -->
+      <div class="md:col-span-5">
+        <Monograma size={64} variant="blanco" withAccent={true} />
+        <p class="mt-6 text-2xl font-bold leading-tight max-w-md">
+          Comunicación que mueve organizaciones.
+        </p>
+        <p class="mt-2 text-base text-[#A0A0A0] italic max-w-md">
+          Con sostenibilidad e IA como ventaja.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="md:col-span-2">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-[#8DBE3F] mb-4">
+          Navegación
+        </h3>
+        <ul class="space-y-2">
+          {links.navegacion.map(({ label, href }) => (
+            <li><a href={href} class="text-sm text-[#FAFAF7]/80 hover:text-[#FAFAF7] transition-colors">{label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="md:col-span-2">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-[#8DBE3F] mb-4">
+          Legal
+        </h3>
+        <ul class="space-y-2">
+          {links.legal.map(({ label, href }) => (
+            <li><a href={href} class="text-sm text-[#FAFAF7]/80 hover:text-[#FAFAF7] transition-colors">{label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="md:col-span-3">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-[#8DBE3F] mb-4">
+          Redes
+        </h3>
+        <ul class="space-y-2">
+          {links.social.map(({ label, href }) => (
+            <li>
+              <a href={href} class="text-sm text-[#FAFAF7]/80 hover:text-[#FAFAF7] transition-colors inline-flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+                {label} <span class="text-[10px]">↗</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-6 text-xs text-[#A0A0A0]">
+          jcebrian@grupimedes.com<br>
+          +34 610 218 870
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-xs text-[#A0A0A0]">
+        © {year} Javi Cebrián · Director de Comunicación y Desarrollo de Negocio · <span class="text-[#8DBE3F] font-semibold">Imedes</span>
+      </p>
+      <div class="acento-verde"></div>
+    </div>
+  </div>
+</footer>

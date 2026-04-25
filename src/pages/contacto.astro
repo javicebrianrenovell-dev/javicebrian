@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contacto — Javi Cebrián"
+  description="Hablamos. Escríbeme para colaboraciones, asesoramiento o formación en comunicación, sostenibilidad e IA."
+>
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
+    <div class="container-base py-20 md:py-28">
+      <div class="acento-verde mb-8"></div>
+      <p class="font-display text-sm text-[#8DBE3F] mb-4">CONTACTO</p>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tighter max-w-3xl">
+        Hablamos.
+      </h1>
+      <p class="mt-8 text-lg md:text-xl text-[#A0A0A0] max-w-2xl">
+        Si tu organización quiere comunicar con criterio y aprovechar sostenibilidad e IA como ventaja, este es el sitio para empezar la conversación.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-base py-20 md:py-28">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 max-w-6xl mx-auto">
+      <!-- INFO DIRECTA -->
+      <div class="lg:col-span-5 space-y-8">
+        <div>
+          <p class="font-display text-xs text-[#1A1A1A] mb-3">EMAIL</p>
+          <a href="mailto:jcebrian@grupimedes.com" class="text-2xl md:text-3xl font-bold text-[#1A1A1A] hover:text-[#8DBE3F] transition-colors break-all">
+            jcebrian@grupimedes.com
+          </a>
+        </div>
+        <div>
+          <p class="font-display text-xs text-[#1A1A1A] mb-3">TELÉFONO</p>
+          <a href="tel:+34610218870" class="text-2xl md:text-3xl font-bold text-[#1A1A1A] hover:text-[#8DBE3F] transition-colors">
+            +34 610 218 870
+          </a>
+        </div>
+        <div>
+          <p class="font-display text-xs text-[#1A1A1A] mb-3">UBICACIÓN</p>
+          <p class="text-2xl md:text-3xl font-bold text-[#1A1A1A]">Valencia, España</p>
+        </div>
+        <div>
+          <p class="font-display text-xs text-[#1A1A1A] mb-3">REDES</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://linkedin.com/in/javicebrian" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-[#1A1A1A] text-[#1A1A1A] text-sm font-semibold rounded-md hover:bg-[#1A1A1A] hover:text-[#FAFAF7] transition-colors">
+              LinkedIn
+            </a>
+            <a href="https://instagram.com/javicebrian" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-[#1A1A1A] text-[#1A1A1A] text-sm font-semibold rounded-md hover:bg-[#1A1A1A] hover:text-[#FAFAF7] transition-colors">
+              Instagram
+            </a>
+            <a href="https://x.com/javicebrian" target="_blank" rel="noopener noreferrer" class="px-4 py-2 border border-[#1A1A1A] text-[#1A1A1A] text-sm font-semibold rounded-md hover:bg-[#1A1A1A] hover:text-[#FAFAF7] transition-colors">
+              X
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULARIO -->
+      <div class="lg:col-span-7">
+        <form class="space-y-6 bg-[#FAFAF7] p-8 md:p-10 border border-[#E5E5E0] rounded-lg" method="POST" action="/api/contact">
+          <div>
+            <p class="font-display text-xs text-[#1A1A1A] mb-2">FORMULARIO DIRECTO</p>
+            <p class="text-sm text-[#3D3D3D]">Cuéntame qué te interesa y te respondo en menos de 48 horas.</p>
+          </div>
+
+          <div>
+            <label for="tipo" class="block text-sm font-bold text-[#1A1A1A] mb-2">Sobre qué quieres hablar *</label>
+            <select id="tipo" name="tipo" required class="w-full px-4 py-3 border border-[#E5E5E0] rounded-md focus:border-[#8DBE3F] focus:outline-none bg-white text-[#1A1A1A]">
+              <option value="">Elige una opción</option>
+              <option value="colaboraciones">Colaboraciones</option>
+              <option value="asesoramiento">Asesoramiento</option>
+              <option value="formacion">Formación</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="nombre" class="block text-sm font-bold text-[#1A1A1A] mb-2">Nombre *</label>
+              <input id="nombre" name="nombre" type="text" required class="w-full px-4 py-3 border border-[#E5E5E0] rounded-md focus:border-[#8DBE3F] focus:outline-none bg-white text-[#1A1A1A]" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-bold text-[#1A1A1A] mb-2">Email *</label>
+              <input id="email" name="email" type="email" required class="w-full px-4 py-3 border border-[#E5E5E0] rounded-md focus:border-[#8DBE3F] focus:outline-none bg-white text-[#1A1A1A]" />
+            </div>
+          </div>
+
+          <div>
+            <label for="organizacion" class="block text-sm font-bold text-[#1A1A1A] mb-2">Organización</label>
+            <input id="organizacion" name="organizacion" type="text" class="w-full px-4 py-3 border border-[#E5E5E0] rounded-md focus:border-[#8DBE3F] focus:outline-none bg-white text-[#1A1A1A]" />
+          </div>
+
+          <div>
+            <label for="mensaje" class="block text-sm font-bold text-[#1A1A1A] mb-2">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required class="w-full px-4 py-3 border border-[#E5E5E0] rounded-md focus:border-[#8DBE3F] focus:outline-none bg-white text-[#1A1A1A] resize-y"></textarea>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <input id="rgpd" name="rgpd" type="checkbox" required class="mt-1.5 accent-[#8DBE3F]" />
+            <label for="rgpd" class="text-xs text-[#3D3D3D] leading-relaxed">
+              He leído y acepto la <a href="/politica-de-privacidad/" class="underline text-[#1A1A1A] hover:text-[#8DBE3F]">política de privacidad</a> y el tratamiento de mis datos.
+            </label>
+          </div>
+
+          <button type="submit" class="w-full sm:w-auto px-10 py-4 bg-[#1A1A1A] text-[#FAFAF7] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#8DBE3F] hover:text-[#1A1A1A] transition-colors">
+            Enviar →
+          </button>
+
+          <p class="text-xs text-[#6B6B6B] italic">
+            Nota: el formulario se conectará a Resend en la siguiente fase. Por ahora, escríbeme directamente al email.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

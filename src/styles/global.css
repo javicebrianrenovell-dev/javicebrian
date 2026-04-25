@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ==========================================================
+   Tokens de marca — Javi Cebrián v1.1 (concepto 2C)
+   Paleta B: Verde Imedes + Negro carbón + Blanco roto + Cobre
+   ========================================================== */
+
+@theme {
+  /* Paleta */
+  --color-verde: #8DBE3F;
+  --color-negro: #1A1A1A;
+  --color-blanco: #FAFAF7;
+  --color-gris-texto: #3D3D3D;
+  --color-gris-secundario: #6B6B6B;
+  --color-gris-claro: #A0A0A0;
+  --color-borde: #E5E5E0;
+
+  /* Tipografía */
+  --font-sans: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Bebas Neue", "Impact", sans-serif;
+
+  /* Tamaños tipográficos (escala compuesta) */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3.25rem;
+  --text-6xl: 4.25rem;
+  --text-7xl: 5.5rem;
+
+  /* Espaciado de marca */
+  --tracking-tight: -0.025em;
+  --tracking-tighter: -0.04em;
+}
+
+/* ==========================================================
+   Reset y base
+   ========================================================== */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-blanco);
+  color: var(--color-gris-texto);
+  line-height: 1.6;
+  font-feature-settings: "ss01", "cv01";
+}
+
+/* Selección con verde Imedes */
+::selection {
+  background: var(--color-verde);
+  color: var(--color-negro);
+}
+
+/* Foco accesible */
+:focus-visible {
+  outline: 2px solid var(--color-verde);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Tipografía display utility */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Acento verde (línea o detalle) */
+.acento-verde {
+  display: inline-block;
+  width: 3rem;
+  height: 4px;
+  background: var(--color-verde);
+}
+
+/* Contenedor estándar */
+.container-base {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-base {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Monograma JC blanco con acento verde sobre negro">
+  <rect width="400" height="400" fill="#1A1A1A"/>
+  <text x="200" y="240"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        font-family="'Impact', 'Oswald', 'Bebas Neue', sans-serif"
+        font-size="320"
+        font-weight="900"
+        letter-spacing="-20"
+        fill="#FAFAF7">JC</text>
+  <rect x="280" y="335" width="40" height="6" fill="#8DBE3F"/>
+</svg>
