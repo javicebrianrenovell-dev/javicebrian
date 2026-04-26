@@ -14,9 +14,13 @@
 
 import express from 'express';
 import { Resend } from 'resend';
+import { appendFileSync, mkdirSync } from 'node:fs';
+import { dirname } from 'node:path';
+import { calcularScore, mensajeRespuesta, VALORES_VALIDOS } from './lead-score.js';
 
 const PORT = process.env.PORT || 3001;
 const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || 'https://javicebrian.es';
+const LEADS_FILE = process.env.LEADS_FILE || '/var/lib/javicebrian/leads.jsonl';
 
 if (!process.env.RESEND_API_KEY) {
   console.error('ERROR: falta RESEND_API_KEY en variables de entorno');
@@ -124,6 +128,128 @@ ${organizacion ? `<div class="field"><strong>Organización</strong>${safe(organi
     return res.json({ ok: true });
   } catch (e) {
     console.error('Contact handler error:', e);
+    return res.status(500).json({ error: 'Error interno.' });
+  }
+});
+
+app.post('/api/lead-cualificado', async (req, res) => {
+  try {
+    const {
+      organizacion,
+      encargo,
+      plazo,
+      presupuesto,
+      nombre,
+      email,
+      telefono,
+      empresa,
+      contexto,
+      rgpd,
+      _hp,
+    } = req.body || {};
+
+    if (_hp) return res.status(200).json({ ok: true, tier: 'GREEN' });
+
+    if (!nombre || !email || !rgpd) {
+      return res.status(400).json({ error: 'Faltan campos obligatorios.' });
+    }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      return res.status(400).json({ error: 'Email no válido.' });
+    }
+    if (!VALORES_VALIDOS.organizacion.includes(organizacion)
+        || !VALORES_VALIDOS.encargo.includes(encargo)
+        || !VALORES_VALIDOS.plazo.includes(plazo)
+        || !VALORES_VALIDOS.presupuesto.includes(presupuesto)) {
+      return res.status(400).json({ error: 'Respuestas no válidas.' });
+    }
+    if (contexto && contexto.length > 5000) {
+      return res.status(400).json({ error: 'Contexto demasiado largo.' });
+    }
+
+    const { score, tier, breakdown, etiquetas } = calcularScore({
+      organizacion, encargo, plazo, presupuesto,
+    });
+    const respuesta = mensajeRespuesta(tier);
+    const recibidoEn = new Date().toISOString();
+
+    const safe = (s) => String(s ?? '').replace(/[<>&]/g, c => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]));
+
+    const leadRecord = {
+      ts: recibidoEn,
+      score, tier,
+      organizacion, encargo, plazo, presupuesto,
+      nombre, email, telefono: telefono || null,
+      empresa: empresa || null,
+      contexto: contexto || null,
+      ip: (req.headers['x-forwarded-for']?.split(',')[0].trim() || req.socket.remoteAddress) ?? null,
+    };
+
+    try {
+      mkdirSync(dirname(LEADS_FILE), { recursive: true });
+      appendFileSync(LEADS_FILE, JSON.stringify(leadRecord) + '\n');
+    } catch (e) {
+      console.error('No se pudo persistir lead:', e.message);
+    }
+
+    const tierColor = tier === 'GREEN' ? '#8DBE3F' : tier === 'YELLOW' ? '#E6A623' : '#A0A0A0';
+    const html = `
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  body { font-family: -apple-system, sans-serif; color: #1A1A1A; max-width: 640px; margin: 0 auto; padding: 20px; }
+  h2 { color: ${tierColor}; margin: 0 0 4px 0; }
+  .tier-badge { display: inline-block; background: ${tierColor}; color: ${tier === 'YELLOW' ? '#1A1A1A' : '#FFFFFF'}; padding: 6px 14px; font-size: 12px; font-weight: 700; letter-spacing: 1px; border-radius: 4px; }
+  .meta { color: #6B6B6B; font-size: 13px; margin: 4px 0 20px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0; }
+  td { padding: 8px 4px; border-bottom: 1px solid #E5E5E0; vertical-align: top; }
+  td:first-child { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #6B6B6B; width: 38%; }
+  td.pts { text-align: right; color: #6B6B6B; font-variant-numeric: tabular-nums; }
+  .ctx { background: #FAFAF7; padding: 14px; border-left: 4px solid ${tierColor}; white-space: pre-wrap; margin-top: 8px; }
+  .actions a { display: inline-block; margin-right: 12px; padding: 10px 16px; background: #1A1A1A; color: #FFFFFF !important; text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: 600; }
+  .actions a.cta-primary { background: ${tierColor}; color: ${tier === 'YELLOW' ? '#1A1A1A' : '#FFFFFF'} !important; }
+</style>
+<p><span class="tier-badge">${tier} · ${score}/100</span></p>
+<h2>${safe(nombre)}${empresa ? ` — ${safe(empresa)}` : ''}</h2>
+<p class="meta">Recibido el ${new Date(recibidoEn).toLocaleString('es-ES', { timeZone: 'Europe/Madrid' })}</p>
+
+<table>
+  <tr><td>Organización</td><td>${safe(etiquetas.organizacion)}</td><td class="pts">+${breakdown.organizacion}</td></tr>
+  <tr><td>Encargo</td><td>${safe(etiquetas.encargo)}</td><td class="pts">+${breakdown.encargo}</td></tr>
+  <tr><td>Plazo</td><td>${safe(etiquetas.plazo)}</td><td class="pts">+${breakdown.plazo}</td></tr>
+  <tr><td>Presupuesto</td><td>${safe(etiquetas.presupuesto)}</td><td class="pts">+${breakdown.presupuesto}</td></tr>
+</table>
+
+<table>
+  <tr><td>Email</td><td><a href="mailto:${safe(email)}">${safe(email)}</a></td></tr>
+  ${telefono ? `<tr><td>Teléfono</td><td><a href="tel:${safe(telefono)}">${safe(telefono)}</a></td></tr>` : ''}
+</table>
+
+${contexto ? `<p style="margin-top: 20px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #6B6B6B;">Contexto</p><div class="ctx">${safe(contexto)}</div>` : ''}
+
+<p class="actions" style="margin-top: 28px;">
+  <a class="cta-primary" href="mailto:${safe(email)}?subject=Re%3A%20Tu%20consulta%20en%20javicebrian.es">Responder por email</a>
+  ${telefono ? `<a href="tel:${safe(telefono)}">Llamar</a>` : ''}
+</p>
+`;
+
+    const subject = `[${tier} · ${score}] ${etiquetas.encargo} — ${nombre}${empresa ? ` (${empresa})` : ''}`;
+
+    const { error } = await resend.emails.send({
+      from: process.env.CONTACT_FROM_EMAIL || 'web@javicebrian.es',
+      to: process.env.CONTACT_TO_EMAIL || 'jcebrian@grupimedes.com',
+      replyTo: email,
+      subject,
+      html,
+    });
+
+    if (error) {
+      console.error('Resend error (lead):', error);
+      return res.status(502).json({ error: 'Error enviando email. Inténtalo más tarde.' });
+    }
+
+    return res.json({ ok: true, tier, mensaje: respuesta });
+  } catch (e) {
+    console.error('Lead handler error:', e);
     return res.status(500).json({ error: 'Error interno.' });
   }
 });

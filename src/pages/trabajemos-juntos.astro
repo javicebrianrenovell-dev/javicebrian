@@ -1,0 +1,282 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Trabajemos juntos — Javi Cebrián"
+  description="Cuéntame en cuatro pasos lo que necesitas. Te respondo con criterio en menos de 48 horas. Comunicación, sostenibilidad e IA aplicadas al negocio."
+>
+  <!-- HERO -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7] relative overflow-hidden">
+    <div class="container-wide py-20 md:py-24">
+      <span class="acento-verde block mb-6" data-mask-up></span>
+      <p class="font-display text-xs text-[#8DBE3F] mb-4" data-mask-up data-delay="80">§ EMPIEZA EL PROYECTO</p>
+      <h1 class="font-extrabold leading-[0.85] tracking-[-0.02em] m-0" style="font-family: var(--font-display); font-size: clamp(3rem, 11vw, 11rem);">
+        <span data-mask-up data-delay="0" class="block">TRABAJEMOS</span>
+        <span data-mask-up data-delay="140" class="block text-[#8DBE3F]">JUNTOS.</span>
+      </h1>
+      <p class="mt-10 text-base md:text-lg text-[#A0A0A0] max-w-2xl" data-reveal data-delay="280">
+        Cuatro preguntas, dos minutos. Te respondo en menos de 48 horas con perspectiva honesta: si encaja, cómo avanzamos. Si no, te oriento hacia quien sí.
+      </p>
+    </div>
+  </section>
+
+  <!-- FORM MULTI-PASO -->
+  <section class="bg-[#FAFAF7] border-b border-[#E5E5E0]">
+    <div class="container-base py-16 md:py-24 max-w-3xl">
+
+      <!-- Barra de progreso -->
+      <div class="mb-10">
+        <div class="flex items-center justify-between mb-3">
+          <p class="font-display text-xs text-[#1A1A1A]">PASO <span id="lf-step">1</span> DE 4</p>
+          <p class="font-display text-xs text-[#6B6B6B]"><span id="lf-pct">25</span>%</p>
+        </div>
+        <div class="h-1 bg-[#E5E5E0] rounded-full overflow-hidden">
+          <div id="lf-bar" class="h-full bg-[#8DBE3F] transition-all duration-500 ease-out" style="width: 25%;"></div>
+        </div>
+      </div>
+
+      <!-- Feedback global (tras envío) -->
+      <div id="lf-feedback" class="hidden mb-6 p-5 rounded-md text-sm font-semibold" role="status" aria-live="polite"></div>
+
+      <form id="lead-form" novalidate>
+        <!-- Honeypot -->
+        <input type="text" name="_hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;" />
+
+        <!-- PASO 1 — Organización -->
+        <fieldset data-step="1" class="lf-step">
+          <legend class="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight mb-2">¿Quién pregunta?</legend>
+          <p class="text-sm text-[#6B6B6B] mb-6">Cuéntame qué tipo de organización representa el proyecto.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {[
+              { v: 'empresa-privada', t: 'Empresa privada', d: 'Compañías que venden productos o servicios.' },
+              { v: 'adjudicataria', t: 'Adjudicataria de servicio público', d: 'Operáis un servicio para una administración.' },
+              { v: 'institucion-publica', t: 'Institución pública', d: 'Ayuntamiento, diputación, ministerio, organismo.' },
+              { v: 'asociacion', t: 'Asociación o fundación', d: 'Tercer sector, ONG, colegio profesional.' },
+              { v: 'otro', t: 'Otro', d: 'Particular, freelance, otra figura.' },
+            ].map((o) => (
+              <label class="lf-card">
+                <input type="radio" name="organizacion" value={o.v} required class="sr-only" />
+                <span class="lf-card-title">{o.t}</span>
+                <span class="lf-card-desc">{o.d}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <!-- PASO 2 — Encargo -->
+        <fieldset data-step="2" class="lf-step hidden">
+          <legend class="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight mb-2">¿Qué necesitas?</legend>
+          <p class="text-sm text-[#6B6B6B] mb-6">Elige el encargo que mejor describa tu prioridad ahora.</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {[
+              { v: 'memoria-tecnica', t: 'Memoria técnica de licitación', d: 'Preparar la propuesta para una licitación pública.' },
+              { v: 'sostenibilidad', t: 'Sostenibilidad y ESG', d: 'Comunicar resultados ambientales con datos.' },
+              { v: 'comunicacion', t: 'Comunicación corporativa', d: 'Estrategia, posicionamiento, relación con públicos.' },
+              { v: 'formacion-ia', t: 'Formación en IA', d: 'Talleres prácticos para tu equipo.' },
+              { v: 'otro', t: 'Otro encargo', d: 'Cuéntamelo en el último paso.' },
+            ].map((o) => (
+              <label class="lf-card">
+                <input type="radio" name="encargo" value={o.v} required class="sr-only" />
+                <span class="lf-card-title">{o.t}</span>
+                <span class="lf-card-desc">{o.d}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <!-- PASO 3 — Plazo + Presupuesto -->
+        <fieldset data-step="3" class="lf-step hidden">
+          <legend class="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight mb-2">¿Cuándo y con qué presupuesto?</legend>
+          <p class="text-sm text-[#6B6B6B] mb-6">Una orientación basta. Si todavía no lo tienes claro, también vale.</p>
+
+          <p class="font-display text-xs text-[#1A1A1A] mb-3">CUÁNDO NECESITAS EMPEZAR</p>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+            {[
+              { v: 'esta-semana', t: 'Esta semana' },
+              { v: 'este-mes', t: 'Este mes' },
+              { v: 'q2', t: 'Este trimestre' },
+              { v: 'mas-adelante', t: 'Más adelante' },
+            ].map((o) => (
+              <label class="lf-pill">
+                <input type="radio" name="plazo" value={o.v} required class="sr-only" />
+                <span>{o.t}</span>
+              </label>
+            ))}
+          </div>
+
+          <p class="font-display text-xs text-[#1A1A1A] mb-3">PRESUPUESTO ORIENTATIVO</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {[
+              { v: 'mas-25k', t: 'Más de 25.000 €' },
+              { v: '10-25k', t: '10.000 – 25.000 €' },
+              { v: '3-10k', t: '3.000 – 10.000 €' },
+              { v: 'menos-3k', t: 'Menos de 3.000 €' },
+              { v: 'no-claro', t: 'Aún no lo tengo claro' },
+            ].map((o) => (
+              <label class="lf-pill">
+                <input type="radio" name="presupuesto" value={o.v} required class="sr-only" />
+                <span>{o.t}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <!-- PASO 4 — Datos -->
+        <fieldset data-step="4" class="lf-step hidden">
+          <legend class="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight mb-2">¿Cómo te encuentro?</legend>
+          <p class="text-sm text-[#6B6B6B] mb-6">Solo lo necesario. Te respondo personalmente, no entras en ninguna lista.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label for="lf-nombre" class="block text-sm font-bold text-[#1A1A1A] mb-2">Nombre y apellidos *</label>
+              <input id="lf-nombre" name="nombre" type="text" required class="lf-input" autocomplete="name" />
+            </div>
+            <div>
+              <label for="lf-email" class="block text-sm font-bold text-[#1A1A1A] mb-2">Email *</label>
+              <input id="lf-email" name="email" type="email" required class="lf-input" autocomplete="email" />
+            </div>
+            <div>
+              <label for="lf-telefono" class="block text-sm font-bold text-[#1A1A1A] mb-2">Teléfono</label>
+              <input id="lf-telefono" name="telefono" type="tel" class="lf-input" autocomplete="tel" />
+            </div>
+            <div>
+              <label for="lf-empresa" class="block text-sm font-bold text-[#1A1A1A] mb-2">Organización</label>
+              <input id="lf-empresa" name="empresa" type="text" class="lf-input" autocomplete="organization" />
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <label for="lf-contexto" class="block text-sm font-bold text-[#1A1A1A] mb-2">Contexto breve</label>
+            <textarea id="lf-contexto" name="contexto" rows="4" maxlength="2000" class="lf-input resize-y" placeholder="Una o dos frases. Plazo concreto si lo hay, qué has probado antes, dónde te atascas."></textarea>
+          </div>
+
+          <div class="flex items-start gap-3 mt-5">
+            <input id="lf-rgpd" name="rgpd" type="checkbox" required class="mt-1.5 accent-[#8DBE3F]" />
+            <label for="lf-rgpd" class="text-xs text-[#3D3D3D] leading-relaxed">
+              He leído y acepto la <a href="/politica-de-privacidad/" class="underline text-[#1A1A1A] hover:text-[#8DBE3F]">política de privacidad</a> y el tratamiento de mis datos para responder a esta consulta.
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Navegación -->
+        <div class="flex items-center justify-between mt-10 pt-6 border-t border-[#E5E5E0]">
+          <button type="button" id="lf-prev" class="px-6 py-3 text-sm font-semibold text-[#1A1A1A] hover:text-[#8DBE3F] transition-colors disabled:opacity-30 disabled:cursor-not-allowed" disabled>
+            ← Atrás
+          </button>
+          <div class="flex items-center gap-3">
+            <button type="button" id="lf-next" class="px-8 py-3 bg-[#1A1A1A] text-[#FAFAF7] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#8DBE3F] hover:text-[#1A1A1A] transition-colors disabled:opacity-50">
+              Siguiente →
+            </button>
+            <button type="submit" id="lf-submit" class="hidden px-8 py-3 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#1A1A1A] hover:text-[#FAFAF7] transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+              <span id="lf-submit-label">Enviar →</span>
+            </button>
+          </div>
+        </div>
+
+        <p class="text-xs text-[#6B6B6B] mt-6">
+          ¿Prefieres email directo? <a href="mailto:jcebrian@grupimedes.com" class="underline text-[#1A1A1A] hover:text-[#8DBE3F]">jcebrian@grupimedes.com</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <style>
+    /* Tarjetas radio (pasos 1 y 2) */
+    .lf-card {
+      display: block;
+      padding: 1.25rem 1.25rem;
+      border: 1.5px solid #E5E5E0;
+      border-radius: 8px;
+      background: #FFFFFF;
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    }
+    .lf-card:hover {
+      border-color: #1A1A1A;
+      transform: translateY(-1px);
+    }
+    .lf-card:has(input:checked) {
+      border-color: #8DBE3F;
+      background: #8DBE3F0F;
+    }
+    .lf-card:has(input:focus-visible) {
+      outline: 2px solid #8DBE3F;
+      outline-offset: 2px;
+    }
+    .lf-card-title {
+      display: block;
+      font-weight: 700;
+      color: #1A1A1A;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    .lf-card-desc {
+      display: block;
+      font-size: 0.8125rem;
+      color: #6B6B6B;
+      line-height: 1.45;
+    }
+
+    /* Pills (paso 3) */
+    .lf-pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 1rem;
+      border: 1.5px solid #E5E5E0;
+      border-radius: 8px;
+      background: #FFFFFF;
+      cursor: pointer;
+      font-weight: 600;
+      color: #1A1A1A;
+      font-size: 0.9375rem;
+      text-align: center;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .lf-pill:hover { border-color: #1A1A1A; }
+    .lf-pill:has(input:checked) {
+      border-color: #8DBE3F;
+      background: #8DBE3F0F;
+      color: #1A1A1A;
+    }
+    .lf-pill:has(input:focus-visible) {
+      outline: 2px solid #8DBE3F;
+      outline-offset: 2px;
+    }
+
+    /* Inputs */
+    .lf-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #E5E5E0;
+      border-radius: 6px;
+      background: #FFFFFF;
+      color: #1A1A1A;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+    .lf-input:focus {
+      border-color: #8DBE3F;
+      outline: none;
+    }
+
+    /* Aria-only */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <script>
+    import { initLeadForm } from '../scripts/lead-form';
+    initLeadForm();
+  </script>
+</BaseLayout>
