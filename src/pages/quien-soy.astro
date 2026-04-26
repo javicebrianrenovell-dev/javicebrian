@@ -7,12 +7,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Director de Comunicación y Desarrollo de Negocio en Imedes. Especializado en sostenibilidad e IA aplicadas a la comunicación corporativa."
 >
   <!-- HERO -->
-  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
-    <div class="container-base py-20 md:py-28">
-      <div class="acento-verde mb-8"></div>
-      <p class="font-display text-sm text-[#8DBE3F] mb-4">QUIÉN SOY</p>
-      <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tighter max-w-4xl">
-        Soy Javi Cebrián. Trabajo donde la comunicación se cruza con la sostenibilidad y la IA.
+  <section class="bg-[#1A1A1A] text-[#FAFAF7] relative overflow-hidden">
+    <div class="container-wide py-20 md:py-28">
+      <span class="acento-verde block mb-6" data-mask-up></span>
+      <p class="font-display text-xs text-[#8DBE3F] mb-4" data-mask-up data-delay="80">§ BIO</p>
+      <h1 class="font-extrabold leading-[0.85] tracking-[-0.02em] m-0" style="font-family: var(--font-display); font-size: clamp(3.5rem, 12vw, 14rem);">
+        <span data-mask-up data-delay="0" class="block">JAVI</span>
+        <span data-mask-up data-delay="140" class="block text-[#8DBE3F]">CEBRIÁN.</span>
       </h1>
     </div>
   </section>
@@ -86,9 +87,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-8">
         ¿Hablamos de tu proyecto?
       </h2>
-      <a href="/contacto/" class="inline-flex items-center gap-2 px-10 py-5 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors">
-        Contacta →
+      <a href="/trabajemos-juntos/" class="inline-flex items-center gap-2 px-10 py-5 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors">
+        Empieza el proyecto →
       </a>
+      <p class="mt-6 text-xs text-[#A0A0A0]">
+        ¿Solo una duda? <a href="/contacto/" class="text-[#FAFAF7] hover:text-[#8DBE3F] transition-colors underline">Contacto rápido</a>
+      </p>
     </div>
   </section>
 </BaseLayout>

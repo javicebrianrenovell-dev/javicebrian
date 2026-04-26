@@ -7,6 +7,8 @@ const navItems = [
   { label: 'Contacto', href: '/contacto/' },
 ];
 
+const cta = { label: 'Empezar proyecto', href: '/trabajemos-juntos/' };
+
 const currentPath = Astro.url.pathname;
 ---
 
@@ -37,6 +39,18 @@ const currentPath = Astro.url.pathname;
           </a>
         );
       })}
+      <a
+        href={cta.href}
+        class:list={[
+          'ml-2 px-4 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider rounded-md transition-colors',
+          currentPath.startsWith(cta.href)
+            ? 'bg-[#FAFAF7] text-[#1A1A1A]'
+            : 'bg-[#8DBE3F] text-[#1A1A1A] hover:bg-[#FAFAF7]'
+        ]}
+        aria-current={currentPath.startsWith(cta.href) ? 'page' : undefined}
+      >
+        {cta.label}
+      </a>
     </nav>
   </div>
 </header>

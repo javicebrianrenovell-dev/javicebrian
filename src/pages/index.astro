@@ -5,26 +5,32 @@ import Monograma from '../components/Monograma.astro';
 const pilares = [
   {
     num: '01',
-    titulo: 'Estrategia que comunica.',
-    texto: 'Cada acción parte de un objetivo de negocio. La creatividad sin estrategia es decoración.',
+    tag: 'ESTRATEGIA',
+    titulo: 'Comunicación con eje, no con calendario.',
+    body: 'Cada acción parte de un objetivo de negocio. La creatividad sin estrategia es decoración.',
   },
   {
     num: '02',
+    tag: 'SOSTENIBILIDAD',
     titulo: 'Sostenibilidad que demuestra.',
-    texto: 'Datos, métricas, auditorías. Lo que no se puede medir, no se debería contar.',
+    body: 'Datos, métricas, auditorías. Lo que no se puede medir, no se debería contar.',
   },
   {
     num: '03',
-    titulo: 'IA que multiplica.',
-    texto: 'Implantación concreta donde ahorra trabajo o multiplica capacidad. Sin postureo.',
+    tag: 'INTELIGENCIA',
+    titulo: 'IA donde ahorra horas o multiplica salidas.',
+    body: 'Implantación concreta donde ahorra trabajo o multiplica capacidad. Sin postureo.',
   },
 ];
 
 const manifiestoLineas = [
-  '"Las organizaciones que mejor comunican son las que mejor deciden.',
-  'Las que mejor deciden son las que han convertido la sostenibilidad en ventaja',
+  '"Las organizaciones que mejor comunican',
+  'son las que mejor deciden.',
+  'Las que mejor deciden son las que han convertido',
+  'la sostenibilidad en ventaja',
   'y la IA en herramienta.',
-  'Mi trabajo es conectar esas tres palancas para que el resultado se vea en negocio,',
+  'Mi trabajo es conectar esas tres palancas',
+  'para que el resultado se vea en negocio,',
   'no solo en intenciones."',
 ];
 ---
@@ -33,87 +39,141 @@ const manifiestoLineas = [
   title="Javi Cebrián · Director de Comunicación con sostenibilidad e IA"
   description="Comunicación que mueve organizaciones. Con sostenibilidad e IA como ventaja. Director de Comunicación y Desarrollo de Negocio en Imedes."
 >
-  <!-- HERO -->
-  <section class="bg-[#1A1A1A] text-[#FAFAF7] relative overflow-hidden">
-    <div class="container-base py-24 md:py-36 relative z-10">
-      <div class="acento-verde mb-8" data-stagger-line></div>
-      <p class="font-display text-sm text-[#8DBE3F] mb-6" data-stagger-line>JAVI CEBRIÁN</p>
-      <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-[1.05] tracking-tighter max-w-5xl">
-        <span class="block" data-stagger-line>Comunicación que mueve organizaciones.</span>
-        <span class="text-[#8DBE3F] block mt-2" data-stagger-line>Con sostenibilidad e IA como ventaja.</span>
-      </h1>
-      <p class="mt-10 text-lg md:text-xl text-[#A0A0A0] max-w-2xl leading-relaxed" data-stagger-line>
-        Director de Comunicación y Desarrollo de Negocio. Trabajo con organizaciones que quieren convertir reputación, sostenibilidad e IA en una ventaja real de negocio.
-      </p>
-      <div class="mt-12 flex flex-wrap gap-4" data-stagger-line>
-        <a href="/contacto/" data-magnetic="0.3" class="inline-flex items-center gap-2 px-8 py-4 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors">
-          Hablamos →
-        </a>
-        <a href="/quien-soy/" data-magnetic="0.2" class="inline-flex items-center gap-2 px-8 py-4 border border-[#FAFAF7]/20 text-[#FAFAF7] font-medium text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7]/5 transition-colors">
-          Quién soy
-        </a>
+  <!-- HERO MAXIMALISTA -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7] relative overflow-hidden min-h-[92vh] flex items-end pb-12">
+    <!-- Monograma decorativo de fondo (parallax) -->
+    <div class="absolute right-[-10%] top-[-8%] w-[85vh] h-[85vh] opacity-[0.05] pointer-events-none" data-parallax="0.12">
+      <Monograma size={1200} variant="blanco" withAccent={false} class="w-full h-full" />
+    </div>
+
+    <!-- Meta-strip arriba -->
+    <div class="container-wide absolute top-0 left-0 right-0 z-10">
+      <div class="meta-strip">
+        <span>VOL. 01 · JAVI · CEBRIÁN · 2026</span>
+        <span class="inline-flex gap-6 flex-wrap">
+          <span><span class="dot-on">●</span> DISPONIBLE Q2</span>
+          <span class="hidden sm:inline">VALENCIA · 39.47°N 0.37°W</span>
+        </span>
       </div>
     </div>
-    <!-- Monograma decorativo con parallax -->
-    <div class="absolute right-[-80px] bottom-[-80px] opacity-[0.05] pointer-events-none hidden md:block" data-parallax="0.15">
-      <Monograma size={500} variant="blanco" withAccent={false} />
+
+    <!-- Contenido principal -->
+    <div class="container-wide w-full relative z-5">
+      <span class="acento-verde block mb-6" data-mask-up></span>
+      <h1 class="m-0 font-extrabold text-[#FAFAF7] leading-[0.85] tracking-[-0.025em]" style="font-size: clamp(3.5rem, 14vw, 16rem);">
+        <span data-mask-up data-delay="0" class="block">COMUNICA.</span>
+        <span data-mask-up data-delay="140" class="block text-[#8DBE3F]">DECIDE.</span>
+        <span data-mask-up data-delay="280" class="block">MULTIPLICA.</span>
+      </h1>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end mt-10">
+        <div class="md:col-span-7" data-reveal data-delay="500">
+          <p class="text-base md:text-lg leading-relaxed text-[#FAFAF7]/85 max-w-2xl">
+            Director de Comunicación y Desarrollo de Negocio en <span class="text-[#8DBE3F] font-semibold">Imedes</span>. Trabajo con organizaciones que quieren convertir reputación, sostenibilidad e IA en una ventaja real de negocio.
+          </p>
+          <div class="flex gap-3 mt-8 flex-wrap">
+            <a href="/trabajemos-juntos/" data-magnetic="0.3" class="inline-flex items-center gap-2 px-8 py-4 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors">
+              Empieza el proyecto →
+            </a>
+            <a href="/quien-soy/" data-magnetic="0.2" class="inline-flex items-center gap-2 px-8 py-4 border border-[#FAFAF7]/20 text-[#FAFAF7] font-medium text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7]/5 transition-colors">
+              Quién soy
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-[-1rem] right-10 font-display text-xs text-[#A0A0A0] hidden md:block">SCROLL ↓</div>
     </div>
   </section>
 
-  <!-- TRES PILARES -->
-  <section class="container-base py-24 md:py-32">
-    <div data-reveal>
-      <div class="acento-verde mb-8"></div>
-      <h2 class="font-display text-sm text-[#1A1A1A] mb-3">MANIFIESTO</h2>
-      <p class="text-3xl md:text-4xl font-bold tracking-tight text-[#1A1A1A] max-w-3xl mb-16 leading-tight">
-        Estrategia que comunica.<br>
-        Sostenibilidad que demuestra.<br>
-        IA que multiplica.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12" data-pillars-group>
-      {pilares.map(({ num, titulo, texto }) => (
-        <div class="border-t border-[#1A1A1A] pt-6 group cursor-default" data-pillar>
-          <p class="font-display text-2xl text-[#8DBE3F] mb-3 transition-transform duration-500 group-hover:translate-x-1">{num}</p>
-          <h3 class="text-xl font-bold text-[#1A1A1A] mb-3 leading-tight">{titulo}</h3>
-          <p class="text-base text-[#3D3D3D] leading-relaxed">{texto}</p>
-        </div>
+  <!-- TAPE — banda con manifiesto en marquee -->
+  <div class="tape" aria-hidden="true">
+    <div class="tape-track">
+      {Array.from({ length: 8 }).map(() => (
+        <span>COMUNICACIÓN QUE MUEVE <span class="dot">·</span> SOSTENIBILIDAD QUE DEMUESTRA <span class="dot">·</span> IA QUE MULTIPLICA <span class="dot">·</span></span>
       ))}
     </div>
-  </section>
+  </div>
 
-  <!-- MANIFIESTO NARRATIVO con line-reveal -->
+  <!-- MANIFIESTO sticky + line-reveal -->
   <section class="bg-[#1A1A1A] text-[#FAFAF7]">
-    <div class="container-base py-24 md:py-32">
-      <div class="max-w-4xl">
-        <div data-reveal>
-          <div class="acento-verde mb-8"></div>
-          <p class="font-display text-sm text-[#8DBE3F] mb-6">POR QUÉ TRABAJO ASÍ</p>
+    <div class="container-wide py-24 md:py-32">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-16 items-start">
+        <div class="md:sticky md:top-28">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#8DBE3F] m-0">§ 01</p>
+          <p class="font-display text-xs text-[#A0A0A0] mt-2">MANIFIESTO</p>
         </div>
-        <blockquote class="text-2xl md:text-3xl font-medium leading-snug italic">
-          {manifiestoLineas.map((linea) => (
-            <span data-line-reveal>{linea}</span>
+        <blockquote class="md:col-span-3 m-0 italic font-medium leading-snug" style="font-size: clamp(1.75rem, 4vw, 3.5rem); letter-spacing: -0.025em;">
+          {manifiestoLineas.map((linea, i) => (
+            <span data-line-reveal>{linea}{i < manifiestoLineas.length - 1 ? ' ' : ''}</span>
           ))}
         </blockquote>
-        <p class="mt-10 font-display text-xs text-[#A0A0A0] tracking-widest" data-reveal>— JAVI CEBRIÁN</p>
       </div>
     </div>
   </section>
 
+  <!-- PILARES FULLSCREEN ALTERNADOS -->
+  {pilares.map((p, i) => {
+    const isLight = i % 2 === 0;
+    const bg = isLight ? '#FAFAF7' : '#1A1A1A';
+    const fg = isLight ? '#1A1A1A' : '#FAFAF7';
+    const fgSoft = isLight ? '#3D3D3D' : '#A0A0A0';
+    const outlineClass = isLight ? 'text-outline-dark' : 'text-outline-light';
+    return (
+      <section style={{ background: bg, color: fg, borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+        <div class="container-wide py-24 md:py-32">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+            <div class="md:col-span-4">
+              <p class={`font-display text-base m-0 ${outlineClass}`} style={`font-family: var(--font-display); font-size: clamp(7rem, 16vw, 14rem); line-height: 0.85; letter-spacing: -0.02em;`} data-mask-up>
+                <span>{p.num}</span>
+              </p>
+              <p class="font-display text-xs text-[#8DBE3F] mt-4">{p.tag}</p>
+            </div>
+            <div class="md:col-span-8 pt-4">
+              <h2 class="font-extrabold m-0 leading-[1.05] tracking-[-0.04em]" style={`font-size: clamp(2rem, 4vw, 4rem); max-width: 22ch; color: ${fg};`} data-mask-up data-delay="100">
+                <span>{p.titulo}</span>
+              </h2>
+              <p class="mt-8 text-lg md:text-xl leading-relaxed max-w-2xl" style={`color: ${fgSoft};`} data-reveal data-delay="200">
+                {p.body}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <!-- TAPE inferior -->
+  <div class="tape" aria-hidden="true">
+    <div class="tape-track">
+      {Array.from({ length: 8 }).map(() => (
+        <span>HABLAMOS <span class="dot">·</span> EN MENOS DE 48 HORAS <span class="dot">·</span> SIN EMBUDOS <span class="dot">·</span></span>
+      ))}
+    </div>
+  </div>
+
   <!-- CTA FINAL -->
-  <section class="container-base py-24 md:py-32 text-center">
-    <div data-reveal>
-      <div class="acento-verde mx-auto mb-8"></div>
-      <h2 class="text-4xl md:text-6xl font-extrabold text-[#1A1A1A] tracking-tighter mb-6">
-        Hablamos.
-      </h2>
-      <p class="text-lg text-[#3D3D3D] max-w-xl mx-auto mb-10">
-        Si tu organización quiere comunicar con criterio y aprovechar sostenibilidad e IA como ventaja real, este es el sitio para empezar la conversación.
-      </p>
-      <a href="/contacto/" data-magnetic="0.3" class="inline-flex items-center gap-2 px-10 py-5 bg-[#1A1A1A] text-[#FAFAF7] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#8DBE3F] hover:text-[#1A1A1A] transition-colors">
-        Contacta →
-      </a>
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
+    <div class="container-wide py-24 md:py-32">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
+        <div class="md:col-span-7">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#8DBE3F] mb-4" data-reveal>§ HABLAMOS</p>
+          <h2 class="font-extrabold tracking-[-0.025em] leading-[0.85] m-0" style="font-size: clamp(3rem, 9vw, 9rem);">
+            <span data-mask-up class="block">HABLAMOS.</span>
+          </h2>
+          <p class="mt-8 text-lg md:text-xl text-[#A0A0A0] max-w-xl leading-relaxed" data-reveal data-delay="200">
+            Si tu organización quiere comunicar con criterio y aprovechar sostenibilidad e IA como ventaja real, este es el sitio para empezar la conversación.
+          </p>
+        </div>
+        <div class="md:col-span-5 md:text-right" data-reveal data-delay="300">
+          <a href="/trabajemos-juntos/" data-magnetic="0.3" class="inline-flex items-center gap-2 px-10 py-5 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors">
+            Empieza el proyecto →
+          </a>
+          <p class="mt-6 text-xs text-[#A0A0A0]">
+            ¿Solo una duda rápida? <a href="/contacto/" class="text-[#FAFAF7] hover:text-[#8DBE3F] transition-colors">Escríbeme aquí</a> · <a href="mailto:jcebrian@grupimedes.com" class="text-[#FAFAF7] hover:text-[#8DBE3F] transition-colors">jcebrian@grupimedes.com</a>
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>

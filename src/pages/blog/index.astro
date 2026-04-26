@@ -24,61 +24,64 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
   description="Reflexiones con criterio sobre comunicación, sostenibilidad e IA aplicadas al negocio. Sin postureo, con argumentos."
 >
   <!-- HERO -->
-  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
-    <div class="container-base py-20 md:py-28">
-      <div class="acento-verde mb-8" data-stagger-line></div>
-      <p class="font-display text-sm text-[#8DBE3F] mb-4" data-stagger-line>BLOG</p>
-      <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.1] tracking-tighter max-w-3xl" data-stagger-line>
-        Reflexiones con criterio sobre comunicación, sostenibilidad e IA.
+  <section class="bg-[#1A1A1A] text-[#FAFAF7] relative overflow-hidden">
+    <div class="container-wide py-20 md:py-24">
+      <span class="acento-verde block mb-6" data-mask-up></span>
+      <p class="font-display text-xs text-[#8DBE3F] mb-4" data-mask-up data-delay="80">§ NOTAS</p>
+      <h1 class="font-extrabold leading-[0.85] tracking-[-0.02em] m-0" style="font-family: var(--font-display); font-size: clamp(3.5rem, 12vw, 12rem);">
+        <span data-mask-up data-delay="0" class="block">DIARIO</span>
+        <span data-mask-up data-delay="140" class="block text-[#8DBE3F]">EDITORIAL.</span>
       </h1>
-      <p class="mt-8 text-lg md:text-xl text-[#A0A0A0] max-w-2xl" data-stagger-line>
-        {posts.length} artículos. Sin postureo. Con argumentos.
+      <p class="mt-10 text-base text-[#A0A0A0] max-w-2xl" data-reveal data-delay="280">
+        {posts.length} artículos sobre comunicación, sostenibilidad e IA. Sin postureo, con argumentos.
       </p>
     </div>
   </section>
 
-  <!-- LISTADO -->
-  <section class="container-base py-20 md:py-28">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10" data-pillars-group>
-      {posts.map(post => (
-        <article class="group" data-pillar>
-          <a href={`/blog/${post.slug}/`} class="block h-full">
-            <div class="aspect-[16/10] bg-[#1A1A1A] rounded-lg overflow-hidden mb-5 relative">
+  <!-- LISTADO EDITORIAL — fila por fila con número grande -->
+  <section class="container-wide py-16 md:py-24">
+    <div>
+      {posts.map((post, i) => (
+        <article data-reveal data-delay={i * 60} class="group">
+          <a
+            href={`/blog/${post.slug}/`}
+            class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start py-8 md:py-10 border-t border-[#1A1A1A] no-underline text-inherit transition-colors hover:bg-[#8DBE3F]/5"
+          >
+            <div class="md:col-span-1">
+              <p class="font-display text-3xl md:text-4xl text-[#8DBE3F] m-0 leading-none" style="letter-spacing: 0.02em;">
+                {String(posts.length - i).padStart(3, '0')}
+              </p>
+            </div>
+            <div class="md:col-span-2">
+              <p class="font-display text-xs text-[#1A1A1A] m-0">{categoriaLabel[post.data.category]}</p>
+              <p class="text-xs text-[#6B6B6B] mt-1.5">
+                {dateFormatter.format(post.data.pubDate)}
+              </p>
+            </div>
+            <div class="md:col-span-7">
+              <h2 class="font-extrabold tracking-[-0.03em] leading-[1.1] text-[#1A1A1A] m-0 transition-colors group-hover:text-[#8DBE3F]" style="font-size: clamp(1.5rem, 2.5vw, 2.25rem);">
+                {post.data.title}
+              </h2>
+              <p class="mt-3 text-base text-[#3D3D3D] leading-relaxed max-w-2xl">
+                {post.data.description}
+              </p>
+            </div>
+            <div class="md:col-span-2 md:text-right">
               {post.data.heroImage ? (
                 <img
                   src={post.data.heroImage}
-                  alt={post.data.title}
-                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt=""
+                  class="w-full md:w-32 md:h-24 object-cover rounded-md transition-transform duration-700 group-hover:scale-105 ml-auto"
                   loading="lazy"
                 />
               ) : (
-                <div class="w-full h-full flex items-center justify-center text-[#8DBE3F] font-display text-7xl opacity-30">
-                  JC
-                </div>
+                <span class="text-2xl text-[#1A1A1A] inline-block transition-transform group-hover:translate-x-1">↗</span>
               )}
-              <div class="absolute top-4 left-4">
-                <span class="px-3 py-1 bg-[#FAFAF7]/95 text-[#1A1A1A] text-xs font-bold uppercase tracking-wider rounded">
-                  {categoriaLabel[post.data.category]}
-                </span>
-              </div>
-            </div>
-            <div>
-              <time datetime={post.data.pubDate.toISOString()} class="text-xs uppercase tracking-widest text-[#6B6B6B] font-semibold">
-                {dateFormatter.format(post.data.pubDate)}
-              </time>
-              <h2 class="mt-2 text-xl font-bold text-[#1A1A1A] leading-tight tracking-tight transition-colors group-hover:text-[#8DBE3F]">
-                {post.data.title}
-              </h2>
-              <p class="mt-3 text-sm text-[#3D3D3D] line-clamp-3 leading-relaxed">
-                {post.data.description}
-              </p>
-              <p class="mt-4 text-xs font-bold text-[#8DBE3F] uppercase tracking-widest inline-flex items-center gap-1 transition-transform group-hover:translate-x-1">
-                Leer artículo →
-              </p>
             </div>
           </a>
         </article>
       ))}
+      <div class="border-t border-[#1A1A1A]"></div>
     </div>
   </section>
 

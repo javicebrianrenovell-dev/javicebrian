@@ -201,6 +201,55 @@ function initMagneticButtons(): void {
 }
 
 /**
+ * 7. Mask-up reveal
+ * Texto que sube desde una máscara (clip overflow). Cinematográfico.
+ */
+function initMaskUp(): void {
+  const els = document.querySelectorAll<HTMLElement>('[data-mask-up]');
+  if (!els.length) return;
+
+  if (reducedMotion()) {
+    els.forEach(el => el.classList.add('is-in'));
+    return;
+  }
+
+  els.forEach(el => {
+    const delay = parseInt(el.dataset.delay || '0', 10);
+    inView(
+      el,
+      () => {
+        setTimeout(() => el.classList.add('is-in'), delay);
+      },
+      { amount: 0.2 }
+    );
+  });
+}
+
+/**
+ * 8. Scale-in
+ */
+function initScaleIn(): void {
+  const els = document.querySelectorAll<HTMLElement>('[data-scale-in]');
+  if (!els.length) return;
+
+  if (reducedMotion()) {
+    els.forEach(el => el.classList.add('is-in'));
+    return;
+  }
+
+  els.forEach(el => {
+    const delay = parseInt(el.dataset.delay || '0', 10);
+    inView(
+      el,
+      () => {
+        setTimeout(() => el.classList.add('is-in'), delay);
+      },
+      { amount: 0.2 }
+    );
+  });
+}
+
+/**
  * Init de todas las animaciones.
  * Se llama al cargar y tras cada View Transition de Astro.
  */
@@ -211,4 +260,6 @@ export function initAnimations(): void {
   initPillarsStagger();
   initLineReveal();
   initMagneticButtons();
+  initMaskUp();
+  initScaleIn();
 }

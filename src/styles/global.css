@@ -172,3 +172,140 @@ body {
     padding-right: 2.5rem;
   }
 }
+
+/* Contenedor amplio (para hero atrevida) */
+.container-wide {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-wide {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+/* ==========================================================
+   Atrevida — diseño cinematográfico editorial
+   ========================================================== */
+
+/* Tipografía display atrevida (hero, números, kickers) */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Texto outline (números pilares fullscreen) */
+.text-outline-dark {
+  -webkit-text-stroke: 2px var(--color-negro);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.text-outline-light {
+  -webkit-text-stroke: 2px var(--color-blanco);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Mask-up: texto que sube tras una máscara */
+[data-mask-up] {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+[data-mask-up] > span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+[data-mask-up].is-in > span {
+  transform: translateY(0);
+}
+
+/* Reveal genérico (con clase is-in) — alias para mask-up también */
+[data-reveal].is-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scale-in */
+[data-scale-in] {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-scale-in].is-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Marquee/Tape — banda con texto en movimiento horizontal */
+.tape {
+  background: var(--color-negro);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  padding: 1.25rem 0;
+}
+.tape-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 50s linear infinite;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: rgba(250, 250, 247, 0.75);
+  letter-spacing: 0.15em;
+}
+.tape-track > span {
+  padding-right: 1rem;
+}
+.tape-track .dot {
+  color: var(--color-verde);
+  margin: 0 0.5rem;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Meta-strip (línea superior estilo revista) */
+.meta-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  color: var(--color-gris-claro);
+  padding: 1.25rem 0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.meta-strip .dot-on {
+  color: var(--color-verde);
+  margin-right: 0.4rem;
+}
+
+/* Pause animations cuando el usuario lo prefiera */
+@media (prefers-reduced-motion: reduce) {
+  .tape-track {
+    animation: none !important;
+  }
+  [data-mask-up] > span {
+    transform: none !important;
+    transition: none !important;
+  }
+  [data-scale-in] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
