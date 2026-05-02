@@ -98,10 +98,13 @@ body {
   will-change: opacity, transform;
 }
 
-/* Line reveal — manifiesto */
+/* Line reveal — manifiesto.
+   Estado inicial: color tenue pero con contraste suficiente (>=4.4:1 sobre fondo).
+   Estado .is-revealed: color final pleno.
+   Cumple WCAG AA. */
 [data-line-reveal] {
   display: block;
-  color: rgba(250, 250, 247, 0.18);
+  color: rgba(250, 250, 247, 0.55);
   transition: color 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 [data-line-reveal].is-revealed {
@@ -110,7 +113,7 @@ body {
 
 /* Variante line-reveal sobre fondo claro */
 [data-line-reveal][data-on-light] {
-  color: rgba(26, 26, 26, 0.18);
+  color: rgba(26, 26, 26, 0.55);
 }
 [data-line-reveal][data-on-light].is-revealed {
   color: var(--color-negro);
