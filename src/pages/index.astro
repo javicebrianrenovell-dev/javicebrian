@@ -126,7 +126,7 @@ const manifiestoLineas = [
               <p class={`font-display text-base m-0 ${outlineClass}`} style={`font-family: var(--font-display); font-size: clamp(7rem, 16vw, 14rem); line-height: 0.85; letter-spacing: -0.02em;`} data-mask-up>
                 <span>{p.num}</span>
               </p>
-              <p class="font-display text-xs text-[#8DBE3F] mt-4">{p.tag}</p>
+              <p class="font-display text-xs mt-4" style={`color: ${isLight ? '#467010' : '#8DBE3F'};`}>{p.tag}</p>
             </div>
             <div class="md:col-span-8 pt-4">
               <h2 class="font-extrabold m-0 leading-[1.05] tracking-[-0.04em]" style={`font-size: clamp(2rem, 4vw, 4rem); max-width: 22ch; color: ${fg};`} data-mask-up data-delay="100">

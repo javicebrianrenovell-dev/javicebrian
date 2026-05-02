@@ -10,7 +10,8 @@
 
 @theme {
   /* Paleta */
-  --color-verde: #8DBE3F;
+  --color-verde: #8DBE3F;          /* verde lima principal — usar sobre fondo oscuro */
+  --color-verde-dark: #467010;     /* variante oscura para texto pequeño sobre fondo crema (WCAG AA, 5.1:1) */
   --color-negro: #1A1A1A;
   --color-blanco: #FAFAF7;
   --color-gris-texto: #3D3D3D;
