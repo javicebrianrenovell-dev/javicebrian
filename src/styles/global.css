@@ -1,5 +1,7 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* Fuentes Inter + Bebas Neue: cargadas como self-hosted desde @fontsource
+   en src/layouts/BaseLayout.astro (cumple RGPD, no envía IPs a Google) */
 
 /* ==========================================================
    Tokens de marca — Javi Cebrián v1.1 (concepto 2C)
