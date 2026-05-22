@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import Schema from '../components/Schema.astro';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -8,6 +9,11 @@ interface Props {
 
 const { post } = Astro.props;
 const { title, description, pubDate, updatedDate, heroImage, category, tags } = post.data;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const heroImageURL = heroImage
+  ? new URL(heroImage, Astro.site).href
+  : new URL('/og-default.jpg', Astro.site).href;
 
 const categoriaLabel: Record<string, string> = {
   comunicacion: 'Comunicación',
@@ -24,6 +30,21 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
+  <Schema
+    type="BlogPosting"
+    data={{
+      headline: title,
+      description,
+      datePublished: pubDate.toISOString(),
+      dateModified: (updatedDate ?? pubDate).toISOString(),
+      image: heroImageURL,
+      mainEntityOfPage: canonicalURL,
+      url: canonicalURL,
+      keywords: tags.join(', '),
+      articleSection: category,
+    }}
+  />
+
   <article>
     <!-- HERO del post -->
     <header class="bg-[#1A1A1A] text-[#FAFAF7]">

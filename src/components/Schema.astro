@@ -1,0 +1,86 @@
+---
+type SchemaType = 'Person' | 'ProfessionalService' | 'BlogPosting' | 'WebSite';
+
+interface Props {
+  type: SchemaType;
+  data?: Record<string, unknown>;
+}
+
+const { type, data = {} } = Astro.props;
+
+const SITE_URL = 'https://javicebrian.es';
+
+const PERSON_BASE = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Javi Cebrián',
+  givenName: 'Javier',
+  familyName: 'Cebrián Renovell',
+  jobTitle: 'Director de Comunicación y Desarrollo de Negocio',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Imedes',
+    url: 'https://www.imedes.es',
+  },
+  url: SITE_URL,
+  sameAs: [
+    'https://www.linkedin.com/in/javicebrian',
+    'https://www.instagram.com/javicebrian',
+    'https://x.com/javicebrian',
+  ],
+  knowsAbout: [
+    'Comunicación corporativa',
+    'Sostenibilidad',
+    'Inteligencia artificial',
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Valencia',
+    addressCountry: 'ES',
+  },
+};
+
+const SERVICE_BASE = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Javi Cebrián — Comunicación con sostenibilidad e IA',
+  provider: { '@type': 'Person', name: 'Javi Cebrián', url: SITE_URL },
+  areaServed: 'ES',
+  serviceType:
+    'Consultoría de comunicación corporativa con sostenibilidad e IA',
+  url: SITE_URL,
+};
+
+const WEBSITE_BASE = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Javi Cebrián',
+  url: SITE_URL,
+  inLanguage: 'es-ES',
+  publisher: { '@type': 'Person', name: 'Javi Cebrián' },
+};
+
+function buildSchema(): Record<string, unknown> {
+  switch (type) {
+    case 'Person':
+      return { ...PERSON_BASE, ...data };
+    case 'ProfessionalService':
+      return { ...SERVICE_BASE, ...data };
+    case 'WebSite':
+      return { ...WEBSITE_BASE, ...data };
+    case 'BlogPosting':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        author: { '@type': 'Person', name: 'Javi Cebrián', url: SITE_URL },
+        publisher: { '@type': 'Person', name: 'Javi Cebrián', url: SITE_URL },
+        inLanguage: 'es-ES',
+        ...data,
+      };
+  }
+}
+
+const schema = buildSchema();
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
