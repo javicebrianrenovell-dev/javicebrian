@@ -1,0 +1,7 @@
+# robots.txt — javicebrian.es
+# Producción: indexación abierta. El sitemap lo genera @astrojs/sitemap.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://javicebrian.es/sitemap-index.xml
