@@ -114,7 +114,7 @@ ${organizacion ? `<div class="field"><strong>Organización</strong>${safe(organi
 
     const { error } = await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL || 'web@javicebrian.es',
-      to: process.env.CONTACT_TO_EMAIL || 'jcebrian@grupimedes.com',
+      to: (process.env.CONTACT_TO_EMAIL || 'jcebrian@grupimedes.com').split(',').map(e => e.trim()).filter(Boolean),
       replyTo: email,
       subject: `[Web] ${tipoLabel} — ${nombre}`,
       html,
@@ -236,7 +236,7 @@ ${contexto ? `<p style="margin-top: 20px; font-size: 12px; text-transform: upper
 
     const { error } = await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL || 'web@javicebrian.es',
-      to: process.env.CONTACT_TO_EMAIL || 'jcebrian@grupimedes.com',
+      to: (process.env.CONTACT_TO_EMAIL || 'jcebrian@grupimedes.com').split(',').map(e => e.trim()).filter(Boolean),
       replyTo: email,
       subject,
       html,
