@@ -135,22 +135,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         submitLabel.textContent = 'Enviando…';
 
         const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
+        const data = Object.fromEntries(formData.entries()) as Record<string, string>;
+        data.access_key = 'bc65817d-03b0-4c30-8571-3bdb79dda23c';
+        data.subject = `[Web] Contacto — ${data.nombre || ''}`;
+        data.from_name = 'Formulario javicebrian.es';
+        data.replyto = data.email || '';
+        data.cc = 'jcebrian@grupimedes.com';
 
         try {
-          const res = await fetch('/api/contact', {
+          const res = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
             body: JSON.stringify(data),
           });
+          const json = await res.json().catch(() => ({}));
 
-          if (res.ok) {
+          if (res.ok && json.success) {
             feedback.className = 'block p-4 rounded-md text-sm font-semibold bg-[#8DBE3F]/15 text-[#1A1A1A] border border-[#8DBE3F]';
             feedback.textContent = '✓ Mensaje enviado. Te respondo en menos de 48 horas.';
             form.reset();
           } else {
-            const json = await res.json().catch(() => ({}));
-            throw new Error(json.error || 'Error al enviar.');
+            throw new Error(json.message || 'Error al enviar.');
           }
         } catch (err) {
           feedback.className = 'block p-4 rounded-md text-sm font-semibold bg-red-50 text-red-900 border border-red-200';

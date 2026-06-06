@@ -105,23 +105,28 @@ export function initLeadForm(): void {
     submitLabel.textContent = 'Enviando…';
     feedback.className = 'hidden';
 
-    const data = Object.fromEntries(new FormData(form).entries());
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    data.access_key = 'bc65817d-03b0-4c30-8571-3bdb79dda23c';
+    data.subject = `[Web] Empezar proyecto — ${data.nombre || ''}`;
+    data.from_name = 'Formulario javicebrian.es';
+    data.replyto = data.email || '';
+    data.cc = 'jcebrian@grupimedes.com';
 
     try {
-      const res = await fetch('/api/lead-cualificado', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(data),
       });
 
       const json = await res.json().catch(() => ({}));
 
-      if (res.ok && json.mensaje) {
+      if (res.ok && json.success) {
         feedback.className = 'block mb-6 p-5 rounded-md bg-[#8DBE3F]/15 text-[#1A1A1A] border border-[#8DBE3F]';
         feedback.innerHTML = `
           <p class="font-display text-xs text-[#1A1A1A] mb-2">RECIBIDO</p>
-          <p class="text-lg font-extrabold tracking-tight mb-2">${escapeHtml(json.mensaje.titulo)}</p>
-          <p class="text-sm font-normal leading-relaxed">${escapeHtml(json.mensaje.cuerpo)}</p>
+          <p class="text-lg font-extrabold tracking-tight mb-2">Gracias, ${escapeHtml(String(data.nombre || ''))}.</p>
+          <p class="text-sm font-normal leading-relaxed">He recibido tu consulta y te respondo personalmente en menos de 48 horas.</p>
         `;
         steps.forEach(s => s.classList.add('hidden'));
         prevBtn.classList.add('hidden');
@@ -129,7 +134,7 @@ export function initLeadForm(): void {
         submitBtn.classList.add('hidden');
         feedback.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
-        throw new Error(json.error || 'No pudimos enviar tu consulta.');
+        throw new Error(json.message || 'No pudimos enviar tu consulta.');
       }
     } catch (err) {
       feedback.className = 'block mb-6 p-4 rounded-md text-sm font-semibold bg-red-50 text-red-900 border border-red-200';
