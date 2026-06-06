@@ -15,9 +15,28 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
+
+// Tiempo de lectura estimado (200 palabras/min)
+const words = post.body.split(/\s+/).filter(Boolean).length;
+const readingTime = Math.max(1, Math.round(words / 200));
+
+// Índice de contenidos: solo encabezados de nivel 2
+const toc = headings.filter(h => h.depth === 2);
+
+// Posts relacionados: misma categoría primero, completados con los más recientes
+const all = (await getCollection('blog', ({ data }) => !data.draft))
+  .filter(p => p.slug !== post.slug)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const sameCategory = all.filter(p => p.data.category === post.data.category);
+const related = [...sameCategory];
+for (const p of all) {
+  if (related.length >= 3) break;
+  if (!related.includes(p)) related.push(p);
+}
+const relatedPosts = related.slice(0, 3);
 ---
 
-<BlogLayout post={post}>
+<BlogLayout post={post} readingTime={readingTime} toc={toc} relatedPosts={relatedPosts}>
   <Content />
 </BlogLayout>

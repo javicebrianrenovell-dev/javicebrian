@@ -2,7 +2,7 @@
 title: "Sostenibilidad estratégica frente al greenwashing"
 description: "Cómo comunicar sostenibilidad con evidencia y evitar el greenwashing: la diferencia entre el adorno y la estrategia real."
 pubDate: 2026-05-30
-heroImage: "/blog-images/agencia_comunicacion_ambiental.webp"
+heroImage: "/blog-images/nuevo-sostenibilidad-estrategica.jpg"
 category: sostenibilidad
 tags: ["greenwashing", "sostenibilidad estratégica", "comunicación ambiental", "reputación"]
 ---
@@ -15,7 +15,7 @@ Voy a explicar dónde está la línea, cómo se cruza sin querer y qué hacer pa
 
 La sostenibilidad ornamental se añade al final. Es una capa de pintura sobre un negocio que no ha cambiado. Sirve para la foto, para el informe anual, para el folleto. Comunica una intención y la disfraza de logro.
 
-La sostenibilidad estratégica está dentro de la estrategia, no al lado. Afecta a cómo se compra, cómo se produce, cómo se mide, qué se decide cuando hay que elegir entre margen y huella. Eso genera datos, decisiones reales y, a veces, errores reconocidos. Y eso es lo que se puede comunicar con la cabeza alta.
+**La sostenibilidad estratégica está dentro de la estrategia, no al lado.** Afecta a cómo se compra, cómo se produce, cómo se mide, qué se decide cuando hay que elegir entre margen y huella. Eso genera datos, decisiones reales y, a veces, errores reconocidos. Y eso es lo que se puede comunicar con la cabeza alta.
 
 El greenwashing no siempre es mala fe. Muchas veces nace de la prisa por estar a la altura del discurso del sector, de copiar el lenguaje verde de los demás sin haber hecho el trabajo de fondo. El resultado es el mismo: un mensaje que promete más de lo que la realidad sostiene. Y el público, los clientes y los reguladores tienen cada vez mejor olfato para detectarlo.
 
@@ -35,7 +35,7 @@ La certificación que no dice de qué. Sellos, premios y distintivos exhibidos s
 
 ## cómo comunicar logros ambientales con pruebas
 
-La regla es sencilla de enunciar y exigente de cumplir: no digas nada que no puedas demostrar. La comunicación ambiental honesta se construye sobre evidencia, no sobre adjetivos.
+La regla es sencilla de enunciar y exigente de cumplir: **no digas nada que no puedas demostrar.** La comunicación ambiental honesta se construye sobre evidencia, no sobre adjetivos.
 
 Cifra lo que afirmes. "Reducimos el consumo de agua" no informa. "Reducimos el consumo de agua un 18% entre 2023 y 2025 en nuestra planta principal" sí. El dato concreto convence y, además, te protege: es verificable, y eso te obliga a tenerlo bien medido antes de publicarlo.
 
@@ -51,11 +51,13 @@ Sobre por qué la calidad del mensaje importa tanto como el dato, escribí en [l
 
 ## del riesgo reputacional al riesgo legal
 
-Durante años el greenwashing se pagaba, como mucho, con una crítica en redes o un titular incómodo. Eso ya cambió. La exigencia regulatoria europea sobre las alegaciones ambientales va en una dirección clara: si afirmas algo verde, tendrás que poder probarlo, y las declaraciones genéricas sin respaldo quedan cada vez más acotadas.
+<aside class="callout"><span class="callout-label">EN CORTO</span> Comunicar con honestidad ya no es solo lo correcto: es lo prudente. El espacio para el adjetivo verde sin pruebas se estrecha año a año.</aside>
+
+Durante años el greenwashing se pagaba, como mucho, con una crítica en redes o un titular incómodo. Eso ya cambió. La [exigencia regulatoria europea sobre las alegaciones ambientales](https://environment.ec.europa.eu) va en una dirección clara: si afirmas algo verde, tendrás que poder probarlo, y las declaraciones genéricas sin respaldo quedan cada vez más acotadas.
 
 No voy a citar artículos ni cifras concretas porque el marco está en evolución y conviene contrastarlo con asesoría especializada en cada caso. Pero la tendencia de fondo no admite duda: el espacio para el adjetivo verde sin pruebas se estrecha. Lo que hoy es una práctica de marketing descuidada, mañana puede ser una infracción.
 
-El daño reputacional sigue ahí, y es más rápido que nunca. Una afirmación exagerada que se desmonta en público no se queda en esa campaña: pone en duda todo lo demás que diga la empresa, incluido lo que sí era verdad. La confianza se construye despacio y se pierde en una tarde.
+El daño reputacional sigue ahí, y es más rápido que nunca. Una afirmación exagerada que se desmonta en público no se queda en esa campaña: pone en duda todo lo demás que diga la empresa, incluido lo que sí era verdad. **La confianza se construye despacio y se pierde en una tarde.**
 
 La lectura para mí es directa: comunicar con honestidad ya no es únicamente lo correcto, es lo prudente. Quien construye su comunicación ambiental sobre pruebas está, además, blindado frente a un terreno legal que se endurece.
 
@@ -73,4 +75,6 @@ Habla de lo que ya haces bien, sin estirarlo. Casi toda organización tiene algo
 
 Y si de verdad no hay nada que contar todavía, lo más sensato es callar y trabajar. El silencio nunca ha hundido la reputación de nadie. Una promesa rota, sí.
 
-La sostenibilidad es estratégica o no será. Y su comunicación corre la misma suerte: o se sostiene sobre hechos, o tarde o temprano se cae. No conozco atajos para esto, y desconfío de quien los vende. Lo que sí sé es que la empresa que mide, decide y cuenta con pruebas tiene un activo que el lavado verde nunca podrá imitar: que cuando habla, se la cree.
+> La sostenibilidad es estratégica o no será.
+
+Y su comunicación corre la misma suerte: o se sostiene sobre hechos, o tarde o temprano se cae. No conozco atajos para esto, y desconfío de quien los vende. Lo que sí sé es que la empresa que mide, decide y cuenta con pruebas tiene un activo que el lavado verde nunca podrá imitar: que cuando habla, se la cree.

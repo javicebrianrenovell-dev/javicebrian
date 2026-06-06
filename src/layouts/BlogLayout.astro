@@ -3,11 +3,20 @@ import BaseLayout from './BaseLayout.astro';
 import Schema from '../components/Schema.astro';
 import type { CollectionEntry } from 'astro:content';
 
-interface Props {
-  post: CollectionEntry<'blog'>;
+interface TocItem {
+  depth: number;
+  slug: string;
+  text: string;
 }
 
-const { post } = Astro.props;
+interface Props {
+  post: CollectionEntry<'blog'>;
+  readingTime?: number;
+  toc?: TocItem[];
+  relatedPosts?: CollectionEntry<'blog'>[];
+}
+
+const { post, readingTime = 0, toc = [], relatedPosts = [] } = Astro.props;
 const { title, description, pubDate, updatedDate, heroImage, category, tags } = post.data;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
@@ -27,6 +36,11 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
   month: 'long',
   year: 'numeric',
 });
+
+// Enlaces para compartir
+const shareLinkedIn = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalURL)}`;
+const shareX = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(canonicalURL)}`;
+const shareWhatsApp = `https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + canonicalURL)}`;
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
@@ -68,6 +82,12 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
                 <span>Actualizado {dateFormatter.format(updatedDate)}</span>
               </>
             )}
+            {readingTime > 0 && (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>{readingTime} min de lectura</span>
+              </>
+            )}
             <span aria-hidden="true">·</span>
             <span>Javi Cebrián</span>
           </div>
@@ -80,7 +100,7 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
       <div class="container-base mt-[-2rem] mb-12 max-w-4xl" data-reveal>
         <img
           src={heroImage}
-          alt={title}
+          alt={`Imagen destacada del artículo: ${title}`}
           class="w-full h-auto rounded-lg shadow-2xl border border-[#1A1A1A]/10"
           loading="eager"
         />
@@ -89,24 +109,74 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
 
     <!-- Contenido del post -->
     <div class="container-base py-12 md:py-16">
-      <div class="prose-custom max-w-3xl mx-auto" data-reveal>
-        <slot />
-      </div>
+      <div class="max-w-3xl mx-auto">
+        <!-- Índice de contenidos -->
+        {toc.length >= 3 && (
+          <nav class="toc-box" aria-label="Índice de contenidos" data-reveal>
+            <p class="toc-title">En este artículo</p>
+            <ol>
+              {toc.map(item => (
+                <li><a href={`#${item.slug}`}>{item.text}</a></li>
+              ))}
+            </ol>
+          </nav>
+        )}
 
-      <!-- Tags -->
-      {tags && tags.length > 0 && (
-        <div class="max-w-3xl mx-auto mt-16 pt-8 border-t border-[#E5E5E0]" data-reveal>
-          <p class="font-display text-xs text-[#1A1A1A] mb-4">ETIQUETAS</p>
-          <ul class="flex flex-wrap gap-2">
-            {tags.map(tag => (
-              <li class="px-3 py-1.5 bg-[#FAFAF7] border border-[#E5E5E0] text-xs font-semibold text-[#3D3D3D] rounded-md">
-                {tag}
-              </li>
-            ))}
-          </ul>
+        <div class="prose-custom" data-reveal>
+          <slot />
         </div>
-      )}
+
+        <!-- Compartir -->
+        <div class="max-w-3xl mx-auto mt-14 pt-8 border-t border-[#E5E5E0] flex flex-wrap items-center gap-3" data-reveal>
+          <span class="font-display text-xs text-[#1A1A1A] mr-1">COMPARTIR</span>
+          <a href={shareLinkedIn} target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Compartir en LinkedIn">LinkedIn</a>
+          <a href={shareX} target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Compartir en X">X</a>
+          <a href={shareWhatsApp} target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Compartir en WhatsApp">WhatsApp</a>
+          <button type="button" class="share-btn" data-copy-url={canonicalURL} aria-label="Copiar enlace">Copiar enlace</button>
+        </div>
+
+        <!-- Tags -->
+        {tags && tags.length > 0 && (
+          <div class="max-w-3xl mx-auto mt-10" data-reveal>
+            <p class="font-display text-xs text-[#1A1A1A] mb-4">ETIQUETAS</p>
+            <ul class="flex flex-wrap gap-2">
+              {tags.map(tag => (
+                <li class="px-3 py-1.5 bg-[#FAFAF7] border border-[#E5E5E0] text-xs font-semibold text-[#3D3D3D] rounded-md">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
+
+    <!-- Posts relacionados -->
+    {relatedPosts.length > 0 && (
+      <section class="bg-[#FAFAF7] border-t border-[#E5E5E0]">
+        <div class="container-wide py-16 md:py-20">
+          <p class="font-display text-xs text-[#8DBE3F] mb-2">§ SIGUE LEYENDO</p>
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#1A1A1A] mb-10">Artículos relacionados</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {relatedPosts.map(rp => (
+              <a href={`/blog/${rp.slug}/`} class="group block no-underline">
+                {rp.data.heroImage && (
+                  <img
+                    src={rp.data.heroImage}
+                    alt={`Imagen del artículo: ${rp.data.title}`}
+                    class="w-full h-44 object-cover rounded-lg mb-4 transition-transform duration-700 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                )}
+                <p class="font-display text-xs text-[#467010] mb-2">{categoriaLabel[rp.data.category]}</p>
+                <h3 class="text-lg font-bold leading-snug text-[#1A1A1A] group-hover:text-[#467010] transition-colors">{rp.data.title}</h3>
+                <p class="mt-2 text-sm text-[#6B6B6B] leading-relaxed line-clamp-3">{rp.data.description}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
 
     <!-- CTA final del post -->
     <section class="bg-[#1A1A1A] text-[#FAFAF7]">
@@ -116,7 +186,7 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
           ¿Hablamos de tu proyecto?
         </h2>
         <p class="text-lg text-[#A0A0A0] max-w-xl mx-auto mb-10" data-reveal>
-          Si lo que has leído conecta con un reto que tienes ahora mismo, contar con una conversación de 30 minutos te aclara más que mil artículos.
+          Si lo que has leído conecta con un reto que tienes ahora mismo, una conversación de 30 minutos te aclara más que mil artículos.
         </p>
         <a href="/contacto/" data-magnetic="0.3" class="inline-flex items-center gap-2 px-10 py-5 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors">
           Contacta →
@@ -124,6 +194,28 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
       </div>
     </section>
   </article>
+
+  <script>
+    function initCopyButtons() {
+      document.querySelectorAll<HTMLButtonElement>('[data-copy-url]').forEach(btn => {
+        if (btn.dataset.copyBound) return;
+        btn.dataset.copyBound = 'true';
+        btn.addEventListener('click', async () => {
+          const url = btn.getAttribute('data-copy-url') || window.location.href;
+          try {
+            await navigator.clipboard.writeText(url);
+            const original = btn.textContent;
+            btn.textContent = 'Enlace copiado';
+            setTimeout(() => { btn.textContent = original; }, 2000);
+          } catch {
+            window.prompt('Copia el enlace:', url);
+          }
+        });
+      });
+    }
+    initCopyButtons();
+    document.addEventListener('astro:page-load', initCopyButtons);
+  </script>
 </BaseLayout>
 
 <style is:global>
@@ -134,6 +226,24 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
     line-height: 1.75;
   }
 
+  /* Entradilla: primer párrafo destacado */
+  .prose-custom > p:first-of-type {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: var(--color-negro);
+    margin-bottom: 1.75rem;
+  }
+
+  /* Capitular editorial en la primera letra */
+  .prose-custom > p:first-of-type::first-letter {
+    float: left;
+    font-family: var(--font-display);
+    font-size: 4.2rem;
+    line-height: 0.78;
+    padding: 0.1rem 0.6rem 0 0;
+    color: var(--color-verde-dark);
+  }
+
   .prose-custom h2 {
     font-size: 1.875rem;
     font-weight: 800;
@@ -142,6 +252,7 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
     margin-top: 3rem;
     margin-bottom: 1rem;
     letter-spacing: -0.02em;
+    scroll-margin-top: 6rem;
   }
 
   .prose-custom h3 {
@@ -151,6 +262,7 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
     line-height: 1.3;
     margin-top: 2rem;
     margin-bottom: 0.75rem;
+    scroll-margin-top: 6rem;
   }
 
   .prose-custom p {
@@ -172,7 +284,7 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
     content: "—";
     position: absolute;
     left: 0;
-    color: var(--color-verde);
+    color: var(--color-verde-dark);
     font-weight: 700;
   }
 
@@ -192,7 +304,7 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
     content: counter(ol-counter, decimal-leading-zero);
     position: absolute;
     left: 0;
-    color: var(--color-verde);
+    color: var(--color-verde-dark);
     font-weight: 700;
     font-family: var(--font-display);
   }
@@ -212,17 +324,59 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
   }
 
   .prose-custom a:hover {
-    color: var(--color-verde);
+    color: var(--color-verde-dark);
   }
 
   .prose-custom blockquote {
     border-left: 4px solid var(--color-verde);
     padding-left: 1.5rem;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
     font-style: italic;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    line-height: 1.45;
     color: var(--color-negro);
-    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  /* Destacado / aside editorial */
+  .prose-custom .callout {
+    background: #F4F6EE;
+    border: 1px solid #DDE7C5;
+    border-left: 4px solid var(--color-verde);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 2.25rem 0;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--color-negro);
+  }
+
+  .prose-custom .callout p:last-child { margin-bottom: 0; }
+
+  .prose-custom .callout .callout-label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    color: var(--color-verde-dark);
+    margin-bottom: 0.4rem;
+  }
+
+  /* Figuras con pie de foto */
+  .prose-custom figure {
+    margin: 2.5rem 0;
+  }
+
+  .prose-custom figure img {
+    margin: 0;
+  }
+
+  .prose-custom figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.875rem;
+    color: #6B6B6B;
+    text-align: center;
+    line-height: 1.4;
   }
 
   .prose-custom img {
@@ -257,5 +411,86 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
     border: none;
     border-top: 1px solid var(--color-borde);
     margin: 3rem 0;
+  }
+
+  /* Índice de contenidos */
+  .toc-box {
+    background: #FAFAF7;
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .toc-title {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    color: var(--color-negro);
+    margin-bottom: 0.75rem;
+  }
+
+  .toc-box ol {
+    list-style: none;
+    counter-reset: toc;
+    margin: 0;
+    padding: 0;
+  }
+
+  .toc-box li {
+    counter-increment: toc;
+    margin-bottom: 0.4rem;
+    padding-left: 1.75rem;
+    position: relative;
+  }
+
+  .toc-box li::before {
+    content: counter(toc, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    color: var(--color-verde-dark);
+  }
+
+  .toc-box a {
+    color: var(--color-gris-texto);
+    text-decoration: none;
+    font-size: 0.975rem;
+    transition: color 0.2s ease;
+  }
+
+  .toc-box a:hover {
+    color: var(--color-verde-dark);
+    text-decoration: underline;
+    text-decoration-color: var(--color-verde);
+  }
+
+  /* Botones de compartir */
+  .share-btn {
+    display: inline-block;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-negro);
+    background: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .share-btn:hover {
+    background: var(--color-verde);
+    border-color: var(--color-verde);
+    color: var(--color-negro);
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 </style>
