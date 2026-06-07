@@ -2,8 +2,7 @@
 title: "Cómo convertir una memoria de sostenibilidad en herramienta de reputación"
 seoTitle: "Memoria de sostenibilidad como reputación"
 description: "La mayoría de las memorias de sostenibilidad no las lee nadie. Cómo convertir ese documento obligatorio en una herramienta real de reputación."
-pubDate: 2026-06-07
-updatedDate: 2026-06-07
+pubDate: 2026-05-15
 heroImage: "/blog-images/agencia_comunicacion_ambiental.webp"
 category: sostenibilidad
 tags: ["memoria de sostenibilidad", "reputación", "ESG", "comunicación corporativa"]

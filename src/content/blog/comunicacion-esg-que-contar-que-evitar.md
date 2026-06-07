@@ -2,8 +2,7 @@
 title: "Comunicación ESG: qué contar, cómo contarlo y qué evitar"
 seoTitle: "Comunicación ESG: qué contar y qué evitar"
 description: "Guía práctica de comunicación ESG: qué información ambiental, social y de gobernanza contar, cómo hacerla creíble y qué errores conviene evitar."
-pubDate: 2026-06-07
-updatedDate: 2026-06-07
+pubDate: 2026-04-10
 heroImage: "/blog-images/nuevo-memorias-sostenibilidad-csrd.jpg"
 category: sostenibilidad
 tags: ["ESG", "comunicación corporativa", "sostenibilidad", "reputación"]

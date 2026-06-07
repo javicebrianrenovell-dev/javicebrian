@@ -2,8 +2,7 @@
 title: "Errores frecuentes en comunicación ambiental corporativa"
 seoTitle: "Errores en comunicación ambiental corporativa"
 description: "Los errores más comunes al comunicar el compromiso ambiental de una empresa, y cómo evitarlos para no convertir una buena intención en un problema."
-pubDate: 2026-06-07
-updatedDate: 2026-06-07
+pubDate: 2026-05-01
 heroImage: "/blog-images/discurso_ambiental_valencia-scaled.webp"
 category: sostenibilidad
 tags: ["comunicación ambiental", "greenwashing", "reputación", "sostenibilidad"]

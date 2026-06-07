@@ -2,8 +2,7 @@
 title: "Cómo crear una política interna de uso de IA en comunicación"
 seoTitle: "Política interna de uso de IA en comunicación"
 description: "Guía para crear una política interna de uso de IA en un equipo de comunicación: qué incluir, qué permitir, qué proteger y cómo aplicarla con criterio."
-pubDate: 2026-06-07
-updatedDate: 2026-06-07
+pubDate: 2026-05-08
 heroImage: "/blog-images/nuevo-elegir-herramientas-ia.jpg"
 category: ia
 tags: ["inteligencia artificial", "política de uso", "comunicación", "gobernanza"]

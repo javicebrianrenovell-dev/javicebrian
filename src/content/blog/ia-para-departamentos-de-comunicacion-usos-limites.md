@@ -2,8 +2,7 @@
 title: "IA para departamentos de comunicación: usos reales y límites"
 seoTitle: "IA para departamentos de comunicación"
 description: "Para qué sirve de verdad la inteligencia artificial en un departamento de comunicación y dónde están sus límites. Sin hype y sin miedo."
-pubDate: 2026-06-07
-updatedDate: 2026-06-07
+pubDate: 2026-04-03
 heroImage: "/blog-images/nuevo-ia-aplicada-sostenibilidad.jpg"
 category: ia
 tags: ["inteligencia artificial", "comunicación", "productividad", "equipos"]

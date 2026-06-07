@@ -2,8 +2,7 @@
 title: "Riesgos reputacionales de usar IA en contenidos corporativos"
 seoTitle: "Riesgos reputacionales de la IA en contenidos"
 description: "Los riesgos reputacionales de usar inteligencia artificial en contenidos corporativos, y cómo aprovechar la IA sin exponer la marca."
-pubDate: 2026-06-07
-updatedDate: 2026-06-07
+pubDate: 2026-05-21
 heroImage: "/blog-images/javi-cebrian_director_comunicacion.webp"
 category: ia
 tags: ["inteligencia artificial", "reputación", "riesgos", "comunicación corporativa"]
