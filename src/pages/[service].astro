@@ -1,0 +1,29 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ServiceLayout from '../layouts/ServiceLayout.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services', ({ data }) => !data.draft);
+  return services.map((service) => ({
+    params: { service: service.slug },
+    props: { service },
+  }));
+}
+
+interface Props {
+  service: CollectionEntry<'services'>;
+}
+
+const { service } = Astro.props;
+const { Content } = await service.render();
+
+// Artículos del cluster: blog cuya category coincide con el cluster del servicio.
+const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .filter((p) => p.data.category === service.data.cluster)
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+  .slice(0, 3);
+---
+
+<ServiceLayout service={service} relatedPosts={relatedPosts}>
+  <Content />
+</ServiceLayout>

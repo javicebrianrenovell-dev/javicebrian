@@ -4,8 +4,16 @@ import Monograma from './Monograma.astro';
 const year = new Date().getFullYear();
 
 const links = {
+  servicios: [
+    { label: 'Comunicación estratégica', href: '/comunicacion-estrategica/' },
+    { label: 'Comunicación de sostenibilidad', href: '/comunicacion-sostenibilidad/' },
+    { label: 'IA para comunicación', href: '/ia-comunicacion/' },
+    { label: 'Automatización', href: '/automatizacion-comunicacion/' },
+    { label: 'Formación en IA', href: '/formacion-ia-comunicacion/' },
+  ],
   navegacion: [
     { label: 'Inicio', href: '/' },
+    { label: 'Servicios', href: '/servicios/' },
     { label: 'Quién soy', href: '/quien-soy/' },
     { label: 'Blog', href: '/blog/' },
     { label: 'Contacto', href: '/contacto/' },
@@ -27,7 +35,7 @@ const links = {
   <div class="container-base py-16">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
       <!-- Brand -->
-      <div class="md:col-span-5">
+      <div class="md:col-span-4">
         <Monograma size={64} variant="blanco" withAccent={true} />
         <p class="mt-6 text-2xl font-bold leading-tight max-w-md">
           Comunicación que mueve organizaciones.
@@ -35,6 +43,18 @@ const links = {
         <p class="mt-2 text-base text-[#A0A0A0] italic max-w-md">
           Con sostenibilidad e IA como ventaja.
         </p>
+      </div>
+
+      <!-- Servicios -->
+      <div class="md:col-span-2">
+        <h3 class="text-xs font-bold uppercase tracking-widest text-[#8DBE3F] mb-4">
+          Servicios
+        </h3>
+        <ul class="space-y-2">
+          {links.servicios.map(({ label, href }) => (
+            <li><a href={href} class="text-sm text-[#FAFAF7]/80 hover:text-[#FAFAF7] transition-colors">{label}</a></li>
+          ))}
+        </ul>
       </div>
 
       <!-- Links -->
@@ -60,7 +80,7 @@ const links = {
         </ul>
       </div>
 
-      <div class="md:col-span-3">
+      <div class="md:col-span-2">
         <h3 class="text-xs font-bold uppercase tracking-widest text-[#8DBE3F] mb-4">
           Redes
         </h3>

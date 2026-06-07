@@ -1,5 +1,12 @@
 ---
-type SchemaType = 'Person' | 'ProfessionalService' | 'BlogPosting' | 'WebSite';
+type SchemaType =
+  | 'Person'
+  | 'ProfessionalService'
+  | 'BlogPosting'
+  | 'WebSite'
+  | 'Service'
+  | 'FAQPage'
+  | 'BreadcrumbList';
 
 interface Props {
   type: SchemaType;
@@ -75,6 +82,27 @@ function buildSchema(): Record<string, unknown> {
         author: { '@type': 'Person', name: 'Javi Cebrián', url: SITE_URL },
         publisher: { '@type': 'Person', name: 'Javi Cebrián', url: SITE_URL },
         inLanguage: 'es-ES',
+        ...data,
+      };
+    case 'Service':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        provider: { '@type': 'Person', name: 'Javi Cebrián', url: SITE_URL },
+        areaServed: 'ES',
+        inLanguage: 'es-ES',
+        ...data,
+      };
+    case 'FAQPage':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        ...data,
+      };
+    case 'BreadcrumbList':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
         ...data,
       };
   }
