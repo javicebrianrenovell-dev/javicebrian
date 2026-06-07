@@ -1,5 +1,6 @@
 ---
 title: "Elegir herramientas de IA con criterio: guía anti-hype para comunicadores"
+seoTitle: "Elegir herramientas de IA con criterio"
 description: "Un método para elegir herramientas de IA sin perseguir cada novedad: qué preguntar antes de adoptar una y por qué."
 pubDate: 2026-06-06
 heroImage: "/blog-images/nuevo-elegir-herramientas-ia.jpg"

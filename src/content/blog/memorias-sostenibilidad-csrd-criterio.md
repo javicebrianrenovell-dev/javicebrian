@@ -1,5 +1,6 @@
 ---
 title: "Memorias de sostenibilidad y CSRD: cómo afrontarlas con criterio"
+seoTitle: "Memorias de sostenibilidad y CSRD con criterio"
 description: "Cómo hacer memorias de sostenibilidad útiles más allá del cumplimiento de la CSRD, y dónde la IA ayuda de verdad."
 pubDate: 2026-06-02
 heroImage: "/blog-images/nuevo-memorias-sostenibilidad-csrd.jpg"

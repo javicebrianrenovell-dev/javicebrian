@@ -1,5 +1,6 @@
 ---
 title: "Discurso ambiental en la política: un compromiso necesario contra el cambio climático y el negacionismo"
+seoTitle: "Discurso ambiental en política y clima"
 description: "Por qué el discurso ambiental en política es una herramienta clave contra el negacionismo climático, con ejemplos concretos de liderazgo."
 pubDate: 2024-12-29
 heroImage: "/blog-images/discurso_ambiental_valencia-scaled.webp"

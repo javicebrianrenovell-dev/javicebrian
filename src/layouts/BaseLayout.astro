@@ -17,6 +17,7 @@ import Schema from '../components/Schema.astro';
 
 interface Props {
   title: string;
+  seoTitle?: string;
   description?: string;
   image?: string;
   noindex?: boolean;
@@ -24,6 +25,7 @@ interface Props {
 
 const {
   title,
+  seoTitle,
   description = 'Director de Comunicación y Desarrollo de Negocio. Comunicación que mueve organizaciones, con sostenibilidad e IA como ventaja.',
   image = '/og-default.jpg',
   noindex = false,
@@ -31,7 +33,9 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 const siteName = 'Javi Cebrián';
-const fullTitle = title.includes('Javi Cebrián') ? title : `${title} · ${siteName}`;
+// seoTitle (corto, <60 car.) prevalece sobre el título visible para el <title> y OG.
+const headTitle = seoTitle ?? title;
+const fullTitle = headTitle.includes('Javi Cebrián') ? headTitle : `${headTitle} · ${siteName}`;
 ---
 
 <!doctype html>

@@ -1,5 +1,6 @@
 ---
 title: "Comunicación ambiental en la administración pública: lo que no se cuenta, no existe"
+seoTitle: "Comunicación ambiental en la Administración"
 description: "La comunicación ambiental de las instituciones es parte del servicio público, no un adorno. Cómo hacerla con criterio."
 pubDate: 2026-05-26
 heroImage: "/blog-images/nuevo-comunicacion-ambiental-publica.jpg"

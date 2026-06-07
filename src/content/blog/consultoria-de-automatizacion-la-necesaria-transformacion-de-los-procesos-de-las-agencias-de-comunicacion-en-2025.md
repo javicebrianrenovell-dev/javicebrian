@@ -1,5 +1,6 @@
 ---
 title: "Consultoría de Automatización: la necesaria transformación de los procesos de las agencias de comunicación en 2025"
+seoTitle: "Automatización para agencias de comunicación"
 description: "Cómo la consultoría de automatización permite a las agencias de comunicación reducir tiempos, errores y enfocarse en estrategia y creatividad."
 pubDate: 2025-01-06
 heroImage: "/blog-images/consultoria_automatizacion_javi_cebrian.webp"

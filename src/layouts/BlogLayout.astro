@@ -17,7 +17,7 @@ interface Props {
 }
 
 const { post, readingTime = 0, toc = [], relatedPosts = [] } = Astro.props;
-const { title, description, pubDate, updatedDate, heroImage, category, tags } = post.data;
+const { title, seoTitle, description, pubDate, updatedDate, heroImage, category, tags } = post.data;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 const heroImageURL = heroImage
@@ -43,7 +43,7 @@ const shareX = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title
 const shareWhatsApp = `https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + canonicalURL)}`;
 ---
 
-<BaseLayout title={title} description={description} image={heroImage}>
+<BaseLayout title={title} seoTitle={seoTitle} description={description} image={heroImage}>
   <Schema
     type="BlogPosting"
     data={{

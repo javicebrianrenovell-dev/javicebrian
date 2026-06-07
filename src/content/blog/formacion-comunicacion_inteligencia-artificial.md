@@ -1,5 +1,6 @@
 ---
 title: "Formación continua en Comunicación e Inteligencia Artificial"
+seoTitle: "Formación continua en comunicación e IA"
 description: "Por qué la formación continua es la clave para seguir siendo relevante en un sector donde la tecnología cambia cada mes."
 pubDate: 2024-11-17
 heroImage: "/blog-images/freepik__candid-image-photography-natural-textures-highly-r__32105.jpeg"

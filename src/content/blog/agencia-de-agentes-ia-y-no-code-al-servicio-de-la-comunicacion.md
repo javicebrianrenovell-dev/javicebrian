@@ -1,5 +1,6 @@
 ---
 title: "Agencia de Agentes: IA y No Code al Servicio de la Comunicación"
+seoTitle: "IA y no-code para agencias de comunicación"
 description: "Cómo el modelo de agencia de agentes combina IA y herramientas no-code para multiplicar la capacidad de las agencias de comunicación."
 pubDate: 2025-01-18
 heroImage: "/blog-images/freepik__un-director-de-comunicacin-trabajando-desde-la-pla__87398.webp"

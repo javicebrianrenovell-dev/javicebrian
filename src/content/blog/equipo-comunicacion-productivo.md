@@ -1,5 +1,6 @@
 ---
 title: "Alejarse de la toxicidad: la clave para un equipo profesional saludable y productivo"
+seoTitle: "Equipos de comunicación sanos y productivos"
 description: "Cómo las dinámicas relacionales del equipo influyen directamente en los resultados de una agencia de comunicación."
 pubDate: 2024-12-03
 heroImage: "/blog-images/freepik__candid-image-photography-natural-textures-highly-r__80603.webp"

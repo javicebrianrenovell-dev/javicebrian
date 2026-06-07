@@ -1,5 +1,6 @@
 ---
 title: "Ventajas de la Automatización y la IA para la Productividad: Transformando la Comunicación Sostenible"
+seoTitle: "Automatización e IA para la productividad"
 description: "Cómo la IA y la automatización permiten que los equipos de comunicación se enfoquen en lo estratégico, dejando lo repetitivo a la máquina."
 pubDate: 2024-09-16
 heroImage: "/blog-images/24a8ae1f-c264-4117-9d9e-fab8c00930c6.webp"

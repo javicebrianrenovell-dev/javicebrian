@@ -1,5 +1,6 @@
 ---
 title: "Nuevos Desafíos en Comunicación, Sostenibilidad e Inteligencia Artificial"
+seoTitle: "Comunicación, sostenibilidad e IA: nuevos retos"
 description: "Por qué la convergencia de sostenibilidad e IA está redefiniendo las reglas operativas de la dirección de comunicación."
 pubDate: 2024-12-22
 heroImage: "/blog-images/freepik__communication-director-a-hispanic-male-in-a-modern__42101.webp"

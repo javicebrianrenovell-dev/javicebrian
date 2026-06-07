@@ -1,5 +1,6 @@
 ---
 title: "IA aplicada a la sostenibilidad: casos reales más allá del hype"
+seoTitle: "IA aplicada a la sostenibilidad: casos reales"
 description: "Usos honestos de la IA aplicada a la sostenibilidad, contados por un operador real: para qué sirve de verdad y para qué no."
 pubDate: 2026-06-04
 heroImage: "/blog-images/nuevo-ia-aplicada-sostenibilidad.jpg"
