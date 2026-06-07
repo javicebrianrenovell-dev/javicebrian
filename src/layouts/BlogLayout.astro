@@ -31,6 +31,31 @@ const categoriaLabel: Record<string, string> = {
   herramientas: 'Herramientas',
 };
 
+// Servicio pilar por categoría: enlace contextual artículo → página de servicio.
+const servicioPilar: Record<string, { href: string; titulo: string; texto: string }> = {
+  comunicacion: {
+    href: '/comunicacion-estrategica/',
+    titulo: 'Comunicación estratégica',
+    texto: 'Del relato a la decisión: comunicación con eje, no con calendario.',
+  },
+  sostenibilidad: {
+    href: '/comunicacion-sostenibilidad/',
+    titulo: 'Comunicación de sostenibilidad y ESG',
+    texto: 'Confianza sin greenwashing: datos ESG que se entienden y se creen.',
+  },
+  ia: {
+    href: '/ia-comunicacion/',
+    titulo: 'IA para comunicación corporativa',
+    texto: 'Adopción con criterio: dónde la IA ahorra horas o multiplica capacidad.',
+  },
+  herramientas: {
+    href: '/automatizacion-comunicacion/',
+    titulo: 'Automatización para comunicación',
+    texto: 'Que la máquina haga lo repetitivo para que tu equipo se centre en lo estratégico.',
+  },
+};
+const servicio = servicioPilar[category];
+
 const dateFormatter = new Intl.DateTimeFormat('es-ES', {
   day: 'numeric',
   month: 'long',
@@ -147,6 +172,20 @@ const shareWhatsApp = `https://api.whatsapp.com/send?text=${encodeURIComponent(t
               ))}
             </ul>
           </div>
+        )}
+
+        <!-- Enlace contextual al servicio pilar de la categoría -->
+        {servicio && (
+          <aside class="max-w-3xl mx-auto mt-12" data-reveal>
+            <a href={servicio.href} class="group block p-6 md:p-8 bg-[#1A1A1A] text-[#FAFAF7] rounded-xl no-underline">
+              <p class="font-display text-xs text-[#8DBE3F] mb-3">¿LO LLEVAMOS A TU ORGANIZACIÓN?</p>
+              <h2 class="text-xl md:text-2xl font-extrabold tracking-tight flex items-center gap-3 group-hover:text-[#8DBE3F] transition-colors">
+                <span>{servicio.titulo}</span>
+                <span class="text-[#8DBE3F] group-hover:translate-x-1 transition-transform">→</span>
+              </h2>
+              <p class="mt-3 text-base text-[#A0A0A0] leading-relaxed">{servicio.texto}</p>
+            </a>
+          </aside>
         )}
       </div>
     </div>
