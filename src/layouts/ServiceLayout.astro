@@ -18,6 +18,8 @@ const {
   cluster,
   problema,
   metodo,
+  paraQuien,
+  entregables,
   casos,
   faq,
   cta,
@@ -148,6 +150,58 @@ const breadcrumbSchema = {
     </section>
   )}
 
+  <!-- PARA QUIÉN -->
+  {paraQuien.length > 0 && (
+    <section class="bg-[#FAFAF7] text-[#1A1A1A]">
+      <div class="container-wide py-24 md:py-32">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+          <div class="md:col-span-4">
+            <span class="acento-verde block mb-6" data-reveal></span>
+            <p class="font-display text-xs text-[#467010] m-0">§ 03</p>
+            <p class="font-display text-xs text-[#6B6B6B] mt-2">PARA QUIÉN</p>
+            <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.5rem, 3vw, 2.5rem); max-width: 14ch;" data-mask-up>
+              <span>Para quién tiene sentido.</span>
+            </h2>
+          </div>
+          <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-7">
+            {paraQuien.map((p, i) => (
+              <div class="flex gap-3" data-reveal data-delay={`${i * 70}`}>
+                <span class="text-[#8DBE3F] font-bold">→</span>
+                <p class="m-0 text-base md:text-lg leading-relaxed text-[#3D3D3D]">{p}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- QUÉ INCLUYE / ENTREGABLES -->
+  {entregables.length > 0 && (
+    <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
+      <div class="container-wide py-24 md:py-32">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+          <div class="md:col-span-4">
+            <span class="acento-verde block mb-6" data-reveal></span>
+            <p class="font-display text-xs text-[#8DBE3F] m-0">§ 04</p>
+            <p class="font-display text-xs text-[#A0A0A0] mt-2">QUÉ INCLUYE</p>
+            <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.5rem, 3vw, 2.5rem); max-width: 14ch;" data-mask-up>
+              <span>Qué te llevas.</span>
+            </h2>
+          </div>
+          <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-7">
+            {entregables.map((e, i) => (
+              <div class="flex gap-3" data-reveal data-delay={`${i * 70}`}>
+                <span class="text-[#8DBE3F] font-bold">→</span>
+                <p class="m-0 text-base md:text-lg leading-relaxed text-[#A0A0A0]">{e}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- CASOS DE USO -->
   {casos.length > 0 && (
     <section class="bg-[#FAFAF7] text-[#1A1A1A]">
@@ -155,7 +209,7 @@ const breadcrumbSchema = {
         <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
           <div class="md:col-span-4">
             <span class="acento-verde block mb-6" data-reveal></span>
-            <p class="font-display text-xs text-[#467010] m-0">§ 03</p>
+            <p class="font-display text-xs text-[#467010] m-0">§ 05</p>
             <p class="font-display text-xs text-[#6B6B6B] mt-2">CASOS DE USO</p>
             <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.5rem, 3vw, 2.5rem); max-width: 14ch;" data-mask-up>
               <span>Dónde encaja.</span>
@@ -181,7 +235,7 @@ const breadcrumbSchema = {
         <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
           <div class="md:col-span-4">
             <span class="acento-verde block mb-6" data-reveal></span>
-            <p class="font-display text-xs text-[#8DBE3F] m-0">§ 04</p>
+            <p class="font-display text-xs text-[#8DBE3F] m-0">§ 06</p>
             <p class="font-display text-xs text-[#A0A0A0] mt-2">PREGUNTAS</p>
           </div>
           <div class="md:col-span-8">
@@ -207,7 +261,7 @@ const breadcrumbSchema = {
         <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
           <div>
             <span class="acento-verde block mb-6" data-reveal></span>
-            <p class="font-display text-xs text-[#467010] m-0">§ 05</p>
+            <p class="font-display text-xs text-[#467010] m-0">§ 07</p>
             <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-4" style="font-size: clamp(1.5rem, 3vw, 2.5rem);" data-mask-up>
               <span>Sigue leyendo</span>
             </h2>

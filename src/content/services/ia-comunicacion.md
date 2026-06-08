@@ -23,6 +23,19 @@ metodo:
   - num: "04"
     titulo: "Gobernanza y voz editorial"
     body: "Una política clara de uso para que la IA acelere sin despersonalizar. Tu voz y tu criterio editorial mandan; la máquina ayuda, no decide."
+paraQuien:
+  - "Departamentos de comunicación bajo presión por 'usar IA' sin saber por dónde."
+  - "Equipos que temen perder la voz de marca si delegan en la máquina."
+  - "Dirección que quiere productividad real, no postureo tecnológico."
+  - "Consultoras y agencias que necesitan escalar capacidad con criterio."
+  - "Organizaciones que ya usan IA, pero sin reglas ni método."
+entregables:
+  - "Diagnóstico de procesos: dónde se va el tiempo y qué se repite."
+  - "Casos de uso priorizados: dónde la IA ahorra horas o multiplica capacidad."
+  - "Criterios de adopción para evaluar cada herramienta antes de incorporarla."
+  - "Protocolo de uso de IA: qué se puede hacer, qué proteger y cómo."
+  - "Guía de voz editorial para que la IA acelere sin despersonalizar."
+  - "Acompañamiento en la implantación de los primeros casos."
 casos:
   - "Análisis de información a escala (medios, redes, tendencias)."
   - "Asistencia editorial sin perder la voz de marca."

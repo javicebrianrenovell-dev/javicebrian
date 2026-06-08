@@ -2,7 +2,7 @@
 title: "Comunicación de sostenibilidad y ESG"
 seoTitle: "Comunicación de sostenibilidad y ESG"
 description: "Comunico sostenibilidad con evidencia: traduzco datos ESG y memorias CSRD en mensajes que se entienden y se creen, sin caer en greenwashing."
-claim: "Sostenibilidad que se entiende. Y se cree."
+claim: "Comunicación de sostenibilidad que se entiende. Y se cree."
 pubDate: 2026-06-07
 heroImage: "/blog-images/nuevo-sostenibilidad-estrategica.jpg"
 cluster: sostenibilidad
@@ -23,6 +23,19 @@ metodo:
   - num: "04"
     titulo: "Medición del retorno"
     body: "Definimos qué indicadores dicen si la comunicación está funcionando. Más allá del alcance: reputación, confianza, percepción. Lo que no se mide, no se mejora."
+paraQuien:
+  - "Organizaciones que invierten de verdad en sostenibilidad y lo comunican mal."
+  - "Empresas obligadas a reportar bajo CSRD que quieren ir más allá del trámite."
+  - "Equipos ESG que necesitan traducir datos a mensajes creíbles."
+  - "Marcas que quieren posicionarse en sostenibilidad sin sobreprometer."
+  - "Instituciones con comunicación ambiental de servicio público."
+entregables:
+  - "Análisis de materialidad del mensaje: qué importa de verdad y qué es ruido."
+  - "Memoria de sostenibilidad convertida en herramienta de reputación, no en trámite."
+  - "Mapa de mensajes ESG por grupo de interés: inversores, clientes, equipo."
+  - "Argumentario con evidencia y trazabilidad, a prueba de greenwashing."
+  - "Cuadro de indicadores de percepción y reputación, más allá del alcance."
+  - "Plan de comunicación para crisis ambiental, cuando hay que explicar rápido y bien."
 casos:
   - "Memorias de sostenibilidad que de verdad se leen y refuerzan la reputación."
   - "Comunicación de informes y datos ESG a grupos de interés."

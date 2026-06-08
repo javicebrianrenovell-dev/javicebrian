@@ -2,7 +2,7 @@
 title: "Formación en IA para comunicación"
 seoTitle: "Formación en IA para comunicación"
 description: "Formación práctica en inteligencia artificial para equipos de comunicación: que tu gente siga siendo relevante sin perder el criterio."
-claim: "Tu equipo, al día. Sin perder el criterio."
+claim: "Formación en IA para comunicación. Sin perder el criterio."
 pubDate: 2026-06-07
 heroImage: "/blog-images/freepik__communication-director-a-hispanic-male-in-a-modern__42101.webp"
 cluster: ia
@@ -23,6 +23,19 @@ metodo:
   - num: "04"
     titulo: "Política interna de uso"
     body: "La formación termina con reglas claras: qué se puede hacer, qué no, qué cuidar con los datos y la voz. Para que la autonomía no se convierta en riesgo."
+paraQuien:
+  - "Equipos de comunicación que salen de formaciones genéricas sin saber qué aplicar."
+  - "Organizaciones que quieren autonomía en IA sin depender de externos."
+  - "Dirección que necesita una sesión específica para decidir con criterio."
+  - "Equipos con niveles dispares: de quien nunca tocó la IA a quien ya la usa sin método."
+  - "Empresas que quieren formar y, a la vez, fijar reglas de uso."
+entregables:
+  - "Diagnóstico de nivel y necesidades por rol."
+  - "Itinerario formativo adaptado a lo que cada perfil hace de verdad."
+  - "Sesiones prácticas con casos reales de tu organización."
+  - "Guía de uso de IA para consultar después de la formación."
+  - "Política interna de uso de IA, adaptada a tu organización."
+  - "Acompañamiento posterior para consolidar el uso."
 casos:
   - "Talleres prácticos para equipos de comunicación."
   - "Formación in-company adaptada a tu sector."
