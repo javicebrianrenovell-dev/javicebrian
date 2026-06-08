@@ -70,6 +70,43 @@ const manifiestoLineas = [
   'para que el resultado se vea en negocio,',
   'no solo en intenciones."',
 ];
+
+// Sectores donde trabajo — prueba de confianza por contexto, sin nombrar clientes.
+const sectores = [
+  { tag: 'Construcción', body: 'Un sector bajo escrutinio ambiental que necesita comunicar sostenibilidad sin exponerse.' },
+  { tag: 'Energía', body: 'Datos ESG y transición que hay que traducir a un relato creíble y defendible.' },
+  { tag: 'Institucional', body: 'Lo público explicado con claridad, rindiendo cuentas sin perder rigor.' },
+  { tag: 'Comunicación', body: 'Equipos y agencias que incorporan IA y criterio a sus procesos.' },
+];
+
+// Situaciones tipo — casos anónimos representativos (problema → enfoque → resultado).
+// Cualitativos a propósito: nada de métricas inventadas.
+const situaciones = [
+  {
+    sector: 'Construcción',
+    problema: 'Una constructora de tamaño medio quería comunicar su sostenibilidad, pero temía las acusaciones de greenwashing.',
+    enfoque: 'Ordené el relato sobre evidencias y un mapa de riesgos reputacionales.',
+    resultado: 'Mensajes defendibles ante clientes, administración y medios.',
+  },
+  {
+    sector: 'Energía',
+    problema: 'Una empresa del sector energético tenía datos ESG complejos y una memoria difícil de explicar.',
+    enfoque: 'Traduje los datos a una narrativa con criterios de evidencia y un plan de contenidos.',
+    resultado: 'Una historia de sostenibilidad que se entiende y se sostiene.',
+  },
+  {
+    sector: 'Institucional',
+    problema: 'Un organismo público debía explicar un proyecto ambiental técnico a una ciudadanía no experta.',
+    enfoque: 'Definí el eje del mensaje y los materiales para distintos públicos.',
+    resultado: 'Comunicación clara que rinde cuentas sin renunciar al rigor.',
+  },
+  {
+    sector: 'Comunicación',
+    problema: 'Un equipo de comunicación estaba saturado de tareas repetitivas y temía perder el control con la IA.',
+    enfoque: 'Decidimos qué automatizar, qué no tocar y una política interna de uso.',
+    resultado: 'Más tiempo para lo estratégico, sin perder la voz de la organización.',
+  },
+];
 ---
 
 <BaseLayout
@@ -229,6 +266,54 @@ const manifiestoLineas = [
               <p class="mt-2 text-base leading-relaxed text-[#3D3D3D]">{a.body}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIANZA — sectores + situaciones tipo anonimizadas -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container-wide py-24 md:py-32">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4 md:sticky md:top-28">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#8DBE3F] m-0">§ 06</p>
+          <p class="font-display text-xs text-[#A0A0A0] mt-2">DÓNDE TRABAJO</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 16ch;" data-mask-up>
+            <span>Trabajo donde la comunicación tiene consecuencias.</span>
+          </h2>
+          <p class="mt-6 text-base leading-relaxed text-[#A0A0A0] max-w-md" data-reveal data-delay="120">
+            Sectores con escrutinio, datos que demostrar y públicos exigentes. Donde comunicar bien no es estética: es reputación, confianza y negocio.
+          </p>
+        </div>
+
+        <div class="md:col-span-8">
+          <!-- Sectores -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 pb-14 mb-14 border-b border-white/10">
+            {sectores.map((s, i) => (
+              <div data-reveal data-delay={`${i * 80}`}>
+                <p class="font-display text-sm text-[#8DBE3F] m-0 tracking-wide">{s.tag}</p>
+                <p class="mt-2 text-base leading-relaxed text-[#A0A0A0]">{s.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <!-- Situaciones tipo -->
+          <p class="font-display text-xs text-[#A0A0A0] mb-8" data-reveal>SITUACIONES TIPO</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {situaciones.map((c, i) => (
+              <div class="p-7 rounded-lg bg-[#FAFAF7]/[0.03] border border-[#FAFAF7]/10" data-reveal data-delay={`${i * 90}`}>
+                <p class="font-display text-xs text-[#8DBE3F] tracking-wide m-0">{c.sector}</p>
+                <p class="mt-4 text-base leading-relaxed text-[#FAFAF7]/90">{c.problema}</p>
+                <p class="mt-3 text-sm leading-relaxed text-[#A0A0A0]"><span class="text-[#8DBE3F]">→</span> {c.enfoque}</p>
+                <p class="mt-4 pt-4 border-t border-white/10 text-sm font-semibold leading-relaxed text-[#FAFAF7]">{c.resultado}</p>
+              </div>
+            ))}
+          </div>
+
+          <p class="mt-8 text-xs text-[#6B6B6B] max-w-2xl" data-reveal>
+            Casos representativos, anonimizados para proteger a cada cliente. Si quieres referencias concretas, te las doy en una conversación.
+          </p>
         </div>
       </div>
     </div>
