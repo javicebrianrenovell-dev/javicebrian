@@ -61,4 +61,4 @@ Medir la comunicación en sostenibilidad no consiste en buscar el número perfec
 
 > Si tu informe de comunicación nunca trae malas noticias, no estás midiendo el retorno: estás contando una historia.
 
-Y eso, en sostenibilidad, se nota enseguida. Si quieres entrar más a fondo en por qué el mensaje ambiental necesita rigor, escribí sobre ello en [comunicación especializada en sostenibilidad](/blog/comunicacion-especializada-sostenibilidad/).
+Y eso, en sostenibilidad, se nota enseguida. Elegir bien esos indicadores y atarlos al objetivo de la organización es parte del servicio de [comunicación de sostenibilidad y ESG](/comunicacion-sostenibilidad/). Si quieres entrar más a fondo en por qué el mensaje ambiental necesita rigor, escribí sobre ello en [comunicación especializada en sostenibilidad](/blog/comunicacion-especializada-sostenibilidad/).

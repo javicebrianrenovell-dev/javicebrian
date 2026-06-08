@@ -42,6 +42,10 @@ const services = defineCollection({
         })
       )
       .default([]),
+    // Perfiles para los que tiene sentido el servicio (P3 — orientación a decisión).
+    paraQuien: z.array(z.string()).default([]),
+    // Entregables concretos que se llevan al cliente (P3 — qué incluye).
+    entregables: z.array(z.string()).default([]),
     casos: z.array(z.string()).default([]),
     faq: z
       .array(

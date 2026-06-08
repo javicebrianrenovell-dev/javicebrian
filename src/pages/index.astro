@@ -33,13 +33,23 @@ const servicios = [
   },
   {
     titulo: 'Comunicación de sostenibilidad y ESG',
-    body: 'Confianza sin greenwashing. Datos ESG traducidos a mensajes que se entienden y se creen.',
+    body: 'Confianza sin greenwashing. Datos ESG y memorias CSRD traducidos a mensajes que se entienden y se creen.',
     href: '/comunicacion-sostenibilidad/',
   },
   {
     titulo: 'IA aplicada a la comunicación',
-    body: 'Adopción con criterio: dónde ahorra horas o multiplica capacidad. Formación y automatización.',
+    body: 'Adopción con criterio: dónde la IA ahorra horas o multiplica capacidad, sin perder la voz.',
     href: '/ia-comunicacion/',
+  },
+  {
+    titulo: 'Automatización para comunicación',
+    body: 'Lo repetitivo, a la máquina. Tu equipo, a lo estratégico. Automatización con control de calidad.',
+    href: '/automatizacion-comunicacion/',
+  },
+  {
+    titulo: 'Formación en IA para comunicación',
+    body: 'Que tu equipo use la IA con criterio y autonomía. Formación práctica que aterriza en el día a día.',
+    href: '/formacion-ia-comunicacion/',
   },
 ];
 
@@ -64,8 +74,10 @@ const manifiestoLineas = [
 
 <BaseLayout
   title="Javi Cebrián · Director de Comunicación con sostenibilidad e IA"
+  seoTitle="Comunicación, sostenibilidad e IA · Javi Cebrián"
   description="Comunicación que mueve organizaciones. Con sostenibilidad e IA como ventaja. Director de Comunicación y Desarrollo de Negocio en Imedes."
 >
+  <Schema type="Person" />
   <Schema type="ProfessionalService" />
 
   <!-- HERO MAXIMALISTA -->
@@ -97,14 +109,17 @@ const manifiestoLineas = [
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end mt-10">
         <div class="md:col-span-7" data-reveal data-delay="500">
           <p class="text-base md:text-lg leading-relaxed text-[#FAFAF7]/85 max-w-2xl">
-            Ayudo a organizaciones y equipos directivos a convertir <span class="text-[#8DBE3F] font-semibold">comunicación, sostenibilidad e inteligencia artificial</span> en ventaja estratégica. Director de Comunicación y Desarrollo de Negocio en Imedes.
+            Ayudo a organizaciones y equipos directivos a convertir <span class="text-[#8DBE3F] font-semibold">comunicación estratégica, sostenibilidad e inteligencia artificial</span> en decisiones de negocio, no solo en intenciones. Director de Comunicación y Desarrollo de Negocio en Imedes.
           </p>
-          <div class="flex gap-3 mt-8 flex-wrap">
+          <div class="flex gap-3 mt-8 flex-wrap items-center">
             <a href="/trabajemos-juntos/" data-magnetic="0.3" class="inline-flex items-center gap-2 px-8 py-4 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors">
               Empieza el proyecto →
             </a>
-            <a href="/quien-soy/" data-magnetic="0.2" class="inline-flex items-center gap-2 px-8 py-4 border border-[#FAFAF7]/20 text-[#FAFAF7] font-medium text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7]/5 transition-colors">
-              Quién soy
+            <a href="/servicios/" data-magnetic="0.2" class="inline-flex items-center gap-2 px-8 py-4 border border-[#FAFAF7]/20 text-[#FAFAF7] font-medium text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7]/5 transition-colors">
+              Ver servicios
+            </a>
+            <a href="/quien-soy/" class="text-sm text-[#A0A0A0] underline-offset-4 hover:text-[#FAFAF7] hover:underline transition-colors ml-1">
+              o conóceme
             </a>
           </div>
         </div>

@@ -34,4 +34,6 @@ La comunicación futura actúa como puente entre aspiraciones humanas y capacida
 
 Los nuevos desafíos exigen reimaginar nuestras interacciones con el mundo. Mi trayectoria profesional se enfoca en aprendizaje continuo, adaptación estratégica y creatividad para impulsar transformaciones significativas alineadas con intereses públicos y privados.
 
+Frente a tanto cambio, lo que no cambia es la necesidad de un eje. Esa es la base del servicio de [comunicación estratégica](/comunicacion-estrategica/): decidir el rumbo antes de elegir las herramientas.
+
 ¿Tu organización está preparada para estos desafíos? [Hablamos](/contacto/).

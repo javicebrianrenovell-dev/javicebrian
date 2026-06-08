@@ -78,3 +78,5 @@ Y si de verdad no hay nada que contar todavía, lo más sensato es callar y trab
 > La sostenibilidad es estratégica o no será.
 
 Y su comunicación corre la misma suerte: o se sostiene sobre hechos, o tarde o temprano se cae. No conozco atajos para esto, y desconfío de quien los vende. Lo que sí sé es que la empresa que mide, decide y cuenta con pruebas tiene un activo que el lavado verde nunca podrá imitar: que cuando habla, se la cree.
+
+Quedarse de ese lado, el de las pruebas, es justo lo que trabajo en el servicio de [comunicación de sostenibilidad sin greenwashing](/comunicacion-sostenibilidad/).

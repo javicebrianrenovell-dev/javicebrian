@@ -52,7 +52,7 @@ Dos tentaciones acechan a la comunicación ambiental institucional. La primera e
 
 El antídoto es el mismo en los dos casos: decir la verdad, con datos, y contar también lo que no salió. Una administración que reconoce que una medida no funcionó y explica el cambio comunica mejor que una que solo enseña éxitos. El [discurso ambiental honesto](/blog/discurso-ambiental-en-la-politica-un-compromiso-necesario-contra-el-cambio-climatico-y-el-negacionismo/) es la mejor defensa frente a quien niega el problema, precisamente porque no exagera.
 
-Esto vale igual para las empresas del sector ambiental que trabajan con lo público. La empresa que presta un servicio de gestión de residuos o de aguas no puede esconderse detrás del ayuntamiento. Si el servicio es bueno, contarlo bien es parte de hacerlo bien.
+Esto vale igual para las empresas del sector ambiental que trabajan con lo público. La empresa que presta un servicio de gestión de residuos o de aguas no puede esconderse detrás del ayuntamiento. Si el servicio es bueno, contarlo bien es parte de hacerlo bien. Aquí es donde entra la [comunicación de sostenibilidad con evidencia](/comunicacion-sostenibilidad/): explicar el trabajo ambiental con datos y sin postureo, que es lo único que sostiene la confianza.
 
 Al final, la regla es sencilla y no tiene vuelta de hoja.
 

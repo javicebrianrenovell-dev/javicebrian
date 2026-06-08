@@ -5,6 +5,39 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const servicios = (await getCollection('services', ({ data }) => !data.draft)).sort(
   (a, b) => a.data.order - b.data.order
 );
+
+// Reencuadre por necesidad del cliente: cada servicio responde a un "necesito…".
+const necesidadPorSlug: Record<string, string> = {
+  'comunicacion-estrategica': 'Necesito ordenar mi comunicación y darle dirección.',
+  'comunicacion-sostenibilidad': 'Necesito comunicar mi sostenibilidad sin caer en greenwashing.',
+  'ia-comunicacion': 'Necesito introducir la IA en mi equipo con criterio.',
+  'automatizacion-comunicacion': 'Necesito automatizar procesos repetitivos y ganar tiempo.',
+  'formacion-ia-comunicacion': 'Necesito formar a mi equipo en IA sin perder criterio.',
+};
+
+// Cómo suelo trabajar — método transversal a todos los servicios.
+const comoTrabajo = [
+  { num: '01', titulo: 'Diagnóstico', body: 'Escucho antes de proponer. Qué dices, qué dicen de ti y dónde está el hueco.' },
+  { num: '02', titulo: 'Foco estratégico', body: 'Definimos el eje y las prioridades. Menos frentes, mejor defendidos.' },
+  { num: '03', titulo: 'Plan de acción', body: 'Un plan con criterio, no un calendario lleno. Qué se hace, en qué orden y por qué.' },
+  { num: '04', titulo: 'Ejecución y acompañamiento', body: 'Dirijo, acompaño o formo a tu equipo, según tu estructura. No te dejo solo en lo difícil.' },
+  { num: '05', titulo: 'Medición', body: 'Definimos cómo se ve el avance. La comunicación rinde cuentas como cualquier otra área.' },
+];
+
+const paraQuien = [
+  'Equipos directivos que deciden mejor cuando la comunicación tiene eje.',
+  'Departamentos de comunicación que quieren incorporar sostenibilidad e IA sin perder la voz.',
+  'Organizaciones con agenda ESG que necesitan comunicar con evidencia.',
+  'Consultoras y agencias con procesos de comunicación intensivos.',
+  'Instituciones que rinden cuentas y necesitan explicar bien lo público.',
+];
+
+const queNoHago = [
+  'No vendo IA por moda: si no ahorra horas o no multiplica capacidad, no entra.',
+  'No comunico sostenibilidad sin evidencias: lo que no se puede sostener, no se cuenta.',
+  'No sustituyo estrategia por volumen: más publicaciones no es mejor comunicación.',
+  'No te lleno el calendario: te ayudo a que cada acción tenga un porqué.',
+];
 ---
 
 <BaseLayout
@@ -24,8 +57,9 @@ const servicios = (await getCollection('services', ({ data }) => !data.draft)).s
         <span data-mask-up>Cómo puedo ayudarte.</span>
       </h1>
       <p class="mt-8 text-lg md:text-xl leading-relaxed text-[#FAFAF7]/85 max-w-2xl" data-reveal data-delay="200">
-        Tres mundos, un mismo criterio: comunicación, sostenibilidad e inteligencia artificial al servicio de
-        organizaciones que quieren decidir mejor, explicar mejor y avanzar con dirección.
+        Comunicación, sostenibilidad e inteligencia artificial no son tres disciplinas sueltas. Son tres
+        palancas de la misma decisión: la comunicación ordena, la sostenibilidad da reputación y la IA
+        multiplica productividad. Las trabajo juntas para que decidas mejor, expliques mejor y avances con dirección.
       </p>
     </div>
   </section>
@@ -45,6 +79,9 @@ const servicios = (await getCollection('services', ({ data }) => !data.draft)).s
             <p class="font-display text-3xl text-[#8DBE3F] m-0 leading-none">0{i + 1}</p>
           </div>
           <div class="md:col-span-7">
+            {necesidadPorSlug[s.slug] && (
+              <p class="font-display text-xs text-[#467010] m-0 mb-2 tracking-wide">{necesidadPorSlug[s.slug]}</p>
+            )}
             <h2 class="font-extrabold m-0 leading-tight tracking-[-0.02em] group-hover:text-[#467010] transition-colors" style="font-size: clamp(1.5rem, 3vw, 2.25rem);">
               {s.data.title}
             </h2>
@@ -60,8 +97,83 @@ const servicios = (await getCollection('services', ({ data }) => !data.draft)).s
     </div>
   </section>
 
+  <!-- CÓMO SUELO TRABAJAR -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#8DBE3F] m-0">§ 01</p>
+          <p class="font-display text-xs text-[#A0A0A0] mt-2">CÓMO SUELO TRABAJAR</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 14ch;" data-mask-up>
+            <span>Un método, no una ocurrencia.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-8">
+          {comoTrabajo.map((m, i) => (
+            <div class="py-6 grid grid-cols-1 sm:grid-cols-12 gap-4" style={i > 0 ? 'border-top: 1px solid rgba(255,255,255,0.1);' : ''} data-reveal data-delay={`${i * 80}`}>
+              <p class="sm:col-span-2 font-display text-3xl text-[#8DBE3F] m-0 leading-none">{m.num}</p>
+              <div class="sm:col-span-10">
+                <h3 class="font-extrabold m-0 leading-tight tracking-[-0.02em]" style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">{m.titulo}</h3>
+                <p class="mt-2 text-base md:text-lg leading-relaxed text-[#A0A0A0] max-w-2xl">{m.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN TIENE SENTIDO -->
+  <section class="bg-[#FAFAF7] text-[#1A1A1A]">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#467010] m-0">§ 02</p>
+          <p class="font-display text-xs text-[#6B6B6B] mt-2">PARA QUIÉN</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 12ch;" data-mask-up>
+            <span>Para quién tiene sentido.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-7">
+          {paraQuien.map((p, i) => (
+            <div class="flex gap-3" data-reveal data-delay={`${i * 70}`}>
+              <span class="text-[#8DBE3F] font-bold">→</span>
+              <p class="m-0 text-base md:text-lg leading-relaxed text-[#3D3D3D]">{p}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ NO HAGO -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#8DBE3F] m-0">§ 03</p>
+          <p class="font-display text-xs text-[#A0A0A0] mt-2">QUÉ NO HAGO</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 14ch;" data-mask-up>
+            <span>Criterio también es decir que no.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-8">
+          {queNoHago.map((q, i) => (
+            <div class="flex gap-3 py-4" style={i > 0 ? 'border-top: 1px solid rgba(255,255,255,0.1);' : ''} data-reveal data-delay={`${i * 70}`}>
+              <span class="text-[#8DBE3F] font-bold shrink-0">✕</span>
+              <p class="m-0 text-base md:text-lg leading-relaxed text-[#A0A0A0]">{q}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
-  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
     <div class="container-wide py-20 md:py-28">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
         <div class="md:col-span-7">

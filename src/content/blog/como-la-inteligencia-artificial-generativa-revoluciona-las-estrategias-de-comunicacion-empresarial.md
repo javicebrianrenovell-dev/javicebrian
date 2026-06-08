@@ -27,4 +27,4 @@ La inteligencia artificial no reemplaza la creatividad humana. La potencia. Para
 
 ## Conclusión
 
-La IA generativa abre una vía concreta para que la comunicación deje de ser tarea operativa y se convierta en palanca de negocio. Si quieres explorar cómo integrarla en tu organización, [hablamos](/contacto/).
+La IA generativa abre una vía concreta para que la comunicación deje de ser tarea operativa y se convierta en palanca de negocio. Es justo lo que trabajo en el servicio de [IA aplicada a la comunicación](/ia-comunicacion/): adoptarla con criterio, no por moda. Si quieres explorar cómo integrarla en tu organización, [hablamos](/contacto/).

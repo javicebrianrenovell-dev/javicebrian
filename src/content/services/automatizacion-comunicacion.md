@@ -23,6 +23,19 @@ metodo:
   - num: "04"
     titulo: "Control de calidad y voz"
     body: "Automatizar no es desentenderse. Definimos controles para que lo automático mantenga la calidad y la voz de marca. La máquina ejecuta; el criterio sigue siendo tuyo."
+paraQuien:
+  - "Equipos de comunicación que pierden horas en tareas mecánicas y repetitivas."
+  - "Agencias que quieren reducir tiempos y errores sin ampliar plantilla."
+  - "Responsables que montan el mismo informe cada semana a mano."
+  - "Organizaciones sin equipo técnico que necesitan soluciones no-code."
+  - "Estructuras que prefieren empezar pequeño y ampliar según resultados."
+entregables:
+  - "Mapa de procesos: cómo se trabaja de verdad, paso a paso."
+  - "Identificación de cuellos: qué roba más tiempo y aporta menos valor."
+  - "Una o dos automatizaciones funcionando, con IA y no-code cuando encaja."
+  - "Automatización documentada para que tu equipo la mantenga sin depender de mí."
+  - "Controles de calidad y voz para que lo automático no pierda nivel."
+  - "Hoja de ruta de las siguientes automatizaciones por fases."
 casos:
   - "Flujos de publicación y programación de contenidos."
   - "Informes recurrentes (alcance, menciones, KPIs)."

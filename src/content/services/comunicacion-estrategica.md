@@ -2,7 +2,7 @@
 title: "Comunicación estratégica para organizaciones"
 seoTitle: "Comunicación estratégica"
 description: "Dirección de comunicación con eje, no con calendario. Del relato a la decisión: ayudo a organizaciones a comunicar con criterio y dirección."
-claim: "Comunicación con eje. No con calendario."
+claim: "Comunicación estratégica con eje. No con calendario."
 pubDate: 2026-06-07
 heroImage: "/blog-images/javi-cebrian_director_comunicacion.webp"
 cluster: comunicacion
@@ -23,6 +23,19 @@ metodo:
   - num: "04"
     titulo: "Medición de intangibles"
     body: "Reputación, confianza, claridad. Definimos cómo se ven los avances de lo que parece que no se puede medir, para que la comunicación rinda cuentas como cualquier otra área."
+paraQuien:
+  - "Equipos directivos que deciden mejor cuando la comunicación tiene eje."
+  - "Departamentos de comunicación que producen mucho y dirigen poco."
+  - "Organizaciones en reposicionamiento, fusión o cambio de etapa."
+  - "Instituciones que rinden cuentas y necesitan explicar bien lo público."
+  - "Estructuras pequeñas que no pueden permitirse desperdiciar esfuerzo."
+entregables:
+  - "Diagnóstico de comunicación: qué dices, qué dicen de ti y dónde está el hueco."
+  - "Mapa de mensajes: el eje y los dos o tres mensajes que lo sostienen."
+  - "Arquitectura de mensajes por público y canal, sin perder coherencia."
+  - "Plan de acción priorizado, no un calendario sin criterio."
+  - "Cuadro de indicadores para medir claridad, confianza y reputación."
+  - "Acompañamiento a dirección en las decisiones de comunicación."
 casos:
   - "Reposicionamiento institucional o de marca."
   - "Comunicación interna en procesos de cambio."

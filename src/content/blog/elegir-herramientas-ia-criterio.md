@@ -57,3 +57,5 @@ Mi recomendación práctica: en vez de preguntarte qué herramienta usar, lista 
 Elegir bien las herramientas de IA es, sobre todo, decir que no a casi todas. Decir que no al noventa por ciento de las novedades no es quedarse atrás. Es proteger tu tiempo y tu atención, que son los dos recursos que de verdad escasean. El criterio no consiste en saber qué hay, sino en saber qué te conviene y por qué.
 
 Yo lo veo así: la IA es una herramienta de trabajo, no un hobby. Y con las herramientas de trabajo uno no quiere la más nueva, quiere la que le deja hacer mejor su oficio. Probar está bien, mantenerse curioso está bien. Pero entre la curiosidad y montar tu trabajo sobre algo hay un filtro de preguntas que conviene no saltarse. Si una herramienta pasa esas cinco, adelante. Si no, ya saldrá otra la semana que viene.
+
+Ese mismo criterio para elegir, en vez de perseguir, es el eje del servicio de [IA para comunicación con criterio](/ia-comunicacion/): pocas herramientas bien usadas valen más que un catálogo entero.
