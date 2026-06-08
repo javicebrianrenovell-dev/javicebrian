@@ -14,6 +14,7 @@ import { ClientRouter } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Schema from '../components/Schema.astro';
+import { GA_MEASUREMENT_ID } from '../consts';
 
 interface Props {
   title: string;
@@ -79,14 +80,53 @@ const fullTitle = headTitle.includes('Javi Cebrián') ? headTitle : `${headTitle
     </main>
     <Footer />
 
+    {GA_MEASUREMENT_ID && (
+      <div
+        id="cookie-consent"
+        class="hidden fixed bottom-0 left-0 right-0 z-50 bg-[#1A1A1A] text-[#FAFAF7] border-t border-[#8DBE3F]/40"
+        role="dialog"
+        aria-live="polite"
+        aria-label="Aviso de cookies"
+      >
+        <div class="container-wide py-5 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+          <p class="text-sm leading-relaxed text-[#FAFAF7]/85 max-w-2xl m-0">
+            Uso cookies de medición (Google Analytics) solo para entender qué contenido te resulta útil.
+            Nada de publicidad. Puedes aceptarlas o rechazarlas. Más detalle en la
+            <a href="/politica-de-cookies/" class="underline text-[#FAFAF7] hover:text-[#8DBE3F]">política de cookies</a>.
+          </p>
+          <div class="flex items-center gap-3 shrink-0">
+            <button
+              id="cookie-reject"
+              type="button"
+              class="px-5 py-2.5 text-sm font-semibold text-[#FAFAF7] border border-[#FAFAF7]/25 rounded-md hover:bg-[#FAFAF7]/10 transition-colors"
+            >
+              Rechazar
+            </button>
+            <button
+              id="cookie-accept"
+              type="button"
+              class="px-6 py-2.5 text-sm font-bold text-[#1A1A1A] bg-[#8DBE3F] rounded-md hover:bg-[#FAFAF7] transition-colors"
+            >
+              Aceptar
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+
     <script>
       import { initAnimations } from '../scripts/animations';
+      import { initAnalytics } from '../scripts/analytics';
 
       // Primera carga
       initAnimations();
+      initAnalytics();
 
       // Re-init tras View Transitions de Astro
-      document.addEventListener('astro:page-load', initAnimations);
+      document.addEventListener('astro:page-load', () => {
+        initAnimations();
+        initAnalytics();
+      });
     </script>
   </body>
 </html>

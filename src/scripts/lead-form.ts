@@ -7,6 +7,12 @@
 
 const TOTAL_STEPS = 4;
 
+// Helper de analítica: no-op si no hay consentimiento/GA configurado.
+function track(event: string, params: Record<string, unknown> = {}): void {
+  const fn = (window as unknown as { jcTrack?: (e: string, p?: Record<string, unknown>) => void }).jcTrack;
+  if (typeof fn === 'function') fn(event, params);
+}
+
 export function initLeadForm(): void {
   const form = document.getElementById('lead-form') as HTMLFormElement | null;
   if (!form) return;
@@ -26,6 +32,7 @@ export function initLeadForm(): void {
   if (!stepLabel || !pctLabel || !bar || !prevBtn || !nextBtn || !submitBtn || !submitLabel || !feedback) return;
 
   let current = 1;
+  let started = false; // para emitir form_start una sola vez
 
   const render = (): void => {
     steps.forEach(s => {
@@ -87,6 +94,10 @@ export function initLeadForm(): void {
       showStepError('Elige una opción para continuar.');
       return;
     }
+    if (!started) {
+      started = true;
+      track('form_start');
+    }
     if (current < TOTAL_STEPS) {
       current += 1;
       feedback.className = 'hidden';
@@ -122,6 +133,13 @@ export function initLeadForm(): void {
       const json = await res.json().catch(() => ({}));
 
       if (res.ok && json.success) {
+        // Conversión. Solo datos de cualificación, nunca datos personales.
+        track('generate_lead', {
+          organizacion: data.organizacion || '',
+          encargo: data.encargo || '',
+          plazo: data.plazo || '',
+          presupuesto: data.presupuesto || '',
+        });
         feedback.className = 'block mb-6 p-5 rounded-md bg-[#8DBE3F]/15 text-[#1A1A1A] border border-[#8DBE3F]';
         feedback.innerHTML = `
           <p class="font-display text-xs text-[#1A1A1A] mb-2">RECIBIDO</p>

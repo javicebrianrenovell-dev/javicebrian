@@ -87,7 +87,7 @@ const links = {
         <ul class="space-y-2">
           {links.social.map(({ label, href }) => (
             <li>
-              <a href={href} class="text-sm text-[#FAFAF7]/80 hover:text-[#FAFAF7] transition-colors inline-flex items-center gap-1" target="_blank" rel="noopener noreferrer">
+              <a href={href} class="text-sm text-[#FAFAF7]/80 hover:text-[#FAFAF7] transition-colors inline-flex items-center gap-1" target="_blank" rel="noopener noreferrer" data-ga-event="contact_click" data-ga-label={`footer_${label.toLowerCase()}`}>
                 {label} <span class="text-[10px]">↗</span>
               </a>
             </li>

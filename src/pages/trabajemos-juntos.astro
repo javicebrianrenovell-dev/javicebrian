@@ -25,6 +25,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="bg-[#FAFAF7] border-b border-[#E5E5E0]">
     <div class="container-base py-16 md:py-24 max-w-3xl">
 
+      <!-- Nota de encaje: qué tipo de proyectos cualifica este formulario -->
+      <div class="mb-10 p-5 border-l-2 border-[#8DBE3F] bg-[#8DBE3F]/8" data-reveal>
+        <p class="text-sm leading-relaxed text-[#3D3D3D] m-0">
+          Este formulario está pensado para proyectos de <strong class="text-[#1A1A1A]">comunicación estratégica, sostenibilidad, IA aplicada, automatización o formación</strong>. Con cuatro respuestas podré valorar si puedo aportarte valor y proponerte el siguiente paso con criterio — mejor que con un email en frío.
+        </p>
+      </div>
+
       <!-- Barra de progreso -->
       <div class="mb-10" data-reveal>
         <div class="flex items-center justify-between mb-3">
@@ -174,8 +181,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
 
-        <p class="text-xs text-[#6B6B6B] mt-6">
-          ¿Prefieres email directo? <a href="mailto:jcebrian@grupimedes.com" class="underline text-[#1A1A1A] hover:text-[#8DBE3F]">jcebrian@grupimedes.com</a>
+        <p class="text-xs text-[#6B6B6B] mt-6 leading-relaxed">
+          Usaré tus datos solo para responder a tu consulta. El formulario me ayuda a responderte mejor, pero si lo prefieres también puedes escribirme directamente a <a href="mailto:jcebrian@grupimedes.com" data-ga-event="contact_click" data-ga-label="email_form" class="underline text-[#1A1A1A] hover:text-[#8DBE3F]">jcebrian@grupimedes.com</a>.
         </p>
       </form>
     </div>
