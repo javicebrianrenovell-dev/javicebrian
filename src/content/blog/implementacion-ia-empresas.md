@@ -76,4 +76,6 @@ Para que la implementación sea efectiva, debe alinearse con la estrategia gener
 
 La IA no es solo una tendencia, sino un componente clave para el crecimiento y diferenciación empresarial. La clave está en desarrollar una estrategia clara, capacitar al talento interno y medir continuamente el impacto.
 
+Cuando se trata de comunicación, ese plan es lo que trabajo en el servicio de [introducir la IA en tu equipo de comunicación](/ia-comunicacion/): el orden de los pasos pesa más que la herramienta que elijas.
+
 ¿Quieres implantar IA en tu empresa con un plan que sí funcione? [Hablamos](/contacto/).

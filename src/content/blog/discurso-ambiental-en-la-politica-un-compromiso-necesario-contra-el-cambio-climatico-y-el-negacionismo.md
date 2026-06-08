@@ -51,4 +51,6 @@ El discurso ambiental requiere acción urgente coordinada, no declaraciones de i
 
 Imperativos: políticas basadas en ciencia, confianza institucional y movilización colectiva para construir una sociedad resiliente y equitativa.
 
+Un discurso ambiental creíble se construye con datos y honestidad, no con eslóganes. Eso es lo que trabajo en el servicio de [comunicación de sostenibilidad sin greenwashing](/comunicacion-sostenibilidad/), la mejor defensa frente al negacionismo.
+
 ¿Trabajas en una organización pública con responsabilidades ambientales? [Hablamos](/contacto/).

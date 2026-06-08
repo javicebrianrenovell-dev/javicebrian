@@ -49,4 +49,4 @@ Con chatbots IA (Make, Dialogflow, Rasa, ChatGPT) se cubre el primer nivel de at
 
 ## Conclusión
 
-La automatización es esencial para mantener competitividad y garantizar crecimiento sostenible a largo plazo. Si tu agencia o departamento de comunicación quiere empezar por aquí, [hablamos](/contacto/).
+La automatización es esencial para mantener competitividad y garantizar crecimiento sostenible a largo plazo. Es lo que trabajo en el servicio de [automatización de procesos de comunicación](/automatizacion-comunicacion/): empezar por el proceso, no por la herramienta. Si tu agencia o departamento de comunicación quiere empezar por aquí, [hablamos](/contacto/).

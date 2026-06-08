@@ -45,4 +45,6 @@ Plataformas como Make permiten implementar soluciones complejas sin programació
 4. Colaborar con expertos cuando haga falta.
 5. Monitorear y optimizar resultados.
 
+Montar una agencia de agentes no va de acumular herramientas, sino de elegir bien dónde la máquina libera tiempo y dónde decide la persona. Eso es lo que trabajo en el servicio de [IA aplicada a la comunicación](/ia-comunicacion/), siempre con criterio antes que con entusiasmo.
+
 ¿Quieres montar una "agencia de agentes" dentro de tu organización? [Hablamos](/contacto/).
