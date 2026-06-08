@@ -33,6 +33,8 @@ export default defineConfig({
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
+      // El recurso descargable es noindex (gate): fuera del sitemap.
+      filter: (page) => !page.includes('/recursos/checklist-greenwashing/checklist/'),
       serialize(item) {
         const path = new URL(item.url).pathname;
         item.lastmod = (blogDates[path] ?? buildDate).toISOString();

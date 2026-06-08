@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+// Checklist operativo. Cada bloque, una pregunta de control. Si la respuesta
+// honesta es "no", hay riesgo. Cualitativo y accionable, sin humo.
+const bloques = [
+  {
+    num: '01',
+    titulo: 'Antes de comunicar — la base',
+    items: [
+      'Cada afirmación tiene un dato o una evidencia detrás que podrías enseñar.',
+      'Distingues lo que ya has logrado de lo que todavía es un objetivo futuro.',
+      'Evitas absolutos sin matiz ("100% sostenible", "ecológico", "verde") salvo que puedas probarlos.',
+      'La sostenibilidad de la que hablas es relevante para tu negocio, no un adorno.',
+    ],
+  },
+  {
+    num: '02',
+    titulo: 'Las palabras — lenguaje',
+    items: [
+      'Defines los términos vagos (sostenible, responsable, eco) o directamente los evitas.',
+      'Queda claro si la afirmación se refiere al producto, a la empresa o solo a una parte.',
+      'No usas datos relativos engañosos ("un 50% menos") sin decir respecto a qué.',
+      'Las certificaciones o sellos que citas son reconocidos y verificables.',
+    ],
+  },
+  {
+    num: '03',
+    titulo: 'Las pruebas — evidencia',
+    items: [
+      'Puedes respaldar cada afirmación con fuente, método y fecha.',
+      'Los datos están actualizados y son representativos, no el mejor caso puntual.',
+      'Sabes a quién derivar si alguien pide la evidencia completa.',
+      'Las imágenes (naturaleza, verde) no sugieren más de lo que de verdad haces.',
+    ],
+  },
+  {
+    num: '04',
+    titulo: 'El equilibrio — honestidad',
+    items: [
+      'Reconoces también lo que aún no haces bien o estás mejorando.',
+      'El peso visual y comunicativo del mensaje verde es proporcional a su peso real.',
+      'No compensas un impacto negativo grande solo con un gesto positivo pequeño.',
+      'Si retiraras la palabra "sostenible", el mensaje seguiría siendo cierto.',
+    ],
+  },
+  {
+    num: '05',
+    titulo: 'El riesgo — antes de publicar',
+    items: [
+      'El mensaje resistiría una pregunta incómoda de un periodista o un regulador.',
+      'Has comprobado que cumple la normativa europea sobre alegaciones ambientales.',
+      'Alguien valida internamente los claims ambientales antes de que salgan.',
+      'Tienes un proceso para corregir rápido si un dato cambia.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Checklist: comunicar sostenibilidad sin greenwashing"
+  description="Veinte controles para que tu comunicación de sostenibilidad sea creíble, útil y defendible. Recurso práctico de Javi Cebrián."
+  noindex={true}
+>
+  <!-- Cabecera del recurso -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7] print:bg-white print:text-black">
+    <div class="container-base py-16 md:py-20">
+      <p class="font-display text-xs text-[#8DBE3F] mb-4 print:text-black">RECURSO · JAVI CEBRIÁN</p>
+      <h1 class="font-extrabold leading-[0.95] tracking-[-0.02em] m-0" style="font-size: clamp(2rem, 5vw, 3.5rem);">
+        Comunicar sostenibilidad<br />sin greenwashing
+      </h1>
+      <p class="mt-6 text-base md:text-lg text-[#A0A0A0] max-w-2xl print:text-black">
+        Veinte controles en cinco bloques. Pásalos antes de publicar cualquier mensaje de sostenibilidad. Si la respuesta honesta a un control es "no", ahí tienes un riesgo que cerrar.
+      </p>
+      <div class="mt-8 print:hidden">
+        <button
+          type="button"
+          id="print-btn"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors"
+        >
+          Imprimir o guardar en PDF
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checklist -->
+  <section class="bg-[#FAFAF7] text-[#1A1A1A] print:bg-white">
+    <div class="container-base py-16 md:py-20 max-w-3xl">
+      {bloques.map((b) => (
+        <div class="mb-12 break-inside-avoid">
+          <div class="flex items-baseline gap-4 mb-5">
+            <span class="font-display text-2xl text-[#8DBE3F]">{b.num}</span>
+            <h2 class="font-extrabold tracking-tight m-0" style="font-size: clamp(1.25rem, 2.5vw, 1.6rem);">{b.titulo}</h2>
+          </div>
+          <ul class="space-y-3">
+            {b.items.map((item) => (
+              <li class="flex gap-3 items-start">
+                <span class="mt-0.5 w-5 h-5 shrink-0 border-2 border-[#1A1A1A] rounded-[4px] inline-block" aria-hidden="true"></span>
+                <span class="text-base leading-relaxed text-[#1A1A1A]">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+      <!-- Cierre -->
+      <div class="mt-4 p-6 border-l-2 border-[#8DBE3F] bg-[#8DBE3F]/8 break-inside-avoid">
+        <p class="text-base leading-relaxed text-[#1A1A1A] m-0">
+          <strong>¿Tres o más controles en "no"?</strong> Tu comunicación de sostenibilidad tiene riesgo reputacional. No es un problema de redacción: es de criterio y evidencia. Eso es justo lo que ayudo a ordenar.
+        </p>
+      </div>
+
+      <!-- CTA (no se imprime) -->
+      <div class="mt-10 print:hidden">
+        <a
+          href="/trabajemos-juntos/"
+          data-ga-event="cta_click"
+          data-ga-label="recurso_checklist_cta"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-[#1A1A1A] text-[#FAFAF7] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#8DBE3F] hover:text-[#1A1A1A] transition-colors"
+        >
+          Cuéntame tu reto →
+        </a>
+        <p class="mt-4 text-sm text-[#6B6B6B]">
+          Ver también: <a href="/comunicacion-sostenibilidad/" class="underline hover:text-[#8DBE3F]">Comunicación de sostenibilidad y ESG</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('print-btn')?.addEventListener('click', () => window.print());
+  </script>
+</BaseLayout>
