@@ -38,6 +38,47 @@ const queNoHago = [
   'No sustituyo estrategia por volumen: más publicaciones no es mejor comunicación.',
   'No te lleno el calendario: te ayudo a que cada acción tenga un porqué.',
 ];
+
+// Puertas de entrada — ofertas acotadas para empezar con un encargo concreto.
+// Sin precio: el presupuesto se cualifica en el formulario.
+const puertas = [
+  {
+    num: '01',
+    nombre: 'Diagnóstico de Comunicación con Criterio',
+    para: 'Para quien necesita ordenar antes de invertir.',
+    promesa: 'En una semana sabrás qué frena tu comunicación y qué pasos concretos dar para convertirla en reputación, eficiencia y negocio.',
+    incluye: [
+      'Sesión inicial para entender tu contexto.',
+      'Revisión de comunicación, sostenibilidad, procesos y narrativa.',
+      'Informe breve con prioridades.',
+      'Sesión de devolución y plan de acción.',
+    ],
+  },
+  {
+    num: '02',
+    nombre: 'IA para Comunicación sin Perder el Criterio',
+    para: 'Para quien necesita activar a su equipo.',
+    promesa: 'Que tu equipo use la IA para ahorrar tiempo y mejorar procesos sin poner en riesgo la voz de la organización.',
+    incluye: [
+      'Taller de 2, 4 u 8 horas con casos reales.',
+      'Usos permitidos y usos que no tocaría.',
+      'Procesos automatizables de tu día a día.',
+      'Borrador de política interna y guía práctica.',
+    ],
+  },
+  {
+    num: '03',
+    nombre: 'Comunicación de Sostenibilidad con Evidencia',
+    para: 'Para quien tiene presión ESG o CSRD.',
+    promesa: 'Convertir datos, compromisos y avances ambientales en comunicación creíble, útil y defendible. Sin greenwashing.',
+    incluye: [
+      'Revisión de mensajes y mapa de riesgos reputacionales.',
+      'Narrativa de sostenibilidad con criterios de evidencia.',
+      'Plan de contenidos o campaña.',
+      'Pautas para sostener cada afirmación con datos.',
+    ],
+  },
+];
 ---
 
 <BaseLayout
@@ -94,6 +135,53 @@ const queNoHago = [
           </div>
         </a>
       ))}
+    </div>
+  </section>
+
+  <!-- POR DÓNDE EMPEZAR — puertas de entrada -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container-wide py-20 md:py-28">
+      <div class="max-w-3xl">
+        <span class="acento-verde block mb-6" data-reveal></span>
+        <p class="font-display text-xs text-[#8DBE3F] m-0" data-reveal>POR DÓNDE EMPEZAR</p>
+        <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 4vw, 3.25rem); max-width: 18ch;" data-mask-up>
+          <span>Tres puertas de entrada. Un encargo concreto.</span>
+        </h2>
+        <p class="mt-6 text-base md:text-lg leading-relaxed text-[#A0A0A0] max-w-2xl" data-reveal data-delay="120">
+          No hace falta contratar "comunicación estratégica" en abstracto. A veces se empieza por un problema concreto. Estas tres son las formas más rápidas de trabajar juntos.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-14">
+        {puertas.map((p, i) => (
+          <div class="flex flex-col p-7 rounded-lg bg-[#FAFAF7]/[0.03] border border-[#FAFAF7]/10 hover:border-[#8DBE3F]/50 transition-colors" data-reveal data-delay={`${i * 100}`}>
+            <p class="font-display text-3xl text-[#8DBE3F] m-0 leading-none">{p.num}</p>
+            <h3 class="font-extrabold mt-5 leading-tight tracking-[-0.02em]" style="font-size: clamp(1.25rem, 2vw, 1.5rem);">{p.nombre}</h3>
+            <p class="mt-2 font-display text-xs text-[#8DBE3F] tracking-wide">{p.para}</p>
+            <p class="mt-4 text-base leading-relaxed text-[#FAFAF7]/85">{p.promesa}</p>
+            <ul class="mt-5 space-y-2 mb-7">
+              {p.incluye.map((item) => (
+                <li class="flex gap-2.5 text-sm leading-relaxed text-[#A0A0A0]">
+                  <span class="text-[#8DBE3F] shrink-0">→</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="/trabajemos-juntos/"
+              data-ga-event="cta_click"
+              data-ga-label={`puerta_${p.num}`}
+              class="mt-auto inline-flex items-center gap-2 text-sm font-bold text-[#8DBE3F] hover:text-[#FAFAF7] transition-colors"
+            >
+              Empezar por aquí <span>→</span>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <p class="mt-10 text-sm text-[#6B6B6B] max-w-2xl" data-reveal>
+        ¿No sabes cuál encaja? Cuéntame tu reto en el <a href="/trabajemos-juntos/" data-ga-event="cta_click" data-ga-label="puertas_formulario" class="underline text-[#A0A0A0] hover:text-[#8DBE3F]">formulario</a> y te oriento yo.
+      </p>
     </div>
   </section>
 
