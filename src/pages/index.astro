@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Monograma from '../components/Monograma.astro';
 import Schema from '../components/Schema.astro';
+import DiagnosticoIA from '../components/DiagnosticoIA.astro';
 
 const pilares = [
   {
@@ -318,6 +319,9 @@ const situaciones = [
       </div>
     </div>
   </section>
+
+  <!-- DIAGNÓSTICO IA — gancho interactivo (capta a Notion + WhatsApp) -->
+  <DiagnosticoIA />
 
   <!-- TAPE inferior -->
   <div class="tape" aria-hidden="true">
