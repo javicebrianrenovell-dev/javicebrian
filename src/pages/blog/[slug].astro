@@ -3,7 +3,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import BlogLayout from '../../layouts/BlogLayout.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getCollection('blog', ({ data }) => !data.draft && data.pubDate <= new Date());
   return posts.map(post => ({
     params: { slug: post.slug },
     props: { post },
@@ -25,7 +25,7 @@ const readingTime = Math.max(1, Math.round(words / 200));
 const toc = headings.filter(h => h.depth === 2);
 
 // Posts relacionados: misma categoría primero, completados con los más recientes
-const all = (await getCollection('blog', ({ data }) => !data.draft))
+const all = (await getCollection('blog', ({ data }) => !data.draft && data.pubDate <= new Date()))
   .filter(p => p.slug !== post.slug)
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 const sameCategory = all.filter(p => p.data.category === post.data.category);

@@ -2,10 +2,10 @@
 title: "Reporting de sostenibilidad: de la hoja de cálculo dispersa al informe que alguien lee"
 seoTitle: "Reporting de sostenibilidad con criterio"
 description: "Cómo pasar de datos de sostenibilidad dispersos en hojas de cálculo a un informe útil y verificable, y dónde la IA ayuda de verdad en el reporting."
-pubDate: 2026-06-22
+pubDate: 2026-07-01
 category: sostenibilidad
 tags: ["reporting", "sostenibilidad", "indicadores", "inteligencia artificial", "ESG"]
-draft: true
+draft: false
 ---
 
 El reporting de sostenibilidad tiene mala fama dentro de las empresas, y con razón. Significa perseguir datos por media organización, pegarlos en una hoja de cálculo que no se habla con las demás, y montar a última hora un informe que casi nadie lee. Mucho trabajo, poco retorno. Pero el problema no es el reporting en sí: es cómo se hace. **Un informe de sostenibilidad bien planteado no es un trámite, es una de las pocas veces al año en que la empresa se mira de verdad.**
@@ -13,6 +13,37 @@ El reporting de sostenibilidad tiene mala fama dentro de las empresas, y con raz
 Este es el tercer frente de la [guía para empezar con IA en empresas de medio ambiente y servicios](/blog/ia-empresas-ambientales-por-donde-empezar/): el reporting, donde la IA quita horas de trabajo mecánico sin tocar lo que importa, que es el criterio.
 
 <aside class="callout"><span class="callout-label">EN CORTO</span> Reúne los datos con orden, apóyate en la IA para el montaje mecánico, verifica cada cifra como si fueras a defenderla ante un auditor, y cuenta solo lo que importa, en un idioma que se entienda.</aside>
+
+<figure class="post-grafico">
+<svg viewBox="0 0 840 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;margin:1.75rem auto;max-width:780px" role="img" aria-label="De datos dispersos a informe útil: la IA ordena y prepara el borrador, la persona verifica cada cifra, y el resultado es un informe que se lee." font-family="Inter, system-ui, sans-serif">
+<text x="20" y="32" font-size="20" font-weight="800" fill="#1A1A1A">De la hoja dispersa al informe que se lee</text>
+<rect x="20" y="58" width="180" height="110" rx="10" fill="#FFFFFF" stroke="#E5E5E0" stroke-width="1.5"/>
+<text x="38" y="94" font-size="15" font-weight="700" fill="#1A1A1A">Datos dispersos</text>
+<text x="38" y="118" font-size="12" fill="#3D3D3D">Hojas, facturas,</text>
+<text x="38" y="134" font-size="12" fill="#3D3D3D">correos.</text>
+<line x1="204" y1="113" x2="232" y2="113" stroke="#8DBE3F" stroke-width="2.5"/>
+<polygon points="232,107 244,113 232,119" fill="#8DBE3F"/>
+<rect x="248" y="58" width="180" height="110" rx="10" fill="#8DBE3F" fill-opacity="0.12" stroke="#8DBE3F" stroke-width="1.5"/>
+<text x="266" y="94" font-size="15" font-weight="700" fill="#1A1A1A">La IA ordena</text>
+<text x="266" y="118" font-size="12" fill="#3D3D3D">Reúne y prepara</text>
+<text x="266" y="134" font-size="12" fill="#3D3D3D">el borrador.</text>
+<line x1="432" y1="113" x2="460" y2="113" stroke="#8DBE3F" stroke-width="2.5"/>
+<polygon points="460,107 472,113 460,119" fill="#8DBE3F"/>
+<rect x="476" y="58" width="180" height="110" rx="10" fill="#FFFFFF" stroke="#E5E5E0" stroke-width="1.5"/>
+<text x="494" y="94" font-size="15" font-weight="700" fill="#1A1A1A">La persona verifica</text>
+<text x="494" y="118" font-size="12" fill="#3D3D3D">Cada cifra, como</text>
+<text x="494" y="134" font-size="12" fill="#3D3D3D">ante un auditor.</text>
+<line x1="660" y1="113" x2="688" y2="113" stroke="#8DBE3F" stroke-width="2.5"/>
+<polygon points="688,107 700,113 688,119" fill="#8DBE3F"/>
+<rect x="704" y="58" width="116" height="110" rx="10" fill="#1A1A1A"/>
+<text x="722" y="94" font-size="15" font-weight="700" fill="#8DBE3F">Informe</text>
+<text x="722" y="114" font-size="15" font-weight="700" fill="#FAFAF7">que se lee</text>
+<text x="722" y="140" font-size="11.5" fill="#A0A0A0">Lo que importa,</text>
+<text x="722" y="155" font-size="11.5" fill="#A0A0A0">claro.</text>
+<text x="20" y="212" font-size="13.5" font-weight="600" fill="#467010">La IA acelera el montaje. La veracidad de cada dato no se delega: es tuya.</text>
+</svg>
+<figcaption>El trabajo mecánico lo hace la máquina; el criterio y la responsabilidad del dato, tú.</figcaption>
+</figure>
 
 ## el problema no son los datos, es el desorden
 

@@ -2,10 +2,10 @@
 title: "Avisos e incidencias: qué automatizar con IA en un servicio (y qué dejar a una persona)"
 seoTitle: "Avisos e incidencias: qué automatizar con IA"
 description: "Cómo usar la IA para gestionar avisos e incidencias en empresas de servicios: qué clasifica y prepara la máquina y qué decide siempre una persona."
-pubDate: 2026-06-22
+pubDate: 2026-06-26
 category: ia
 tags: ["inteligencia artificial", "incidencias", "servicios", "automatización", "residuos"]
-draft: true
+draft: false
 ---
 
 Un contenedor desbordado. Una fuga. Una farola fundida. Una recogida que no pasó. En una empresa de servicios, los avisos entran por todos lados a la vez: teléfono, correo, una app, el formulario de la web, a veces hasta por redes. Y casi siempre acaban en el mismo cuello de botella: una persona que los lee uno a uno, decide de qué van, a quién se mandan y los registra. **Ese trabajo de triar no aporta nada al ciudadano, pero se lleva horas todos los días.** Es justo donde la IA rinde.
@@ -13,6 +13,32 @@ Un contenedor desbordado. Una fuga. Una farola fundida. Una recogida que no pas�
 Este es el segundo frente de la [guía para empezar con IA en empresas de medio ambiente y servicios](/blog/ia-empresas-ambientales-por-donde-empezar/), y probablemente el de retorno más rápido. Pero con una línea muy clara entre lo que conviene automatizar y lo que no.
 
 <aside class="callout"><span class="callout-label">EN CORTO</span> La IA clasifica, enruta y prepara la respuesta de un aviso. No decide la actuación ni atiende a quien está enfadado. Eso, siempre, una persona.</aside>
+
+<figure class="post-grafico">
+<svg viewBox="0 0 840 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;margin:1.75rem auto;max-width:780px" role="img" aria-label="Flujo de un aviso: entra por varios canales, la IA lo clasifica y enruta, y una persona decide y resuelve." font-family="Inter, system-ui, sans-serif">
+<text x="20" y="32" font-size="20" font-weight="800" fill="#1A1A1A">El camino de un aviso, bien repartido</text>
+<rect x="20" y="60" width="225" height="120" rx="10" fill="#FFFFFF" stroke="#E5E5E0" stroke-width="1.5"/>
+<text x="40" y="98" font-size="16" font-weight="700" fill="#1A1A1A">Entra el aviso</text>
+<text x="40" y="124" font-size="12.5" fill="#3D3D3D">Teléfono, correo, app,</text>
+<text x="40" y="142" font-size="12.5" fill="#3D3D3D">web, redes.</text>
+<line x1="250" y1="120" x2="300" y2="120" stroke="#8DBE3F" stroke-width="2.5"/>
+<polygon points="300,113 314,120 300,127" fill="#8DBE3F"/>
+<rect x="318" y="60" width="225" height="120" rx="10" fill="#8DBE3F" fill-opacity="0.12" stroke="#8DBE3F" stroke-width="1.5"/>
+<text x="338" y="98" font-size="16" font-weight="700" fill="#1A1A1A">La IA ordena</text>
+<text x="338" y="124" font-size="12.5" fill="#3D3D3D">Clasifica, prioriza,</text>
+<text x="338" y="142" font-size="12.5" fill="#3D3D3D">enruta y prepara respuesta.</text>
+<line x1="548" y1="120" x2="598" y2="120" stroke="#8DBE3F" stroke-width="2.5"/>
+<polygon points="598,113 612,120 598,127" fill="#8DBE3F"/>
+<rect x="616" y="60" width="204" height="120" rx="10" fill="#FFFFFF" stroke="#E5E5E0" stroke-width="1.5"/>
+<text x="636" y="98" font-size="16" font-weight="700" fill="#1A1A1A">La persona resuelve</text>
+<text x="636" y="124" font-size="12.5" fill="#3D3D3D">Confirma, decide</text>
+<text x="636" y="142" font-size="12.5" fill="#3D3D3D">y actúa.</text>
+<rect x="20" y="216" width="800" height="56" rx="10" fill="#1A1A1A"/>
+<text x="40" y="250" font-size="14.5" font-weight="600" fill="#FAFAF7">Lo dudoso, lo sensible y el ciudadano molesto van</text>
+<text x="40" y="250" font-size="14.5" font-weight="600" fill="#FAFAF7" dx="372">directos a una persona. Siempre.</text>
+</svg>
+<figcaption>La máquina ordena la entrada; la decisión y el trato siguen siendo humanos.</figcaption>
+</figure>
 
 ## qué hace bien la IA con un aviso
 

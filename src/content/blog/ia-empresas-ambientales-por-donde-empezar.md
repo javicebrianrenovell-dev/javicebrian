@@ -5,7 +5,7 @@ description: "Guía para empresas de medio ambiente y servicios que quieren usar
 pubDate: 2026-06-22
 category: ia
 tags: ["inteligencia artificial", "medio ambiente", "servicios", "automatización", "residuos"]
-draft: true
+draft: false
 ---
 
 Si diriges una empresa de residuos, de aguas, de energía o de servicios para administraciones, esta escena te sonará. Alguien en una reunión dice que "hay que meter IA". Todos asienten. Nadie sabe muy bien por dónde. Y al cabo de unos meses, lo único que ha pasado es que un par de personas usan ChatGPT a su aire para redactar correos, sin reglas y sin que nadie lo sepa. **La IA en tu sector no fracasa por falta de tecnología. Fracasa por empezar por el sitio equivocado.**
@@ -29,6 +29,53 @@ Esas tareas son tus candidatas. Pocas, bien elegidas, valen más que muchas a me
 ## los cuatro frentes donde la IA rinde de verdad
 
 En tu sector, casi todo el ahorro real se concentra en cuatro frentes. Si tu empresa hace alguno de estos, ahí está tu punto de partida.
+
+<figure class="post-grafico">
+<svg viewBox="0 0 840 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;margin:1.75rem auto;max-width:780px" role="img" aria-label="Los cuatro frentes donde la IA rinde en empresas de servicios: avisos e incidencias, reporting, atención y consultas, y documentación y licitaciones." font-family="Inter, system-ui, sans-serif">
+<text x="20" y="34" font-size="22" font-weight="800" fill="#1A1A1A">Dónde rinde la IA en una empresa de servicios</text>
+<text x="20" y="58" font-size="13" fill="#6B6B6B">Cuatro frentes de alto retorno. Empieza por el que más duela.</text>
+<g>
+<rect x="20" y="80" width="185" height="150" rx="10" fill="#FFFFFF" stroke="#E5E5E0" stroke-width="1.5"/>
+<rect x="20" y="80" width="185" height="5" rx="2.5" fill="#8DBE3F"/>
+<text x="36" y="118" font-size="22" font-weight="800" fill="#8DBE3F">01</text>
+<text x="36" y="150" font-size="15" font-weight="700" fill="#1A1A1A">Avisos e</text>
+<text x="36" y="170" font-size="15" font-weight="700" fill="#1A1A1A">incidencias</text>
+<text x="36" y="198" font-size="12" fill="#3D3D3D">Clasifica, prioriza</text>
+<text x="36" y="214" font-size="12" fill="#3D3D3D">y enruta.</text>
+</g>
+<g>
+<rect x="225" y="80" width="185" height="150" rx="10" fill="#FFFFFF" stroke="#E5E5E0" stroke-width="1.5"/>
+<rect x="225" y="80" width="185" height="5" rx="2.5" fill="#8DBE3F"/>
+<text x="241" y="118" font-size="22" font-weight="800" fill="#8DBE3F">02</text>
+<text x="241" y="150" font-size="15" font-weight="700" fill="#1A1A1A">Reporting e</text>
+<text x="241" y="170" font-size="15" font-weight="700" fill="#1A1A1A">informes</text>
+<text x="241" y="198" font-size="12" fill="#3D3D3D">Ordena datos y</text>
+<text x="241" y="214" font-size="12" fill="#3D3D3D">prepara el borrador.</text>
+</g>
+<g>
+<rect x="430" y="80" width="185" height="150" rx="10" fill="#FFFFFF" stroke="#E5E5E0" stroke-width="1.5"/>
+<rect x="430" y="80" width="185" height="5" rx="2.5" fill="#8DBE3F"/>
+<text x="446" y="118" font-size="22" font-weight="800" fill="#8DBE3F">03</text>
+<text x="446" y="150" font-size="15" font-weight="700" fill="#1A1A1A">Atención y</text>
+<text x="446" y="170" font-size="15" font-weight="700" fill="#1A1A1A">consultas</text>
+<text x="446" y="198" font-size="12" fill="#3D3D3D">Resuelve lo</text>
+<text x="446" y="214" font-size="12" fill="#3D3D3D">repetitivo.</text>
+</g>
+<g>
+<rect x="635" y="80" width="185" height="150" rx="10" fill="#FFFFFF" stroke="#E5E5E0" stroke-width="1.5"/>
+<rect x="635" y="80" width="185" height="5" rx="2.5" fill="#8DBE3F"/>
+<text x="651" y="118" font-size="22" font-weight="800" fill="#8DBE3F">04</text>
+<text x="651" y="150" font-size="15" font-weight="700" fill="#1A1A1A">Documentación</text>
+<text x="651" y="170" font-size="15" font-weight="700" fill="#1A1A1A">y licitaciones</text>
+<text x="651" y="198" font-size="12" fill="#3D3D3D">Reaprovecha</text>
+<text x="651" y="214" font-size="12" fill="#3D3D3D">y estructura.</text>
+</g>
+<rect x="20" y="270" width="800" height="62" rx="10" fill="#1A1A1A"/>
+<text x="40" y="307" font-size="15" font-weight="700" fill="#8DBE3F">La IA acelera lo mecánico.</text>
+<text x="270" y="307" font-size="15" font-weight="600" fill="#FAFAF7">La persona decide y da la cara. Esa línea no se cruza.</text>
+</svg>
+<figcaption>Los cuatro frentes de mayor retorno. La máquina acelera; el criterio sigue siendo humano.</figcaption>
+</figure>
 
 ### 1. avisos e incidencias
 
