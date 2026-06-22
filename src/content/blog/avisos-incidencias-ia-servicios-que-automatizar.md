@@ -2,7 +2,7 @@
 title: "Avisos e incidencias: qué automatizar con IA en un servicio (y qué dejar a una persona)"
 seoTitle: "Avisos e incidencias: qué automatizar con IA"
 description: "Cómo usar la IA para gestionar avisos e incidencias en empresas de servicios: qué clasifica y prepara la máquina y qué decide siempre una persona."
-pubDate: 2026-06-26
+pubDate: 2026-06-21
 heroImage: "/blog-images/hero-avisos-incidencias.jpg"
 category: ia
 tags: ["inteligencia artificial", "incidencias", "servicios", "automatización", "residuos"]
