@@ -1,0 +1,266 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const wa = '34694218846';
+const waText = encodeURIComponent('Hola Javi, me interesa el Diagnóstico de 14 días. Te cuento brevemente mi caso:');
+const waHref = `https://wa.me/${wa}?text=${waText}`;
+
+const queTeLlevas = [
+  {
+    num: '01',
+    titulo: 'Un mapa de oportunidades priorizado',
+    body: 'Dónde la IA te ahorra horas de verdad y dónde es un capricho caro. Aplicado a tus procesos, no a una idea abstracta.',
+  },
+  {
+    num: '02',
+    titulo: 'Un diagnóstico de tu comunicación',
+    body: 'Si hay un eje o solo calendario; si lo que cuentas de tu sostenibilidad aguanta una pregunta incómoda; qué riesgos reputacionales tienes abiertos.',
+  },
+  {
+    num: '03',
+    titulo: 'Las 3 acciones que moverían la aguja',
+    body: 'Con el retorno estimado de cada una —ahorro, reputación o negocio— y por dónde empezaría yo.',
+  },
+  {
+    num: '04',
+    titulo: 'Una conversación de devolución',
+    body: 'Te lo explico, lo discutimos y respondo a todo. Te lo entrego por escrito: es tuyo, lo uses conmigo o no.',
+  },
+];
+
+const comoFunciona = [
+  { num: '01', titulo: 'Hablamos 30 minutos', body: 'Sin coste. Vemos si encajamos y qué necesitas.' },
+  { num: '02', titulo: 'Reservas el diagnóstico', body: 'Te paso un cuestionario breve y acordamos un par de accesos o conversaciones con tu equipo.' },
+  { num: '03', titulo: 'Trabajo 14 días', body: 'Reúno, analizo, priorizo. Sin desaparecer.' },
+  { num: '04', titulo: 'Sesión de devolución', body: 'Te entrego el documento y lo explicamos. Decides tú qué hacer con él.' },
+];
+
+const faqs = [
+  {
+    q: '¿No puedo hacer esto yo con ChatGPT?',
+    a: 'Puedes probar herramientas. Lo que no te da una herramienta es criterio: qué priorizar, qué no tocar, qué riesgo asumes. Eso es justo lo que pagas.',
+  },
+  {
+    q: '¿14 días no es poco?',
+    a: 'Es suficiente para un diagnóstico honesto y accionable. No es una auditoría eterna que nadie lee. Es un mapa para empezar a mover cosas ya.',
+  },
+  {
+    q: '¿Y si al final no hay nada que hacer?',
+    a: 'Te lo diré. Es parte del valor: ahorrarte gastar en lo que no necesitas. Pero no me ha pasado todavía.',
+  },
+  {
+    q: '¿Esto es de Imedes o tuyo?',
+    a: 'Lo lidero yo; entrega el equipo de Imedes cuando el proyecto lo necesita. Lo mejor de los dos: criterio cercano y una casa detrás.',
+  },
+];
+---
+
+<BaseLayout
+  title="Diagnóstico IA + Comunicación en 14 días"
+  seoTitle="Diagnóstico IA + Comunicación · 14 días"
+  description="En 14 días sabrás qué hacer con la IA y la comunicación en tu empresa, y qué no. Mapa priorizado, 3 acciones con retorno estimado y garantía de devolución."
+>
+  <!-- HERO -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7] relative overflow-hidden">
+    <div class="container-wide py-24 md:py-32">
+      <span class="acento-verde block mb-6" data-mask-up></span>
+      <p class="font-display text-xs text-[#8DBE3F] mb-4" data-mask-up data-delay="80">§ DIAGNÓSTICO · 14 DÍAS</p>
+      <h1 class="font-extrabold leading-[0.95] tracking-[-0.03em] m-0" style="font-size: clamp(2.25rem, 6vw, 5rem); max-width: 18ch;">
+        <span data-mask-up data-delay="0" class="block">En 14 días sabrás qué hacer con la IA y la comunicación en tu empresa.</span>
+        <span data-mask-up data-delay="140" class="block text-[#8DBE3F]">Y qué no.</span>
+      </h1>
+      <p class="mt-10 text-base md:text-lg text-[#A0A0A0] max-w-2xl" data-reveal data-delay="280">
+        Sin teoría, sin humo y sin comprarte nada que no necesites. Un mapa claro de por dónde empezar, qué mueve la aguja en tu caso y qué retorno esperar. Te lo dejo por escrito y te lo explico a la cara.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-3" data-reveal data-delay="360">
+        <a href={waHref} data-ga-event="cta_click" data-ga-label="diagnostico_hero_whatsapp" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors no-underline">
+          Reserva tu diagnóstico →
+        </a>
+        <a href="/trabajemos-juntos/" data-ga-event="cta_click" data-ga-label="diagnostico_hero_form" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#FAFAF7]/20 text-[#FAFAF7] font-medium text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7]/5 transition-colors no-underline">
+          Hablamos 30 min
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EL PROBLEMA -->
+  <section class="bg-[#FAFAF7] text-[#1A1A1A]">
+    <div class="container-wide py-20 md:py-28">
+      <div class="max-w-3xl">
+        <span class="acento-verde block mb-6" data-reveal></span>
+        <p class="font-display text-xs text-[#467010] m-0" data-reveal>EL PROBLEMA</p>
+        <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 4vw, 3rem); max-width: 20ch;" data-mask-up>
+          <span>No es un problema de herramientas. Es de criterio.</span>
+        </h2>
+        <div class="mt-6 space-y-5 text-base md:text-lg leading-relaxed text-[#3D3D3D]">
+          <p class="m-0" data-reveal data-delay="100">Llega la presión: "hay que usar IA", "hay que comunicar mejor la sostenibilidad", "hay que estar en LinkedIn". Y se empieza a hacer cosas sueltas, sin saber si sirven de algo. Se gasta tiempo y dinero en lo que no mueve nada, mientras lo que sí importa se queda sin tocar.</p>
+          <p class="m-0 font-semibold text-[#1A1A1A]" data-reveal data-delay="160">Un diagnóstico no es más actividad. Es parar, mirar con criterio, y decidir.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+        <div data-reveal>
+          <p class="font-display text-xs text-[#8DBE3F] m-0 mb-6">ES PARA TI SI…</p>
+          <ul class="space-y-5">
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#FAFAF7]/90"><span class="text-[#8DBE3F] font-bold shrink-0">→</span><span>Diriges o decides en una empresa de medio ambiente, servicios o industria (residuos, agua, energía, servicios locales).</span></li>
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#FAFAF7]/90"><span class="text-[#8DBE3F] font-bold shrink-0">→</span><span>Sabes que la IA y una buena comunicación te darían ventaja, pero no tienes claro por dónde empezar sin tirar el dinero.</span></li>
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#FAFAF7]/90"><span class="text-[#8DBE3F] font-bold shrink-0">→</span><span>Quieres una opinión honesta, aunque te diga que algo no merece la pena.</span></li>
+          </ul>
+        </div>
+        <div data-reveal data-delay="120">
+          <p class="font-display text-xs text-[#A0A0A0] m-0 mb-6">NO ES PARA TI SI…</p>
+          <ul class="space-y-5">
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#A0A0A0]"><span class="text-[#6B6B6B] font-bold shrink-0">✕</span><span>Buscas a alguien que te llene el calendario de publicaciones sin preguntarse para qué.</span></li>
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#A0A0A0]"><span class="text-[#6B6B6B] font-bold shrink-0">✕</span><span>Quieres "hacer IA" para decir que la haces.</span></li>
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#A0A0A0]"><span class="text-[#6B6B6B] font-bold shrink-0">✕</span><span>No hay nadie con capacidad de decidir al otro lado.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 p-6 border-l-2 border-[#8DBE3F] bg-[#8DBE3F]/8 max-w-3xl" data-reveal>
+        <p class="text-base leading-relaxed text-[#FAFAF7]/90 m-0">Cobro por el diagnóstico porque es trabajo de verdad, y porque quien paga por pensar bien un problema es quien después lo resuelve. Si solo quieres tantear, tengo contenido gratis para eso.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUÉ TE LLEVAS -->
+  <section class="bg-[#FAFAF7] text-[#1A1A1A]">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#467010] m-0">§ EN 14 DÍAS</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 12ch;" data-mask-up>
+            <span>Qué te llevas.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-8">
+          {queTeLlevas.map((m, i) => (
+            <div class="py-6 grid grid-cols-1 sm:grid-cols-12 gap-4" style={i > 0 ? 'border-top: 1px solid #E5E5E0;' : ''} data-reveal data-delay={`${i * 80}`}>
+              <p class="sm:col-span-2 font-display text-3xl text-[#8DBE3F] m-0 leading-none">{m.num}</p>
+              <div class="sm:col-span-10">
+                <h3 class="font-extrabold m-0 leading-tight tracking-[-0.02em]" style="font-size: clamp(1.2rem, 2.2vw, 1.6rem);">{m.titulo}</h3>
+                <p class="mt-2 text-base md:text-lg leading-relaxed text-[#3D3D3D] max-w-2xl">{m.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIO + GARANTÍA -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+        <div class="md:col-span-5">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#8DBE3F] m-0" data-reveal>PRECIO</p>
+          <p class="font-extrabold tracking-[-0.03em] leading-none mt-4 m-0" style="font-size: clamp(3rem, 8vw, 6rem);" data-mask-up>
+            900 – 1.500 €
+          </p>
+          <p class="mt-4 text-base text-[#A0A0A0] max-w-sm" data-reveal data-delay="120">Según tamaño y alcance. Precio cerrado antes de empezar, sin sorpresas. Si seguimos con el proyecto, se descuenta.</p>
+        </div>
+        <div class="md:col-span-7" data-reveal data-delay="160">
+          <div class="p-7 md:p-9 rounded-lg bg-[#8DBE3F]/10 border border-[#8DBE3F]/30">
+            <p class="font-display text-xs text-[#8DBE3F] m-0 mb-3">MI GARANTÍA</p>
+            <p class="text-xl md:text-2xl font-extrabold leading-snug tracking-[-0.01em] m-0">Si al terminar no te he dado al menos 3 acciones concretas con su retorno estimado, no pagas.</p>
+            <p class="mt-4 text-base text-[#FAFAF7]/85 m-0">Te devuelvo el importe y nos damos la mano. Asumo yo el riesgo, no tú.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container-wide py-20 md:py-28">
+      <div class="max-w-3xl mb-12">
+        <p class="font-display text-xs text-[#8DBE3F] m-0" data-reveal>CÓMO FUNCIONA</p>
+        <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 16ch;" data-mask-up>
+          <span>Cuatro pasos, sin misterio.</span>
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+        {comoFunciona.map((p, i) => (
+          <div class="flex flex-col p-7 rounded-lg bg-[#FAFAF7]/[0.03] border border-[#FAFAF7]/10" data-reveal data-delay={`${i * 90}`}>
+            <p class="font-display text-3xl text-[#8DBE3F] m-0 leading-none">{p.num}</p>
+            <h3 class="font-extrabold mt-5 leading-tight tracking-[-0.02em]" style="font-size: clamp(1.15rem, 2vw, 1.4rem);">{p.titulo}</h3>
+            <p class="mt-3 text-base leading-relaxed text-[#A0A0A0]">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ YO -->
+  <section class="bg-[#FAFAF7] text-[#1A1A1A]">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#467010] m-0">POR QUÉ YO</p>
+        </div>
+        <div class="md:col-span-8">
+          <p class="text-xl md:text-2xl font-extrabold leading-snug tracking-[-0.01em] text-[#1A1A1A] m-0" data-mask-up>Comunica. Decide. Multiplica.</p>
+          <div class="mt-6 space-y-5 text-base md:text-lg leading-relaxed text-[#3D3D3D]">
+            <p class="m-0" data-reveal data-delay="100">Soy Javi Cebrián, Director de Comunicación y Desarrollo de Negocio en Imedes, una consultora ambiental con décadas de proyectos reales con empresas y administraciones. No vengo de la moda de la IA: vengo de comunicar sostenibilidad con rigor y de meter la IA en procesos reales, con criterio.</p>
+            <p class="m-0" data-reveal data-delay="160">Trabajo tres palancas que son la misma decisión: comunicar con criterio, sostenibilidad que se mide, IA que se usa.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#8DBE3F] m-0">PREGUNTAS</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 12ch;" data-mask-up>
+            <span>Lo que sueles preguntar.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-8">
+          {faqs.map((f, i) => (
+            <div class="py-6" style={i > 0 ? 'border-top: 1px solid rgba(255,255,255,0.1);' : ''} data-reveal data-delay={`${i * 70}`}>
+              <h3 class="font-extrabold m-0 leading-tight tracking-[-0.01em]" style="font-size: clamp(1.1rem, 2vw, 1.35rem);">{f.q}</h3>
+              <p class="mt-3 text-base md:text-lg leading-relaxed text-[#A0A0A0] max-w-2xl">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
+        <div class="md:col-span-7">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[0.95] m-0" style="font-size: clamp(2.5rem, 7vw, 5rem);">
+            <span data-mask-up>¿Empezamos por los 30 minutos?</span>
+          </h2>
+          <p class="mt-8 text-lg md:text-xl text-[#A0A0A0] max-w-xl leading-relaxed" data-reveal data-delay="200">
+            Cuéntame en una línea dónde estás y vemos si tiene sentido. Sin compromiso.
+          </p>
+        </div>
+        <div class="md:col-span-5 md:text-right flex flex-col sm:flex-row md:justify-end gap-3" data-reveal data-delay="300">
+          <a href={waHref} data-ga-event="cta_click" data-ga-label="diagnostico_final_whatsapp" class="inline-flex items-center justify-center gap-2 px-10 py-5 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors no-underline">
+            Hablar por WhatsApp →
+          </a>
+          <a href="/trabajemos-juntos/" data-ga-event="cta_click" data-ga-label="diagnostico_final_form" class="inline-flex items-center justify-center gap-2 px-10 py-5 border border-[#FAFAF7]/20 text-[#FAFAF7] font-medium text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7]/5 transition-colors no-underline">
+            Escríbeme
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

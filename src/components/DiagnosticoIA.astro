@@ -118,7 +118,7 @@ const {
           if (fraseIA) {
             html += '<div class="mb-5 p-5 rounded-lg bg-[#8DBE3F]/10 border border-[#8DBE3F]/30"><p class="' + LABEL + '">HECHO A TU CASO</p><p class="text-[#FAFAF7] leading-relaxed m-0">' + esc(fraseIA) + '</p></div>';
           }
-          html += '<div class="mb-6"><p class="' + LABEL + '">POR DÓNDE EMPEZARÍA</p><p class="text-[#FAFAF7]/90 leading-relaxed m-0">Un Diagnóstico de 14 días: mapa de casos priorizado y un primer caso ya funcionando.</p></div>';
+          html += '<div class="mb-6"><p class="' + LABEL + '">POR DÓNDE EMPEZARÍA</p><p class="text-[#FAFAF7]/90 leading-relaxed m-0">Un <a href="/diagnostico/" class="underline decoration-[#8DBE3F] underline-offset-2 hover:text-[#8DBE3F]">Diagnóstico de 14 días</a>: mapa de casos priorizado y un primer caso ya funcionando.</p></div>';
           html += '<a class="' + WABTN + '" href="https://wa.me/' + wa + '?text=' + waText + '" data-ga-event="cta_click" data-ga-label="diagnostico_whatsapp">Concrétalo por WhatsApp con Javi</a>';
           html += '<button type="button" class="' + MAILBTN + '" id="dia-mailbtn">Mándame el diagnóstico ampliado</button>';
           html += '<div id="dia-mailbox"></div>';
