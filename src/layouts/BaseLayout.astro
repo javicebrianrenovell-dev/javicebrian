@@ -114,6 +114,24 @@ const fullTitle = headTitle.includes('Javi Cebrián') ? headTitle : `${headTitle
       </div>
     )}
 
+    <script is:inline>
+      // Captura de origen (UTM) de primer toque, persistida para atribución del diagnóstico.
+      (function () {
+        function cap() {
+          try {
+            if (localStorage.getItem('jc_origen')) return;
+            var q = new URLSearchParams(location.search);
+            var s = q.get('utm_source');
+            if (!s) return;
+            var c = q.get('utm_content'), m = q.get('utm_campaign');
+            localStorage.setItem('jc_origen', s + (c ? ' · ' + c : '') + (m ? ' · ' + m : ''));
+          } catch (e) {}
+        }
+        cap();
+        document.addEventListener('astro:page-load', cap);
+      })();
+    </script>
+
     <script>
       import { initAnimations } from '../scripts/animations';
       import { initAnalytics } from '../scripts/analytics';
