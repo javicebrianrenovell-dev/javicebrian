@@ -69,6 +69,8 @@ const {
       var pctEl = root.querySelector(".dia-pct");
       var wh = root.getAttribute("data-webhook");
       var wa = root.getAttribute("data-wa");
+      var origen = "";
+      try { origen = localStorage.getItem("jc_origen") || ""; } catch (e) {}
       var a = {};
       var step = 0;
       var steps = [
@@ -128,14 +130,14 @@ const {
             root.querySelector("#dia-send").addEventListener("click", function () {
               var email = (root.querySelector("#dia-email") || {}).value || "";
               try {
-                fetch(wh, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ sector: a.sector, madurez: a.madurez, dolor: a.dolor, decision: a.decision, email: email }) });
+                fetch(wh, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ sector: a.sector, madurez: a.madurez, dolor: a.dolor, decision: a.decision, email: email, origen: origen }) });
               } catch (e) {}
               box.innerHTML = '<p class="text-sm text-[#8DBE3F] mt-3 m-0">Hecho. Javi te escribe pronto.</p>';
             });
           });
         };
         try {
-          fetch(wh, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(a) })
+          fetch(wh, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(Object.assign({}, a, { origen: origen })) })
             .then(function (r) { return r.json(); })
             .then(function (d) { done((d && d.fraseIA) || ""); })
             .catch(function () { done(""); });
