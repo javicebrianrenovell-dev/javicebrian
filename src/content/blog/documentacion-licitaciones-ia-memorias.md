@@ -3,6 +3,7 @@ title: "Documentación y licitaciones con IA: ahorrar horas en las memorias sin 
 seoTitle: "Licitaciones con IA: memorias sin inventar datos"
 description: "Cómo usar la IA para preparar documentación y memorias técnicas de licitación ahorrando horas, sin inventar datos ni perder la trazabilidad."
 pubDate: 2026-07-04
+heroImage: "/blog-images/hero-documentacion-licitaciones.jpg"
 category: ia
 tags: ["licitaciones", "memorias técnicas", "inteligencia artificial", "documentación", "sector público"]
 draft: false

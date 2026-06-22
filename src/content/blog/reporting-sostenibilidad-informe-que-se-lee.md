@@ -3,6 +3,7 @@ title: "Reporting de sostenibilidad: de la hoja de cálculo dispersa al informe 
 seoTitle: "Reporting de sostenibilidad con criterio"
 description: "Cómo pasar de datos de sostenibilidad dispersos en hojas de cálculo a un informe útil y verificable, y dónde la IA ayuda de verdad en el reporting."
 pubDate: 2026-07-01
+heroImage: "/blog-images/hero-reporting-sostenibilidad.jpg"
 category: sostenibilidad
 tags: ["reporting", "sostenibilidad", "indicadores", "inteligencia artificial", "ESG"]
 draft: false

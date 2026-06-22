@@ -3,6 +3,7 @@ title: "IA en empresas de medio ambiente y servicios: por dónde empezar con cri
 seoTitle: "IA en empresas ambientales: por dónde empezar"
 description: "Guía para empresas de medio ambiente y servicios que quieren usar la IA con criterio: por dónde empezar, qué automatizar y qué dejar en manos humanas."
 pubDate: 2026-06-22
+heroImage: "/blog-images/hero-ia-empresas-ambientales.jpg"
 category: ia
 tags: ["inteligencia artificial", "medio ambiente", "servicios", "automatización", "residuos"]
 draft: false
