@@ -99,7 +99,9 @@ function initRevealOnScroll(): void {
           { duration: 0.75, ease: easing }
         );
       },
-      { amount: 0.2 }
+      // "some" = se revela en cuanto el bloque asoma. Con un valor fijo (p.ej. 0.2),
+      // los bloques más altos que la pantalla nunca alcanzan ese % visible y no se revelan.
+      { amount: 'some' }
     );
   });
 }
