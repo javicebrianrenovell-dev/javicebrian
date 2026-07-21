@@ -48,8 +48,14 @@ function loadGA4(): void {
 
   const w = window as any;
   w.dataLayer = w.dataLayer || [];
-  function gtag(...args: any[]) {
-    w.dataLayer.push(args);
+  // OJO: hay que empujar el objeto `arguments`, NO un array. gtag.js solo
+  // procesa las entradas de dataLayer que son `arguments`; las que son arrays
+  // reales las ignora. Con `(...args) => push(args)` los comandos entraban en
+  // dataLayer y no se ejecutaba ninguno: la biblioteca cargaba, el contenedor
+  // se inicializaba y no salía un solo hit a /g/collect. Dos meses sin datos.
+  function gtag(..._args: any[]) {
+    // eslint-disable-next-line prefer-rest-params
+    w.dataLayer.push(arguments);
   }
   w.gtag = gtag;
 
