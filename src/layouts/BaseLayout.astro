@@ -10,6 +10,12 @@ import '@fontsource/inter/800.css';
 import '@fontsource/inter/900.css';
 import '@fontsource/bebas-neue/400.css';
 
+// Las dos fuentes del primer pantallazo. Sin precarga el navegador no las descubre
+// hasta haber descargado y analizado el CSS: es la cadena crítica más larga que
+// tiene la página. Vite resuelve aquí la URL con hash del build.
+import interDisplay from '@fontsource/inter/files/inter-latin-800-normal.woff2?url';
+import bebasDisplay from '@fontsource/bebas-neue/files/bebas-neue-latin-400-normal.woff2?url';
+
 import { ClientRouter } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -36,7 +42,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 const siteName = 'Javi Cebrián';
 // seoTitle (corto, <60 car.) prevalece sobre el título visible para el <title> y OG.
 const headTitle = seoTitle ?? title;
-const fullTitle = headTitle.includes('Javi Cebrián') ? headTitle : `${headTitle} · ${siteName}`;
+// El sufijo de marca solo se añade si el resultado sigue cabiendo en un resultado
+// de búsqueda (~60 caracteres). Si no cabe, manda el título: cortar la frase útil
+// para dejar el nombre visible es el peor de los dos males.
+const withBrand = `${headTitle} · ${siteName}`;
+const fullTitle = headTitle.includes('Javi Cebrián')
+  ? headTitle
+  : withBrand.length <= 60
+    ? withBrand
+    : headTitle;
 ---
 
 <!doctype html>
@@ -46,6 +60,9 @@ const fullTitle = headTitle.includes('Javi Cebrián') ? headTitle : `${headTitle
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="facebook-domain-verification" content="7ziez5ui2g2xibji9tahc1wnxapfsm" />
+    <link rel="preload" href={interDisplay} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={bebasDisplay} as="font" type="font/woff2" crossorigin />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

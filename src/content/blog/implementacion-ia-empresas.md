@@ -1,7 +1,7 @@
 ---
 title: "Implementación de IA en empresas: por dónde se empieza de verdad"
 seoTitle: "Implementación de IA en empresas: por dónde empezar"
-description: "Guía práctica de implementación e implantación de IA en empresas: qué decidir antes de elegir herramienta, qué procesos compensan, qué no automatizar y cuánto cuesta."
+description: "Implantar IA en una empresa: qué decidir antes de elegir herramienta, qué procesos compensan, qué no automatizar y cuánto cuesta de verdad."
 pubDate: 2025-02-08
 updatedDate: 2026-07-21
 heroImage: "/blog-images/javi-cebrian_director_comunicacion.webp"

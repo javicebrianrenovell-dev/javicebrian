@@ -48,6 +48,12 @@ export async function GET(context: APIContext) {
   }
   lines.push('');
 
+  lines.push('## Texto completo');
+  lines.push(
+    `- [Contenido íntegro del sitio](${site}/llms-full.txt): todos los artículos y servicios en un solo documento de texto plano.`
+  );
+  lines.push('');
+
   lines.push('## Recursos y contacto');
   lines.push(`- [Checklist: 20 controles para comunicar sostenibilidad sin greenwashing](${site}/recursos/checklist-greenwashing/): recurso descargable gratuito.`);
   lines.push(`- [Blog completo](${site}/blog/): todos los artículos.`);

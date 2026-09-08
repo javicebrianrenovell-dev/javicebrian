@@ -5,3 +5,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://javicebrian.es/sitemap-index.xml
+
+# Índice y texto completo para modelos de lenguaje (https://llmstxt.org)
+# https://javicebrian.es/llms.txt
+# https://javicebrian.es/llms-full.txt
