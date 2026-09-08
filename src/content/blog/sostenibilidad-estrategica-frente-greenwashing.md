@@ -3,6 +3,7 @@ title: "Sostenibilidad estratégica frente al greenwashing"
 description: "Cómo comunicar sostenibilidad con evidencia y evitar el greenwashing: la diferencia entre el adorno y la estrategia real."
 enCorto: "La diferencia entre sostenibilidad estratégica y greenwashing no está en el tono: está en si la afirmación se puede sostener con datos, metodología y trazabilidad delante de un auditor. Las señales de alarma son los términos absolutos sin acreditar, los distintivos propios sin certificación detrás y los logros contados sin decir el punto de partida. Desde el 27 de septiembre de 2026 esa exigencia deja de ser reputacional y pasa a ser legal."
 pubDate: 2026-05-30
+updatedDate: 2026-09-08
 heroImage: "/blog-images/nuevo-sostenibilidad-estrategica.jpg"
 category: sostenibilidad
 tags: ["greenwashing", "sostenibilidad estratégica", "comunicación ambiental", "reputación"]
@@ -54,7 +55,9 @@ Sobre por qué la calidad del mensaje importa tanto como el dato, escribí en [l
 
 <aside class="callout"><span class="callout-label">EN CORTO</span> Comunicar con honestidad ya no es solo lo correcto: es lo prudente. El espacio para el adjetivo verde sin pruebas se estrecha año a año.</aside>
 
-Durante años el greenwashing se pagaba, como mucho, con una crítica en redes o un titular incómodo. Eso ya cambió. La [exigencia regulatoria europea sobre las alegaciones ambientales](https://environment.ec.europa.eu) va en una dirección clara: si afirmas algo verde, tendrás que poder probarlo, y las declaraciones genéricas sin respaldo quedan cada vez más acotadas.
+Durante años el greenwashing se pagaba, como mucho, con una crítica en redes o un titular incómodo. Eso ya cambió. La exigencia regulatoria europea va en una dirección clara: si afirmas algo verde, tendrás que poder probarlo, y las declaraciones genéricas sin respaldo quedan cada vez más acotadas.
+
+**Actualización · septiembre de 2026.** Conviene precisar contra qué norma se planifica, porque hay una confusión extendida. La **propuesta de directiva Green Claims fue retirada** por la Comisión Europea en junio de 2025: quien siga preparándose para ella se está preparando para algo que no existe. Lo que sí obliga es la [**Directiva (UE) 2024/825**](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32024L0825) de empoderamiento del consumidor, con transposición hasta el 27 de marzo de 2026 y **aplicación desde el 27 de septiembre de 2026**. Prohíbe expresamente las alegaciones ambientales genéricas sin acreditación y los distintivos de sostenibilidad que no se apoyen en un sistema de certificación. En España llega a través del anteproyecto de ley de consumo sostenible. Traducido: lo que hasta ahora era un riesgo reputacional pasa a ser una práctica comercial desleal.
 
 No voy a citar artículos ni cifras concretas porque el marco está en evolución y conviene contrastarlo con asesoría especializada en cada caso. Pero la tendencia de fondo no admite duda: el espacio para el adjetivo verde sin pruebas se estrecha. Lo que hoy es una práctica de marketing descuidada, mañana puede ser una infracción.
 

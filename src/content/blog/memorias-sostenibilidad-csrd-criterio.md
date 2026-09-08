@@ -4,12 +4,15 @@ seoTitle: "Memorias de sostenibilidad y CSRD con criterio"
 description: "Cómo hacer memorias de sostenibilidad útiles más allá del cumplimiento de la CSRD, y dónde la IA ayuda de verdad."
 enCorto: "Una memoria de sostenibilidad sirve para sostener decisiones ante quien financia, contrata o regula, no para rellenar un requisito. Los dos errores que la arruinan son escribirla solo para el auditor y publicarla después como si fuera para el público. Antes de escribir conviene comprobar el ámbito real de la CSRD: el paquete Ómnibus de 2025 recortó las empresas obligadas y retrasó dos años a buena parte de ellas."
 pubDate: 2026-06-02
+updatedDate: 2026-09-08
 heroImage: "/blog-images/nuevo-memorias-sostenibilidad-csrd.jpg"
 category: sostenibilidad
 tags: ["memorias de sostenibilidad", "CSRD", "informes ESG", "inteligencia artificial"]
 ---
 
-Cada año más empresas se encuentran con la misma carpeta encima de la mesa: hay que publicar una memoria de sostenibilidad. Unas porque la directiva europea de información de sostenibilidad (la que se conoce como CSRD) amplía el círculo de compañías obligadas a reportar. Otras porque un cliente grande, que sí está obligado, les pide datos de su cadena de proveedores. Y casi todas con la misma sensación: que esto es un trámite, un documento pesado que nadie va a leer. Esa sensación es el primer error. **Una memoria bien hecha no es un trámite.** Es una de las pocas ocasiones al año en que una organización se obliga a mirarse de verdad.
+Cada año más empresas se encuentran con la misma carpeta encima de la mesa: hay que publicar una memoria de sostenibilidad. Unas porque la directiva europea de información de sostenibilidad (la que se conoce como CSRD) las alcanza. Otras porque un cliente grande, que sí está obligado, les pide datos de su cadena de proveedores. Y casi todas con la misma sensación: que esto es un trámite, un documento pesado que nadie va a leer. Esa sensación es el primer error. **Una memoria bien hecha no es un trámite.** Es una de las pocas ocasiones al año en que una organización se obliga a mirarse de verdad.
+
+**Actualización · septiembre de 2026.** Antes de dar por hecho que estás obligado, comprueba en qué grupo caes hoy. El paquete Ómnibus aprobado en febrero de 2025 recortó con fuerza el ámbito de la CSRD —quedan sobre todo las empresas de más de 1.000 personas y 50 millones de cifra de negocio— y **retrasó dos años** las obligaciones de buena parte de las que ya estaban dentro. Los propios ESRS están en revisión y en España la transposición va más lenta de lo previsto. Nada de lo que sigue cambia por eso: la razón para hacer bien una memoria nunca fue la obligación. Pero el calendario sí cambia, y conviene mirarlo antes de contratar a nadie.
 
 En el equipo Imedes llevamos tiempo acompañando estos procesos, y lo que vemos se repite: empresas con buenas prácticas reales que las cuentan fatal, e informes impecables de forma que por dentro están vacíos. La diferencia entre una cosa y otra no es el presupuesto. Es el criterio con el que se aborda.
 
