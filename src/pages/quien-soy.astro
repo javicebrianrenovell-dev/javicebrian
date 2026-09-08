@@ -4,8 +4,9 @@ import Schema from '../components/Schema.astro';
 ---
 
 <BaseLayout
-  title="Quién soy — Javi Cebrián, Director de Comunicación"
-  description="Director de Comunicación y Desarrollo de Negocio en Imedes. Especializado en sostenibilidad e IA aplicadas a la comunicación corporativa."
+  title="Quién soy"
+  seoTitle="Quién soy — Javi Cebrián, director de comunicación"
+  description="Director de Comunicación y Desarrollo de Negocio en Imedes, consultora ambiental de València. Comunicación de sostenibilidad e IA aplicada, con criterio y con una casa detrás."
 >
   <Schema type="Person" />
 
@@ -30,9 +31,77 @@ import Schema from '../components/Schema.astro';
       <p class="text-lg leading-relaxed text-[#3D3D3D] mb-6">
         Mi trabajo consiste en convertir la comunicación en una palanca real de negocio para organizaciones que compiten por reputación, clientes y futuro. No vendo creatividad por sí misma. Vendo decisiones de comunicación que mueven negocio, demuestran sostenibilidad y aprovechan la IA donde de verdad multiplica.
       </p>
-      <p class="text-lg leading-relaxed text-[#3D3D3D]">
+      <p class="text-lg leading-relaxed text-[#3D3D3D] mb-6">
         Trabajo con adjudicatarias de servicios públicos, instituciones, CEOs y direcciones de marketing de empresas medianas y grandes que tienen presupuesto y agenda para hacerlo bien.
       </p>
+      <p class="text-lg leading-relaxed text-[#3D3D3D]">
+        Lo hago desde València. El criterio y la dirección los pongo yo; la entrega la hace <a href="https://imedes.net" target="_blank" rel="noopener" class="text-[#467010] underline underline-offset-4 hover:text-[#1A1A1A]">Imedes</a>, una consultora ambiental nacida como <em>spin-off</em> de la Universitat de València, con treinta años de trabajo en el sector y más de 600 proyectos a la espalda. Está en el registro de entidades de educación ambiental del <a href="https://www.miteco.gob.es/en/ceneam/recursos/quien-es-quien/instituto-imedes.html" target="_blank" rel="noopener" class="text-[#467010] underline underline-offset-4 hover:text-[#1A1A1A]">CENEAM, del Ministerio para la Transición Ecológica</a>. Contratas a una persona y tienes una casa detrás: equipo técnico, capacidad de producción y las certificaciones que un contrato público exige.
+      </p>
+    </div>
+  </section>
+
+  <!-- LAS TRES PALANCAS -->
+  <section class="bg-[#FAFAF7]" style="border-top: 1px solid rgba(26,26,26,0.08);">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#467010] m-0">§ LAS TRES PALANCAS</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6 text-[#1A1A1A]" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 12ch;" data-mask-up>
+            <span>Comunica. Decide. Multiplica.</span>
+          </h2>
+          <p class="mt-6 text-base leading-relaxed text-[#3D3D3D]">Por separado, cada una es un departamento. Juntas y en ese orden, son una ventaja.</p>
+        </div>
+        <div class="md:col-span-8 space-y-10">
+          <div class="border-t border-[#1A1A1A]/12 pt-6" data-reveal>
+            <h3 class="text-lg md:text-xl font-extrabold text-[#1A1A1A] m-0">Comunicación</h3>
+            <p class="mt-3 text-base leading-relaxed text-[#3D3D3D] m-0">
+              La mayoría de los departamentos de comunicación no tienen un problema de producción: tienen un problema de eje. Publican mucho y dicen poco. Mi primer trabajo casi siempre es el mismo: reducir el número de frentes y dejar una idea que se pueda defender delante de un comité, de un pleno o de un periodista.
+              <a href="/comunicacion-estrategica/" class="text-[#467010] underline underline-offset-4 hover:text-[#1A1A1A]">Cómo trabajo la comunicación estratégica</a>.
+            </p>
+          </div>
+          <div class="border-t border-[#1A1A1A]/12 pt-6" data-reveal data-delay="80">
+            <h3 class="text-lg md:text-xl font-extrabold text-[#1A1A1A] m-0">Sostenibilidad</h3>
+            <p class="mt-3 text-base leading-relaxed text-[#3D3D3D] m-0">
+              La sostenibilidad que no se comunica se queda en intención, y la que se comunica sin evidencia se convierte en un riesgo. Trabajo entre esas dos zanjas: traducir datos ESG y memorias a mensajes que se entienden y se sostienen. El listón es siempre el mismo — si no lo puedes defender delante de un auditor, no se publica.
+              <a href="/comunicacion-sostenibilidad/" class="text-[#467010] underline underline-offset-4 hover:text-[#1A1A1A]">Comunicación de sostenibilidad y ESG</a>.
+            </p>
+          </div>
+          <div class="border-t border-[#1A1A1A]/12 pt-6" data-reveal data-delay="160">
+            <h3 class="text-lg md:text-xl font-extrabold text-[#1A1A1A] m-0">Inteligencia artificial</h3>
+            <p class="mt-3 text-base leading-relaxed text-[#3D3D3D] m-0">
+              No trabajo la IA como tecnología, sino como decisión: qué parte de un proceso deja de costar horas, qué no conviene automatizar nunca y qué riesgo reputacional asumes al hacerlo. La uso a diario en mi propio trabajo, que es la única razón por la que me atrevo a recomendarla.
+              <a href="/ia-comunicacion/" class="text-[#467010] underline underline-offset-4 hover:text-[#1A1A1A]">IA aplicada a la comunicación</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CON QUIÉN / QUÉ NO -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+        <div data-reveal>
+          <p class="font-display text-xs text-[#8DBE3F] m-0 mb-6">CON QUIÉN TRABAJO</p>
+          <ul class="space-y-5">
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#FAFAF7]/90"><span class="text-[#8DBE3F] font-bold shrink-0">→</span><span>Adjudicatarias de servicios públicos: residuos, agua, limpieza, jardinería, servicios locales.</span></li>
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#FAFAF7]/90"><span class="text-[#8DBE3F] font-bold shrink-0">→</span><span>Ayuntamientos, mancomunidades, consorcios y diputaciones que rinden cuentas de lo que gestionan.</span></li>
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#FAFAF7]/90"><span class="text-[#8DBE3F] font-bold shrink-0">→</span><span>Empresas con agenda ESG que tienen que reportar y quieren que además se entienda.</span></li>
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#FAFAF7]/90"><span class="text-[#8DBE3F] font-bold shrink-0">→</span><span>Direcciones de comunicación que quieren incorporar IA sin perder la voz ni el control.</span></li>
+          </ul>
+        </div>
+        <div data-reveal data-delay="120">
+          <p class="font-display text-xs text-[#A0A0A0] m-0 mb-6">QUÉ NO HAGO</p>
+          <ul class="space-y-5">
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#A0A0A0]"><span class="text-[#6B6B6B] font-bold shrink-0">✕</span><span>Vender IA por moda. Si no ahorra horas o no multiplica capacidad, no entra en la propuesta.</span></li>
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#A0A0A0]"><span class="text-[#6B6B6B] font-bold shrink-0">✕</span><span>Comunicar sostenibilidad sin evidencia. Lo que no se puede sostener, no se cuenta.</span></li>
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#A0A0A0]"><span class="text-[#6B6B6B] font-bold shrink-0">✕</span><span>Llenar calendarios. Más publicaciones no es mejor comunicación.</span></li>
+            <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#A0A0A0]"><span class="text-[#6B6B6B] font-bold shrink-0">✕</span><span>Trabajar sin nadie con capacidad de decidir al otro lado.</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -78,6 +147,32 @@ import Schema from '../components/Schema.astro';
           <p class="text-base text-[#3D3D3D] leading-relaxed">
             Frases cortas. Argumentos con ejemplos. Sin relleno corporativo. La marca personal y corporativa al servicio de la decisión que el cliente necesita tomar.
           </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÓNDE ESCRIBO -->
+  <section class="bg-[#FAFAF7]" style="border-top: 1px solid rgba(26,26,26,0.08);">
+    <div class="container-wide py-16 md:py-20">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#467010] m-0">§ DÓNDE ESCRIBO</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6 text-[#1A1A1A]" style="font-size: clamp(1.5rem, 3vw, 2.4rem); max-width: 13ch;" data-mask-up>
+            <span>Se me lee antes de contratarme.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-8 space-y-6">
+          <p class="text-base md:text-lg leading-relaxed text-[#3D3D3D] m-0" data-reveal>
+            Publico de forma regular sobre comunicación, sostenibilidad e IA. No para llenar un blog: porque escribir es la forma más barata de comprobar si un criterio aguanta.
+          </p>
+          <ul class="space-y-4 list-none p-0 m-0">
+            <li data-reveal><a href="/blog/" class="text-base md:text-lg font-semibold text-[#1A1A1A] no-underline hover:text-[#467010] transition-colors">Artículos del blog <span class="text-[#8DBE3F]">→</span></a><span class="block text-sm text-[#6B6B6B] mt-1">Comunicación estratégica, ESG e inteligencia artificial aplicada.</span></li>
+            <li data-reveal data-delay="60"><a href="/glosario/" class="text-base md:text-lg font-semibold text-[#1A1A1A] no-underline hover:text-[#467010] transition-colors">Glosario <span class="text-[#8DBE3F]">→</span></a><span class="block text-sm text-[#6B6B6B] mt-1">25 términos con definición cerrada y fuente: CSRD, ESRS, doble materialidad, alcances, alegaciones ecológicas.</span></li>
+            <li data-reveal data-delay="120"><a href="/comunicacion-sostenibilidad-valencia/" class="text-base md:text-lg font-semibold text-[#1A1A1A] no-underline hover:text-[#467010] transition-colors">Sostenibilidad en la Comunitat Valenciana <span class="text-[#8DBE3F]">→</span></a><span class="block text-sm text-[#6B6B6B] mt-1">Por qué aquí no se comunica igual.</span></li>
+            <li data-reveal data-delay="180"><a href="https://www.linkedin.com/in/javiercebrian" target="_blank" rel="noopener" class="text-base md:text-lg font-semibold text-[#1A1A1A] no-underline hover:text-[#467010] transition-colors">LinkedIn <span class="text-[#8DBE3F]">↗</span></a><span class="block text-sm text-[#6B6B6B] mt-1">Tres publicaciones por semana, lunes, miércoles y viernes.</span></li>
+          </ul>
         </div>
       </div>
     </div>
