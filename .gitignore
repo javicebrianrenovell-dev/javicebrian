@@ -27,3 +27,4 @@ infra/contact-server/node_modules/
 # IDE
 .vscode/
 .idea/
+.claude/

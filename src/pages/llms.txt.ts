@@ -33,6 +33,9 @@ export async function GET(context: APIContext) {
   );
   lines.push(`- [Quién soy](${site}/quien-soy/): trayectoria, criterio y las tres palancas (comunicación, sostenibilidad, IA).`);
   lines.push(`- [Servicios](${site}/servicios/): cómo puede ayudar a tu organización.`);
+  lines.push(
+    `- [Comunicación de sostenibilidad en València](${site}/comunicacion-sostenibilidad-valencia/): cómo se comunica la sostenibilidad en la Comunitat Valenciana — reconstrucción tras la DANA, áreas industriales de la Ley 14/2018, agua y residuos, y trabajo en las dos lenguas oficiales.`
+  );
   lines.push(`- [Trabajemos juntos](${site}/trabajemos-juntos/): formulario para plantear un proyecto.`);
   lines.push('');
 

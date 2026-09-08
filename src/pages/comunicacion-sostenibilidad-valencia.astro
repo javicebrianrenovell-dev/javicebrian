@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Schema from '../components/Schema.astro';
+import { getCollection } from 'astro:content';
+
+const SITE = 'https://javicebrian.es';
+
+// Artículos del sitio que sostienen esta página. Se enlazan de verdad: una página
+// de territorio sin recorrido interno es una página de relleno.
+const slugsRelacionados = [
+  'comunicacion-ambiental-administracion-publica',
+  'memorias-sostenibilidad-csrd-criterio',
+  'sostenibilidad-estrategica-frente-greenwashing',
+  'justificar-contrato-servicios-administracion',
+];
+const posts = (await getCollection('blog', ({ data }) => !data.draft && data.pubDate <= new Date()))
+  .filter((p) => slugsRelacionados.includes(p.slug))
+  .sort((a, b) => slugsRelacionados.indexOf(a.slug) - slugsRelacionados.indexOf(b.slug));
+
+const marcos = [
+  {
+    num: '01',
+    titulo: 'La reconstrucción tras la DANA',
+    body: 'Municipios enteros explicando obras, plazos y ayudas a vecinos que ya han oído demasiadas promesas. Aquí la comunicación no adorna: sostiene la confianza en la administración. El error caro es contar la inversión en vez de contar lo que cambia en la calle de cada uno.',
+  },
+  {
+    num: '02',
+    titulo: 'Las áreas industriales',
+    body: 'La Ley 14/2018 de la Generalitat creó las entidades de gestión y modernización, el mapa de áreas industriales y el distintivo de municipio industrial estratégico. Detrás de cada expediente hay que convencer a decenas de empresas de que paguen una cuota común. Eso es comunicación, no gestión.',
+    fuente: {
+      texto: 'Ley 14/2018, de 5 de junio · BOE',
+      url: 'https://www.boe.es/buscar/act.php?id=BOE-A-2018-8949',
+    },
+  },
+  {
+    num: '03',
+    titulo: 'Agua y residuos',
+    body: 'Consorcios, planes zonales, concesionarias y un marco que ha cambiado dos veces en tres años: la Ley 7/2022 estatal, la Ley 5/2022 valenciana y la revisión del Plan Integral de Residuos. Cada cambio obliga a explicar de nuevo a la ciudadanía por qué se recicla distinto, se paga distinto o se recoge distinto.',
+    fuente: {
+      texto: 'Plan Integral de Residuos de la Comunitat Valenciana · GVA',
+      url: 'https://mediambient.gva.es/es/web/calidad-ambiental/plan-integral-de-residuos-de-la-comunitat-valenciana-pircv-',
+    },
+  },
+  {
+    num: '04',
+    titulo: 'Dos lenguas, un mensaje',
+    body: 'En castellano y en valencià, y no traduciendo al final. Una campaña pensada en una lengua y volcada a la otra a última hora se nota, y se nota justo donde más cuesta: en el tono. Trabajo los dos idiomas desde el eje, no desde la corrección de estilo.',
+  },
+];
+
+const trabajoCon = [
+  'Adjudicatarias de servicios públicos —residuos, agua, limpieza, jardinería— que tienen que explicar su trabajo ante un ayuntamiento y ante sus vecinos.',
+  'Ayuntamientos y mancomunidades de la provincia de València, Castelló y Alacant.',
+  'Entidades de gestión y modernización de áreas industriales.',
+  'Empresas con obligación de reportar bajo CSRD que quieren que su memoria sirva para algo más que cumplir.',
+  'Consorcios, diputaciones y empresas públicas que rinden cuentas de lo que gestionan.',
+];
+
+const faqs = [
+  {
+    q: '¿Trabajas solo en València capital?',
+    a: 'No. Trabajo en toda la Comunitat Valenciana —provincias de València, Castelló y Alacant— y también fuera de ella. La base está en València, en Imedes, y eso significa que puedo estar en una reunión presencial sin convertirlo en un problema de agenda ni en una partida de desplazamientos.',
+  },
+  {
+    q: '¿Eres tú solo o hay un equipo detrás?',
+    a: 'Las dos cosas. El criterio y la dirección los pongo yo. La entrega la hace Imedes, una consultora ambiental con sede en València y treinta años de trabajo en el sector: equipo técnico, capacidad de producción y las certificaciones que un contrato público exige. Contratas a una persona y tienes detrás una casa.',
+  },
+  {
+    q: '¿Podéis presentaros a licitaciones con nosotros?',
+    a: 'Sí. Imedes concurre habitualmente a licitaciones de comunicación ambiental e institucional. Si lo que necesitas es la memoria técnica de una licitación a la que te presentas tú, también es un trabajo que hago: ordenar el discurso, alinearlo con los criterios de valoración y que se sostenga ante la mesa de contratación.',
+  },
+  {
+    q: '¿Trabajáis en valencià?',
+    a: 'Sí, y desde el principio, no traduciendo al final. En materiales para administración valenciana es lo habitual: la pieza se piensa en las dos lenguas y se revisa con criterio de la Acadèmia Valenciana de la Llengua.',
+  },
+  {
+    q: '¿Cuánto cuesta empezar?',
+    a: 'El escalón de entrada es el Diagnóstico IA + Comunicación: catorce días, 1.500 € fijos, y con garantía de devolución si no salen de ahí al menos tres acciones concretas con retorno estimado. Sirve para saber qué hacer antes de comprometer un presupuesto mayor.',
+  },
+];
+
+const faqSchema = {
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const servicioSchema = {
+  '@id': `${SITE}/comunicacion-sostenibilidad-valencia/#servicio`,
+  name: 'Comunicación de sostenibilidad y comunicación ambiental en València',
+  description:
+    'Dirección de comunicación de sostenibilidad, comunicación ambiental e inteligencia artificial aplicada para organizaciones de la Comunitat Valenciana: adjudicatarias de servicios públicos, ayuntamientos, áreas industriales y empresas con obligación de reporte CSRD.',
+  serviceType: 'Consultoría de comunicación ambiental y de sostenibilidad',
+  url: `${SITE}/comunicacion-sostenibilidad-valencia/`,
+};
+
+const breadcrumbSchema = {
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Servicios', item: `${SITE}/servicios/` },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Comunicación de sostenibilidad en València',
+      item: `${SITE}/comunicacion-sostenibilidad-valencia/`,
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title="Comunicación de sostenibilidad en València"
+  seoTitle="Comunicación ambiental y de sostenibilidad en València"
+  description="Dirección de comunicación de sostenibilidad e IA para organizaciones de la Comunitat Valenciana: adjudicatarias de servicios públicos, ayuntamientos, áreas industriales y empresas con reporte CSRD."
+>
+  <Schema type="Service" data={servicioSchema} />
+  <Schema type="FAQPage" data={faqSchema} />
+  <Schema type="BreadcrumbList" data={breadcrumbSchema} />
+
+  <!-- HERO -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7] relative overflow-hidden">
+    <div class="container-wide py-24 md:py-32">
+      <span class="acento-verde block mb-6" data-mask-up></span>
+      <p class="font-display text-xs text-[#8DBE3F] mb-4" data-mask-up data-delay="80">§ COMUNICACIÓN AMBIENTAL · COMUNITAT VALENCIANA</p>
+      <h1 class="font-extrabold leading-[0.95] tracking-[-0.03em] m-0" style="font-size: clamp(2.25rem, 6vw, 5rem); max-width: 17ch;">
+        <span data-mask-up data-delay="0" class="block">Aquí la sostenibilidad no se explica igual.</span>
+      </h1>
+      <p class="mt-10 text-base md:text-lg text-[#A0A0A0] max-w-2xl" data-reveal data-delay="280">
+        Dirijo comunicación de sostenibilidad para organizaciones de la Comunitat Valenciana desde València, en Imedes. Adjudicatarias de servicios públicos, ayuntamientos, áreas industriales y empresas que tienen que reportar y que además quieren que se entienda.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-3" data-reveal data-delay="360">
+        <a href="/diagnostico/" data-ga-event="cta_click" data-ga-label="valencia_hero_diagnostico" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors no-underline">
+          Empieza por el diagnóstico →
+        </a>
+        <a href="/trabajemos-juntos/" data-ga-event="cta_click" data-ga-label="valencia_hero_form" class="inline-flex items-center justify-center gap-2 px-8 py-4 border border-[#FAFAF7]/20 text-[#FAFAF7] font-medium text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7]/5 transition-colors no-underline">
+          Cuéntame tu caso
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EN CORTO — respuesta directa, extraíble -->
+  <section class="bg-[#FAFAF7] text-[#1A1A1A]">
+    <div class="container-wide py-16 md:py-20">
+      <div class="max-w-3xl border-l-2 border-[#8DBE3F] pl-6 md:pl-8" data-reveal>
+        <p class="font-display text-xs text-[#467010] m-0 mb-4">EN CORTO</p>
+        <p class="text-lg md:text-xl leading-relaxed text-[#1A1A1A] m-0">
+          Comunicar sostenibilidad en la Comunitat Valenciana tiene tres condicionantes que no están en un manual genérico: un territorio que se está reconstruyendo tras la DANA y donde la credibilidad institucional se juega en cada obra, un marco autonómico propio para áreas industriales y residuos, y dos lenguas oficiales. Quien comunica aquí sin conocer esos tres, comunica bien en abstracto y mal en concreto.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ES UN CASO PROPIO -->
+  <section class="bg-[#FAFAF7] text-[#1A1A1A]" style="border-top: 1px solid rgba(26,26,26,0.08);">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#467010] m-0">§ EL TERRENO</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 13ch;" data-mask-up>
+            <span>Cuatro cosas que aquí pesan.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-8 space-y-10">
+          {marcos.map((m, i) => (
+            <div class="border-t border-[#1A1A1A]/12 pt-6" data-reveal data-delay={i * 80}>
+              <div class="flex gap-5">
+                <span class="font-display text-2xl text-[#8DBE3F] shrink-0 leading-none pt-1">{m.num}</span>
+                <div>
+                  <h3 class="text-lg md:text-xl font-extrabold tracking-[-0.01em] m-0">{m.titulo}</h3>
+                  <p class="mt-3 text-base leading-relaxed text-[#3D3D3D] m-0">{m.body}</p>
+                  {m.fuente && (
+                    <p class="mt-3 text-sm m-0">
+                      <a href={m.fuente.url} target="_blank" rel="noopener noreferrer" class="text-[#467010] underline underline-offset-4 hover:text-[#1A1A1A]">
+                        Fuente: {m.fuente.texto}
+                      </a>
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CON QUIÉN TRABAJO -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#8DBE3F] m-0">§ PERFILES</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 13ch;" data-mask-up>
+            <span>Con quién trabajo aquí.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-8">
+          <ul class="space-y-5">
+            {trabajoCon.map((t, i) => (
+              <li class="flex gap-3 text-base md:text-lg leading-relaxed text-[#FAFAF7]/90" data-reveal data-delay={i * 60}>
+                <span class="text-[#8DBE3F] font-bold shrink-0">→</span><span>{t}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="mt-12 p-6 border-l-2 border-[#8DBE3F] bg-[#8DBE3F]/8" data-reveal>
+            <p class="text-base leading-relaxed text-[#FAFAF7]/90 m-0">
+              El criterio lo pongo yo. La entrega la hace <strong class="text-[#FAFAF7]">Imedes</strong>, consultora ambiental con sede en València —Calle Hernández Lázaro, 10— y treinta años de trabajo en el sector. Contratas a una persona y tienes una casa detrás.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR DÓNDE EMPEZAR -->
+  <section class="bg-[#FAFAF7] text-[#1A1A1A]">
+    <div class="container-wide py-20 md:py-28">
+      <span class="acento-verde block mb-6" data-reveal></span>
+      <p class="font-display text-xs text-[#467010] m-0">§ SERVICIOS</p>
+      <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6 mb-12" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 16ch;" data-mask-up>
+        <span>Qué puedo hacer por tu organización.</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="/comunicacion-sostenibilidad/" class="block border-t-2 border-[#1A1A1A] pt-5 no-underline text-[#1A1A1A] group" data-reveal>
+          <h3 class="text-lg font-extrabold m-0 group-hover:text-[#467010] transition-colors">Comunicación de sostenibilidad y ESG</h3>
+          <p class="mt-3 text-base leading-relaxed text-[#3D3D3D] m-0">Traducir datos ESG y memorias CSRD a mensajes que se entienden y se creen. Sin greenwashing y sin párrafos que nadie lee.</p>
+        </a>
+        <a href="/comunicacion-estrategica/" class="block border-t-2 border-[#1A1A1A] pt-5 no-underline text-[#1A1A1A] group" data-reveal data-delay="80">
+          <h3 class="text-lg font-extrabold m-0 group-hover:text-[#467010] transition-colors">Comunicación estratégica</h3>
+          <p class="mt-3 text-base leading-relaxed text-[#3D3D3D] m-0">Dirección de comunicación con eje, no con calendario. Para organizaciones que rinden cuentas de lo que gestionan.</p>
+        </a>
+        <a href="/ia-comunicacion/" class="block border-t-2 border-[#1A1A1A] pt-5 no-underline text-[#1A1A1A] group" data-reveal data-delay="160">
+          <h3 class="text-lg font-extrabold m-0 group-hover:text-[#467010] transition-colors">IA aplicada a la comunicación</h3>
+          <p class="mt-3 text-base leading-relaxed text-[#3D3D3D] m-0">Dónde la IA ahorra horas de verdad en un equipo de comunicación, y dónde es un capricho caro.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LECTURAS -->
+  <section class="bg-[#FAFAF7] text-[#1A1A1A]" style="border-top: 1px solid rgba(26,26,26,0.08);">
+    <div class="container-wide py-16 md:py-20">
+      <p class="font-display text-xs text-[#467010] m-0 mb-8">§ PARA PROFUNDIZAR</p>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5 list-none p-0 m-0">
+        {posts.map((p, i) => (
+          <li data-reveal data-delay={i * 60}>
+            <a href={`/blog/${p.slug}/`} class="text-base md:text-lg font-semibold text-[#1A1A1A] no-underline hover:text-[#467010] transition-colors">
+              {p.data.title} <span class="text-[#8DBE3F]">→</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
+    <div class="container-wide py-20 md:py-28">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#8DBE3F] m-0">§ PREGUNTAS</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 12ch;" data-mask-up>
+            <span>Lo que suelen preguntarme.</span>
+          </h2>
+        </div>
+        <div class="md:col-span-8 space-y-8">
+          {faqs.map((f, i) => (
+            <div class="border-t border-[#FAFAF7]/12 pt-6" data-reveal data-delay={i * 60}>
+              <h3 class="text-lg font-extrabold m-0 text-[#FAFAF7]">{f.q}</h3>
+              <p class="mt-3 text-base leading-relaxed text-[#FAFAF7]/80 m-0">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[#8DBE3F] text-[#1A1A1A]">
+    <div class="container-wide py-20 md:py-24 text-center">
+      <h2 class="font-extrabold tracking-[-0.03em] leading-[1] m-0 mx-auto" style="font-size: clamp(2rem, 5vw, 4rem); max-width: 16ch;" data-mask-up>
+        <span>¿Hablamos de lo tuyo?</span>
+      </h2>
+      <p class="mt-6 text-base md:text-lg max-w-xl mx-auto text-[#1A1A1A]/80" data-reveal data-delay="120">
+        Treinta minutos, sin coste y sin compromiso. Si no encajamos, te lo digo.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center" data-reveal data-delay="200">
+        <a href="/trabajemos-juntos/" data-ga-event="cta_click" data-ga-label="valencia_cta_form" class="inline-flex items-center justify-center px-8 py-4 bg-[#1A1A1A] text-[#FAFAF7] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] hover:text-[#1A1A1A] transition-colors no-underline">
+          Plantéame tu proyecto →
+        </a>
+        <a href="/contacto/" data-ga-event="cta_click" data-ga-label="valencia_cta_contacto" class="inline-flex items-center justify-center px-8 py-4 border border-[#1A1A1A]/30 text-[#1A1A1A] font-medium text-sm uppercase tracking-wider rounded-md hover:bg-[#1A1A1A]/5 transition-colors no-underline">
+          Contacto rápido
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
