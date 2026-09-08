@@ -58,6 +58,9 @@ export async function GET(context: APIContext) {
   lines.push('');
 
   lines.push('## Recursos y contacto');
+  lines.push(
+    `- [Glosario de comunicación, sostenibilidad e IA](${site}/glosario/): definiciones cerradas y con fuente de CSRD, ESRS, doble materialidad, greenwashing, alcances 1-2-3, alegaciones ecológicas, GEO, memoria técnica y criterios de valoración. Revisado en 2026.`
+  );
   lines.push(`- [Checklist: 20 controles para comunicar sostenibilidad sin greenwashing](${site}/recursos/checklist-greenwashing/): recurso descargable gratuito.`);
   lines.push(`- [Blog completo](${site}/blog/): todos los artículos.`);
   lines.push(`- [Contacto](${site}/contacto/): para hablar de un proyecto.`);

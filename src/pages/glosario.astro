@@ -1,0 +1,403 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Schema from '../components/Schema.astro';
+
+const SITE = 'https://javicebrian.es';
+const REVISADO = '2026-09-08';
+
+// Definiciones cerradas, verificables y con fuente. Es el formato que un motor de
+// respuesta cita literalmente, y el que un cliente enseña en una reunión.
+type Termino = {
+  slug: string;
+  termino: string;
+  alias?: string;
+  grupo: 'sostenibilidad' | 'comunicacion' | 'ia' | 'publico';
+  definicion: string;
+  matiz?: string;
+  fuente?: { texto: string; url: string };
+};
+
+const terminos: Termino[] = [
+  // ---------- SOSTENIBILIDAD Y ESG ----------
+  {
+    slug: 'greenwashing',
+    termino: 'Greenwashing',
+    alias: 'Ecoblanqueo',
+    grupo: 'sostenibilidad',
+    definicion:
+      'El greenwashing es presentar como beneficiosa para el medio ambiente una actividad, un producto o una organización cuando ese beneficio no existe, no está probado o es marginal respecto al impacto real. No exige mala fe: la mayoría de los casos son exageración de un dato cierto o una afirmación general sin evidencia detrás.',
+    matiz:
+      'La prueba práctica: si una afirmación no se puede sostener delante de un auditor con datos y metodología, no se publica.',
+  },
+  {
+    slug: 'greenhushing',
+    termino: 'Greenhushing',
+    grupo: 'sostenibilidad',
+    definicion:
+      'El greenhushing es callar deliberadamente los avances ambientales propios por miedo a que se interpreten como greenwashing o a que atraigan escrutinio. Se ha vuelto frecuente desde que endurecieron las normas sobre alegaciones ecológicas.',
+    matiz:
+      'Es un error simétrico al greenwashing: quien no cuenta lo que hace deja que otros escriban su relato. La respuesta no es callar, es documentar.',
+  },
+  {
+    slug: 'csrd',
+    termino: 'CSRD',
+    alias: 'Directiva de información corporativa en materia de sostenibilidad',
+    grupo: 'sostenibilidad',
+    definicion:
+      'La CSRD es la Directiva (UE) 2022/2464, que obliga a determinadas empresas a publicar información de sostenibilidad auditada siguiendo unos estándares comunes, los ESRS, dentro del informe de gestión. Sustituyó a la anterior directiva de información no financiera.',
+    matiz:
+      'Ojo al estado real: el paquete Ómnibus aprobado en 2025 recortó drásticamente el ámbito —quedan sobre todo empresas de más de 1.000 personas y 50 M€ de cifra de negocio— y retrasó dos años la entrada de buena parte de las obligadas. En España la transposición ha ido más lenta de lo previsto. Antes de dar por hecho que una empresa está obligada, hay que comprobar en qué grupo cae hoy.',
+    fuente: {
+      texto: 'Directiva (UE) 2022/2464 · EUR-Lex',
+      url: 'https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32022L2464',
+    },
+  },
+  {
+    slug: 'esrs',
+    termino: 'ESRS',
+    alias: 'Estándares europeos de información de sostenibilidad',
+    grupo: 'sostenibilidad',
+    definicion:
+      'Los ESRS son los estándares que dicen qué información de sostenibilidad hay que publicar bajo la CSRD y con qué formato. Cubren asuntos transversales, ambientales, sociales y de gobernanza, y se están revisando para simplificarlos tras el paquete Ómnibus.',
+    matiz:
+      'Para comunicación importa una cosa: los ESRS fijan el contenido mínimo, no el relato. Cumplirlos no equivale a que se entienda lo que haces.',
+  },
+  {
+    slug: 'doble-materialidad',
+    termino: 'Doble materialidad',
+    grupo: 'sostenibilidad',
+    definicion:
+      'La doble materialidad es el criterio que decide qué asuntos de sostenibilidad son relevantes para una organización mirando en dos direcciones: cómo le afecta a ella el entorno (materialidad financiera) y cómo afecta ella al entorno y a las personas (materialidad de impacto). Un asunto entra en el informe si es material por cualquiera de las dos vías.',
+    matiz:
+      'Es la mejor herramienta de comunicación que existe y casi nadie la usa como tal: el análisis de doble materialidad ya te dice de qué tienes que hablar y de qué no.',
+  },
+  {
+    slug: 'alegaciones-ecologicas',
+    termino: 'Alegaciones ecológicas',
+    alias: 'Green claims',
+    grupo: 'sostenibilidad',
+    definicion:
+      'Una alegación ecológica es cualquier afirmación pública —en un envase, un anuncio, una web o una memoria— que atribuya a un producto, servicio u organización un efecto ambiental positivo o menos dañino.',
+    matiz:
+      'Estado a día de hoy: la Comisión Europea retiró en junio de 2025 la propuesta específica de directiva Green Claims. Lo que sí obliga es la Directiva (UE) 2024/825 de empoderamiento del consumidor, con transposición hasta el 27 de marzo de 2026 y aplicación desde el 27 de septiembre de 2026. Prohíbe las alegaciones ambientales genéricas sin acreditación y los distintivos de sostenibilidad que no se basen en un sistema de certificación. Quien todavía planifique contra la Green Claims está planificando contra una norma que no existe.',
+    fuente: {
+      texto: 'Directiva (UE) 2024/825 · EUR-Lex',
+      url: 'https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32024L0825',
+    },
+  },
+  {
+    slug: 'memoria-de-sostenibilidad',
+    termino: 'Memoria de sostenibilidad',
+    alias: 'Informe de sostenibilidad',
+    grupo: 'sostenibilidad',
+    definicion:
+      'Una memoria de sostenibilidad es el documento en el que una organización rinde cuentas periódicamente de su desempeño ambiental, social y de gobernanza, con datos, metodología y comparación con periodos anteriores.',
+    matiz:
+      'La mayoría se escriben para el auditor y luego se publican como si fueran para el público. Son dos documentos distintos y conviene aceptarlo desde el principio.',
+  },
+  {
+    slug: 'alcance-1-2-3',
+    termino: 'Alcances 1, 2 y 3',
+    grupo: 'sostenibilidad',
+    definicion:
+      'Los alcances clasifican las emisiones de gases de efecto invernadero de una organización según su origen. Alcance 1: emisiones directas de fuentes que controla. Alcance 2: indirectas asociadas a la energía que compra. Alcance 3: el resto de la cadena de valor, de los proveedores al uso del producto.',
+    matiz:
+      'El alcance 3 suele ser el grueso del total y el peor medido. Comunicar una reducción sin decir de qué alcance se habla es la forma más común de exagerar sin mentir.',
+    fuente: {
+      texto: 'GHG Protocol · Corporate Standard',
+      url: 'https://ghgprotocol.org/corporate-standard',
+    },
+  },
+  {
+    slug: 'taxonomia-europea',
+    termino: 'Taxonomía europea',
+    grupo: 'sostenibilidad',
+    definicion:
+      'La taxonomía europea es el sistema de clasificación que define cuándo una actividad económica puede considerarse ambientalmente sostenible, según el Reglamento (UE) 2020/852. Sirve para orientar la inversión y para evitar que cada empresa use su propia definición de «verde».',
+    fuente: {
+      texto: 'Reglamento (UE) 2020/852 · EUR-Lex',
+      url: 'https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX%3A32020R0852',
+    },
+  },
+  {
+    slug: 'economia-circular',
+    termino: 'Economía circular',
+    grupo: 'sostenibilidad',
+    definicion:
+      'La economía circular es el modelo que busca mantener materiales y productos en uso el mayor tiempo posible —reduciendo, reutilizando, reparando y reciclando— frente al modelo lineal de extraer, fabricar y tirar.',
+    matiz:
+      'En comunicación municipal es el término más gastado y peor explicado. Funciona cuando se traduce a lo que el vecino tiene delante: qué contenedor, qué día, qué pasa después.',
+  },
+
+  // ---------- COMUNICACIÓN ----------
+  {
+    slug: 'eje-discursivo',
+    termino: 'Eje discursivo',
+    grupo: 'comunicacion',
+    definicion:
+      'El eje discursivo es la idea central que sostiene toda la comunicación de una organización durante un periodo. Una sola, formulable en una frase, a la que se subordinan campañas, mensajes y piezas.',
+    matiz:
+      'Sin eje no hay estrategia de comunicación: hay calendario. La diferencia se nota cuando alguien pregunta por qué se hace algo y la respuesta es «tocaba publicar».',
+  },
+  {
+    slug: 'comunicacion-ambiental',
+    termino: 'Comunicación ambiental',
+    grupo: 'comunicacion',
+    definicion:
+      'La comunicación ambiental es la disciplina que traslada información sobre el medio ambiente y su gestión a públicos concretos con un objetivo de cambio: que se recicle mejor, que se consuma menos agua, que se entienda una obra o que se acepte una decisión pública.',
+    matiz:
+      'Se diferencia de la comunicación corporativa en que casi siempre persigue un comportamiento, no una percepción.',
+  },
+  {
+    slug: 'licencia-social',
+    termino: 'Licencia social para operar',
+    grupo: 'comunicacion',
+    definicion:
+      'La licencia social para operar es la aceptación continuada que una comunidad concede a una actividad que le afecta —una planta de tratamiento, una cantera, una obra— más allá de los permisos administrativos que esa actividad tenga en regla.',
+    matiz:
+      'No se firma y no caduca en una fecha: se retira el día que alguien decide que ya no compensa. Por eso se trabaja antes del conflicto, no durante.',
+  },
+  {
+    slug: 'reputacion-corporativa',
+    termino: 'Reputación corporativa',
+    grupo: 'comunicacion',
+    definicion:
+      'La reputación corporativa es el juicio acumulado que los grupos de interés hacen sobre una organización a partir de su comportamiento a lo largo del tiempo. Se distingue de la imagen en que no depende de lo que la organización dice, sino de lo que hace y de lo que se recuerda.',
+  },
+  {
+    slug: 'portavocia',
+    termino: 'Portavocía',
+    grupo: 'comunicacion',
+    definicion:
+      'La portavocía es la función de representar públicamente a una organización: quién habla, con qué mandato, en qué canales y con qué límites. Incluye la preparación del portavoz y el reparto de papeles cuando hay más de uno.',
+    matiz:
+      'En una crisis, la mayoría de los errores no son de mensaje: son de portavocía mal repartida.',
+  },
+
+  // ---------- INTELIGENCIA ARTIFICIAL ----------
+  {
+    slug: 'ia-generativa',
+    termino: 'IA generativa',
+    grupo: 'ia',
+    definicion:
+      'La IA generativa es el conjunto de sistemas capaces de producir contenido nuevo —texto, imagen, audio, vídeo o código— a partir de patrones aprendidos de grandes volúmenes de datos y de una instrucción del usuario.',
+    matiz:
+      'Para un equipo de comunicación, lo relevante no es qué puede generar, sino qué parte del proceso deja de costar horas: documentación, primeras versiones, adaptación de formatos.',
+  },
+  {
+    slug: 'alucinacion',
+    termino: 'Alucinación',
+    grupo: 'ia',
+    definicion:
+      'Una alucinación es una afirmación falsa que un modelo de lenguaje produce con la misma seguridad que una verdadera: una cifra inventada, una cita que no existe, una norma mal atribuida.',
+    matiz:
+      'Es el riesgo número uno al usar IA en contenidos corporativos. La única defensa que funciona es la verificación de todo dato, nombre y norma antes de publicar. Ninguna herramienta lo resuelve por ti.',
+  },
+  {
+    slug: 'politica-interna-de-ia',
+    termino: 'Política interna de uso de IA',
+    grupo: 'ia',
+    definicion:
+      'Una política interna de uso de IA es el documento breve que fija, dentro de una organización, qué se puede hacer con estas herramientas y qué no: qué información no se sube nunca, qué salidas requieren revisión humana, quién aprueba qué y cómo se documenta.',
+    matiz:
+      'Suele bastar con dos páginas. Su valor no es normativo: es que el equipo deje de improvisar cada uno por su cuenta.',
+  },
+  {
+    slug: 'agente-de-ia',
+    termino: 'Agente de IA',
+    grupo: 'ia',
+    definicion:
+      'Un agente de IA es un sistema que, además de generar contenido, ejecuta pasos por su cuenta hacia un objetivo: consultar fuentes, usar herramientas, encadenar acciones y decidir el siguiente paso según el resultado del anterior.',
+    matiz:
+      'La diferencia práctica con un asistente: al asistente le pides una cosa, al agente le encargas un encargo. Y por eso el agente necesita límites escritos.',
+  },
+  {
+    slug: 'automatizacion-de-procesos',
+    termino: 'Automatización de procesos',
+    grupo: 'ia',
+    definicion:
+      'La automatización de procesos es la sustitución de pasos manuales y repetitivos de un flujo de trabajo por reglas o sistemas que los ejecutan solos: recopilar, clasificar, avisar, publicar, archivar.',
+    matiz:
+      'No es lo mismo que IA, y confundirlas sale caro. Buena parte de lo que un equipo de comunicación pierde en horas se resuelve con automatización sencilla, sin modelos de por medio.',
+  },
+  {
+    slug: 'geo',
+    termino: 'GEO',
+    alias: 'Optimización para motores generativos',
+    grupo: 'ia',
+    definicion:
+      'GEO es el trabajo de conseguir que una organización aparezca y se cite correctamente en las respuestas que generan los asistentes de IA, frente al SEO clásico, que persigue posiciones en una lista de resultados.',
+    matiz:
+      'Cambian las palancas: pesan más las definiciones cerradas, los datos propios verificables, las fuentes citadas y las menciones de terceros que las palabras clave repetidas.',
+  },
+
+  // ---------- SECTOR PÚBLICO ----------
+  {
+    slug: 'memoria-tecnica',
+    termino: 'Memoria técnica',
+    grupo: 'publico',
+    definicion:
+      'La memoria técnica es el documento con el que una empresa explica, en una licitación pública, cómo va a prestar el servicio: metodología, equipo, medios, plazos y mejoras. Es lo que se puntúa en los criterios sujetos a juicio de valor.',
+    matiz:
+      'Se evalúa contra un baremo, no contra el gusto de nadie. Una memoria bien escrita pero desalineada del baremo pierde frente a una peor escrita que responde punto por punto.',
+  },
+  {
+    slug: 'criterios-de-valoracion',
+    termino: 'Criterios de valoración',
+    grupo: 'publico',
+    definicion:
+      'Los criterios de valoración son el reparto de puntos con el que una mesa de contratación decide qué oferta gana. Se dividen entre criterios evaluables por fórmula —normalmente el precio— y criterios sujetos a juicio de valor, que se defienden en la memoria técnica.',
+    matiz:
+      'Leer el reparto antes que el objeto del contrato ahorra semanas: si el precio pesa demasiado y el trabajo intelectual poco, la licitación no es para ti por buena que sea tu propuesta.',
+  },
+  {
+    slug: 'pliego',
+    termino: 'Pliego',
+    grupo: 'publico',
+    definicion:
+      'El pliego es el documento que fija las condiciones de un contrato público. Hay dos: el de cláusulas administrativas particulares, que regula el procedimiento y la puntuación, y el de prescripciones técnicas, que describe qué hay que hacer.',
+    matiz:
+      'Las decisiones que ganan o pierden una licitación están casi siempre en el administrativo, y casi todo el mundo empieza leyendo el técnico.',
+  },
+  {
+    slug: 'consulta-publica',
+    termino: 'Consulta pública',
+    grupo: 'publico',
+    definicion:
+      'Una consulta pública es el trámite por el que una administración recoge opiniones de la ciudadanía y del sector antes de aprobar una norma o un plan. Es preceptiva en la elaboración de disposiciones de carácter general.',
+    matiz:
+      'Es la ventana barata de influencia que casi ningún sector privado usa. Participar deja además una posición pública documentada y citable.',
+  },
+];
+
+const grupos = [
+  { id: 'sostenibilidad', label: 'Sostenibilidad y ESG' },
+  { id: 'comunicacion', label: 'Comunicación' },
+  { id: 'ia', label: 'Inteligencia artificial' },
+  { id: 'publico', label: 'Sector público' },
+] as const;
+
+const definedTermSet = {
+  '@id': `${SITE}/glosario/#glosario`,
+  '@type': 'DefinedTermSet',
+  name: 'Glosario de comunicación, sostenibilidad e IA',
+  description:
+    'Definiciones cerradas y actualizadas de los términos que aparecen en comunicación de sostenibilidad, reporte ESG, inteligencia artificial aplicada a la comunicación y contratación pública.',
+  url: `${SITE}/glosario/`,
+  inLanguage: 'es-ES',
+  dateModified: REVISADO,
+  hasDefinedTerm: terminos.map((t) => ({
+    '@type': 'DefinedTerm',
+    '@id': `${SITE}/glosario/#${t.slug}`,
+    name: t.termino,
+    ...(t.alias ? { alternateName: t.alias } : {}),
+    description: t.matiz ? `${t.definicion} ${t.matiz}` : t.definicion,
+    inDefinedTermSet: { '@id': `${SITE}/glosario/#glosario` },
+    url: `${SITE}/glosario/#${t.slug}`,
+  })),
+};
+
+const breadcrumbSchema = {
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Glosario', item: `${SITE}/glosario/` },
+  ],
+};
+---
+
+<BaseLayout
+  title="Glosario"
+  seoTitle="Glosario de comunicación, sostenibilidad e IA"
+  description="Qué significan CSRD, ESRS, doble materialidad, greenwashing, alcance 3, GEO o memoria técnica. Definiciones cerradas, con fuente y actualizadas a 2026."
+>
+  <Schema type="CollectionPage" data={{ '@id': `${SITE}/glosario/#pagina`, url: `${SITE}/glosario/`, name: 'Glosario de comunicación, sostenibilidad e IA', mainEntity: definedTermSet }} />
+  <Schema type="BreadcrumbList" data={breadcrumbSchema} />
+
+  <!-- HERO -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
+    <div class="container-wide py-20 md:py-28">
+      <span class="acento-verde block mb-6" data-mask-up></span>
+      <p class="font-display text-xs text-[#8DBE3F] mb-4" data-mask-up data-delay="80">§ GLOSARIO</p>
+      <h1 class="font-extrabold leading-[0.95] tracking-[-0.03em] m-0" style="font-size: clamp(2.25rem, 6vw, 5rem); max-width: 15ch;">
+        <span data-mask-up data-delay="0" class="block">Las palabras que todo el mundo usa y casi nadie define.</span>
+      </h1>
+      <p class="mt-10 text-base md:text-lg text-[#A0A0A0] max-w-2xl" data-reveal data-delay="280">
+        {terminos.length} términos de comunicación, sostenibilidad, inteligencia artificial y contratación pública. Definición cerrada, el matiz que importa en la práctica y la fuente cuando la hay.
+      </p>
+      <p class="mt-6 text-sm text-[#6B6B6B]" data-reveal data-delay="340">Revisado el 8 de septiembre de 2026.</p>
+    </div>
+  </section>
+
+  <!-- ÍNDICE -->
+  <section class="bg-[#FAFAF7] text-[#1A1A1A]" style="border-bottom: 1px solid rgba(26,26,26,0.08);">
+    <div class="container-wide py-10">
+      <nav aria-label="Índice del glosario" class="flex flex-wrap gap-x-6 gap-y-3">
+        {grupos.map((g) => (
+          <a href={`#${g.id}`} class="text-sm font-semibold text-[#467010] no-underline hover:text-[#1A1A1A] transition-colors">
+            {g.label} <span class="text-[#8DBE3F]">({terminos.filter((t) => t.grupo === g.id).length})</span>
+          </a>
+        ))}
+      </nav>
+    </div>
+  </section>
+
+  <!-- TÉRMINOS -->
+  {grupos.map((g) => (
+    <section id={g.id} class="bg-[#FAFAF7] text-[#1A1A1A]" style="border-top: 1px solid rgba(26,26,26,0.08); scroll-margin-top: 90px;">
+      <div class="container-wide py-16 md:py-20">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+          <div class="md:col-span-4">
+            <span class="acento-verde block mb-6" data-reveal></span>
+            <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] m-0" style="font-size: clamp(1.5rem, 3vw, 2.4rem); max-width: 12ch;" data-mask-up>
+              <span>{g.label}</span>
+            </h2>
+          </div>
+          <div class="md:col-span-8 space-y-10">
+            {terminos.filter((t) => t.grupo === g.id).map((t, i) => (
+              <div id={t.slug} class="border-t border-[#1A1A1A]/12 pt-6" style="scroll-margin-top: 90px;" data-reveal data-delay={Math.min(i, 4) * 60}>
+                <h3 class="text-lg md:text-xl font-extrabold tracking-[-0.01em] m-0">
+                  {t.termino}
+                  {t.alias && <span class="block text-sm font-medium text-[#6B6B6B] mt-1">También: {t.alias}</span>}
+                </h3>
+                <p class="mt-3 text-base leading-relaxed text-[#3D3D3D] m-0">{t.definicion}</p>
+                {t.matiz && (
+                  <p class="mt-4 pl-4 border-l-2 border-[#8DBE3F] text-base leading-relaxed text-[#1A1A1A] m-0">{t.matiz}</p>
+                )}
+                {t.fuente && (
+                  <p class="mt-3 text-sm m-0">
+                    <a href={t.fuente.url} target="_blank" rel="noopener noreferrer" class="text-[#467010] underline underline-offset-4 hover:text-[#1A1A1A]">
+                      Fuente: {t.fuente.texto}
+                    </a>
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- CTA -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
+    <div class="container-wide py-16 md:py-20">
+      <div class="max-w-3xl">
+        <span class="acento-verde block mb-6" data-reveal></span>
+        <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] m-0" style="font-size: clamp(1.6rem, 3.5vw, 2.6rem); max-width: 20ch;" data-mask-up>
+          <span>¿Falta un término o hay uno que no cuadra con tu caso?</span>
+        </h2>
+        <p class="mt-6 text-base md:text-lg text-[#FAFAF7]/80" data-reveal data-delay="120">
+          Escríbeme y lo añado o lo matizo. Este glosario se revisa cuando cambia la norma, no cada año por costumbre.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3" data-reveal data-delay="200">
+          <a href="/contacto/" data-ga-event="cta_click" data-ga-label="glosario_cta_contacto" class="inline-flex items-center justify-center px-8 py-4 bg-[#8DBE3F] text-[#1A1A1A] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] transition-colors no-underline">
+            Proponer un término →
+          </a>
+          <a href="/comunicacion-sostenibilidad/" class="inline-flex items-center justify-center px-8 py-4 border border-[#FAFAF7]/20 text-[#FAFAF7] font-medium text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7]/5 transition-colors no-underline">
+            Comunicación de sostenibilidad
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
