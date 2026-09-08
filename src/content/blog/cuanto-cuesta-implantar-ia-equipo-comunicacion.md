@@ -2,6 +2,7 @@
 title: "Cuánto cuesta de verdad implantar IA en un equipo de comunicación"
 seoTitle: "Cuánto cuesta implantar IA en comunicación"
 description: "Las licencias son la parte barata. El coste real está en las horas de aprendizaje, la gobernanza y lo que se pierde por empezar por el sitio equivocado."
+enCorto: "Las licencias son la partida pequeña: entre 20 y 60 € por persona y mes. El coste real está en las horas de aprendizaje del equipo, en montar la gobernanza —qué se puede subir, quién revisa qué— y en lo que se pierde empezando por el proceso equivocado. Un proyecto bien ordenado se paga con las horas que libera; uno desordenado sale caro aunque el software sea gratis."
 pubDate: 2026-08-04
 heroImage: "/blog-images/hero-ia-empresas-ambientales.jpg"
 category: ia

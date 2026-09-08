@@ -17,7 +17,7 @@ interface Props {
 }
 
 const { post, readingTime = 0, toc = [], relatedPosts = [] } = Astro.props;
-const { title, seoTitle, description, pubDate, updatedDate, heroImage, category, tags } = post.data;
+const { title, seoTitle, description, enCorto, pubDate, updatedDate, heroImage, category, tags } = post.data;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 const heroImageURL = heroImage
@@ -80,6 +80,7 @@ const shareWhatsApp = `https://api.whatsapp.com/send?text=${encodeURIComponent(t
       mainEntityOfPage: canonicalURL,
       url: canonicalURL,
       keywords: tags.join(', '),
+      ...(enCorto ? { abstract: enCorto } : {}),
       articleSection: category,
     }}
   />
@@ -145,6 +146,13 @@ const shareWhatsApp = `https://api.whatsapp.com/send?text=${encodeURIComponent(t
               ))}
             </ol>
           </nav>
+        )}
+
+        {enCorto && (
+          <aside class="mb-10 border-l-2 border-[#8DBE3F] pl-5 md:pl-6" aria-label="Resumen">
+            <p class="font-display text-xs text-[#467010] m-0 mb-3">EN CORTO</p>
+            <p class="text-lg md:text-xl leading-relaxed text-[#1A1A1A] m-0">{enCorto}</p>
+          </aside>
         )}
 
         <div class="prose-custom">

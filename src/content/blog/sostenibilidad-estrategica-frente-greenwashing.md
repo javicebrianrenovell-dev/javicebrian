@@ -1,6 +1,7 @@
 ---
 title: "Sostenibilidad estratégica frente al greenwashing"
 description: "Cómo comunicar sostenibilidad con evidencia y evitar el greenwashing: la diferencia entre el adorno y la estrategia real."
+enCorto: "La diferencia entre sostenibilidad estratégica y greenwashing no está en el tono: está en si la afirmación se puede sostener con datos, metodología y trazabilidad delante de un auditor. Las señales de alarma son los términos absolutos sin acreditar, los distintivos propios sin certificación detrás y los logros contados sin decir el punto de partida. Desde el 27 de septiembre de 2026 esa exigencia deja de ser reputacional y pasa a ser legal."
 pubDate: 2026-05-30
 heroImage: "/blog-images/nuevo-sostenibilidad-estrategica.jpg"
 category: sostenibilidad

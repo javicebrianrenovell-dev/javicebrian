@@ -2,6 +2,7 @@
 title: "Memorias de sostenibilidad y CSRD: cómo afrontarlas con criterio"
 seoTitle: "Memorias de sostenibilidad y CSRD con criterio"
 description: "Cómo hacer memorias de sostenibilidad útiles más allá del cumplimiento de la CSRD, y dónde la IA ayuda de verdad."
+enCorto: "Una memoria de sostenibilidad sirve para sostener decisiones ante quien financia, contrata o regula, no para rellenar un requisito. Los dos errores que la arruinan son escribirla solo para el auditor y publicarla después como si fuera para el público. Antes de escribir conviene comprobar el ámbito real de la CSRD: el paquete Ómnibus de 2025 recortó las empresas obligadas y retrasó dos años a buena parte de ellas."
 pubDate: 2026-06-02
 heroImage: "/blog-images/nuevo-memorias-sostenibilidad-csrd.jpg"
 category: sostenibilidad

@@ -2,6 +2,7 @@
 title: "Reporting de sostenibilidad: de la hoja de cálculo dispersa al informe que alguien lee"
 seoTitle: "Reporting de sostenibilidad con criterio"
 description: "Cómo pasar de datos de sostenibilidad dispersos en hojas de cálculo a un informe útil y verificable, y dónde la IA ayuda de verdad en el reporting."
+enCorto: "El problema del reporting de sostenibilidad casi nunca son los datos: es que están repartidos en hojas de cálculo distintas, con criterios distintos y sin trazabilidad. Ordenarlos antes de escribir es la mitad del trabajo. La IA ayuda a reunir, cotejar y redactar primeras versiones, pero no puede validar un dato: lo que no se puede sostener con metodología y fuente es un riesgo, no un descuido."
 pubDate: 2026-06-20
 heroImage: "/blog-images/hero-reporting-sostenibilidad.jpg"
 category: sostenibilidad
