@@ -1,0 +1,271 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Schema from '../components/Schema.astro';
+
+const SITE = 'https://javicebrian.es';
+
+// Preguntas reales, con respuesta cerrada y autosuficiente. Cada respuesta tiene
+// que poder leerse suelta, fuera de la página, sin perder sentido: así es como
+// la lee un motor de respuesta y así es como se cita.
+type P = { q: string; a: string; grupo: 'sostenibilidad' | 'ia' | 'comunicacion' | 'publico' | 'trabajar' };
+
+const preguntas: P[] = [
+  // ---------- SOSTENIBILIDAD ----------
+  {
+    grupo: 'sostenibilidad',
+    q: '¿Cómo se comunica sostenibilidad sin caer en greenwashing?',
+    a: 'Contando solo lo que se puede demostrar con datos, metodología y trazabilidad, y diciendo siempre desde dónde se parte. Tres reglas prácticas: nada de términos absolutos —«ecológico», «sostenible», «respetuoso»— sin acreditación detrás; nada de distintivos propios que no se apoyen en una certificación; y ninguna cifra de mejora sin el punto de partida al lado. La prueba definitiva es si la afirmación aguanta delante de un auditor.',
+  },
+  {
+    grupo: 'sostenibilidad',
+    q: '¿Sigue vigente la Directiva Green Claims?',
+    a: 'No. La Comisión Europea retiró la propuesta de directiva sobre alegaciones ecológicas en junio de 2025. Lo que sí obliga es la Directiva (UE) 2024/825, de empoderamiento del consumidor, con transposición hasta el 27 de marzo de 2026 y aplicación desde el 27 de septiembre de 2026. Prohíbe las alegaciones ambientales genéricas sin acreditación y los sellos de sostenibilidad sin sistema de certificación detrás.',
+  },
+  {
+    grupo: 'sostenibilidad',
+    q: '¿Mi empresa está obligada por la CSRD?',
+    a: 'Depende, y menos que hace dos años. El paquete Ómnibus aprobado en febrero de 2025 recortó drásticamente el ámbito: quedan sobre todo las empresas de más de 1.000 personas y 50 millones de cifra de negocio, y se retrasaron dos años las obligaciones de buena parte de las que ya estaban dentro. En España la transposición va más lenta de lo previsto. Antes de dar nada por hecho, hay que comprobar en qué grupo cae la empresa hoy.',
+  },
+  {
+    grupo: 'sostenibilidad',
+    q: '¿Para qué sirve una memoria de sostenibilidad más allá de cumplir?',
+    a: 'Para sostener decisiones ante quien te financia, te contrata o te regula. Una memoria bien hecha es el único documento donde una organización deja por escrito, con datos comparables, qué hace y qué no hace en sostenibilidad. Eso vale en una licitación, en una negociación bancaria y en una crisis. El error habitual es escribirla solo para el auditor y publicarla después como si fuera para el público: son dos documentos distintos.',
+  },
+  {
+    grupo: 'sostenibilidad',
+    q: '¿Qué es la doble materialidad y por qué importa en comunicación?',
+    a: 'Es el criterio que decide qué asuntos de sostenibilidad son relevantes mirando en dos direcciones: cómo te afecta a ti el entorno y cómo afectas tú al entorno y a las personas. Importa en comunicación porque el análisis de doble materialidad ya te dice de qué tienes que hablar y de qué no. Es la mejor herramienta de priorización de mensajes que existe, y casi nadie la usa para eso.',
+  },
+  {
+    grupo: 'sostenibilidad',
+    q: '¿Qué hago si todavía no tengo resultados ambientales que contar?',
+    a: 'Contar el proceso, no el resultado. Decir qué has medido, con qué metodología, qué has descubierto y qué te has comprometido a hacer, con fecha. Eso es honesto, es verificable y construye credibilidad. Lo que no funciona es esperar a tener una cifra buena: mientras tanto, el relato lo escribe otro. Y tampoco funciona callar del todo, que es el error contrario, el greenhushing.',
+  },
+  {
+    grupo: 'sostenibilidad',
+    q: '¿Qué son los alcances 1, 2 y 3 y cuál se comunica peor?',
+    a: 'Clasifican las emisiones según su origen: alcance 1 son las directas de lo que controlas, alcance 2 las de la energía que compras y alcance 3 el resto de la cadena de valor, de los proveedores al uso del producto. El peor comunicado es el 3, que suele ser el grueso del total y el peor medido. Anunciar una reducción sin decir de qué alcance se habla es la forma más común de exagerar sin llegar a mentir.',
+  },
+
+  // ---------- IA ----------
+  {
+    grupo: 'ia',
+    q: '¿Por dónde empieza un equipo de comunicación con la IA?',
+    a: 'Por un proceso concreto que duela y se repita, no por elegir herramienta. Se mide cuántas horas cuesta hoy ese proceso, se prueba un mes con una sola herramienta y una persona responsable, y se compara. Los cuatro frentes donde suele rendir: documentación y búsqueda, primeras versiones de texto, adaptación de una pieza a varios formatos y seguimiento informativo. Empezar por la herramienta en vez de por el proceso es el error más caro y el más común.',
+  },
+  {
+    grupo: 'ia',
+    q: '¿Cuánto cuesta implantar IA en un equipo de comunicación?',
+    a: 'Las licencias son la partida pequeña: entre 20 y 60 euros por persona y mes en herramientas generalistas. El coste real está en las horas de aprendizaje del equipo, en montar la gobernanza —qué se puede subir, quién revisa qué— y en lo que se pierde empezando por el proceso equivocado. Un proyecto bien ordenado se paga con las horas que libera; uno desordenado sale caro aunque el software fuera gratis.',
+  },
+  {
+    grupo: 'ia',
+    q: '¿Qué NO se debe automatizar en comunicación?',
+    a: 'Tres cosas. Lo que exige criterio profesional: decidir qué se cuenta y qué no. Lo que implica trato con una persona molesta o preocupada, donde una respuesta automática empeora el problema. Y cualquier dato, cifra o norma que se vaya a publicar sin que un humano lo verifique. Un modelo de lenguaje inventa con la misma seguridad con la que acierta, y en un contenido corporativo eso es un riesgo reputacional, no un error de estilo.',
+  },
+  {
+    grupo: 'ia',
+    q: '¿Cómo elijo una herramienta de IA sin perseguir cada novedad?',
+    a: 'Con cuatro preguntas antes de adoptarla: qué proceso concreto mejora, cuántas horas ahorra al mes, dónde acaban los datos que le das, y qué pasa si mañana desaparece. Si no puedes responder las cuatro, no la adoptes todavía. Cambiar de herramienta cada mes tiene un coste que no aparece en ninguna factura: el equipo vuelve a empezar cada vez y ninguna llega a integrarse en el trabajo real.',
+  },
+  {
+    grupo: 'ia',
+    q: '¿Necesito una política interna de uso de IA?',
+    a: 'Sí, y bastan dos páginas. Debe fijar qué información no se sube nunca a una herramienta externa, qué salidas requieren revisión humana antes de publicarse, quién aprueba qué y cómo se documenta. Su valor no es normativo: es que el equipo deje de improvisar cada uno por su cuenta. Sin política escrita, la práctica real de la organización la define quien más se atreva.',
+  },
+  {
+    grupo: 'ia',
+    q: '¿La IA puede escribir una memoria de sostenibilidad?',
+    a: 'Puede ayudar a reunir información dispersa, cotejar datos entre fuentes y redactar primeras versiones. No puede validar un dato ni decidir qué es material. Ese es justo el trabajo que da valor a la memoria y el que un auditor va a revisar. Usada así ahorra semanas; usada para generar el documento entero produce un texto correcto que no se sostiene.',
+  },
+  {
+    grupo: 'ia',
+    q: '¿Qué es la optimización para motores generativos o GEO?',
+    a: 'Es el trabajo de conseguir que una organización aparezca y se cite correctamente en las respuestas que generan los asistentes de IA, frente al SEO clásico, que persigue posiciones en una lista de resultados. Cambian las palancas: pesan más las definiciones cerradas, los datos propios verificables, las fuentes citadas y las menciones de terceros que la repetición de palabras clave.',
+  },
+
+  // ---------- COMUNICACIÓN ----------
+  {
+    grupo: 'comunicacion',
+    q: '¿Cómo sé si mi comunicación tiene estrategia o solo calendario?',
+    a: 'Con una pregunta: ¿por qué se publicó lo último que se publicó? Si la respuesta es «tocaba», hay calendario. Si es «porque sostiene la idea que estamos defendiendo este trimestre», hay estrategia. La señal más clara de que falta eje es que el equipo dedica más tiempo a decidir qué publicar que a decidir qué defender.',
+  },
+  {
+    grupo: 'comunicacion',
+    q: '¿Qué es un eje discursivo?',
+    a: 'La idea central que sostiene toda la comunicación de una organización durante un periodo. Una sola, formulable en una frase, a la que se subordinan campañas, mensajes y piezas. No es un eslogan ni un valor corporativo: es la posición que quieres que alguien repita cuando hable de ti sin tenerte delante.',
+  },
+  {
+    grupo: 'comunicacion',
+    q: '¿Cómo se mide el retorno de la comunicación de sostenibilidad?',
+    a: 'Definiendo antes qué decisión tenía que mover. Si el objetivo era ganar contratos, se mide en licitaciones presentadas y adjudicadas. Si era reducir conflictividad, en quejas y en incidencias. Si era captar talento, en candidaturas. Las métricas de alcance sirven para diagnosticar, no para justificar. Una comunicación que solo puede enseñar impresiones no ha definido su objetivo.',
+  },
+  {
+    grupo: 'comunicacion',
+    q: '¿Qué es la licencia social para operar?',
+    a: 'La aceptación continuada que una comunidad concede a una actividad que le afecta —una planta de tratamiento, una cantera, una obra— más allá de los permisos administrativos que esa actividad tenga en regla. No se firma y no caduca en una fecha: se retira el día que alguien decide que ya no compensa. Por eso se trabaja antes del conflicto, no durante.',
+  },
+  {
+    grupo: 'comunicacion',
+    q: '¿Cuántos portavoces debe tener una organización?',
+    a: 'Los mínimos posibles y con el papel de cada uno escrito. En una crisis, la mayoría de los errores no son de mensaje: son de portavocía mal repartida, con dos personas dando versiones que no encajan. Lo razonable es un portavoz principal, un suplente formado y una regla clara de quién habla de qué.',
+  },
+
+  // ---------- SECTOR PÚBLICO ----------
+  {
+    grupo: 'publico',
+    q: '¿Qué se valora de verdad en la memoria técnica de una licitación?',
+    a: 'Lo que el pliego administrativo dice que se valora, punto por punto, en el orden en que lo dice. Una memoria bien escrita pero desalineada del baremo pierde frente a una peor escrita que responde a cada criterio. Antes de redactar una línea hay que leer el reparto de puntos: si el precio pesa demasiado y el trabajo intelectual poco, la licitación no compensa por buena que sea la propuesta.',
+  },
+  {
+    grupo: 'publico',
+    q: '¿Cómo justifica un ayuntamiento un contrato de comunicación ambiental?',
+    a: 'Vinculándolo a una obligación o a un objetivo que ya tiene: un plan de residuos que exige comunicación, una ordenanza que hay que explicar, una obra que afecta a vecinos, un objetivo de recogida selectiva que no se alcanza. La justificación no es «hace falta comunicar»: es qué resultado medible se persigue y por qué la vía elegida es la proporcionada.',
+  },
+  {
+    grupo: 'publico',
+    q: '¿Qué se comunica primero en una obra que molesta a los vecinos?',
+    a: 'Lo que les pasa a ellos, no lo que se invierte. Cuánto durará, qué se va a cerrar, qué alternativa tienen, a quién llamar si algo falla y cuándo se acaba. La inversión y el diseño técnico van después, y para otro público. El orden inverso —empezar por la cifra— es el error más repetido en comunicación institucional y el que más desconfianza genera.',
+  },
+  {
+    grupo: 'publico',
+    q: '¿Se puede trabajar en valencià y castellano sin duplicar el coste?',
+    a: 'Sí, si se piensa en las dos lenguas desde el principio en vez de traducir al final. Una campaña concebida en una lengua y volcada a la otra a última hora se nota, y se nota en el tono, que es justo lo que no se arregla revisando. Pensarlo desde el eje cuesta algo más de tiempo al inicio y bastante menos al final.',
+  },
+
+  // ---------- TRABAJAR CONMIGO ----------
+  {
+    grupo: 'trabajar',
+    q: '¿Cómo se empieza a trabajar contigo?',
+    a: 'Por el Diagnóstico IA + Comunicación: catorce días, 1.500 euros fijos, con garantía de devolución si no salen de ahí al menos tres acciones concretas con retorno estimado. Antes hay una conversación de treinta minutos sin coste para ver si encajamos. Si del diagnóstico sale que no hace falta hacer nada, te lo digo, y ese también es el valor.',
+  },
+  {
+    grupo: 'trabajar',
+    q: '¿Eres tú solo o hay un equipo detrás?',
+    a: 'Las dos cosas. El criterio y la dirección los pongo yo. La entrega la hace Imedes, consultora ambiental con sede en València, nacida como spin-off de la Universitat de València, con treinta años de trabajo y más de 600 proyectos. Eso significa equipo técnico, capacidad de producción y las certificaciones que un contrato público exige. Contratas a una persona y tienes una casa detrás.',
+  },
+  {
+    grupo: 'trabajar',
+    q: '¿Trabajas solo en Valencia?',
+    a: 'La base está en València y ahí es donde puedo estar en una reunión presencial sin convertirlo en un problema de agenda. Trabajo en toda la Comunitat Valenciana —València, Castelló y Alacant— y también fuera. Buena parte del trabajo de dirección y de criterio se hace igual de bien en remoto; lo que pierde con la distancia es la escucha inicial.',
+  },
+  {
+    grupo: 'trabajar',
+    q: '¿Qué tipo de organización encaja contigo?',
+    a: 'Adjudicatarias de servicios públicos —residuos, agua, limpieza, servicios locales—, ayuntamientos y consorcios que rinden cuentas, entidades de gestión de áreas industriales, y empresas con agenda ESG que tienen que reportar. El denominador común no es el sector: es que haya alguien con capacidad de decidir al otro lado y voluntad de sostener lo que se cuenta.',
+  },
+  {
+    grupo: 'trabajar',
+    q: '¿Qué no haces?',
+    a: 'No vendo IA por moda: si no ahorra horas o no multiplica capacidad, no entra en la propuesta. No comunico sostenibilidad sin evidencia. No lleno calendarios: más publicaciones no es mejor comunicación. Y no trabajo sin nadie con capacidad de decidir al otro lado, porque el proyecto se encalla y acabamos los dos perdiendo el tiempo.',
+  },
+  {
+    grupo: 'trabajar',
+    q: '¿Podéis presentaros a una licitación con nosotros?',
+    a: 'Sí. Imedes concurre habitualmente a licitaciones de comunicación ambiental e institucional. Y si lo que necesitas es la memoria técnica de una licitación a la que te presentas tú, también es un trabajo que hago: ordenar el discurso, alinearlo con los criterios de valoración y que se sostenga ante la mesa de contratación.',
+  },
+];
+
+const grupos = [
+  { id: 'sostenibilidad', label: 'Sostenibilidad y ESG' },
+  { id: 'ia', label: 'Inteligencia artificial' },
+  { id: 'comunicacion', label: 'Comunicación' },
+  { id: 'publico', label: 'Sector público' },
+  { id: 'trabajar', label: 'Trabajar conmigo' },
+] as const;
+
+const faqSchema = {
+  '@id': `${SITE}/preguntas-frecuentes/#faq`,
+  mainEntity: preguntas.map((p) => ({
+    '@type': 'Question',
+    name: p.q,
+    acceptedAnswer: { '@type': 'Answer', text: p.a },
+  })),
+};
+
+const breadcrumbSchema = {
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Preguntas frecuentes', item: `${SITE}/preguntas-frecuentes/` },
+  ],
+};
+---
+
+<BaseLayout
+  title="Preguntas frecuentes"
+  seoTitle="Preguntas frecuentes · Javi Cebrián"
+  description="Respuestas directas sobre comunicación de sostenibilidad, CSRD, greenwashing, IA aplicada a la comunicación y licitaciones. Con la norma al día."
+>
+  <Schema type="FAQPage" data={faqSchema} />
+  <Schema type="BreadcrumbList" data={breadcrumbSchema} />
+
+  <!-- HERO -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]">
+    <div class="container-wide py-20 md:py-28">
+      <span class="acento-verde block mb-6" data-mask-up></span>
+      <p class="font-display text-xs text-[#8DBE3F] mb-4" data-mask-up data-delay="80">§ PREGUNTAS FRECUENTES</p>
+      <h1 class="font-extrabold leading-[0.95] tracking-[-0.03em] m-0" style="font-size: clamp(2.25rem, 6vw, 5rem); max-width: 16ch;">
+        <span data-mask-up data-delay="0" class="block">Lo que me preguntan, respondido sin rodeos.</span>
+      </h1>
+      <p class="mt-10 text-base md:text-lg text-[#A0A0A0] max-w-2xl" data-reveal data-delay="280">
+        {preguntas.length} preguntas sobre comunicación de sostenibilidad, inteligencia artificial, contratación pública y cómo trabajo. Cada respuesta se entiende suelta, sin leer el resto.
+      </p>
+    </div>
+  </section>
+
+  <!-- ÍNDICE -->
+  <section class="bg-[#FAFAF7] text-[#1A1A1A]" style="border-bottom: 1px solid rgba(26,26,26,0.08);">
+    <div class="container-wide py-10">
+      <nav aria-label="Índice de preguntas" class="flex flex-wrap gap-x-6 gap-y-3">
+        {grupos.map((g) => (
+          <a href={`#${g.id}`} class="text-sm font-semibold text-[#467010] no-underline hover:text-[#1A1A1A] transition-colors">
+            {g.label} <span class="text-[#8DBE3F]">({preguntas.filter((p) => p.grupo === g.id).length})</span>
+          </a>
+        ))}
+      </nav>
+    </div>
+  </section>
+
+  {grupos.map((g) => (
+    <section id={g.id} class="bg-[#FAFAF7] text-[#1A1A1A]" style="border-top: 1px solid rgba(26,26,26,0.08); scroll-margin-top: 90px;">
+      <div class="container-wide py-16 md:py-20">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+          <div class="md:col-span-4">
+            <span class="acento-verde block mb-6" data-reveal></span>
+            <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] m-0" style="font-size: clamp(1.5rem, 3vw, 2.4rem); max-width: 12ch;" data-mask-up>
+              <span>{g.label}</span>
+            </h2>
+          </div>
+          <div class="md:col-span-8 space-y-9">
+            {preguntas.filter((p) => p.grupo === g.id).map((p, i) => (
+              <div class="border-t border-[#1A1A1A]/12 pt-6" data-reveal data-delay={Math.min(i, 4) * 60}>
+                <h3 class="text-lg md:text-xl font-extrabold tracking-[-0.01em] m-0">{p.q}</h3>
+                <p class="mt-3 text-base leading-relaxed text-[#3D3D3D] m-0">{p.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- CTA -->
+  <section class="bg-[#8DBE3F] text-[#1A1A1A]">
+    <div class="container-wide py-20 md:py-24 text-center">
+      <h2 class="font-extrabold tracking-[-0.03em] leading-[1] m-0 mx-auto" style="font-size: clamp(2rem, 5vw, 3.6rem); max-width: 18ch;" data-mask-up>
+        <span>¿Tu pregunta no está aquí?</span>
+      </h2>
+      <p class="mt-6 text-base md:text-lg max-w-xl mx-auto text-[#1A1A1A]/80" data-reveal data-delay="120">
+        Escríbeme. Si es buena, la añado a esta página.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-3 justify-center" data-reveal data-delay="200">
+        <a href="/contacto/" data-ga-event="cta_click" data-ga-label="faq_cta_contacto" class="inline-flex items-center justify-center px-8 py-4 bg-[#1A1A1A] text-[#FAFAF7] font-bold text-sm uppercase tracking-wider rounded-md hover:bg-[#FAFAF7] hover:text-[#1A1A1A] transition-colors no-underline">
+          Hacer una pregunta →
+        </a>
+        <a href="/glosario/" class="inline-flex items-center justify-center px-8 py-4 border border-[#1A1A1A]/30 text-[#1A1A1A] font-medium text-sm uppercase tracking-wider rounded-md hover:bg-[#1A1A1A]/5 transition-colors no-underline">
+          Ver el glosario
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
