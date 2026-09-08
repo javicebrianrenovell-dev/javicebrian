@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Schema from '../../components/Schema.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft && data.pubDate <= new Date()))
@@ -17,12 +18,40 @@ const dateFormatter = new Intl.DateTimeFormat('es-ES', {
   month: 'long',
   year: 'numeric',
 });
+
+const SITE = 'https://javicebrian.es';
+
+// El blog como entidad propia: cada artículo lo referencia con isPartOf.
+const blogSchema = {
+  name: 'Blog de Javi Cebrián',
+  description:
+    'Artículos sobre comunicación estratégica, comunicación de sostenibilidad y ESG, e inteligencia artificial aplicada a la comunicación corporativa.',
+  blogPost: posts.map((p) => ({
+    '@type': 'BlogPosting',
+    headline: p.data.title,
+    description: p.data.description,
+    url: `${SITE}/blog/${p.slug}/`,
+    datePublished: p.data.pubDate.toISOString(),
+    dateModified: (p.data.updatedDate ?? p.data.pubDate).toISOString(),
+  })),
+};
+
+const breadcrumbBlog = {
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE}/blog/` },
+  ],
+};
+
 ---
 
 <BaseLayout
   title="Blog — Javi Cebrián"
   description="Reflexiones con criterio sobre comunicación, sostenibilidad e IA aplicadas al negocio. Sin postureo, con argumentos."
 >
+  <Schema type="Blog" data={blogSchema} />
+  <Schema type="BreadcrumbList" data={breadcrumbBlog} />
+
   <!-- HERO -->
   <section class="bg-[#1A1A1A] text-[#FAFAF7] relative overflow-hidden">
     <div class="container-wide py-20 md:py-24">

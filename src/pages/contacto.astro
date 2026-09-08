@@ -1,11 +1,33 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Schema from '../components/Schema.astro';
+
+const SITE = 'https://javicebrian.es';
+
+const contactoSchema = {
+  '@id': `${SITE}/contacto/#contacto`,
+  url: `${SITE}/contacto/`,
+  name: 'Contacto — Javi Cebrián',
+  description:
+    'Cómo contactar con Javi Cebrián, director de comunicación especializado en sostenibilidad e inteligencia artificial, con base en València.',
+};
+
+const breadcrumbContacto = {
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+    { '@type': 'ListItem', position: 2, name: 'Contacto', item: `${SITE}/contacto/` },
+  ],
+};
+
 ---
 
 <BaseLayout
   title="Contacto — Javi Cebrián"
   description="Hablamos. Escríbeme para colaboraciones, asesoramiento o formación en comunicación, sostenibilidad e IA."
 >
+  <Schema type="ContactPage" data={contactoSchema} />
+  <Schema type="BreadcrumbList" data={breadcrumbContacto} />
+
   <section class="bg-[#1A1A1A] text-[#FAFAF7]">
     <div class="container-wide py-20 md:py-24">
       <span class="acento-verde block mb-6" data-mask-up></span>

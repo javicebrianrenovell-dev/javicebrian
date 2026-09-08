@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Schema from '../../components/Schema.astro';
 
 const wa = '34694218846';
 const waText = encodeURIComponent('Hola Javi, me interesa el Diagnóstico de 14 días. Te cuento brevemente mi caso:');
@@ -53,6 +54,59 @@ const faqs = [
     a: 'Lo lidero yo; entrega el equipo de Imedes cuando el proyecto lo necesita. Lo mejor de los dos: criterio cercano y una casa detrás.',
   },
 ];
+
+const SITE = 'https://javicebrian.es';
+
+// La única oferta de pago de la web. Sin esquema no se puede citar en una respuesta
+// generada ni aparecer como servicio con precio en resultados enriquecidos.
+const servicioSchema = {
+  '@id': `${SITE}/diagnostico/#servicio`,
+  name: 'Diagnóstico IA + Comunicación en 14 días',
+  alternateName: 'Diagnóstico de inteligencia artificial y comunicación',
+  description:
+    'Diagnóstico de 14 días que entrega un mapa priorizado de oportunidades de IA, una revisión de la comunicación y la sostenibilidad de la organización, y las tres acciones de mayor retorno con su estimación. Incluye sesión de devolución y garantía de devolución del importe.',
+  serviceType: 'Consultoría de inteligencia artificial y comunicación',
+  url: `${SITE}/diagnostico/`,
+  termsOfService: `${SITE}/aviso-legal/`,
+  offers: {
+    '@type': 'Offer',
+    price: '1500',
+    priceCurrency: 'EUR',
+    priceValidUntil: '2027-12-31',
+    availability: 'https://schema.org/InStock',
+    url: `${SITE}/diagnostico/`,
+    description:
+      'Precio fijo de 1.500 €. Garantía de devolución si no se entregan al menos tres acciones concretas con retorno estimado.',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Qué incluye el diagnóstico',
+    itemListElement: queTeLlevas.map((item) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: item.titulo, description: item.body },
+    })),
+  },
+};
+
+const faqSchema = {
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const breadcrumbSchema = {
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${SITE}/` },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Diagnóstico IA + Comunicación en 14 días',
+      item: `${SITE}/diagnostico/`,
+    },
+  ],
+};
 ---
 
 <BaseLayout
@@ -60,6 +114,10 @@ const faqs = [
   seoTitle="Diagnóstico IA + Comunicación · 14 días"
   description="En 14 días sabrás qué hacer con la IA y la comunicación en tu empresa, y qué no. Mapa priorizado, 3 acciones con retorno estimado y garantía de devolución."
 >
+  <Schema type="Service" data={servicioSchema} />
+  <Schema type="FAQPage" data={faqSchema} />
+  <Schema type="BreadcrumbList" data={breadcrumbSchema} />
+
   <!-- HERO -->
   <section class="bg-[#1A1A1A] text-[#FAFAF7] relative overflow-hidden">
     <div class="container-wide py-24 md:py-32">

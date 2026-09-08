@@ -1,9 +1,15 @@
 ---
+// Structured data. Every node in the identity graph carries a stable @id so that
+// parsers (and LLM retrieval layers) resolve author, provider and publisher to the
+// SAME entity across the 51 pages, instead of treating each block as an island.
 type SchemaType =
-  | 'Person'
-  | 'ProfessionalService'
+  | 'WebSite'        // identity graph — emitted on every page from BaseLayout
+  | 'ProfilePage'    // /quien-soy/
+  | 'Person'         // deprecated alias of ProfilePage, kept for existing call sites
   | 'BlogPosting'
-  | 'WebSite'
+  | 'Blog'
+  | 'CollectionPage'
+  | 'ContactPage'
   | 'Service'
   | 'FAQPage'
   | 'BreadcrumbList';
@@ -17,20 +23,69 @@ const { type, data = {} } = Astro.props;
 
 const SITE_URL = 'https://javicebrian.es';
 
-const PERSON_BASE = {
-  '@context': 'https://schema.org',
+// Stable identifiers for the entity graph. Never change these: they are the
+// anchors every other node points at.
+const ID = {
+  person: `${SITE_URL}/#javi-cebrian`,
+  org: `${SITE_URL}/#imedes`,
+  site: `${SITE_URL}/#website`,
+  business: `${SITE_URL}/#servicio`,
+} as const;
+
+const REF = {
+  person: { '@id': ID.person },
+  org: { '@id': ID.org },
+  site: { '@id': ID.site },
+  business: { '@id': ID.business },
+};
+
+// Territory served, declared explicitly. `areaServed: 'ES'` says nothing to a
+// local search: València and the Comunitat are where the work actually happens.
+const AREA_SERVED = [
+  { '@type': 'City', name: 'València', sameAs: 'https://www.wikidata.org/wiki/Q8818' },
+  {
+    '@type': 'AdministrativeArea',
+    name: 'Comunitat Valenciana',
+    sameAs: 'https://www.wikidata.org/wiki/Q5720',
+  },
+  { '@type': 'Country', name: 'España', sameAs: 'https://www.wikidata.org/wiki/Q29' },
+];
+
+const IMEDES_ADDRESS = {
+  '@type': 'PostalAddress',
+  streetAddress: 'Calle Hernández Lázaro, 10',
+  addressLocality: 'València',
+  addressRegion: 'Comunitat Valenciana',
+  postalCode: '46015',
+  addressCountry: 'ES',
+};
+
+const PERSON = {
   '@type': 'Person',
+  '@id': ID.person,
   name: 'Javi Cebrián',
   givenName: 'Javier',
   familyName: 'Cebrián Renovell',
   jobTitle: 'Director de Comunicación y Desarrollo de Negocio',
-  worksFor: {
-    '@type': 'Organization',
-    name: 'Imedes',
-    url: 'https://imedes.net',
-  },
+  description:
+    'Director de Comunicación y Desarrollo de Negocio en Imedes, consultora ambiental con sede en València. Trabaja la comunicación de sostenibilidad y la aplicación de la inteligencia artificial en organizaciones que compiten por reputación: adjudicatarias de servicios públicos, administraciones y empresas con agenda ESG.',
   url: SITE_URL,
+  mainEntityOfPage: `${SITE_URL}/quien-soy/`,
   image: `${SITE_URL}/blog-images/javi-cebrian_director_comunicacion.webp`,
+  email: 'mailto:jcebrian@grupimedes.com',
+  telephone: '+34694218846',
+  worksFor: REF.org,
+  homeLocation: {
+    '@type': 'Place',
+    name: 'València, Comunitat Valenciana, España',
+    address: { '@type': 'PostalAddress', addressLocality: 'València', addressCountry: 'ES' },
+  },
+  workLocation: { '@type': 'Place', address: IMEDES_ADDRESS },
+  nationality: { '@type': 'Country', name: 'España' },
+  knowsLanguage: [
+    { '@type': 'Language', name: 'Español', alternateName: 'es' },
+    { '@type': 'Language', name: 'Valencià', alternateName: 'ca' },
+  ],
   sameAs: [
     'https://www.linkedin.com/in/javiercebrian',
     'https://www.instagram.com/javicebrian',
@@ -38,73 +93,180 @@ const PERSON_BASE = {
   ],
   knowsAbout: [
     'Comunicación estratégica',
-    'Sostenibilidad',
+    'Comunicación ambiental',
+    'Comunicación de sostenibilidad',
     'ESG',
-    'Inteligencia artificial',
-    'Comunicación corporativa',
-    'Reputación',
-    'Automatización',
-    'Productividad con IA',
+    'CSRD',
+    'Greenwashing',
+    'Inteligencia artificial aplicada a la comunicación',
+    'Automatización de procesos de comunicación',
+    'Comunicación institucional y contratación pública',
+    'Reputación corporativa',
   ],
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Valencia',
-    addressCountry: 'ES',
-  },
 };
 
-const SERVICE_BASE = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Javi Cebrián — Comunicación con sostenibilidad e IA',
-  provider: { '@type': 'Person', name: 'Javi Cebrián', url: SITE_URL },
-  areaServed: 'ES',
-  serviceType:
-    'Consultoría de comunicación corporativa con sostenibilidad e IA',
-  url: SITE_URL,
+const ORGANIZATION = {
+  '@type': 'Organization',
+  '@id': ID.org,
+  name: 'Imedes',
+  legalName: 'Instituto IMEDES, S.L.',
+  alternateName: 'Instituto Mediterráneo para el Desarrollo Sostenible',
+  vatID: 'ESB98255482',
+  url: 'https://imedes.net',
+  address: IMEDES_ADDRESS,
+  telephone: '+34963152140',
+  email: 'imedes@grupimedes.com',
+  areaServed: AREA_SERVED,
+  sameAs: [
+    'https://www.linkedin.com/company/imedes',
+    'https://www.miteco.gob.es/en/ceneam/recursos/quien-es-quien/instituto-imedes.html',
+  ],
+  employee: REF.person,
 };
 
-const WEBSITE_BASE = {
-  '@context': 'https://schema.org',
+const WEBSITE = {
   '@type': 'WebSite',
+  '@id': ID.site,
   name: 'Javi Cebrián',
   url: SITE_URL,
   inLanguage: 'es-ES',
-  publisher: { '@type': 'Person', name: 'Javi Cebrián' },
+  publisher: REF.person,
+  author: REF.person,
+  about: REF.person,
+};
+
+// The commercial entity: this is what a local search and an answer engine read
+// to decide whether there is a professional serving València.
+const BUSINESS = {
+  '@type': 'ProfessionalService',
+  '@id': ID.business,
+  name: 'Javi Cebrián — Comunicación, sostenibilidad e IA',
+  description:
+    'Consultoría de comunicación estratégica para organizaciones con agenda de sostenibilidad e inteligencia artificial, con base en València.',
+  url: SITE_URL,
+  image: `${SITE_URL}/og-default.jpg`,
+  founder: REF.person,
+  provider: REF.person,
+  parentOrganization: REF.org,
+  address: IMEDES_ADDRESS,
+  telephone: '+34694218846',
+  email: 'mailto:jcebrian@grupimedes.com',
+  areaServed: AREA_SERVED,
+  availableLanguage: ['es', 'ca'],
+  serviceType: 'Consultoría de comunicación corporativa con sostenibilidad e IA',
+  knowsAbout: PERSON.knowsAbout,
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Servicios',
+    itemListElement: [
+      ['Diagnóstico IA + Comunicación en 14 días', '/diagnostico/'],
+      ['Comunicación estratégica para organizaciones', '/comunicacion-estrategica/'],
+      ['Comunicación de sostenibilidad y ESG', '/comunicacion-sostenibilidad/'],
+      ['IA aplicada a la comunicación', '/ia-comunicacion/'],
+      ['Automatización de procesos de comunicación', '/automatizacion-comunicacion/'],
+      ['Formación en IA para equipos de comunicación', '/formacion-ia-comunicacion/'],
+    ].map(([name, path]) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name, url: `${SITE_URL}${path}` },
+    })),
+  },
 };
 
 function buildSchema(): Record<string, unknown> {
   switch (type) {
-    case 'Person':
-      return { ...PERSON_BASE, ...data };
-    case 'ProfessionalService':
-      return { ...SERVICE_BASE, ...data };
+    // Identity graph. One block, four linked nodes, on every page.
     case 'WebSite':
-      return { ...WEBSITE_BASE, ...data };
+      return {
+        '@context': 'https://schema.org',
+        '@graph': [WEBSITE, PERSON, ORGANIZATION, BUSINESS],
+      };
+
+    case 'Person':
+    case 'ProfilePage':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'ProfilePage',
+        '@id': `${SITE_URL}/quien-soy/#profilepage`,
+        url: `${SITE_URL}/quien-soy/`,
+        isPartOf: REF.site,
+        inLanguage: 'es-ES',
+        mainEntity: REF.person,
+        about: REF.person,
+        ...data,
+      };
+
     case 'BlogPosting':
       return {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
-        author: { '@type': 'Person', name: 'Javi Cebrián', url: SITE_URL },
-        publisher: { '@type': 'Person', name: 'Javi Cebrián', url: SITE_URL },
+        author: REF.person,
+        publisher: REF.person,
+        isPartOf: { '@id': `${SITE_URL}/blog/#blog` },
         inLanguage: 'es-ES',
         ...data,
       };
+
+    case 'Blog':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'Blog',
+        '@id': `${SITE_URL}/blog/#blog`,
+        url: `${SITE_URL}/blog/`,
+        isPartOf: REF.site,
+        author: REF.person,
+        publisher: REF.person,
+        inLanguage: 'es-ES',
+        ...data,
+      };
+
+    case 'CollectionPage':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        isPartOf: REF.site,
+        about: REF.business,
+        inLanguage: 'es-ES',
+        ...data,
+      };
+
+    case 'ContactPage':
+      return {
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        isPartOf: REF.site,
+        about: REF.person,
+        inLanguage: 'es-ES',
+        mainEntity: {
+          '@type': 'ContactPoint',
+          contactType: 'Consultas comerciales',
+          email: 'jcebrian@grupimedes.com',
+          telephone: '+34694218846',
+          areaServed: AREA_SERVED,
+          availableLanguage: ['es', 'ca'],
+        },
+        ...data,
+      };
+
     case 'Service':
       return {
         '@context': 'https://schema.org',
         '@type': 'Service',
-        provider: { '@type': 'Person', name: 'Javi Cebrián', url: SITE_URL },
-        areaServed: 'ES',
+        provider: REF.person,
+        brand: REF.business,
+        areaServed: AREA_SERVED,
+        availableLanguage: ['es', 'ca'],
         inLanguage: 'es-ES',
         ...data,
       };
+
     case 'FAQPage':
       return {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
+        inLanguage: 'es-ES',
         ...data,
       };
+
     case 'BreadcrumbList':
       return {
         '@context': 'https://schema.org',
