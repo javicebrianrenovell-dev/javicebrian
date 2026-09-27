@@ -14,6 +14,10 @@ const blog = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     heroImage: z.string().optional(),
+    // Portada generada con IA que muestra a una persona real (p. ej. el personaje
+    // entrenado de Javi). El Reglamento europeo de IA (art. 50.4) obliga a avisar:
+    // se pinta un pie visible bajo la imagen.
+    heroAI: z.boolean().default(false),
     category: z.enum(['comunicacion', 'sostenibilidad', 'ia', 'herramientas']),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),

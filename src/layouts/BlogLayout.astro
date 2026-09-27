@@ -17,7 +17,7 @@ interface Props {
 }
 
 const { post, readingTime = 0, toc = [], relatedPosts = [] } = Astro.props;
-const { title, seoTitle, description, enCorto, pubDate, updatedDate, heroImage, category, tags } = post.data;
+const { title, seoTitle, description, enCorto, pubDate, updatedDate, heroImage, heroAI, category, tags } = post.data;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 const heroImageURL = heroImage
@@ -124,12 +124,19 @@ const shareWhatsApp = `https://api.whatsapp.com/send?text=${encodeURIComponent(t
     <!-- Imagen destacada (si hay) -->
     {heroImage && (
       <div class="container-base mt-[-2rem] mb-12 max-w-4xl" data-reveal>
-        <img
-          src={heroImage}
-          alt={`Imagen destacada del artículo: ${title}`}
-          class="w-full h-auto rounded-lg shadow-2xl border border-[#1A1A1A]/10"
-          loading="eager"
-        />
+        <figure class="m-0">
+          <img
+            src={heroImage}
+            alt={`Imagen destacada del artículo: ${title}`}
+            class="w-full h-auto rounded-lg shadow-2xl border border-[#1A1A1A]/10"
+            loading="eager"
+          />
+          {heroAI && (
+            <figcaption class="mt-3 text-xs text-[#1A1A1A]/60">
+              Imagen generada con IA.
+            </figcaption>
+          )}
+        </figure>
       </div>
     )}
 

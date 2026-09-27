@@ -18,7 +18,7 @@ const { service } = Astro.props;
 const { Content } = await service.render();
 
 // Artículos del cluster: blog cuya category coincide con el cluster del servicio.
-const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft))
+const relatedPosts = (await getCollection('blog', ({ data }) => !data.draft && data.pubDate <= new Date()))
   .filter((p) => p.data.category === service.data.cluster)
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
   .slice(0, 3);

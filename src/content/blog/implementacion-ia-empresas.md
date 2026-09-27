@@ -5,6 +5,7 @@ description: "Implantar IA en una empresa: qué decidir antes de elegir herramie
 pubDate: 2025-02-08
 updatedDate: 2026-07-21
 heroImage: "/blog-images/javi-cebrian_director_comunicacion.webp"
+heroAI: true
 category: ia
 tags: ["implementación IA empresas", "implantación IA", "inteligencia artificial", "transformación digital", "estrategia"]
 ---

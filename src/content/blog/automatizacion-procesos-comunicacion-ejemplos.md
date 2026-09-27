@@ -4,6 +4,7 @@ seoTitle: "Automatización de comunicación: ejemplos"
 description: "Ejemplos concretos de procesos de comunicación que se pueden automatizar hoy, qué tiempo ahorran y dónde conviene no automatizar."
 pubDate: 2026-04-17
 heroImage: "/blog-images/consultoria_automatizacion_javi_cebrian.webp"
+heroAI: true
 category: herramientas
 tags: ["automatización", "procesos", "comunicación", "productividad"]
 ---

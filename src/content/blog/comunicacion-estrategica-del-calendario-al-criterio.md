@@ -4,6 +4,7 @@ seoTitle: "Comunicación estratégica: del calendario al criterio"
 description: "Muchas organizaciones confunden tener un calendario de contenidos con tener estrategia. La diferencia entre llenar fechas y comunicar con criterio."
 pubDate: 2026-06-07
 heroImage: "/blog-images/freepik__un-director-de-comunicacin-trabajando-desde-la-pla__87398.webp"
+heroAI: true
 category: comunicacion
 tags: ["comunicación estratégica", "criterio", "dirección de comunicación"]
 ---
