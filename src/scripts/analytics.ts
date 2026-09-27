@@ -7,7 +7,7 @@
  * - El ID vive en src/consts.ts (GA_MEASUREMENT_ID). Si está vacío, todo
  *   este módulo queda inerte: ni banner ni tracking.
  * - track() es seguro de llamar siempre: si no hay consentimiento o no hay
- *   ID, no hace nada.
+ *   ID, no envía nada a GA4. Umami (sin cookies) recibe el evento siempre.
  *
  * Eventos que medimos (ver data-ga-event en el HTML y llamadas a jcTrack):
  *   - cta_click       { label }      → clics en botones de llamada a la acción
@@ -75,9 +75,19 @@ function loadGA4(): void {
   document.head.appendChild(s);
 }
 
-/** Envía un evento a GA4. No-op si no hay consentimiento o no hay ID. */
+/**
+ * Envía un evento a Umami (siempre, no usa cookies) y a GA4 (solo con
+ * consentimiento). Seguro de llamar aunque ninguno de los dos esté cargado.
+ */
 export function track(event: string, params: Record<string, unknown> = {}): void {
   const w = window as any;
+  if (typeof w.umami?.track === 'function') {
+    try {
+      w.umami.track(event, params);
+    } catch {
+      /* el contador nunca debe romper la página */
+    }
+  }
   if (!GA_MEASUREMENT_ID || typeof w.gtag !== 'function') return;
   w.gtag('event', event, params);
 }

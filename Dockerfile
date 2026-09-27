@@ -18,6 +18,9 @@ FROM nginx:1.27-alpine AS runner
 
 COPY infra/nginx-container.conf /etc/nginx/conf.d/default.conf
 
+# Carpeta del registro persistente (se monta desde el host en Dokploy).
+RUN mkdir -p /var/log/nginx/persist
+
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 EXPOSE 80

@@ -179,3 +179,35 @@ hacen falta.
 - *(Opcional)* Auto-deploy en Dokploy al hacer push a `main` mediante webhook de
   GitHub, si se decide quitar el paso manual de Redeploy. Hoy el deploy es manual
   a propósito.
+
+## Analítica y registro de accesos
+
+La web se mide por tres vías que se complementan:
+
+| Vía | Qué cuenta | Dónde se consulta |
+|---|---|---|
+| **Umami** (sin cookies) | Todas las visitas humanas y los eventos (`cta_click`, `form_start`, `generate_lead`…) | Panel de Umami, por túnel SSH |
+| **Registro del servidor** | Todas las peticiones, incluidos robots, con IP recortada | `/var/log/javicebrian-web/` en el VPS |
+| **Google Analytics 4** | Solo quien acepta las cookies | analytics.google.com |
+
+### Umami
+
+- Vive **fuera de Dokploy**, en `/opt/umami` del VPS (`docker-compose.yml` + `.env` con
+  los secretos generados en el servidor, permisos 600). Contenedores `umami` y `umami-db`.
+- Ruta pública mínima con Traefik (`/etc/dokploy/traefik/dynamic/umami.yml`): solo
+  `javicebrian.es/u/m.js` (script) y `javicebrian.es/u/api/hit` (envío). Al ir por el
+  propio dominio, los bloqueadores lo filtran mucho menos.
+- El panel **no es público**. Se abre con un túnel y después en `http://localhost:3200`:
+  `ssh -L 3200:127.0.0.1:3200 motor-vps`
+- El script se carga en `BaseLayout.astro` con `UMAMI_WEBSITE_ID` (`src/consts.ts`) y
+  `data-domains="javicebrian.es"`: staging y local no cuentan.
+- Actualizar: `cd /opt/umami && docker compose pull && docker compose up -d`.
+
+### Registro del servidor
+
+- nginx escribe cada petición en la salida estándar y en `/var/log/nginx/persist/access.log`
+  con la IP anonimizada (IPv4 sin el último octeto; IPv6, 3 primeros bloques).
+- En Dokploy, la app "web" monta `/var/log/javicebrian-web` (host) en
+  `/var/log/nginx/persist` (contenedor). Sin ese montaje el registro se pierde en cada
+  despliegue.
+- Rotación diaria con `logrotate` (`/etc/logrotate.d/javicebrian-web`): 90 días, comprimidos.
