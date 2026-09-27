@@ -27,6 +27,7 @@ const PESOS = {
     'otro': 4,
   },
   encargo: {
+    'diagnostico': 25,
     'memoria-tecnica': 25,
     'sostenibilidad': 22,
     'comunicacion': 20,
@@ -57,6 +58,7 @@ const ETIQUETAS = {
     'otro': 'Otro',
   },
   encargo: {
+    'diagnostico': 'Diagnóstico IA + Comunicación (14 días)',
     'memoria-tecnica': 'Memoria técnica de licitación',
     'sostenibilidad': 'Sostenibilidad y ESG',
     'comunicacion': 'Comunicación corporativa',

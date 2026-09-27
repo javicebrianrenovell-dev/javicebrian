@@ -34,6 +34,13 @@ export function initLeadForm(): void {
   let current = 1;
   let started = false; // para emitir form_start una sola vez
 
+  // Deep link: ?encargo=<value> preselects that option (e.g. from the diagnosis video).
+  const preset = new URLSearchParams(window.location.search).get('encargo');
+  if (preset) {
+    const opt = form.querySelector<HTMLInputElement>(`input[name="encargo"][value="${CSS.escape(preset)}"]`);
+    if (opt) opt.checked = true;
+  }
+
   const render = (): void => {
     steps.forEach(s => {
       const n = parseInt(s.dataset.step || '0', 10);
