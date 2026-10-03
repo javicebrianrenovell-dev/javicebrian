@@ -142,6 +142,7 @@ export function initLeadForm(): void {
       if (res.ok && json.success) {
         // Conversión. Solo datos de cualificación, nunca datos personales.
         track('generate_lead', {
+          formulario: 'proyecto',
           organizacion: data.organizacion || '',
           encargo: data.encargo || '',
           plazo: data.plazo || '',

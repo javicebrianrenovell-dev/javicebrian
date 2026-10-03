@@ -174,6 +174,8 @@ const breadcrumbContacto = {
           const json = await res.json().catch(() => ({}));
 
           if (res.ok && json.success) {
+            // Conversion. Only the enquiry type, never personal data.
+            (window as any).jcTrack?.('generate_lead', { formulario: 'contacto', tipo: data.tipo || '' });
             feedback.className = 'block p-4 rounded-md text-sm font-semibold bg-[#8DBE3F]/15 text-[#1A1A1A] border border-[#8DBE3F]';
             feedback.textContent = '✓ Mensaje enviado. Te respondo en menos de 48 horas.';
             form.reset();

@@ -14,7 +14,11 @@
  *   - service_click   { label }      → clics hacia páginas de servicio
  *   - contact_click   { label }      → email / LinkedIn
  *   - form_start      {}             → el visitante avanza del paso 1
- *   - generate_lead   { ... }        → envío correcto del formulario (conversión)
+ *   - generate_lead   { formulario } → envío correcto de un formulario (conversión):
+ *                                      'proyecto' (trabajemos-juntos), 'contacto' o
+ *                                      'diagnostico' (correo para el diagnóstico ampliado)
+ *   - diagnostico_start    {}        → primera respuesta del test de la portada
+ *   - diagnostico_complete { sector, madurez, dolor, decision } → test terminado
  */
 
 import { GA_MEASUREMENT_ID } from '../consts';

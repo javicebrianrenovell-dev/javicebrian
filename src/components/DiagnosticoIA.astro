@@ -62,6 +62,11 @@ const {
 
     function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
 
+    // Analytics: analytics.ts exposes window.jcTrack. Quiz answers only, never personal data.
+    function medir(evento, datos) {
+      try { if (typeof window.jcTrack === "function") window.jcTrack(evento, datos || {}); } catch (e) {}
+    }
+
     function init(root) {
       var body = root.querySelector(".dia-body");
       var bar = root.querySelector(".dia-bar");
@@ -96,6 +101,7 @@ const {
           for (var j = 0; j < btns.length; j++) {
             btns[j].addEventListener("click", function (e) {
               a[s.k] = e.currentTarget.getAttribute("data-v");
+              if (step === 0) medir("diagnostico_start");
               step++;
               render();
             });
@@ -110,6 +116,7 @@ const {
         pctEl.textContent = "100%";
         bar.style.width = "100%";
         body.innerHTML = '<p class="' + Q + '">Analizando…</p>';
+        medir("diagnostico_complete", { sector: a.sector, madurez: a.madurez, dolor: a.dolor, decision: a.decision });
         var done = function (fraseIA) {
           var veo = "Una empresa de " + a.sector.toLowerCase() + " que " + (a.madurez === "Nada aún" ? "aún no ha entrado en la IA" : "ya tantea la IA pero no pasa de ahí") + ". El cuello está en " + a.dolor.toLowerCase() + ".";
           var waText = encodeURIComponent("Hola Javi, vengo del diagnóstico de tu web. Sector: " + a.sector + ". Madurez: " + a.madurez + ". Me atasca: " + a.dolor + ". Quiero ver por dónde empezar.");
@@ -132,6 +139,7 @@ const {
               try {
                 fetch(wh, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ sector: a.sector, madurez: a.madurez, dolor: a.dolor, decision: a.decision, email: email, origen: origen }) });
               } catch (e) {}
+              if (email.indexOf("@") > 0) medir("generate_lead", { formulario: "diagnostico" });
               box.innerHTML = '<p class="text-sm text-[#8DBE3F] mt-3 m-0">Hecho. Javi te escribe pronto.</p>';
             });
           });
