@@ -5,7 +5,9 @@
  * - El score se calcula SIEMPRE en servidor; aquí solo recogemos respuestas.
  */
 
-const TOTAL_STEPS = 4;
+const ALL_STEPS = [1, 2, 3, 4];
+// The diagnosis has a fixed scope and price, so its deep link skips "encargo", "plazo" and "presupuesto".
+const DIAGNOSIS_STEPS = [1, 4];
 
 // Helper de analítica: no-op si no hay consentimiento/GA configurado.
 function track(event: string, params: Record<string, unknown> = {}): void {
@@ -23,6 +25,7 @@ export function initLeadForm(): void {
   const stepLabel = document.getElementById('lf-step') as HTMLSpanElement | null;
   const pctLabel = document.getElementById('lf-pct') as HTMLSpanElement | null;
   const bar = document.getElementById('lf-bar') as HTMLDivElement | null;
+  const totalLabel = document.getElementById('lf-total') as HTMLSpanElement | null;
   const prevBtn = document.getElementById('lf-prev') as HTMLButtonElement | null;
   const nextBtn = document.getElementById('lf-next') as HTMLButtonElement | null;
   const submitBtn = document.getElementById('lf-submit') as HTMLButtonElement | null;
@@ -31,29 +34,36 @@ export function initLeadForm(): void {
 
   if (!stepLabel || !pctLabel || !bar || !prevBtn || !nextBtn || !submitBtn || !submitLabel || !feedback) return;
 
-  let current = 1;
   let started = false; // para emitir form_start una sola vez
 
   // Deep link: ?encargo=<value> preselects that option (e.g. from the diagnosis video).
   const preset = new URLSearchParams(window.location.search).get('encargo');
+  let flow = ALL_STEPS;
   if (preset) {
     const opt = form.querySelector<HTMLInputElement>(`input[name="encargo"][value="${CSS.escape(preset)}"]`);
-    if (opt) opt.checked = true;
+    if (opt) {
+      opt.checked = true;
+      if (preset === 'diagnostico') flow = DIAGNOSIS_STEPS;
+    }
   }
+  const isDiagnosis = flow === DIAGNOSIS_STEPS;
+  let pos = 0; // index into flow
 
   const render = (): void => {
+    const current = flow[pos];
     steps.forEach(s => {
       const n = parseInt(s.dataset.step || '0', 10);
       s.classList.toggle('hidden', n !== current);
     });
-    stepLabel.textContent = String(current);
-    const pct = Math.round((current / TOTAL_STEPS) * 100);
+    stepLabel.textContent = String(pos + 1);
+    if (totalLabel) totalLabel.textContent = String(flow.length);
+    const pct = Math.round(((pos + 1) / flow.length) * 100);
     pctLabel.textContent = String(pct);
     bar.style.width = `${pct}%`;
 
-    prevBtn.disabled = current === 1;
+    prevBtn.disabled = pos === 0;
 
-    const isLast = current === TOTAL_STEPS;
+    const isLast = pos === flow.length - 1;
     nextBtn.classList.toggle('hidden', isLast);
     submitBtn.classList.toggle('hidden', !isLast);
 
@@ -89,15 +99,15 @@ export function initLeadForm(): void {
   };
 
   prevBtn.addEventListener('click', () => {
-    if (current > 1) {
-      current -= 1;
+    if (pos > 0) {
+      pos -= 1;
       feedback.className = 'hidden';
       render();
     }
   });
 
   nextBtn.addEventListener('click', () => {
-    if (!validateStep(current)) {
+    if (!validateStep(flow[pos])) {
       showStepError('Elige una opción para continuar.');
       return;
     }
@@ -105,8 +115,8 @@ export function initLeadForm(): void {
       started = true;
       track('form_start');
     }
-    if (current < TOTAL_STEPS) {
-      current += 1;
+    if (pos < flow.length - 1) {
+      pos += 1;
       feedback.className = 'hidden';
       render();
     }
@@ -125,7 +135,9 @@ export function initLeadForm(): void {
 
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
     data.access_key = 'bc65817d-03b0-4c30-8571-3bdb79dda23c';
-    data.subject = `[Web] Empezar proyecto — ${data.nombre || ''}`;
+    data.subject = isDiagnosis
+      ? `[Web] Diagnóstico 14 días — ${data.nombre || ''}`
+      : `[Web] Empezar proyecto — ${data.nombre || ''}`;
     data.from_name = 'Formulario javicebrian.es';
     data.replyto = data.email || '';
     data.cc = 'jcebrian@grupimedes.com';
