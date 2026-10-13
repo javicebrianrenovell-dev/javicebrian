@@ -120,6 +120,16 @@ body {
   color: var(--color-negro);
 }
 
+/* Portada — líneas del manifiesto ligadas al scroll (scripts/home-scroll.ts).
+   Sin JS o con movimiento reducido se quedan en su color pleno. */
+[data-scrub-line] {
+  display: block;
+}
+[data-hero-mono],
+[data-pilar-num] {
+  will-change: transform;
+}
+
 /* Magnetic buttons — base */
 [data-magnetic] {
   transition: background 0.3s ease, color 0.3s ease;

@@ -116,9 +116,9 @@ const situaciones = [
 >
 
   <!-- HERO MAXIMALISTA -->
-  <section class="bg-[#1A1A1A] text-[#FAFAF7] relative overflow-hidden min-h-[92vh] flex items-end pb-12">
-    <!-- Monograma decorativo de fondo (parallax) -->
-    <div class="absolute right-[-10%] top-[-8%] w-[85vh] h-[85vh] opacity-[0.05] pointer-events-none" data-parallax="0.12">
+  <section class="bg-[#1A1A1A] text-[#FAFAF7] relative overflow-hidden min-h-[92vh] flex items-end pb-12" data-home-hero>
+    <!-- Monograma decorativo de fondo (se mueve con el scroll: scripts/home-scroll.ts) -->
+    <div class="absolute right-[-10%] top-[-8%] w-[85vh] h-[85vh] opacity-[0.05] pointer-events-none" data-hero-mono>
       <Monograma size={1200} variant="blanco" withAccent={false} class="w-full h-full" />
     </div>
 
@@ -136,7 +136,7 @@ const situaciones = [
     <!-- Contenido principal -->
     <div class="container-wide w-full relative z-5">
       <span class="acento-verde block mb-6" data-mask-up></span>
-      <h1 class="m-0 font-extrabold text-[#FAFAF7] leading-[0.85] tracking-[-0.025em]" style="font-size: clamp(3.5rem, 14vw, 16rem);">
+      <h1 class="m-0 font-extrabold text-[#FAFAF7] leading-[0.85] tracking-[-0.025em]" style="font-size: clamp(3.5rem, 14vw, 16rem);" data-hero-title>
         <span data-mask-up data-delay="0" class="block">COMUNICA.</span>
         <span data-mask-up data-delay="140" class="block text-[#8DBE3F]">DECIDE.</span>
         <span data-mask-up data-delay="280" class="block">MULTIPLICA.</span>
@@ -172,7 +172,7 @@ const situaciones = [
     </div>
   </div>
 
-  <!-- MANIFIESTO sticky + line-reveal -->
+  <!-- MANIFIESTO sticky + líneas que se iluminan con el scroll (scripts/home-scroll.ts) -->
   <section class="bg-[#1A1A1A] text-[#FAFAF7]">
     <div class="container-wide py-24 md:py-32">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-16 items-start">
@@ -181,9 +181,9 @@ const situaciones = [
           <p class="font-display text-xs text-[#8DBE3F] m-0">§ 01</p>
           <p class="font-display text-xs text-[#A0A0A0] mt-2">MANIFIESTO</p>
         </div>
-        <blockquote class="md:col-span-3 m-0 italic font-medium leading-snug" style="font-size: clamp(1.75rem, 4vw, 3.5rem); letter-spacing: -0.025em;">
+        <blockquote class="md:col-span-3 m-0 italic font-medium leading-snug" style="font-size: clamp(1.75rem, 4vw, 3.5rem); letter-spacing: -0.025em;" data-scrub-quote>
           {manifiestoLineas.map((linea, i) => (
-            <span data-line-reveal>{linea}{i < manifiestoLineas.length - 1 ? ' ' : ''}</span>
+            <span data-scrub-line>{linea}{i < manifiestoLineas.length - 1 ? ' ' : ''}</span>
           ))}
         </blockquote>
       </div>
@@ -202,7 +202,7 @@ const situaciones = [
         <div class="container-wide py-24 md:py-32">
           <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
             <div class="md:col-span-4">
-              <p class={`font-display text-base m-0 ${outlineClass}`} style={`font-family: var(--font-display); font-size: clamp(7rem, 16vw, 14rem); line-height: 0.85; letter-spacing: -0.02em;`} data-mask-up>
+              <p class={`font-display text-base m-0 ${outlineClass}`} style={`font-family: var(--font-display); font-size: clamp(7rem, 16vw, 14rem); line-height: 0.85; letter-spacing: -0.02em;`} data-mask-up data-pilar-num>
                 <span>{p.num}</span>
               </p>
               <p class="font-display text-xs mt-4" style={`color: ${isLight ? '#467010' : '#8DBE3F'};`}>{p.tag}</p>
@@ -354,4 +354,12 @@ const situaciones = [
       </div>
     </div>
   </section>
+
+  <script>
+    import { initHomeScroll, destroyHomeScroll } from '../scripts/home-scroll';
+
+    initHomeScroll();
+    document.addEventListener('astro:page-load', initHomeScroll);
+    document.addEventListener('astro:before-swap', destroyHomeScroll);
+  </script>
 </BaseLayout>
