@@ -3,7 +3,7 @@ title: "Atención y consultas con IA: descargar al equipo sin perder la cercaní
 seoTitle: "Atención y consultas con IA en servicios"
 description: "Cómo usar la IA para resolver las consultas repetitivas de una empresa de servicios sin enfriar el trato: qué responde la máquina y qué necesita una persona."
 pubDate: 2026-06-22
-heroImage: "/blog-images/hero-atencion-consultas.jpg"
+heroImage: "/blog-images/hero-atencion-consultas.webp"
 category: ia
 tags: ["inteligencia artificial", "atención al cliente", "servicios", "automatización", "ciudadanía"]
 draft: false

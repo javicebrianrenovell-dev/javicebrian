@@ -1,7 +1,7 @@
 ---
 title: "Tu asistente automático de servicio público ya tiene que decir que es una máquina"
 seoTitle: "Chatbot de servicio público: aviso de IA obligatorio"
-description: "Desde el 2 de agosto de 2026, el Reglamento europeo de IA obliga a avisar a la ciudadanía cuando habla con una máquina. Qué cambia para las adjudicatarias de servicios públicos y cómo cumplir sin enfriar el trato."
+description: "Desde agosto de 2026, el Reglamento de IA obliga a avisar a quien habla con una máquina. Qué cambia en el servicio público y cómo cumplir sin enfriar el trato."
 enCorto: "Desde el 2 de agosto de 2026 se aplica el artículo 50 del Reglamento europeo de IA: quien habla con un asistente automático debe saberlo desde el primer mensaje. El Ómnibus Digital aplazó las obligaciones de alto riesgo, no esta. Si tu empresa atiende a la ciudadanía con un asistente por WhatsApp o web, revisa el primer mensaje, la salida a una persona y el contrato con tu proveedor."
 pubDate: 2026-09-28
 heroImage: "/blog-images/hero-chatbot-servicio-publico-ia.webp"

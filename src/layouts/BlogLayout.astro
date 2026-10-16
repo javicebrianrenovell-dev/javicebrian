@@ -68,7 +68,14 @@ const shareX = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title
 const shareWhatsApp = `https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + canonicalURL)}`;
 ---
 
-<BaseLayout title={title} seoTitle={seoTitle} description={description} image={heroImage}>
+<BaseLayout
+  title={title}
+  seoTitle={seoTitle}
+  description={description}
+  image={heroImage}
+  imageAlt={heroImage ? `Imagen destacada del artículo: ${title}${heroAI ? '. Imagen generada con IA.' : ''}` : undefined}
+  article={{ publishedTime: pubDate, modifiedTime: updatedDate }}
+>
   <Schema
     type="BlogPosting"
     data={{

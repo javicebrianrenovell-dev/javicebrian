@@ -3,7 +3,7 @@ title: "Cómo medir el retorno de la comunicación en sostenibilidad (sin humo)"
 seoTitle: "Medir el retorno de la comunicación sostenible"
 description: "Medir la comunicación en sostenibilidad va más allá del alcance: indicadores con sentido para saber si de verdad aporta valor."
 pubDate: 2026-05-28
-heroImage: "/blog-images/nuevo-medir-retorno-comunicacion.jpg"
+heroImage: "/blog-images/nuevo-medir-retorno-comunicacion.webp"
 category: comunicacion
 tags: ["retorno de la comunicación", "medición", "sostenibilidad", "comunicación estratégica"]
 ---

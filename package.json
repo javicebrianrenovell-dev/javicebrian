@@ -19,6 +19,7 @@
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.13.0",
     "motion": "^12.38.0",
+    "sharp": "^0.34.5",
     "shiki": "^4.0.2",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.7.0"

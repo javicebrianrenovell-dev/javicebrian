@@ -4,7 +4,7 @@ seoTitle: "Formación continua en comunicación e IA"
 description: "Por qué la formación continua es la clave para seguir siendo relevante en un sector donde la tecnología cambia cada mes."
 pubDate: 2024-11-17
 updatedDate: 2026-06-07
-heroImage: "/blog-images/freepik__candid-image-photography-natural-textures-highly-r__32105.jpeg"
+heroImage: "/blog-images/freepik__candid-image-photography-natural-textures-highly-r__32105.webp"
 category: ia
 tags: ["formación", "comunicación", "inteligencia artificial", "aprendizaje continuo"]
 ---

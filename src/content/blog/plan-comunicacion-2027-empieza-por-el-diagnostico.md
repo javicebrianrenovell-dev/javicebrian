@@ -1,7 +1,7 @@
 ---
 title: "Plan de comunicación 2027: empieza por el diagnóstico, no por el calendario"
 seoTitle: "Plan de comunicación 2027: método en 4 semanas"
-description: "Octubre es cuando se decide el plan del año que viene. Un método de cuatro semanas para que el plan de 2027 salga de lo que funcionó en 2026 y no de rellenar un calendario."
+description: "En octubre se decide el plan del año que viene. Un método de cuatro semanas para que el de 2027 salga de lo que funcionó en 2026 y no de rellenar un calendario."
 enCorto: "Un buen plan anual de comunicación se hace en cuatro semanas y en este orden: diagnóstico de lo que funcionó este año, eje y tres objetivos con cifra, decisión de qué se deja de hacer y, solo al final, calendario. La IA ahorra horas en el diagnóstico —ordenar datos, clasificar impactos, resumir encuestas—, pero el eje y las renuncias son decisiones de la dirección."
 pubDate: 2026-10-05
 heroImage: "/blog-images/hero-plan-comunicacion-eje.webp"

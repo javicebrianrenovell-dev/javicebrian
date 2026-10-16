@@ -6,7 +6,8 @@ const blog = defineCollection({
     title: z.string(),
     // Título SEO corto (<60 car.) para el <title>; si falta, se usa `title`.
     seoTitle: z.string().max(60).optional(),
-    description: z.string(),
+    // Meta description: past 160 characters search results cut it off.
+    description: z.string().max(160),
     // Respuesta directa a la pregunta del artículo, en 40-70 palabras. Es el bloque
     // que un motor de respuesta extrae y cita: va bajo el H1 y como `abstract` en
     // el esquema. Sin él, el artículo solo se puede citar entero, y no se cita.
@@ -29,7 +30,7 @@ const services = defineCollection({
   schema: z.object({
     title: z.string(),
     seoTitle: z.string().max(60).optional(),
-    description: z.string(),
+    description: z.string().max(160),
     claim: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),

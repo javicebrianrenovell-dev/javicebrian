@@ -1,7 +1,7 @@
 ---
 title: "Etiquetar lo que haces con IA: qué te exige la ley desde agosto y cómo hacerlo sin que parezca una disculpa"
 seoTitle: "Etiquetar contenido hecho con IA en comunicación"
-description: "Desde el 2 de agosto de 2026, las imágenes, vídeos y audios sintéticos que parecen reales deben avisarse. Qué se etiqueta, qué no y cómo lo hago yo con las portadas de este blog."
+description: "Desde el 2 de agosto de 2026, las imágenes, vídeos y audios sintéticos que parecen reales deben avisarse. Qué se etiqueta, qué no y cómo lo hago en este blog."
 enCorto: "Desde el 2 de agosto de 2026, el Reglamento europeo de IA obliga a avisar cuando publicas una imagen, un vídeo o un audio generado con IA que parece real, sobre todo si muestra a una persona. Los textos corporativos revisados por alguien con responsabilidad editorial quedan, en general, fuera. La clave es tener un criterio escrito: qué se etiqueta, cómo y qué no se hace nunca."
 pubDate: 2026-10-08
 heroImage: "/blog-images/hero-etiquetar-contenido-ia.webp"

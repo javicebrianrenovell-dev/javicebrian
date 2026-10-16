@@ -4,7 +4,7 @@ seoTitle: "Elegir herramientas de IA con criterio"
 description: "Un método para elegir herramientas de IA sin perseguir cada novedad: qué preguntar antes de adoptar una y por qué."
 enCorto: "Antes de adoptar una herramienta de IA conviene responder cuatro preguntas: qué proceso concreto mejora, cuántas horas ahorra al mes, dónde acaban los datos que le das y qué pasa si mañana desaparece. Cambiar de herramienta cada mes tiene un coste que no aparece en ninguna factura: el equipo vuelve a empezar cada vez y ninguna llega a integrarse en el trabajo real."
 pubDate: 2026-06-06
-heroImage: "/blog-images/nuevo-elegir-herramientas-ia.jpg"
+heroImage: "/blog-images/nuevo-elegir-herramientas-ia.webp"
 category: herramientas
 tags: ["herramientas de IA", "comunicación", "productividad", "criterio"]
 ---

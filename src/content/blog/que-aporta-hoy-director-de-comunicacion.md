@@ -3,7 +3,7 @@ title: "Qué debe aportar hoy un director de comunicación"
 seoTitle: "Qué aporta hoy un director de comunicación"
 description: "El papel del director de comunicación ha cambiado: ya no basta con gestionar mensajes. Qué se le pide hoy a un dircom y por qué es una función estratégica."
 pubDate: 2026-04-24
-heroImage: "/blog-images/nuevo-comunicacion-ambiental-publica.jpg"
+heroImage: "/blog-images/nuevo-comunicacion-ambiental-publica.webp"
 category: comunicacion
 tags: ["dirección de comunicación", "estrategia", "reputación", "liderazgo"]
 ---

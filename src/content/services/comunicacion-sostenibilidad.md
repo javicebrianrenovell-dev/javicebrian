@@ -1,10 +1,10 @@
 ---
 title: "Comunicación de sostenibilidad y ESG"
-seoTitle: "Comunicación de sostenibilidad y ESG"
+seoTitle: "Comunicación ESG y sostenibilidad en València"
 description: "Comunico sostenibilidad con evidencia: traduzco datos ESG y memorias CSRD en mensajes que se entienden y se creen, sin caer en greenwashing."
 claim: "Comunicación de sostenibilidad que se entiende. Y se cree."
 pubDate: 2026-06-07
-heroImage: "/blog-images/nuevo-sostenibilidad-estrategica.jpg"
+heroImage: "/blog-images/nuevo-sostenibilidad-estrategica.webp"
 cluster: sostenibilidad
 order: 2
 problema:

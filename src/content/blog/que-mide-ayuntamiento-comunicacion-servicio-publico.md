@@ -1,7 +1,7 @@
 ---
 title: "Qué mide de verdad un ayuntamiento cuando evalúa la comunicación de un servicio público"
 seoTitle: "Qué evalúa un ayuntamiento de tu comunicación"
-description: "El pliego habla de campañas y folletos. Lo que de verdad pesa son las quejas, lo que llega al pleno y si cumpliste lo que ofertaste. Guía para adjudicatarias de servicios públicos."
+description: "El pliego habla de campañas y folletos. Lo que pesa son las quejas, lo que llega al pleno y si cumpliste lo ofertado. Guía para adjudicatarias de servicios."
 enCorto: "Un ayuntamiento evalúa tu comunicación en tres momentos: al puntuar la oferta, durante la ejecución y cuando decide la prórroga o la siguiente licitación. En los tres, lo que más pesa no es cuántas campañas haces, sino si bajan las quejas, si el cargo político se entera por ti y no por la prensa, y si cumpliste lo que prometiste en la oferta."
 pubDate: 2026-10-01
 heroImage: "/blog-images/hero-que-mide-ayuntamiento-comunicacion.webp"

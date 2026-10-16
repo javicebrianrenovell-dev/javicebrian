@@ -1,6 +1,6 @@
 ---
 title: "Automatización para comunicación"
-seoTitle: "Automatización para comunicación"
+seoTitle: "Automatización para comunicación en València"
 description: "Automatización de procesos de comunicación con criterio: que la máquina haga lo repetitivo para que tu equipo se dedique a lo estratégico."
 claim: "Lo repetitivo, a la máquina. Tú, a lo que importa."
 pubDate: 2026-06-07

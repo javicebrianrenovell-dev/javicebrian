@@ -1,6 +1,6 @@
 ---
 title: "Formación en IA para comunicación"
-seoTitle: "Formación en IA para comunicación"
+seoTitle: "Formación en IA para comunicación en València"
 description: "Formación práctica en inteligencia artificial para equipos de comunicación: que tu gente siga siendo relevante sin perder el criterio."
 claim: "Formación en IA para comunicación. Sin perder el criterio."
 pubDate: 2026-06-07

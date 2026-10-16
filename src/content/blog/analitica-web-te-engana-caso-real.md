@@ -1,7 +1,7 @@
 ---
 title: "Tu analítica web te engaña (la mía también lo hacía)"
 seoTitle: "Por qué tu analítica web no cuadra: caso real"
-description: "El aviso de cookies, los robots y un error de una línea pueden dejar tus datos de visitas en nada. Lo que encontré al revisar la medición de mi propia web y cómo lo arreglé sin gastar un euro."
+description: "El aviso de cookies, los robots y un error de una línea pueden vaciar tus datos de visitas. Lo que encontré en mi web y cómo lo arreglé sin gastar un euro."
 enCorto: "La cifra de visitas que ves en Google Analytics puede estar muy lejos de la real. El aviso de cookies deja fuera a quien no acepta, más de la mitad de las peticiones a una web son robots y un error técnico puede dejarte meses sin datos. La solución es cruzar tres fuentes: un contador sin cookies, el registro del servidor y Analytics solo para quien acepta."
 pubDate: 2026-10-22
 heroImage: "/blog-images/hero-analitica-web.webp"

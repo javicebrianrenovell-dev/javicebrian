@@ -1,10 +1,10 @@
 ---
 title: "IA para comunicación corporativa"
-seoTitle: "IA para comunicación corporativa"
+seoTitle: "IA para comunicación corporativa en València"
 description: "Inteligencia artificial en comunicación con criterio, no por moda. Usos reales, límites claros y un método de adopción que no te hace perder la voz."
 claim: "IA en comunicación. Con criterio, no por moda."
 pubDate: 2026-06-07
-heroImage: "/blog-images/nuevo-ia-aplicada-sostenibilidad.jpg"
+heroImage: "/blog-images/nuevo-ia-aplicada-sostenibilidad.webp"
 cluster: ia
 order: 3
 problema:

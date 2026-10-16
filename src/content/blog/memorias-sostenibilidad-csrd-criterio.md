@@ -5,7 +5,7 @@ description: "Cómo hacer memorias de sostenibilidad útiles más allá del cump
 enCorto: "Una memoria de sostenibilidad sirve para sostener decisiones ante quien financia, contrata o regula, no para rellenar un requisito. Los dos errores que la arruinan son escribirla solo para el auditor y publicarla después como si fuera para el público. Antes de escribir conviene comprobar el ámbito real de la CSRD: el paquete Ómnibus de 2025 recortó las empresas obligadas y retrasó dos años a buena parte de ellas."
 pubDate: 2026-06-02
 updatedDate: 2026-09-08
-heroImage: "/blog-images/nuevo-memorias-sostenibilidad-csrd.jpg"
+heroImage: "/blog-images/nuevo-memorias-sostenibilidad-csrd.webp"
 category: sostenibilidad
 tags: ["memorias de sostenibilidad", "CSRD", "informes ESG", "inteligencia artificial"]
 ---

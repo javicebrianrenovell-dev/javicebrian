@@ -1,7 +1,7 @@
 ---
 title: "Buscadores que responden con IA: qué cambia para que encuentren a tu organización"
 seoTitle: "Buscadores con IA: cómo seguir apareciendo"
-description: "El Modo IA de Google lleva un año en España y los resúmenes con IA reducen los clics a las webs. Qué significa para una dirección de comunicación y qué he cambiado en mi propia web."
+description: "El Modo IA de Google lleva un año en España y los resúmenes con IA restan clics. Qué significa para una dirección de comunicación y qué he cambiado en mi web."
 enCorto: "Cuando el buscador responde con un resumen de IA, la gente hace menos clic: un 8 % de las visitas frente a un 15 % sin resumen, según Pew Research. La web ya no compite solo por aparecer, sino por ser la fuente que la IA cita. Eso se consigue con respuestas directas, datos propios, una identidad clara y contenido que se pueda citar por partes."
 pubDate: 2026-10-19
 heroImage: "/blog-images/hero-buscadores-ia.webp"

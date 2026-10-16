@@ -3,7 +3,7 @@ title: "Cómo auditar tu comunicación en una semana (sin contratar a nadie)"
 seoTitle: "Auditar tu comunicación en una semana"
 description: "Cinco revisiones concretas para saber si tu comunicación tiene eje o solo calendario. Se hacen en cinco días, con lo que ya tienes dentro."
 pubDate: 2026-07-28
-heroImage: "/blog-images/hero-reporting-sostenibilidad.jpg"
+heroImage: "/blog-images/hero-reporting-sostenibilidad.webp"
 category: comunicacion
 tags: ["auditoría de comunicación", "estrategia", "dirección de comunicación", "medición"]
 draft: false

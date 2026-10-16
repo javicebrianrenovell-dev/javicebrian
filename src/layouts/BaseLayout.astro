@@ -27,7 +27,9 @@ interface Props {
   seoTitle?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
   noindex?: boolean;
+  article?: { publishedTime: Date; modifiedTime?: Date };
 }
 
 const {
@@ -35,7 +37,9 @@ const {
   seoTitle,
   description = 'Director de Comunicación y Desarrollo de Negocio. Comunicación que mueve organizaciones, con sostenibilidad e IA como ventaja.',
   image = '/og-default.jpg',
+  imageAlt,
   noindex = false,
+  article,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
@@ -51,6 +55,17 @@ const fullTitle = headTitle.includes('Javi Cebrián')
   : withBrand.length <= 60
     ? withBrand
     : headTitle;
+
+// Blog covers are 16:9; the share version is the 1200x630 crop built by
+// src/pages/og/[file].jpg.ts. Images already made at 1200x630 go as they are.
+const OG_READY = new Set(['/og-default.jpg', '/og-diagnostico.jpg']);
+const shareImage = image.startsWith('/blog-images/')
+  ? `/og/${image.slice('/blog-images/'.length).replace(/\.[^.]+$/, '')}.jpg`
+  : image;
+const shareImageURL = new URL(shareImage, Astro.site).href;
+const shareImageSized = shareImage.startsWith('/og/') || OG_READY.has(shareImage);
+const shareImageAlt =
+  imageAlt ?? (image === '/og-default.jpg' ? 'Javi Cebrián · Comunica. Decide. Multiplica.' : fullTitle);
 ---
 
 <!doctype html>
@@ -58,6 +73,7 @@ const fullTitle = headTitle.includes('Javi Cebrián')
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1A1A1A" />
     <meta name="generator" content={Astro.generator} />
     <meta name="facebook-domain-verification" content="7ziez5ui2g2xibji9tahc1wnxapfsm" />
     <link rel="preload" href={interDisplay} as="font" type="font/woff2" crossorigin />
@@ -73,19 +89,27 @@ const fullTitle = headTitle.includes('Javi Cebrián')
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={new URL(image, Astro.site).href} />
+    <meta property="og:image" content={shareImageURL} />
+    {shareImageSized && <meta property="og:image:width" content="1200" />}
+    {shareImageSized && <meta property="og:image:height" content="630" />}
+    <meta property="og:image:alt" content={shareImageAlt} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content="es_ES" />
+    {article && <meta property="article:published_time" content={article.publishedTime.toISOString()} />}
+    {article && (
+      <meta property="article:modified_time" content={(article.modifiedTime ?? article.publishedTime).toISOString()} />
+    )}
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(image, Astro.site).href} />
+    <meta name="twitter:image" content={shareImageURL} />
+    <meta name="twitter:image:alt" content={shareImageAlt} />
 
     <Schema type="WebSite" />
 

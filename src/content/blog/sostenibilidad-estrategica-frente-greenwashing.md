@@ -4,7 +4,7 @@ description: "Cómo comunicar sostenibilidad con evidencia y evitar el greenwash
 enCorto: "La diferencia entre sostenibilidad estratégica y greenwashing no está en el tono: está en si la afirmación se puede sostener con datos, metodología y trazabilidad delante de un auditor. Las señales de alarma son los términos absolutos sin acreditar, los distintivos propios sin certificación detrás y los logros contados sin decir el punto de partida. Desde el 27 de septiembre de 2026 esa exigencia deja de ser reputacional y pasa a ser legal."
 pubDate: 2026-05-30
 updatedDate: 2026-09-08
-heroImage: "/blog-images/nuevo-sostenibilidad-estrategica.jpg"
+heroImage: "/blog-images/nuevo-sostenibilidad-estrategica.webp"
 category: sostenibilidad
 tags: ["greenwashing", "sostenibilidad estratégica", "comunicación ambiental", "reputación"]
 ---

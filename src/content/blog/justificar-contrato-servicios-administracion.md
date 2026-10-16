@@ -1,9 +1,9 @@
 ---
 title: "Cómo demostrar el valor de un contrato de servicios ante la administración que te lo adjudicó"
 seoTitle: "Demostrar el valor de un contrato público"
-description: "Ganar el concurso es la mitad del trabajo. La otra mitad es que quien te lo adjudicó pueda defender esa decisión. Guía para adjudicatarias de servicios públicos."
+description: "Ganar el concurso es la mitad del trabajo. La otra mitad es que quien te lo adjudicó pueda defender su decisión. Guía para adjudicatarias de servicios públicos."
 pubDate: 2026-07-21
-heroImage: "/blog-images/hero-documentacion-licitaciones.jpg"
+heroImage: "/blog-images/hero-documentacion-licitaciones.webp"
 category: comunicacion
 tags: ["adjudicatarias", "sector público", "comunicación de servicio", "reputación", "contratos"]
 draft: false

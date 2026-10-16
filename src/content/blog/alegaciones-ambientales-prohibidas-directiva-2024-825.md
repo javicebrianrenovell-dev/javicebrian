@@ -1,7 +1,7 @@
 ---
 title: "Desde el 27 de septiembre hay frases ambientales que ya no deberías usar"
 seoTitle: "Frases verdes prohibidas: la Directiva 2024/825"
-description: "«Ecológico», «neutro en carbono» o un sello propio sin certificar: la Directiva europea contra el blanqueo ecológico se aplica desde el 27 de septiembre de 2026. Qué cambia, qué pasa en España y cómo reescribir tus mensajes."
+description: "«Ecológico» o «neutro en carbono» sin pruebas ya no valen: la directiva contra el blanqueo ecológico se aplica desde el 27 de septiembre de 2026. Qué cambia."
 enCorto: "Desde el 27 de septiembre de 2026 se aplica la Directiva (UE) 2024/825: prohíbe las alegaciones ambientales genéricas sin pruebas, la neutralidad climática basada en compensar emisiones y los sellos de sostenibilidad sin certificación independiente. España aún no la ha incorporado, pero la ley de competencia desleal y los tribunales ya van en esa dirección. Lo prudente es revisar tus mensajes ahora."
 pubDate: 2026-10-13
 heroImage: "/blog-images/hero-alegaciones-ambientales.webp"

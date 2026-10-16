@@ -1,6 +1,6 @@
 ---
 title: "Comunicación estratégica para organizaciones"
-seoTitle: "Comunicación estratégica"
+seoTitle: "Comunicación estratégica en València"
 description: "Dirección de comunicación con eje, no con calendario. Del relato a la decisión: ayudo a organizaciones a comunicar con criterio y dirección."
 claim: "Comunicación estratégica con eje. No con calendario."
 pubDate: 2026-06-07

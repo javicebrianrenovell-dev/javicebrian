@@ -1,7 +1,7 @@
 ---
 title: "Cómo defender el presupuesto de comunicación de 2027 ante tu dirección"
 seoTitle: "Defender el presupuesto de comunicación 2027"
-description: "En octubre se decide cuánto dinero tendrá comunicación el año que viene. Cómo llegar a esa reunión con un presupuesto que se defiende solo: ligado a objetivos, con renuncias y con las horas a la vista."
+description: "En octubre se decide el dinero de comunicación de 2027. Cómo llevar un presupuesto que se defiende solo: ligado a objetivos, con renuncias y horas a la vista."
 enCorto: "Un presupuesto de comunicación se defiende mejor cuando no se presenta como una lista de gastos, sino como tres apuestas ligadas a objetivos de la dirección. Llega con lo que dejas de hacer, con lo que ya ha demostrado funcionar y con las horas del equipo contadas. Y si te piden recortar, ofrece tú el recorte antes de que lo hagan a ciegas."
 pubDate: 2026-10-15
 heroImage: "/blog-images/hero-presupuesto-comunicacion.webp"
