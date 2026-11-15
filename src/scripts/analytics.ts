@@ -19,6 +19,8 @@
  *                                      'diagnostico' (correo para el diagnóstico ampliado)
  *   - diagnostico_start    {}        → primera respuesta del test de la portada
  *   - diagnostico_complete { sector, madurez, dolor, decision } → test terminado
+ *   - video_play      { label }      → primera reproducción de un <video data-ga-video>
+ *   - video_complete  { label }      → el vídeo llega al final
  */
 
 import { GA_MEASUREMENT_ID } from '../consts';
@@ -130,12 +132,50 @@ function wireTrackedClicks(): void {
 }
 
 /**
+ * Reproducciones de vídeo: cualquier <video data-ga-video="etiqueta"> envía
+ * video_play la primera vez que arranca y video_complete al terminar.
+ * Los eventos de medios no burbujean, así que se escuchan en fase de captura.
+ */
+function wireTrackedVideos(): void {
+  if ((window as any).__jcVideosWired) return;
+  (window as any).__jcVideosWired = true;
+
+  const tracked = (e: Event): HTMLVideoElement | null => {
+    const el = e.target as HTMLElement | null;
+    return el instanceof HTMLVideoElement && el.dataset.gaVideo ? el : null;
+  };
+
+  document.addEventListener(
+    'play',
+    (e) => {
+      const v = tracked(e);
+      if (!v || v.dataset.gaPlayed) return;
+      v.dataset.gaPlayed = '1';
+      track('video_play', { label: v.dataset.gaVideo });
+    },
+    true
+  );
+
+  document.addEventListener(
+    'ended',
+    (e) => {
+      const v = tracked(e);
+      if (!v || v.dataset.gaEnded) return;
+      v.dataset.gaEnded = '1';
+      track('video_complete', { label: v.dataset.gaVideo });
+    },
+    true
+  );
+}
+
+/**
  * Inicializa analítica + consentimiento. Idempotente: se puede llamar en cada
  * astro:page-load. Expone window.jcTrack para scripts sueltos (lead-form).
  */
 export function initAnalytics(): void {
   (window as any).jcTrack = track;
   wireTrackedClicks();
+  wireTrackedVideos();
 
   // Sin ID configurado: nada que hacer (ni banner ni GA4).
   if (!GA_MEASUREMENT_ID) return;
