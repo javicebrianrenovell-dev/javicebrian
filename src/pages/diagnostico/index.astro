@@ -151,6 +151,47 @@ const breadcrumbSchema = {
     </div>
   </section>
 
+  <!-- VÍDEO -->
+  <section class="bg-[#1A1A1A] text-[#FAFAF7]" style="border-top: 1px solid rgba(255,255,255,0.06);">
+    <div class="container-wide py-16 md:py-24">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+        <div class="md:col-span-4">
+          <span class="acento-verde block mb-6" data-reveal></span>
+          <p class="font-display text-xs text-[#8DBE3F] m-0" data-reveal>§ EN 40 SEGUNDOS</p>
+          <h2 class="font-extrabold tracking-[-0.03em] leading-[1.05] mt-6" style="font-size: clamp(1.75rem, 3.5vw, 3rem); max-width: 12ch;" data-mask-up>
+            <span>El diagnóstico, de un vistazo.</span>
+          </h2>
+          <p class="mt-6 text-base md:text-lg leading-relaxed text-[#A0A0A0] m-0" data-reveal data-delay="100">
+            Qué es, qué te llevas y cuánto cuesta. Si prefieres leerlo, lo tienes todo aquí debajo.
+          </p>
+        </div>
+        <div class="md:col-span-8" data-reveal data-delay="160">
+          <video
+            class="hidden md:block w-full aspect-video rounded-lg bg-black border border-[#FAFAF7]/10"
+            controls
+            playsinline
+            preload="none"
+            poster="/video/diagnostico-16x9.jpg"
+            aria-label="Vídeo de 40 segundos que resume el Diagnóstico IA + Comunicación en 14 días"
+          >
+            <source src="/video/diagnostico-16x9.mp4" type="video/mp4" />
+          </video>
+          <video
+            class="md:hidden w-full max-w-[22rem] mx-auto aspect-[9/16] rounded-lg bg-black border border-[#FAFAF7]/10"
+            controls
+            playsinline
+            preload="none"
+            poster="/video/diagnostico-9x16.jpg"
+            aria-label="Vídeo de 40 segundos que resume el Diagnóstico IA + Comunicación en 14 días"
+          >
+            <source src="/video/diagnostico-9x16.mp4" type="video/mp4" />
+          </video>
+          <p class="mt-3 text-xs text-[#6B6B6B] m-0 text-center md:text-left">40 s · Vídeo generado con IA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EL PROBLEMA -->
   <section class="bg-[#FAFAF7] text-[#1A1A1A]">
     <div class="container-wide py-20 md:py-28">
