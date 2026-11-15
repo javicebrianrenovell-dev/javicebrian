@@ -3,6 +3,7 @@ title: "Atención y consultas con IA: descargar al equipo sin perder la cercaní
 seoTitle: "Atención y consultas con IA en servicios"
 description: "Cómo usar la IA para resolver las consultas repetitivas de una empresa de servicios sin enfriar el trato: qué responde la máquina y qué necesita una persona."
 pubDate: 2026-06-22
+updatedDate: 2026-11-15
 heroImage: "/blog-images/hero-atencion-consultas.webp"
 category: ia
 tags: ["inteligencia artificial", "atención al cliente", "servicios", "automatización", "ciudadanía"]
@@ -59,11 +60,12 @@ La frontera, en realidad, es sencilla de enunciar y exigente de respetar: **lo r
 El miedo legítimo es ese: que automatizar la atención la vuelva fría y distante. Se evita con método, no con suerte.
 
 1. **Empieza por las preguntas frecuentes reales.** Saca las diez o quince consultas que más se repiten —tu equipo las sabe de memoria— y deja que la IA resuelva solo esas, con respuestas que tú has revisado.
-2. **Pon siempre la salida a una persona.** En cualquier momento, el ciudadano tiene que poder decir "quiero hablar con alguien" y llegar a un humano sin laberintos. Esa puerta no se cierra nunca.
+2. **Pon siempre la salida a una persona.** En cualquier momento, cualquier persona tiene que poder decir "quiero hablar con alguien" y llegar a otra persona sin laberintos. Esa puerta no se cierra nunca.
 3. **Cuida el tono.** La voz de la atención automática también es tu voz. Que sea clara, cercana y sin jerga. Una respuesta automática puede ser fría o puede ser amable; eso lo decides tú.
 4. **Mide y ajusta.** Mira qué resuelve bien la IA, qué deriva y dónde la gente se queda insatisfecha. Lo que falle, lo afinas o lo devuelves a una persona.
+5. **Di desde el primer mensaje que es un asistente automático.** Desde el 2 de agosto de 2026 es obligatorio (artículo 50 del Reglamento europeo de IA). Lo explico en [tu asistente ya tiene que decir que es una máquina](/blog/asistente-ia-servicio-publico-aviso-obligatorio/).
 
-Bien hecho, esto no aleja a la empresa de su gente: la acerca. Resuelve al instante lo sencillo y libera a tu equipo para dedicar tiempo de verdad a quien lo necesita. Mal hecho, levantas un muro entre tu organización y el ciudadano. La diferencia, otra vez, no es la herramienta. Es el criterio con el que se usa.
+Bien hecho, esto no aleja a la empresa de su gente: la acerca. Resuelve al instante lo sencillo y libera a tu equipo para dedicar tiempo de verdad a quien lo necesita. Mal hecho, levantas un muro entre tu organización y la ciudadanía. La diferencia, otra vez, no es la herramienta. Es el criterio con el que se usa.
 
 ---
 

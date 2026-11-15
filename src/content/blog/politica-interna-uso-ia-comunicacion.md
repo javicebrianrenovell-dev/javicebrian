@@ -3,6 +3,7 @@ title: "Cómo crear una política interna de uso de IA en comunicación"
 seoTitle: "Política interna de uso de IA en comunicación"
 description: "Guía para crear una política interna de uso de IA en un equipo de comunicación: qué incluir, qué permitir, qué proteger y cómo aplicarla con criterio."
 pubDate: 2026-05-08
+updatedDate: 2026-11-15
 heroImage: "/blog-images/nuevo-elegir-herramientas-ia.webp"
 category: ia
 tags: ["inteligencia artificial", "política de uso", "comunicación", "gobernanza"]
@@ -26,7 +27,7 @@ Esta parte no es opcional. Un descuido aquí puede ser un problema legal, no sol
 
 ## 3. Cómo se revisa lo que produce la IA
 
-La IA se equivoca con seguridad y elegancia: inventa datos, cita fuentes falsas, suena convincente cuando está mal. Por eso ningún contenido generado debería salir sin pasar por un humano que verifique.
+La IA se equivoca con seguridad y elegancia: inventa datos, cita fuentes falsas, suena convincente cuando está mal. Por eso ningún contenido generado debería salir sin pasar por una persona que verifique.
 
 La política debe fijar quién revisa qué y con qué nivel de exigencia según el riesgo. Un borrador interno no necesita el mismo control que una nota de prensa.
 
@@ -36,7 +37,9 @@ Si todo el mundo usa las mismas herramientas, todo empieza a sonar igual. La pol
 
 ## 5. Transparencia: cuándo se dice y cuándo no
 
-¿Hay que avisar de que un contenido se ha hecho con ayuda de IA? Depende del contexto y del sector, pero la política debería tener una postura clara y coherente, no decidirlo sobre la marcha cada vez.
+¿Hay que avisar de que un contenido se ha hecho con ayuda de IA? Desde el 2 de agosto de 2026 hay tres casos en los que ya no es una elección, porque lo exige el artículo 50 del Reglamento europeo de IA: cuando un asistente automático conversa con personas, cuando publicas imagen, audio o vídeo generado o manipulado que parece real, y cuando publicas textos generados con IA sobre asuntos de interés público sin revisión humana ni responsabilidad editorial. Lo explico en [cómo etiquetar lo que haces con IA](/blog/etiquetar-contenido-ia-comunicacion-corporativa/).
+
+Fuera de esos tres casos sí depende del contexto y del sector. Pero la política debería tener una postura clara y coherente, no decidirlo sobre la marcha cada vez.
 
 ## 6. Quién responde de qué
 

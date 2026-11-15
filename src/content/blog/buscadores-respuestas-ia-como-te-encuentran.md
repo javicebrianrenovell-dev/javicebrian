@@ -1,9 +1,10 @@
 ---
 title: "Buscadores que responden con IA: qué cambia para que encuentren a tu organización"
 seoTitle: "Buscadores con IA: cómo seguir apareciendo"
-description: "El Modo IA de Google lleva un año en España y los resúmenes con IA restan clics. Qué significa para una dirección de comunicación y qué he cambiado en mi web."
+description: "El Modo IA de Google llegó a España en 2025 y los resúmenes con IA restan clics. Qué significa para una dirección de comunicación y qué he cambiado en mi web."
 enCorto: "Cuando el buscador responde con un resumen de IA, la gente hace menos clic: un 8 % de las visitas frente a un 15 % sin resumen, según Pew Research. La web ya no compite solo por aparecer, sino por ser la fuente que la IA cita. Eso se consigue con respuestas directas, datos propios, una identidad clara y contenido que se pueda citar por partes."
 pubDate: 2026-10-19
+updatedDate: 2026-11-15
 heroImage: "/blog-images/hero-buscadores-ia.webp"
 heroAI: true
 category: herramientas
@@ -11,7 +12,7 @@ tags: ["buscadores", "Modo IA", "posicionamiento", "visibilidad", "dirección de
 draft: false
 ---
 
-Hace un año, el 8 de octubre de 2025, Google activó en España su Modo IA. Es un buscador que, en lugar de una lista de enlaces, responde con un texto redactado por IA y unas pocas fuentes al lado. Antes ya habían llegado los resúmenes con IA encima de los resultados de siempre.
+El 8 de octubre de 2025 Google activó en España su Modo IA. Es un buscador que, en lugar de una lista de enlaces, responde con un texto redactado por IA y unas pocas fuentes al lado. Antes ya habían llegado los resúmenes con IA encima de los resultados de siempre.
 
 Para quien dirige la comunicación de una organización, la pregunta no es técnica. Es esta: si la gente obtiene la respuesta sin entrar en tu web, ¿cómo llega a saber que existes?
 
@@ -22,7 +23,7 @@ Para quien dirige la comunicación de una organización, la pregunta no es técn
 Tres estudios que conviene conocer:
 
 - **Pew Research (julio de 2025).** Con 900 adultos de Estados Unidos que compartieron su navegación: cuando aparecía un resumen de IA, hacían clic en un resultado en el 8 % de las visitas. Sin resumen, en el 15 %. Y en los enlaces del propio resumen, solo en el 1 %.
-- **Universidad de Pensilvania y Northeastern (septiembre de 2026).** En un experimento con 1.100 usuarios, usar el Modo IA redujo en 18,8 puntos la tasa de clics hacia webs externas.
+- **Universidad de Pensilvania y Northeastern (prepublicación de agosto de 2026).** En un experimento con 1.100 usuarios, usar el Modo IA redujo en 18,8 puntos la tasa de clics hacia webs externas.
 - **Google** sostiene que los clics que llegan desde la búsqueda con IA son «de mayor calidad»: menos, pero de gente que pasa más tiempo en la página.
 
 Las dos cosas pueden ser ciertas a la vez. Menos visitas y visitas más interesadas. Para una web corporativa o de servicios, que vive de que llegue la persona adecuada y no del volumen, lo segundo importa más que lo primero. Pero solo si eres tú la fuente citada.
@@ -39,7 +40,7 @@ Las dos cosas pueden ser ciertas a la vez. Menos visitas y visitas más interesa
 
 ## Mi caso: lo que he cambiado en esta web
 
-No lo cuento como teoría. En septiembre hice estos cambios en javicebrian.es:
+No lo cuento como teoría. En septiembre de 2026 hice estos cambios en javicebrian.es:
 
 1. **Un bloque de respuesta directa al principio de cada artículo**, el recuadro «En corto» que ves arriba: la respuesta a la pregunta del artículo en unas 60 palabras.
 2. **Una [página de preguntas frecuentes](/preguntas-frecuentes/)** con 29 preguntas reales, cada una con su respuesta breve.
@@ -47,7 +48,7 @@ No lo cuento como teoría. En septiembre hice estos cambios en javicebrian.es:
 4. **Datos estructurados coherentes**: una sola descripción de quién soy y qué hago, repetida igual en todas las páginas.
 5. **Un archivo para modelos de lenguaje** (`llms.txt`) que resume el sitio y enlaza lo importante.
 
-¿Ha servido? Todavía no lo sé con rigor, y prefiero decirlo así. Acabo de montar la medición para saberlo, y es justo lo que cuento en el próximo artículo. Lo que sí sé es que ninguno de estos cambios costó dinero: costó ordenar lo que ya tenía.
+¿Ha servido? Todavía no lo sé con rigor, y prefiero decirlo así. Monté la medición para saberlo, y lo cuento en [tu analítica web te engaña](/blog/analitica-web-te-engana-caso-real/). Lo que sí sé es que ninguno de estos cambios costó dinero: costó ordenar lo que ya tenía.
 
 ## Por dónde empezar en tu organización
 

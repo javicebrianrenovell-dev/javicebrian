@@ -3,6 +3,7 @@ title: "Riesgos reputacionales de usar IA en contenidos corporativos"
 seoTitle: "Riesgos reputacionales de la IA en contenidos"
 description: "Los riesgos reputacionales de usar inteligencia artificial en contenidos corporativos, y cómo aprovechar la IA sin exponer la marca."
 pubDate: 2026-05-21
+updatedDate: 2026-11-15
 heroImage: "/blog-images/javi-cebrian_director_comunicacion.webp"
 heroAI: true
 category: ia
@@ -48,6 +49,12 @@ Los modelos aprenden de datos que arrastran sesgos. Sin atención, esos sesgos s
 Un riesgo más silencioso: si el equipo delega todo en la IA, deja de entrenar su propio criterio. Y el día que la herramienta falla, o que hay que pensar algo de verdad, el músculo está atrofiado. La IA debe potenciar al equipo, no sustituir su capacidad de pensar.
 
 **Cómo protegerse:** usar la IA como apoyo, no como muleta. El criterio se mantiene usándolo.
+
+## 7. Publicar contenido sintético sin avisar
+
+Este ya no es solo reputacional. Desde el 2 de agosto de 2026, el artículo 50 del Reglamento europeo de IA obliga a avisar cuando publicas imagen, audio o vídeo generado o manipulado que parece real. No hacerlo tiene sanción, además del coste de que alguien lo descubra por ti.
+
+**Cómo protegerse:** un criterio escrito de qué se avisa y cómo. Lo detallo en [cómo etiquetar lo que haces con IA](/blog/etiquetar-contenido-ia-comunicacion-corporativa/).
 
 ## El equilibrio real
 

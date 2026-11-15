@@ -1,9 +1,10 @@
 ---
 title: "Plan de comunicación 2027: empieza por el diagnóstico, no por el calendario"
 seoTitle: "Plan de comunicación 2027: método en 4 semanas"
-description: "En octubre se decide el plan del año que viene. Un método de cuatro semanas para que el de 2027 salga de lo que funcionó en 2026 y no de rellenar un calendario."
+description: "En otoño se decide el plan del año que viene. Un método de cuatro semanas para que el de 2027 salga de lo que funcionó en 2026 y no de rellenar un calendario."
 enCorto: "Un buen plan anual de comunicación se hace en cuatro semanas y en este orden: diagnóstico de lo que funcionó este año, eje y tres objetivos con cifra, decisión de qué se deja de hacer y, solo al final, calendario. La IA ahorra horas en el diagnóstico —ordenar datos, clasificar impactos, resumir encuestas—, pero el eje y las renuncias son decisiones de la dirección."
 pubDate: 2026-10-05
+updatedDate: 2026-11-15
 heroImage: "/blog-images/hero-plan-comunicacion-eje.webp"
 heroAI: true
 category: comunicacion
@@ -17,7 +18,7 @@ El problema no es la prisa. Es que ese plan no ha aprendido nada del año que te
 
 <aside class="callout"><span class="callout-label">EN CORTO</span> Cuatro semanas, en este orden: diagnóstico, eje y objetivos, renuncias y calendario. El calendario es lo último que se escribe, no lo primero.</aside>
 
-Ya expliqué por qué [el calendario no es la estrategia](/blog/comunicacion-estrategica-del-calendario-al-criterio/). Esta vez voy a lo práctico: cómo hacer el plan de 2027 en octubre con un método que cabe en la agenda de una dirección de comunicación real.
+Ya expliqué por qué [el calendario no es la estrategia](/blog/comunicacion-estrategica-del-calendario-al-criterio/). Esta vez voy a lo práctico: cómo hacer el plan de 2027 con un método que cabe en la agenda de una dirección de comunicación real.
 
 ## Semana 1 · Diagnóstico: qué funcionó de verdad en 2026
 
@@ -70,10 +71,10 @@ El plan de 2027 quedó en unas 40 acciones. Boletín trimestral en lugar de mens
 
 Nada de esto requería presupuesto nuevo. Requería mirar antes de planificar.
 
-## La trampa de octubre
+## La trampa del último trimestre
 
 La tentación es saltarse las tres primeras semanas porque «ya sabemos lo que funciona». Casi nunca es verdad. Lo que se sabe es lo que se recuerda, y se recuerda lo que costó esfuerzo, no lo que dio resultado.
 
-Si quieres hacerlo con alguien de fuera que ponga los datos encima de la mesa sin compromisos internos, el [Diagnóstico de 14 días](/diagnostico/) es exactamente la semana 1 y la semana 2 de este método, con la parte mecánica automatizada para que el año que viene la puedas repetir tú. Llegas a noviembre con el eje, los tres objetivos y la lista de renuncias justificada ante tu dirección.
+Si quieres hacerlo con alguien de fuera que ponga los datos encima de la mesa sin compromisos internos, el [Diagnóstico de 14 días](/diagnostico/) cubre la semana 1 de este método y prepara la 2: el diagnóstico con los datos ordenados y las tres acciones de mayor retorno, con su estimación. El eje y las renuncias los decides tú, con eso delante.
 
 Son 1.500 €, precio cerrado, con una condición: si no salen al menos tres acciones concretas con su retorno estimado, no lo pagas. Y si prefieres empezar sin compromiso, puedes ver cómo trabajo la [comunicación estratégica con eje](/comunicacion-estrategica/).

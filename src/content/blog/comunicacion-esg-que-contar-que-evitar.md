@@ -3,12 +3,13 @@ title: "Comunicación ESG: qué contar, cómo contarlo y qué evitar"
 seoTitle: "Comunicación ESG: qué contar y qué evitar"
 description: "Guía práctica de comunicación ESG: qué información ambiental, social y de gobernanza contar, cómo hacerla creíble y qué errores conviene evitar."
 pubDate: 2026-04-10
+updatedDate: 2026-11-15
 heroImage: "/blog-images/nuevo-memorias-sostenibilidad-csrd.webp"
 category: sostenibilidad
 tags: ["ESG", "comunicación corporativa", "sostenibilidad", "reputación"]
 ---
 
-ESG son tres letras que se han colado en los consejos de administración: ambiental, social y de gobernanza. Cada vez más empresas tienen que rendir cuentas sobre estas tres dimensiones ante inversores, clientes, empleados y reguladores. El problema es que muchas confunden reportar con comunicar. Y no es lo mismo.
+ESG son tres letras que se han colado en los consejos de administración: ambiental, social y de gobernanza. Europa ha recortado quién está obligado a informar, pero cada vez más empresas reciben la misma petición de sus clientes, de la banca, de su plantilla y de quien invierte en ellas. El problema es que muchas confunden reportar con comunicar. Y no es lo mismo.
 
 Reportar es cumplir con una obligación: entregar la información que te exigen. Comunicar es conseguir que esa información se entienda, se crea y construya reputación. Una empresa puede hacer un informe ESG impecable y, aun así, comunicarlo fatal. Esta guía va de evitar justo eso.
 
@@ -44,6 +45,8 @@ Aquí está la parte que cuesta carreras profesionales. Los errores más caros e
 - **Maquillar.** Destacar lo bueno y enterrar lo malo. Los grupos de interés —y los reguladores— lo detectan cada vez antes.
 - **Hablar en abstracto.** "Estamos comprometidos con la sostenibilidad" no significa nada. El compromiso se demuestra con datos, no se declara.
 - **Copiar el lenguaje de otros.** Si tu informe ESG suena igual que el de tu competencia, no estás comunicando: estás rellenando.
+
+Desde el 27 de septiembre de 2026, además, parte de esta lista tiene consecuencias legales en la UE: las alegaciones ambientales genéricas sin pruebas pasan a ser práctica desleal. Lo explico en [las frases ambientales que ya no deberías usar](/blog/alegaciones-ambientales-prohibidas-directiva-2024-825/).
 
 ## ESG no es un departamento, es un relato coherente
 

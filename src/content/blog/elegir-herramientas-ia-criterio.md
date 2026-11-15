@@ -2,8 +2,9 @@
 title: "Elegir herramientas de IA con criterio: guía anti-hype para comunicadores"
 seoTitle: "Elegir herramientas de IA con criterio"
 description: "Un método para elegir herramientas de IA sin perseguir cada novedad: qué preguntar antes de adoptar una y por qué."
-enCorto: "Antes de adoptar una herramienta de IA conviene responder cuatro preguntas: qué proceso concreto mejora, cuántas horas ahorra al mes, dónde acaban los datos que le das y qué pasa si mañana desaparece. Cambiar de herramienta cada mes tiene un coste que no aparece en ninguna factura: el equipo vuelve a empezar cada vez y ninguna llega a integrarse en el trabajo real."
+enCorto: "Antes de adoptar una herramienta de IA conviene pasarla por un filtro de cinco preguntas, entre ellas qué proceso concreto mejora, cuántas horas ahorra al mes, dónde acaban los datos que le das y qué pasa si mañana desaparece. Cambiar de herramienta cada mes tiene un coste que no aparece en ninguna factura: el equipo vuelve a empezar cada vez y ninguna llega a integrarse en el trabajo real."
 pubDate: 2026-06-06
+updatedDate: 2026-11-15
 heroImage: "/blog-images/nuevo-elegir-herramientas-ia.webp"
 category: herramientas
 tags: ["herramientas de IA", "comunicación", "productividad", "criterio"]
@@ -49,7 +50,7 @@ Esto no es decir que no haya que cambiar nunca. Cuando una herramienta nueva res
 
 No existe la mejor herramienta en abstracto. Existe la que encaja con lo que haces. Quien produce piezas visuales tiene necesidades distintas a las de un equipo que gestiona la comunicación de varios clientes. Por eso desconfío de las listas de "las 20 herramientas imprescindibles": casi ninguna lo es para todos.
 
-Si tu trabajo es muy visual, una herramienta como Freepik puede resolverte el día a día creativo mejor que tres apps sueltas; lo conté con detalle en [este artículo sobre Freepik para agencias](/blog/freepik-herramienta-agencias-comunicacion/). Si lo tuyo son procesos que se repiten y quieres encadenar tareas, lo interesante no es una app concreta sino montar un sistema, como expliqué al hablar de [agentes de IA y no-code al servicio de la comunicación](/blog/agencia-de-agentes-ia-y-no-code-al-servicio-de-la-comunicacion/). El criterio para elegir es el mismo en los dos casos. Cambia la respuesta porque cambia el trabajo. Y si lo que tienes entre manos no es una herramienta suelta sino llevar la IA a toda una organización, ese filtro se vuelve aún más necesario, como conté al hablar de [implementación de IA en empresas](/blog/implementacion-ia-empresas/).
+Si tu trabajo es muy visual, una herramienta como Magnific (antes Freepik) puede resolverte el día a día creativo mejor que tres apps sueltas; lo conté con detalle en [este artículo sobre Freepik para agencias](/blog/freepik-herramienta-agencias-comunicacion/). Si lo tuyo son procesos que se repiten y quieres encadenar tareas, lo interesante no es una app concreta sino montar un sistema, como expliqué al hablar de [agentes de IA y no-code al servicio de la comunicación](/blog/agencia-de-agentes-ia-y-no-code-al-servicio-de-la-comunicacion/). El criterio para elegir es el mismo en los dos casos. Cambia la respuesta porque cambia el trabajo. Y si lo que tienes entre manos no es una herramienta suelta sino llevar la IA a toda una organización, ese filtro se vuelve aún más necesario, como conté al hablar de [implementación de IA en empresas](/blog/implementacion-ia-empresas/).
 
 Mi recomendación práctica: en vez de preguntarte qué herramienta usar, lista las tres o cuatro tareas que más tiempo te comen cada semana. Esas son tus candidatas a mejorar. Para cada una, prueba una herramienta con un caso real de tu trabajo, no con el ejemplo de demostración, y dale dos semanas antes de juzgarla. Si te ahorra trabajo de forma clara, la incorporas. Si no, la dejas sin culpa y sigues con lo que tienes.
 

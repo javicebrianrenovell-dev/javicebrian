@@ -3,6 +3,7 @@ title: "Errores frecuentes en comunicación ambiental corporativa"
 seoTitle: "Errores en comunicación ambiental corporativa"
 description: "Los errores más comunes al comunicar el compromiso ambiental de una empresa, y cómo evitarlos para no convertir una buena intención en un problema."
 pubDate: 2026-05-01
+updatedDate: 2026-11-15
 heroImage: "/blog-images/discurso_ambiental_valencia-scaled.webp"
 category: sostenibilidad
 tags: ["comunicación ambiental", "greenwashing", "reputación", "sostenibilidad"]
@@ -26,7 +27,7 @@ He visto repetirse los mismos errores en organizaciones muy distintas. Estos son
 
 ## 3. Comunicar más de lo que se hace
 
-Este es el más peligroso. Cuando el relato va por delante de la realidad, aparece el greenwashing, aunque no haya mala fe. Basta con destacar lo verde de un producto y callar el impacto del resto. Los grupos de interés y los reguladores cada vez lo detectan antes, y el coste reputacional es alto.
+Este es el más peligroso. Cuando el relato va por delante de la realidad, aparece el greenwashing, aunque no haya mala fe. Basta con destacar lo verde de un producto y callar el impacto del resto. Los grupos de interés y los reguladores cada vez lo detectan antes, y el coste reputacional es alto. Desde el 27 de septiembre de 2026, además, la Directiva (UE) 2024/825 trata varias de estas prácticas como desleales: lo cuento en [las frases ambientales que ya no deberías usar](/blog/alegaciones-ambientales-prohibidas-directiva-2024-825/).
 
 **Cómo evitarlo:** que cada afirmación se pueda sostener delante de un auditor. Si no, mejor no decirla.
 

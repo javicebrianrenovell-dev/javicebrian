@@ -4,6 +4,7 @@ seoTitle: "Qué evalúa un ayuntamiento de tu comunicación"
 description: "El pliego habla de campañas y folletos. Lo que pesa son las quejas, lo que llega al pleno y si cumpliste lo ofertado. Guía para adjudicatarias de servicios."
 enCorto: "Un ayuntamiento evalúa tu comunicación en tres momentos: al puntuar la oferta, durante la ejecución y cuando decide la prórroga o la siguiente licitación. En los tres, lo que más pesa no es cuántas campañas haces, sino si bajan las quejas, si el cargo político se entera por ti y no por la prensa, y si cumpliste lo que prometiste en la oferta."
 pubDate: 2026-10-01
+updatedDate: 2026-11-15
 heroImage: "/blog-images/hero-que-mide-ayuntamiento-comunicacion.webp"
 heroAI: true
 category: comunicacion
@@ -11,7 +12,7 @@ tags: ["adjudicatarias", "sector público", "contratos", "comunicación de servi
 draft: false
 ---
 
-El 4 de septiembre, Llucmajor adjudicó sus nuevos contratos de residuos y limpieza: 53,5 millones de euros, con la recogida a ocho años. La noticia habla de 1.000 contenedores nuevos, de puerta a puerta en las urbanizaciones y de frecuencias que se adaptan a la temporada. De cómo se va a explicar ese cambio a los vecinos no dice nada.
+A principios de septiembre de 2026, Llucmajor adjudicó sus nuevos contratos de residuos y limpieza: 53,5 millones de euros, con la recogida a ocho años. La noticia habla de 1.000 contenedores nuevos, de puerta a puerta en las urbanizaciones y de frecuencias que se adaptan a la temporada. De cómo se va a explicar ese cambio al vecindario no dice nada.
 
 Es normal: las noticias cuentan camiones y cifras. Pero cualquiera que haya vivido un cambio de modelo de recogida sabe que ahí se decide si el contrato arranca bien o arranca con el teléfono ardiendo. Y es ahí donde el ayuntamiento empieza a formarse una opinión de la adjudicataria que le va a durar ocho años.
 
@@ -63,7 +64,7 @@ Si eres una de las empresas que arrancan contrato este otoño, el primer trimest
 
 ## Por dónde empezar
 
-Si tu empresa presta un servicio público y la comunicación va a rastras de la operación, en el [Diagnóstico de 14 días](/diagnostico/) hago tres cosas: miro qué te pide de verdad tu ayuntamiento, frente a lo que dice el pliego; monto contigo el cuadro de indicadores con los datos que ya tienes; y dejo funcionando el informe mensual, con la parte mecánica automatizada.
+Si tu empresa presta un servicio público y la comunicación va a rastras de la operación, en el [Diagnóstico de 14 días](/diagnostico/) hago tres cosas: miro qué te pide de verdad tu ayuntamiento, frente a lo que dice el pliego; te propongo el cuadro de indicadores con los datos que ya tienes; y te digo qué parte del informe mensual se puede automatizar y con qué retorno.
 
 Son 1.500 €, precio cerrado. Si al terminar no tienes al menos tres acciones concretas con su retorno estimado, no lo pagas.
 

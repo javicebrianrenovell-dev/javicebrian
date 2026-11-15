@@ -1,13 +1,16 @@
 ---
 title: "Freepik: la herramienta imprescindible para agencias de comunicación en el día a día"
-seoTitle: "Freepik para agencias de comunicación"
+seoTitle: "Freepik (ahora Magnific) para agencias"
 description: "Cómo Freepik resuelve el día a día creativo de las agencias de comunicación: imágenes, plantillas, recursos para redes y editor online."
 pubDate: 2024-11-10
-updatedDate: 2026-06-07
+updatedDate: 2026-11-15
 heroImage: "/blog-images/freepik__candid-image-photography-natural-textures-highly-r__91806.webp"
+heroAI: true
 category: herramientas
 tags: ["Freepik", "herramientas IA", "diseño", "agencias de comunicación"]
 ---
+
+**Actualización · noviembre de 2026.** Freepik se llama Magnific desde abril de 2026. Mantengo el nombre con el que escribí el artículo; el criterio para usarla no cambia.
 
 En el día a día de la comunicación, dos cosas empujan los resultados: hacerlo bien y hacerlo rápido. La mayoría de los equipos no fallan por falta de ideas, sino por falta de tiempo para ejecutarlas. Ahí es donde una herramienta como Freepik se gana el sitio: resuelve buena parte del trabajo visual sin convertirlo en un cuello de botella.
 

@@ -2,8 +2,9 @@
 title: "Tu analítica web te engaña (la mía también lo hacía)"
 seoTitle: "Por qué tu analítica web no cuadra: caso real"
 description: "El aviso de cookies, los robots y un error de una línea pueden vaciar tus datos de visitas. Lo que encontré en mi web y cómo lo arreglé sin gastar un euro."
-enCorto: "La cifra de visitas que ves en Google Analytics puede estar muy lejos de la real. El aviso de cookies deja fuera a quien no acepta, más de la mitad de las peticiones a una web son robots y un error técnico puede dejarte meses sin datos. La solución es cruzar tres fuentes: un contador sin cookies, el registro del servidor y Analytics solo para quien acepta."
+enCorto: "La cifra de visitas que ves en Google Analytics puede estar muy lejos de la real. El aviso de cookies deja fuera a quien no acepta, en mi web, más de la mitad de las peticiones eran robots, y un error técnico puede dejarte meses sin datos. La solución es cruzar tres fuentes: un contador sin cookies, el registro del servidor y Analytics solo para quien acepta."
 pubDate: 2026-10-22
+updatedDate: 2026-11-15
 heroImage: "/blog-images/hero-analitica-web.webp"
 heroAI: true
 category: herramientas
@@ -66,4 +67,4 @@ Si diriges la comunicación, pide a quien lleve la web que responda a estas preg
 
 Si alguna respuesta es «no lo sé», el número que presentas cada mes a tu dirección es menos fiable de lo que parece. Y las decisiones que se toman con él, también. Lo relaciono con algo más amplio en [cómo medir el retorno de la comunicación](/blog/medir-retorno-comunicacion-sostenibilidad/): medir mal es peor que no medir, porque da seguridad falsa.
 
-En el [Diagnóstico de 14 días](/diagnostico/) reviso cómo mide tu organización su comunicación digital, qué números son fiables y cuáles no, y dejo montado un cuadro sencillo con fuentes que se contrastan entre sí. Precio cerrado: 1.500 €. Si al terminar no ves al menos tres acciones concretas con su retorno estimado, no lo pagas.
+En el [Diagnóstico de 14 días](/diagnostico/) reviso cómo mide tu organización su comunicación digital, qué números son fiables y cuáles no, y te dejo por escrito cómo montar un cuadro sencillo con fuentes que se contrastan entre sí. Precio cerrado: 1.500 €. Si al terminar no ves al menos tres acciones concretas con su retorno estimado, no lo pagas.

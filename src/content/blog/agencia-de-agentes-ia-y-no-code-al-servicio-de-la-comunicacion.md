@@ -3,6 +3,7 @@ title: "Agencia de Agentes: IA y No Code al Servicio de la Comunicación"
 seoTitle: "IA y no-code para agencias de comunicación"
 description: "Cómo el modelo de agencia de agentes combina IA y herramientas no-code para multiplicar la capacidad de las agencias de comunicación."
 pubDate: 2025-01-18
+updatedDate: 2026-11-15
 heroImage: "/blog-images/freepik__un-director-de-comunicacin-trabajando-desde-la-pla__87398.webp"
 heroAI: true
 category: ia
@@ -13,9 +14,9 @@ Con la transformación digital en auge, las herramientas de IA y las plataformas
 
 ## Agencia de Agentes: un concepto transformador
 
-Una agencia de agentes actúa como facilitador conectando recursos y estrategias. Como señala Sam Altman, CEO de OpenAI: la IA no reemplazará a las personas, sino que potenciará su capacidad.
+Una agencia de agentes actúa como facilitador conectando recursos y estrategias. La IA no reemplaza a las personas: amplía lo que pueden hacer.
 
-Las agencias que implementan automatizaciones mediante IA experimentan un aumento promedio del **40% en productividad**. No es una previsión de futuro: es lo que ya está pasando.
+Las agencias que automatizan con IA recuperan horas de trabajo repetitivo. En un equipo pequeño de comunicación, mi cálculo es de [entre tres y seis horas por persona y semana](/blog/cuanto-cuesta-implantar-ia-equipo-comunicacion/). Desconfía de los porcentajes redondos que no dicen de dónde salen.
 
 ## El papel fundamental de la IA
 

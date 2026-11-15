@@ -4,6 +4,7 @@ seoTitle: "Frases verdes prohibidas: la Directiva 2024/825"
 description: "«Ecológico» o «neutro en carbono» sin pruebas ya no valen: la directiva contra el blanqueo ecológico se aplica desde el 27 de septiembre de 2026. Qué cambia."
 enCorto: "Desde el 27 de septiembre de 2026 se aplica la Directiva (UE) 2024/825: prohíbe las alegaciones ambientales genéricas sin pruebas, la neutralidad climática basada en compensar emisiones y los sellos de sostenibilidad sin certificación independiente. España aún no la ha incorporado, pero la ley de competencia desleal y los tribunales ya van en esa dirección. Lo prudente es revisar tus mensajes ahora."
 pubDate: 2026-10-13
+updatedDate: 2026-11-15
 heroImage: "/blog-images/hero-alegaciones-ambientales.webp"
 heroAI: true
 category: sostenibilidad
@@ -13,7 +14,7 @@ draft: false
 
 Revisa ahora mismo la web de tu organización y busca estas palabras: «ecológico», «sostenible», «verde», «respetuoso con el medio ambiente», «neutro en carbono». Si aparecen como adjetivo suelto, sin un dato al lado que las respalde, tienes trabajo.
 
-Desde el **27 de septiembre de 2026** se aplica la Directiva (UE) 2024/825, la de «empoderamiento de los consumidores para la transición ecológica». Es la norma que de verdad obliga en materia de blanqueo ecológico. La propuesta de directiva Green Claims, de la que se habló tanto, la retiró la Comisión en junio de 2025.
+Desde el **27 de septiembre de 2026** se aplica la Directiva (UE) 2024/825, la de «empoderamiento de los consumidores para la transición ecológica». Es la norma que de verdad obliga en materia de blanqueo ecológico. La propuesta de directiva Green Claims, de la que se habló tanto, lleva parada desde junio de 2025 y la Comisión anunció en noviembre de 2026 que la retirará.
 
 <aside class="callout"><span class="callout-label">EN CORTO</span> Un adjetivo verde sin prueba, una neutralidad climática basada en compensar y un sello propio sin certificar pasan a ser prácticas desleales. España va con retraso, pero no conviene esperar a la ley para cambiar los mensajes.</aside>
 
@@ -26,11 +27,12 @@ La directiva añade a la lista de prácticas comerciales que se consideran desle
 - **Distintivos de sostenibilidad** que no se basen en un sistema de certificación independiente o no los haya establecido una autoridad pública. El sello que diseñó tu propio departamento de marketing entra aquí.
 - **Presentar como propio un rasgo que es obligatorio por ley.** Decir que «cumplimos la normativa de residuos» como si fuera un mérito.
 - **Atribuir a todo el producto o a toda la empresa** lo que solo vale para una parte.
-- **Compromisos de futuro** («seremos neutros en 2030») sin un plan detallado, con objetivos públicos y verificados por alguien independiente.
+
+Además, anunciar un compromiso de futuro («seremos neutros en 2030») sin un plan detallado, con objetivos públicos y verificados por alguien independiente, pasa a considerarse engañoso. Este caso no está en la lista de lo prohibido siempre: se valora caso por caso (artículo 6.2.d de la directiva de prácticas desleales).
 
 ## Qué pasa en España
 
-La directiva daba de plazo hasta el 27 de marzo de 2026 para incorporarla a la ley nacional. España no llegó: la Comisión Europea abrió en mayo un procedimiento de infracción, y el texto que debe incorporarla, la futura ley de consumo sostenible, sigue en tramitación.
+La directiva daba de plazo hasta el 27 de marzo de 2026 para incorporarla a la ley nacional. España no llegó: la Comisión Europea abrió en mayo de 2026 un procedimiento de infracción, y el texto que debe incorporarla, la futura ley de consumo sostenible, sigue en tramitación.
 
 ¿Significa eso que puedes esperar? No. Mientras tanto se aplican la Ley de Competencia Desleal y la Ley General para la Defensa de los Consumidores, que ya prohíben la publicidad engañosa. Y los tribunales deben interpretarlas a la luz de la directiva. Traducido: el riesgo legal ya existe, y el reputacional existía antes.
 
@@ -69,7 +71,7 @@ Para no empezar de cero, tengo una [lista de comprobación para comunicar sosten
 
 La directiva no te obliga a callarte. Te obliga a demostrar. Las organizaciones que tienen datos salen ganando: por fin su comunicación se distingue de la de quien solo tenía adjetivos.
 
-Si quieres que alguien revise tus mensajes ambientales con ojos de fuera, en el [Diagnóstico de 14 días](/diagnostico/) hago ese inventario, te marco qué frases cambiar y por cuáles, y dejo montado un sistema sencillo para que cada mensaje nuevo pase el filtro antes de publicarse. Son 1.500 €, precio cerrado. Si al terminar no tienes al menos tres acciones concretas con su retorno estimado, no lo pagas.
+Si quieres que alguien revise tus mensajes ambientales con ojos de fuera, en el [Diagnóstico de 14 días](/diagnostico/) hago ese inventario, te marco qué frases cambiar y por cuáles, y te dejo por escrito el filtro que debería pasar cada mensaje nuevo antes de publicarse. Son 1.500 €, precio cerrado. Si al terminar no tienes al menos tres acciones concretas con su retorno estimado, no lo pagas.
 
 ---
 

@@ -4,6 +4,7 @@ seoTitle: "Etiquetar contenido hecho con IA en comunicación"
 description: "Desde el 2 de agosto de 2026, las imágenes, vídeos y audios sintéticos que parecen reales deben avisarse. Qué se etiqueta, qué no y cómo lo hago en este blog."
 enCorto: "Desde el 2 de agosto de 2026, el Reglamento europeo de IA obliga a avisar cuando publicas una imagen, un vídeo o un audio generado con IA que parece real, sobre todo si muestra a una persona. Los textos corporativos revisados por alguien con responsabilidad editorial quedan, en general, fuera. La clave es tener un criterio escrito: qué se etiqueta, cómo y qué no se hace nunca."
 pubDate: 2026-10-08
+updatedDate: 2026-11-15
 heroImage: "/blog-images/hero-etiquetar-contenido-ia.webp"
 heroAI: true
 category: ia
@@ -75,7 +76,7 @@ La transparencia bien hecha es un mensaje en sí misma. Dice que usas herramient
 
 Haz una lista de todo lo que tu equipo publica con ayuda de IA: textos, imágenes, vídeos, voces, asistentes. Pon cada cosa en su color. Si en media hora no has terminado, es que tu equipo usa la IA más de lo que crees y con menos criterio común del que conviene.
 
-En el [Diagnóstico de 14 días](/diagnostico/) hago ese inventario contigo, dejo escrito el semáforo adaptado a tu organización y te marco dónde la IA te está ahorrando horas de verdad y dónde solo está añadiendo riesgo. Son 1.500 €, precio cerrado. Y si no hay al menos tres acciones concretas con su retorno estimado, no lo pagas.
+En el [Diagnóstico de 14 días](/diagnostico/) hago ese inventario contigo, te propongo el semáforo adaptado a tu organización y te marco dónde la IA te está ahorrando horas de verdad y dónde solo está añadiendo riesgo. Son 1.500 €, precio cerrado. Y si no hay al menos tres acciones concretas con su retorno estimado, no lo pagas.
 
 ---
 

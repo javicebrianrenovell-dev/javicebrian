@@ -1,9 +1,10 @@
 ---
 title: "Cómo defender el presupuesto de comunicación de 2027 ante tu dirección"
 seoTitle: "Defender el presupuesto de comunicación 2027"
-description: "En octubre se decide el dinero de comunicación de 2027. Cómo llevar un presupuesto que se defiende solo: ligado a objetivos, con renuncias y horas a la vista."
+description: "En otoño se decide el dinero de comunicación de 2027. Cómo llevar un presupuesto que se defiende solo: ligado a objetivos, con renuncias y horas a la vista."
 enCorto: "Un presupuesto de comunicación se defiende mejor cuando no se presenta como una lista de gastos, sino como tres apuestas ligadas a objetivos de la dirección. Llega con lo que dejas de hacer, con lo que ya ha demostrado funcionar y con las horas del equipo contadas. Y si te piden recortar, ofrece tú el recorte antes de que lo hagan a ciegas."
 pubDate: 2026-10-15
+updatedDate: 2026-11-15
 heroImage: "/blog-images/hero-presupuesto-comunicacion.webp"
 heroAI: true
 category: comunicacion
@@ -71,4 +72,4 @@ La dirección recibe más recorte del que pidió, y comunicación sale con un pl
 - Los resultados de 2026 que se pueden demostrar, aunque sean pocos. Lo explico en [cómo medir el retorno de la comunicación](/blog/medir-retorno-comunicacion-sostenibilidad/).
 - Una fecha de revisión a mitad de año, con los mismos indicadores.
 
-Si tienes la reunión en unas semanas y te faltan los datos, en el [Diagnóstico de 14 días](/diagnostico/) preparo contigo exactamente eso: qué funcionó en 2026, qué se deja, dónde la IA te libera horas y cuánto valen. Llegas a la reunión con el presupuesto defendible por escrito. Son 1.500 €, precio cerrado. Y si no salen al menos tres acciones concretas con su retorno estimado, no lo pagas.
+Si tienes la reunión en unas semanas y te faltan los datos, en el [Diagnóstico de 14 días](/diagnostico/) reviso contigo justo eso: qué funcionó en 2026, qué se puede dejar, dónde la IA te libera horas y cuánto valen. Llegas a la reunión con tres acciones priorizadas y su retorno estimado, por escrito. Son 1.500 €, precio cerrado. Y si no salen al menos tres acciones concretas con su retorno estimado, no lo pagas.

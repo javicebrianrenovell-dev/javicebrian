@@ -3,6 +3,7 @@ title: "Comunicación ambiental en la administración pública: lo que no se cue
 seoTitle: "Comunicación ambiental en la Administración"
 description: "La comunicación ambiental de las instituciones es parte del servicio público, no un adorno. Cómo hacerla con criterio."
 pubDate: 2026-05-26
+updatedDate: 2026-11-15
 heroImage: "/blog-images/nuevo-comunicacion-ambiental-publica.webp"
 category: comunicacion
 tags: ["comunicación ambiental", "comunicación institucional", "administración pública", "sostenibilidad"]
@@ -22,7 +23,7 @@ Hay además una cuestión democrática. **Una política ambiental que no se expl
 
 ## comunicación de proximidad: hablar donde está la gente
 
-La administración tiende a comunicar hacia arriba (a la prensa, al BOE provincial, a la nota institucional) y poco hacia el lado, que es donde vive la gente. La comunicación de proximidad va al revés: parte del barrio, del mercado, del centro de mayores, del grupo de la asociación de vecinos.
+La administración tiende a comunicar hacia arriba (a la prensa, al boletín oficial de la provincia, a la nota institucional) y poco hacia el lado, que es donde vive la gente. La comunicación de proximidad va al revés: parte del barrio, del mercado, del centro de mayores, del grupo de la asociación de vecinos.
 
 Un ejemplo concreto. Una mancomunidad lanza el quinto contenedor para residuo orgánico. Puede hacerlo con un bando, un cartel y una nota de prensa. O puede hacerlo con monitores que están una semana junto a los contenedores resolviendo dudas, con un imán para la nevera que explica qué va y qué no, y con un mensaje adaptado al hogar con niños y al hogar de una persona mayor que vive sola. La diferencia entre ambas formas no es estética. Es la tasa de impropios que tendrá esa fracción seis meses después, y por tanto el coste real de la gestión.
 

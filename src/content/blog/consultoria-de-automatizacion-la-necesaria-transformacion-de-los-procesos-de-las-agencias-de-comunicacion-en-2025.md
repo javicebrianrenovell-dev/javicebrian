@@ -3,6 +3,7 @@ title: "Consultoría de Automatización: la necesaria transformación de los pro
 seoTitle: "Automatización para agencias de comunicación"
 description: "Cómo la consultoría de automatización permite a las agencias de comunicación reducir tiempos, errores y enfocarse en estrategia y creatividad."
 pubDate: 2025-01-06
+updatedDate: 2026-11-15
 heroImage: "/blog-images/consultoria_automatizacion_javi_cebrian.webp"
 heroAI: true
 category: herramientas
@@ -35,10 +36,12 @@ Mediante Power BI y Google Analytics se pueden generar dashboards que el equipo 
 
 Con chatbots IA (Make, Dialogflow, Rasa, ChatGPT) se cubre el primer nivel de atención sin perder calidad de respuesta.
 
-## Casos prácticos de éxito
+## Dónde se nota antes
 
-- **Agencia de branding:** aumento del 30% en eficiencia tras automatizar gestión de proyectos.
-- **Consultoría:** reducción del 40% en tiempo de respuesta a clientes y aumento del 15% en conversiones.
+- **Gestión de proyectos:** menos tiempo en repartir tareas y perseguir estados.
+- **Respuesta a clientes:** menos espera en las consultas que se repiten.
+
+No doy porcentajes porque dependen de cada equipo. Mide tus horas antes y después: es la única cifra que vale.
 
 ## Beneficios
 
